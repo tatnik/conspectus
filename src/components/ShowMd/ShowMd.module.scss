@@ -1,11 +1,7 @@
 .ShowMd {
+  box-sizing: border-box;
   width: 100%;
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
-  box-sizing: border-box;
-
-  & h2,
-  h3,
-  h4,
   h5 {
     margin-top: 40px;
   }
@@ -21,19 +17,16 @@
 }
 
 .showMdBlock {
-  @extend .ShowMd;
   display: block;
-  padding-left: var(--indent);
   padding-right: var(--indent);
+  padding-left: var(--indent);
 }
 
 .showMdBlockNav {
-  @extend .showMdBlock;
   border-left: 1px solid var(--g-color-private-blue-200-solid);
 }
 
 .showMdGrid {
-  @extend .ShowMd;
   display: grid;
   grid-template-columns: 2fr 1fr;
 }

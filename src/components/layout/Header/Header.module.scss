@@ -3,17 +3,17 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  box-sizing: border-box;
   width: 100%;
   max-width: var(--max-width);
+  height: var(--header-height);
   margin: 0 auto;
   padding: 0 var(--indent);
-  box-sizing: border-box;
-  position: fixed;
   background-color: var(--g-color-private-blue-100-solid);
   border: 1px solid var(--g-color-private-blue-200-solid);
-  top: 0;
-  height: var(--header-height);
-  z-index: 9999;
 }
 
 .title {

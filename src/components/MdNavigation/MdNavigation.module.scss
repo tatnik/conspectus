@@ -1,12 +1,11 @@
 .MdNavigation {
-  padding: var(--indent);
   box-sizing: border-box;
+  padding: var(--indent);
   border-left: 1px solid var(--g-color-private-blue-200-solid);
-
   & ul {
-    list-style-type: none;
     margin: 0;
     padding: 0;
+    list-style-type: none;
   }
 
   & li {

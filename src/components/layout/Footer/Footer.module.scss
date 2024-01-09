@@ -1,19 +1,19 @@
 .Footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
+  z-index: 999;
   bottom: 0;
   left: 0;
   right: 0;
-  display: flex;
-  flex-direction: row;
-  padding: 0 var(--indent);
+  box-sizing: border-box;
   width: 100%;
   max-width: var(--max-width);
-  margin: 0 auto;
   height: var(--footer-height);
-  justify-content: space-between;
-  align-items: center;
-  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 var(--indent);
   background-color: var(--g-color-private-blue-100-solid);
   border: 1px solid var(--g-color-private-blue-200-solid);
-  z-index: 999;
 }

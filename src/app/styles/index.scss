@@ -4,10 +4,10 @@
 @import 'themes/dark';
 
 body {
-  font: var(--font-m);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
+  font: var(--font-m);
 }
 
 code {
@@ -28,23 +28,23 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: var(--max-width);
-  min-width: var(--min-width);
-  margin: 0 auto;
-  padding: 0;
   box-sizing: border-box;
   width: 100%;
+  min-width: var(--min-width);
+  max-width: var(--max-width);
   min-height: 100vh;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .page-wrapper {
-  width: 100%;
-  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  display: block;
   position: relative;
   top: var(--header-height);
   left: 0;
   right: 0;
-  border-left: 1px solid var(--g-color-private-blue-200-solid);
+  width: 100%;
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
   border-right: 1px solid var(--g-color-private-blue-200-solid);
-  display: block;
+  border-left: 1px solid var(--g-color-private-blue-200-solid);
 }
