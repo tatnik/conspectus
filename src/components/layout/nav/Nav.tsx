@@ -1,7 +1,7 @@
-import React from "react";
-import { useLocation } from "react-router-dom";
-import { TypeNavLink } from '../../../markdown/navSite';
-import { Button } from "@gravity-ui/uikit";
+import React from 'react';
+import { useLocation } from 'react-router-dom';
+import { Button } from '@gravity-ui/uikit';
+import { TypeNavLink } from 'src/markdown/navSite';
 
 interface NavProps {
   nav: Array<TypeNavLink>;
@@ -14,8 +14,8 @@ export const Nav: React.FC<NavProps> = ({ nav }) => {
       {
         nav.map(val => (
           <Button
-            key={"b" + val.id}
-            view="outlined"
+            key={'b' + val.id}
+            view='outlined'
             href={val.path}
             disabled={pageUrl == val.path}
           >

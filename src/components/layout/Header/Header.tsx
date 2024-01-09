@@ -1,9 +1,9 @@
 import React from 'react';
 import cls from './Header.module.scss';
-import { Logo } from '../../Logo/Logo';
 import { DropdownMenu, Text } from '@gravity-ui/uikit';
-import { ThemeSwitcher } from '../../ThemeSwitcher/ThemeSwitcher';
-import { TypeNavLink } from './../../../markdown/navSite';
+import { Logo } from 'src/components/layout/Logo/Logo';
+import { TypeNavLink } from 'src/markdown/navSite';
+import { ThemeSwitcher } from 'src/components/ThemeSwitcher/ThemeSwitcher';
 
 
 
@@ -15,7 +15,7 @@ export interface HeaderProps {
 
 export const Header = (props: HeaderProps) => {
   const { titlePage, headerNav } = props;
-  const showNav = (headerNav[0] && !(headerNav[0].path === "/"));
+  const showNav = (headerNav[0] && !(headerNav[0].path === '/'));
   const menuItems = headerNav.map(val => (
     {
       href: val.path,
@@ -29,8 +29,8 @@ export const Header = (props: HeaderProps) => {
       <Logo />
       <div>
         <Text
-          variant="header-1"
-          color={"info"}
+          variant='header-1'
+          color={'info'}
         >
           {titlePage}
         </Text>

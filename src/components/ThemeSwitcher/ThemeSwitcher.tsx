@@ -1,8 +1,8 @@
 import React from 'react';
-import { useTheme } from '../../app/providers/AppThemeProvider/lib/useTheme';
-import { Themes } from '../../app/providers/AppThemeProvider/lib/ThemeContext';
 import { Select } from '@gravity-ui/uikit';
 import cls from './ThemeSwitcher.module.scss'
+import { useTheme } from 'src/app/providers/AppThemeProvider';
+import { Themes } from 'src/app/providers/AppThemeProvider/lib/ThemeContext';
 
 export const ThemeSwitcher = () => {
   const { theme, toggleTheme } = useTheme();
