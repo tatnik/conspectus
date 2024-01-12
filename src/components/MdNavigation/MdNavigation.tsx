@@ -1,7 +1,8 @@
-import { Link } from "@gravity-ui/uikit";
-import React from "react";
-import cls from "./MdNavigation.module.scss"
+import React from 'react';
 
+import { Link } from '@gravity-ui/uikit';
+
+import cls from './MdNavigation.module.scss';
 
 interface Heading {
   text: string;
@@ -15,7 +16,6 @@ interface MdNavigationProps {
 const MdNavigation: React.FC<MdNavigationProps> = ({ headings }) => {
   //     <Card type="container" theme="normal" >
   return (
-
     <nav className={cls.MdNavigation}>
       <ul>
         {headings.map((heading) => (
@@ -25,7 +25,6 @@ const MdNavigation: React.FC<MdNavigationProps> = ({ headings }) => {
         ))}
       </ul>
     </nav>
-
   );
 };
 

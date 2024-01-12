@@ -9,19 +9,22 @@ type AppRouterProps = {
   setTitlePage: React.Dispatch<React.SetStateAction<string>>;
   setNavPart: React.Dispatch<React.SetStateAction<TypeNavLink[]>>;
   navSite: TypeNavLink[];
-
-}
+};
 
 export const AppRouter: React.FC<AppRouterProps> = (props) => {
   const { setTitlePage, setNavPart, navSite } = props;
 
   return (
     <Routes>
-      <Route path="/"
+      <Route
+        path="/"
         element={<MainPage setTitlePage={setTitlePage} />}
       />
       {navSite.map((val) => (
-        <Route path={val.path} key={val.id} >
+        <Route
+          path={val.path}
+          key={val.id}
+        >
           <Route
             index
             element={
@@ -42,7 +45,8 @@ export const AppRouter: React.FC<AppRouterProps> = (props) => {
             }
           />
         </Route>
-      ))};
+      ))}
+      ;
     </Routes>
   );
 };

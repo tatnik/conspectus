@@ -9,7 +9,15 @@ module.exports = {
     'process.env': true,
   },
   extends: [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "prettier"
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -38,7 +46,7 @@ module.exports = {
         code: 100,
       },
     ],
-    "linebreak-style": 0,
+    "linebreak-style": ["error", "windows"],
     "react/jsx-indent": [
       2,
       2,
@@ -61,7 +69,7 @@ module.exports = {
         ],
       },
     ],
-    "import/no-unresolved": "off",
+    "import/no-unresolved": "error",
     "import/prefer-default-export": "off",
     "no-unused-vars": "warn",
     "react/require-default-props": "off",
@@ -89,4 +97,39 @@ module.exports = {
       },
     },
   ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
+        // Choose from one of the "project" configs below or omit to use <root>/tsconfig.json by default
+        // use <root>/path/to/folder/tsconfig.json
+        "project": "./",
+      }
+    },
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupExcludedImportTypes": ["react"],
+        "newlines-between": "allways",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+  }
 };

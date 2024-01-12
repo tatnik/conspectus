@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { configure } from '@gravity-ui/uikit';
+import { AppThemeProvider } from './app/providers/AppThemeProvider';
 import { App } from './app/App';
 import reportWebVitals from './reportWebVitals';
-import { AppThemeProvider } from './app/providers/AppThemeProvider';
 import { BrowserRouter } from 'react-router-dom';
 
 //import 'highlight.js/styles/github.css';
@@ -16,12 +16,12 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <AppThemeProvider>
+    <AppThemeProvider>
+      <BrowserRouter>
         <App />
-      </AppThemeProvider>
-    </BrowserRouter>
-  </React.StrictMode>,
+      </BrowserRouter>
+    </AppThemeProvider>
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

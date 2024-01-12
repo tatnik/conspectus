@@ -1,26 +1,30 @@
 export interface TypeNavLink {
-  id: number,
-  name: string,
-  path: string
+  id: number;
+  name: string;
+  path: string;
 }
 
 const navSite: Array<TypeNavLink> = [
   {
     id: 0,
-    name: "JavaScript",
-    path: "/js"
+    name: 'JavaScript',
+    path: '/js',
   },
   {
     id: 1,
-    name: "React",
-    path: "/react"
+    name: 'React',
+    path: '/react',
   },
   {
     id: 2,
-    name: "Web",
-    path: "/web",
-  }
-]
+    name: 'Settings',
+    path: '/settings',
+  },
+  {
+    id: 3,
+    name: 'Web',
+    path: '/web',
+  },
+];
 
 export default navSite;
-

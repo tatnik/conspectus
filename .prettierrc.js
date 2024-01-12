@@ -1,9 +1,11 @@
 module.exports = {
+  semi: true,
   bracketSpacing: true,
   tabWidth: 2,
   printWidth: 100,
   singleQuote: true,
-  trailingComma: 'all',
+  endOfLineL: 'lf',
+  singleAttributePerLine: true,
   overrides: [
     {
       files: ['*.js', '*.jsx', '*.ts', '*.tsx'],

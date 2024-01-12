@@ -1,20 +1,22 @@
+import 'highlight.js/scss/default.scss';
+
+import hljs from 'highlight.js/lib/core';
+import bash from 'highlight.js/lib/languages/bash';
+import javascript from 'highlight.js/lib/languages/javascript'; // import JS highlighting
+import json from 'highlight.js/lib/languages/json';
+import xml from 'highlight.js/lib/languages/xml';
 import Markdown from 'markdown-to-jsx';
 import React, { useLayoutEffect, useRef, useState } from 'react';
-import cls from "./ShowMd.module.scss";
+
 import { Link } from '@gravity-ui/uikit';
-import hljs from 'highlight.js/lib/core';
-import javascript from 'highlight.js/lib/languages/javascript'; // import JS highlighting
-hljs.registerLanguage('javascript', javascript); // import XML highlighting
-import xml from 'highlight.js/lib/languages/xml';
-hljs.registerLanguage('xml', xml);
-import json from 'highlight.js/lib/languages/json';
-hljs.registerLanguage('json', json);
-import bash from 'highlight.js/lib/languages/bash';
-hljs.registerLanguage('bash', bash);
-import 'highlight.js/scss/default.scss';
+
 import MdNavigation from '../MdNavigation/MdNavigation';
+import cls from './ShowMd.module.scss';
 
-
+hljs.registerLanguage('javascript', javascript); // import XML highlighting
+hljs.registerLanguage('xml', xml);
+hljs.registerLanguage('json', json);
+hljs.registerLanguage('bash', bash);
 
 export interface ShowMdProps {
   post: string;
@@ -27,7 +29,7 @@ interface Heading {
 }
 
 function generateHeadingsArray(article: HTMLElement | null): Heading[] {
-  if (article == null) return []
+  if (article === null) return [];
 
   const h2Tags = article.getElementsByTagName('h2');
   const headings: Heading[] = [];
@@ -41,27 +43,22 @@ function generateHeadingsArray(article: HTMLElement | null): Heading[] {
   return headings;
 }
 
-
 export const ShowMd = (props: ShowMdProps) => {
-  const {
-    post,
-    isIndex,
-  } = props;
+  const { post, isIndex } = props;
 
   const articleRef = useRef(null);
 
-  const [headings, setHeadings] = useState<Heading[]>([])
+  const [headings, setHeadings] = useState<Heading[]>([]);
   //let headings: Heading[] = [];
 
-  const mdProps = isIndex ?
-    {
-      view: 'normal'
-    }
-    :
-    {
-      view: 'normal',
-      target: '_blank'
-    };
+  const mdProps = isIndex
+    ? {
+        view: 'normal',
+      }
+    : {
+        view: 'normal',
+        target: '_blank',
+      };
 
   useLayoutEffect(() => {
     const element: HTMLElement | null = articleRef.current;
@@ -76,27 +73,26 @@ export const ShowMd = (props: ShowMdProps) => {
 
   //    <Card type="container" theme="normal" className={cls.card}>
   return (
-    <article ref={articleRef} className={isIndex ? cls.showMdBlock : cls.showMdGrid}>
+    <article
+      ref={articleRef}
+      className={isIndex ? cls.showMdBlock : cls.showMdGrid}
+    >
       <div className={cls.showMdBlock}>
-        <Markdown options={{
-          overrides: {
-            wrapper: React.Fragment,
-            a: {
-              component: Link,
-              props: mdProps,
+        <Markdown
+          options={{
+            overrides: {
+              wrapper: React.Fragment,
+              a: {
+                component: Link,
+                props: mdProps,
+              },
             },
-          },
-        }}>
+          }}
+        >
           {post}
         </Markdown>
       </div>
-      {isIndex ? null : (
-
-        <MdNavigation headings={headings} />
-
-      )
-      }
-    </article >
+      {isIndex ? null : <MdNavigation headings={headings} />}
+    </article>
   );
-}
-
+};

@@ -10,7 +10,6 @@
     "@types/jest": "^27.5.2",
     "@types/node": "^18.17.19",
     "@types/react": "^18.2.22",
-    "@types/react-dom": "^18.2.7",
     "bem-cn-lite": "^4.1.0",
     "highlight.js": "^11.9.0",
     "markdown-to-jsx": "^7.3.2",
@@ -28,7 +27,17 @@
     "@gravity-ui/prettier-config": "^1.1.0",
     "@gravity-ui/stylelint-config": "^2.0.0",
     "@gravity-ui/tsconfig": "^1.0.0",
+    "@types/react-dom": "^18.2.18",
+    "@types/react-router-dom": "^5.3.3",
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/parser": "^5.62.0",
     "eslint": "^8.50.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^2.8.0",
     "raw-loader": "^4.0.2",
     "react-app-rewired": "^2.2.1",
@@ -44,7 +53,9 @@
     "lint:js": "eslint --ext .js,.jsx,.ts,.tsx .",
     "lint:styles": "stylelint '{styles,src}/**/*.scss'",
     "lint:prettier": "prettier --check '**/*.md'",
-    "lint": "npm run lint:js && npm run lint:styles && npm run lint:prettier"
+    "lint": "npm run lint:js && npm run lint:styles && npm run lint:prettier",
+    "lint-fix:js": "eslint --ext .js,.jsx,.ts,.tsx . --fix",
+    "lint-fix:styles": "stylelint '{styles,src}/**/*.scss' --fix"
   },
   "browserslist": {
     "production": [

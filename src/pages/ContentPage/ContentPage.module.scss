@@ -1,10 +1,12 @@
 .ContentPage {
   display: block;
   width: 100%;
-  position: relative;
+  position: absolute;
   padding: 0;
   box-sizing: border-box;
-
+  top: var(--header-height);
+  left: 0;
+  padding-bottom: var(--footer-height);
   & p {
     margin: 10px 0;
   }

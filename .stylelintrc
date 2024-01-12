@@ -1,5 +1,10 @@
 {
-    "extends": ["@gravity-ui/stylelint-config", "@gravity-ui/stylelint-config/prettier"],
+    "extends": [
+        "@gravity-ui/stylelint-config",
+        "@gravity-ui/stylelint-config/prettier",
+        "prettier"
+    ],
+    "customSyntax": "postcss-scss",
     "rules": {
         "declaration-colon-space-after": "always-single-line"
     }
