@@ -1,7 +1,11 @@
 .MdNavigation {
+  position: sticky;
+  top: 0;
   box-sizing: border-box;
-  padding: var(--indent);
-  border-left: 1px solid var(--g-color-private-blue-200-solid);
+  height: fit-content;
+  padding: 0 var(--indent);
+  border-left: 1px dotted var(--g-color-private-blue-200-solid);
+  overflow-y: auto;
   & ul {
     margin: 0;
     padding: 0;

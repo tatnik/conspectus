@@ -41,8 +41,11 @@ code {
   top: var(--header-height);
   left: 0;
   right: 0;
+  overflow-y: scroll;
+  box-sizing: border-box;
   width: 100%;
-  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  height: calc(100vh - var(--header-height) - var(--footer-height));
   border-right: 1px solid var(--g-color-private-blue-200-solid);
   border-left: 1px solid var(--g-color-private-blue-200-solid);
+  padding: var(--indent);
 }

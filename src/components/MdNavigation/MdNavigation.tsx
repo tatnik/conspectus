@@ -14,7 +14,6 @@ interface MdNavigationProps {
 }
 
 const MdNavigation: React.FC<MdNavigationProps> = ({ headings }) => {
-  //     <Card type="container" theme="normal" >
   return (
     <nav className={cls.MdNavigation}>
       <ul>

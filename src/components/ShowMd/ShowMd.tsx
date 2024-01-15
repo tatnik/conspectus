@@ -28,6 +28,7 @@ interface Heading {
   id: string;
 }
 
+// eslint-disable-next-line no-implicit-globals
 function generateHeadingsArray(article: HTMLElement | null): Heading[] {
   if (article === null) return [];
 
@@ -45,12 +46,8 @@ function generateHeadingsArray(article: HTMLElement | null): Heading[] {
 
 export const ShowMd = (props: ShowMdProps) => {
   const { post, isIndex } = props;
-
   const articleRef = useRef(null);
-
   const [headings, setHeadings] = useState<Heading[]>([]);
-  //let headings: Heading[] = [];
-
   const mdProps = isIndex
     ? {
         view: 'normal',
@@ -71,7 +68,6 @@ export const ShowMd = (props: ShowMdProps) => {
     }
   }, [post, articleRef, isIndex]);
 
-  //    <Card type="container" theme="normal" className={cls.card}>
   return (
     <article
       ref={articleRef}
