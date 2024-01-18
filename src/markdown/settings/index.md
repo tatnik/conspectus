@@ -1,7 +1,7 @@
-## [VS Code - горячие клавиши (windows)](/settings/vscode) ##
+## [VS Code - горячие клавиши (windows)](/settings/vscode)
 
-## [Git - основные команды](/settings/git) ##
+## [Git - основы](/settings/git)
 
-## [ESLint & Prettier - базовые настройки](/settings/eslint-prettier) ##
+## [ESLint & Prettier - базовые настройки](/settings/eslint-prettier)
 
-## [Prettier - расширение для VS Code](/settings/prettier) ##
+## [Prettier - расширение для VS Code](/settings/prettier)

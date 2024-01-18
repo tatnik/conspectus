@@ -1,6 +1,7 @@
-import AppThemeProvider from './ui/AppThemeProvider';
-import { useTheme } from './lib/useTheme';
+import { ThemeSwitcher } from 'src/app/providers/AppThemeProvider/ui/ThemeSwitcher/ThemeSwitcher';
+
 import { Theme } from './lib/ThemeContext';
-import { ThemeSwitcher } from 'src/components/ThemeSwitcher/ThemeSwitcher';
+import { useTheme } from './lib/useTheme';
+import AppThemeProvider from './ui/AppThemeProvider';
 
 export { AppThemeProvider, useTheme, Theme, ThemeSwitcher };

@@ -1,11 +1,13 @@
 import './styles/index.scss';
-import React, { Suspense, useState } from 'react';
-import { AppRouter } from './AppRouter';
-import { Header } from 'src/components/layout/Header/Header';
-import { Footer } from 'src/components/layout/Footer/Footer';
 
+import React, { Suspense, useState } from 'react';
+import { Footer } from 'src/components/layout/Footer/Footer';
+import { Header } from 'src/components/layout/Header/Header';
 import navSite from 'src/markdown/navSite';
+
 import { Loader } from '@gravity-ui/uikit';
+
+import { AppRouter } from './AppRouter';
 
 export const App = () => {
   const [titlePage, setTitlePage] = useState('');

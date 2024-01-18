@@ -1,6 +1,6 @@
 import React from 'react';
+import { ThemeSwitcher } from 'src/app/providers/AppThemeProvider';
 import { Logo } from 'src/components/layout/Logo/Logo';
-import { ThemeSwitcher } from 'src/components/ThemeSwitcher/ThemeSwitcher';
 import { TypeNavLink } from 'src/markdown/navSite';
 
 import { DropdownMenu, Text } from '@gravity-ui/uikit';
