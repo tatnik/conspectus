@@ -52,7 +52,7 @@
     "eject": "react-app-rewired eject",
     "lint:js": "eslint --ext .js,.jsx,.ts,.tsx .",
     "lint:styles": "stylelint '{styles,src}/**/*.scss'",
-    "lint:prettier": "prettier --check '**/*.md'",
+    "lint:prettier": "prettier --check src/**.ts*",
     "lint": "npm run lint:js && npm run lint:styles && npm run lint:prettier",
     "lint-fix:js": "eslint --ext .js,.jsx,.ts,.tsx . --fix",
     "lint-fix:styles": "stylelint '{styles,src}/**/*.scss' --fix"

@@ -4,7 +4,7 @@ module.exports = {
   tabWidth: 2,
   printWidth: 100,
   singleQuote: true,
-  endOfLineL: 'lf',
+  endOfLine: 'lf',
   singleAttributePerLine: true,
   overrides: [
     {

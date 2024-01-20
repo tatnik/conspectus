@@ -2,21 +2,10 @@ import React, { SetStateAction, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ShowMd } from 'src/components/ShowMd/ShowMd';
 import { TypeNavLink } from 'src/markdown/navSite';
-import { useGetPost } from 'src/utils/useGetPost/useGetPost';
+import { getNavFromIndex } from 'src/utils/getNavFromIndex';
+import { useGetPost } from 'src/utils/useGetPost';
 
 import cls from './ContentPage.module.scss';
-
-export const getNavFromIndex = (index: string) => {
-  const regex = /## \[(.*?)\]\((.*?)\) ##/g;
-  const matches = index.matchAll(regex);
-  let id = 0;
-  const result = Array.from(matches, (match) => ({
-    id: id++,
-    name: match[1],
-    path: match[2],
-  }));
-  return result;
-};
 
 export interface ContentPageProps {
   setTitlePage: React.Dispatch<SetStateAction<string>>;

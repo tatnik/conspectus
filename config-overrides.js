@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-undef
 module.exports = function override(config /*, env*/) {
   return {
     ...config,

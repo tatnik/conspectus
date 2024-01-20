@@ -4,8 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { configure } from '@gravity-ui/uikit';
 
-import { App } from './app/App';
 import { AppThemeProvider } from './app/providers/AppThemeProvider';
+import { App } from './app/App';
 import reportWebVitals from './reportWebVitals';
 
 //import 'highlight.js/styles/github.css';

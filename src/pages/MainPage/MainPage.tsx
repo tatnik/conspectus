@@ -1,6 +1,7 @@
 import React, { SetStateAction, useState } from 'react';
 import { ShowMd } from 'src/components/ShowMd/ShowMd';
-import { useGetPost } from 'src/utils/useGetPost/useGetPost';
+import { useGetPost } from 'src/utils/useGetPost';
+
 import cls from './MainPage.module.scss';
 
 export interface MainPageProps {

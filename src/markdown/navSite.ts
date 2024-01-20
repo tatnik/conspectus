@@ -4,7 +4,7 @@ export interface TypeNavLink {
   path: string;
 }
 
-const navSite: Array<TypeNavLink> = [
+export const navSite: Array<TypeNavLink> = [
   {
     id: 0,
     name: 'JavaScript',
@@ -26,5 +26,3 @@ const navSite: Array<TypeNavLink> = [
     path: '/web',
   },
 ];
-
-export default navSite;

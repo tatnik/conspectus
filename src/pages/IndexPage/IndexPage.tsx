@@ -1,8 +1,9 @@
 import React, { SetStateAction, useState } from 'react';
 import { ShowMd } from 'src/components/ShowMd/ShowMd';
-import { useGetPost } from 'src/utils/useGetPost/useGetPost';
-import cls from './IndexPage.module.scss';
 import { TypeNavLink } from 'src/markdown/navSite';
+import { useGetPost } from 'src/utils/useGetPost';
+
+import cls from './IndexPage.module.scss';
 
 export interface IndexPageProps {
   setTitlePage: React.Dispatch<SetStateAction<string>>;

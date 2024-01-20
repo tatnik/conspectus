@@ -1,7 +1,9 @@
- ## [JS](/js) ##
+## [JavaScript](/js)
 
+## [REACT](/react)
 
-## [REACT](/react) ##
+## [Settings](/settings)
 
+## [WEB](/web)
 
-## [WEB](/web) ##
+## [Typescript](/typescript)

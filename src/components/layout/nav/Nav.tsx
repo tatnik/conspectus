@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { TypeNavLink } from 'src/markdown/navSite';
 
 import { Button } from '@gravity-ui/uikit';
@@ -13,14 +13,15 @@ export const Nav: React.FC<NavProps> = ({ nav }) => {
   return (
     <>
       {nav.map((val) => (
-        <Button
-          key={'b' + val.id}
-          view="outlined"
-          href={val.path}
-          disabled={pageUrl === val.path}
-        >
-          {val.name}
-        </Button>
+        <Link to={val.path}>
+          <Button
+            key={'b' + val.id}
+            view="outlined"
+            disabled={pageUrl === val.path}
+          >
+            {val.name}
+          </Button>
+        </Link>
       ))}
     </>
   );
