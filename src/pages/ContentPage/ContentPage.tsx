@@ -1,9 +1,9 @@
-import React, { SetStateAction, useEffect, useState } from 'react';
+import React, { SetStateAction, useEffect, useLayoutEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ShowMd } from 'src/components/ShowMd/ShowMd';
 import { TypeNavLink } from 'src/markdown/navSite';
 import { getNavFromIndex } from 'src/utils/getNavFromIndex';
-import { useGetPost } from 'src/utils/useGetPost';
+import { getFile } from 'src/utils/useGetPost';
 
 import cls from './ContentPage.module.scss';
 
@@ -26,15 +26,26 @@ export const ContentPage: React.FC<ContentPageProps> = (props) => {
   const [post, setPost] = useState('');
   const [index, setIndex] = useState('');
 
-  useGetPost({
-    fileName: indexName,
-    setPost: setIndex,
-  });
+  const getIndex = async () => {
+    const res = await getFile(indexName);
+    setIndex(res.text);
+    if (res.err !== '') {
+      console.log(res.err);
+    }
+  };
 
-  useGetPost({
-    fileName: contentName,
-    setPost,
-  });
+  const getPost = async () => {
+    const res = await getFile(contentName);
+    setPost(res.text);
+    if (res.err !== '') {
+      console.log(res.err);
+    }
+  };
+
+  useLayoutEffect(() => {
+    getPost();
+    getIndex();
+  }, [navItem]);
 
   useEffect(() => {
     const navFromIndex = getNavFromIndex(index);

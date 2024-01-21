@@ -8,35 +8,29 @@ import { Header } from 'src/components/layout/Header/Header';
 import { Loader } from '@gravity-ui/uikit';
 
 import { AppRouter } from './AppRouter';
-import { useGetPost } from 'src/utils/useGetPost';
+//import { useGetPost } from 'src/utils/useGetPost';
 import { getNavFromIndex } from 'src/utils/getNavFromIndex';
 
 //import { TypeNavLink } from 'src/markdown/navSite';
+import { getFile } from './../utils/useGetPost';
 
 export const App = () => {
   const [titlePage, setTitlePage] = useState('');
   const [navPart, setNavPart] = useState([{ id: 0, name: '', path: '/' }]);
+  const [navSite, setNavSite] = useState([{ id: 0, name: '', path: '/' }]);
 
-  const [post, setPost] = useState('');
-  //const [navSite, setNavSite] = useState(nav);
-
-  const [navSite, setNavSite] = useState([
-    {
-      id: 0,
-      name: 'Главная',
-      path: '/',
-    },
-  ]);
-
-  // eslint-disable-next-line prettier/prettier
-  const fileName = '/index.md';
-
-  useGetPost({ fileName, setPost });
+  const getNavSite = async () => {
+    const res = await getFile('/index.md');
+    if (res.err === '') {
+      setNavSite(getNavFromIndex(res.text));
+    } else {
+      console.log(res.err);
+    }
+  };
 
   useLayoutEffect(() => {
-    const addNav = getNavFromIndex(post);
-    setNavSite(addNav);
-  }, [post]);
+    getNavSite();
+  }, []);
 
   return (
     <>

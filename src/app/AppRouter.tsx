@@ -23,7 +23,7 @@ export const AppRouter: React.FC<AppRouterProps> = (props) => {
       {navSite.map((val) => (
         <Route
           path={val.path}
-          key={val.id}
+          key={'r' + val.id}
         >
           <Route
             index

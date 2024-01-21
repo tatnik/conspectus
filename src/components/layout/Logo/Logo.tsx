@@ -1,14 +1,13 @@
 import React from 'react';
 import logo from 'src/assets/logo.svg';
 
-import { Link } from '@gravity-ui/uikit';
-
 import cls from './Logo.module.scss';
+import { Link } from 'react-router-dom';
 
 export const Logo = () => {
   return (
     <div className={cls.Logo}>
-      <Link href="/">
+      <Link to="/">
         <img
           src={logo}
           height="35px"

@@ -3,9 +3,10 @@ import { ThemeSwitcher } from 'src/app/providers/AppThemeProvider';
 import { Logo } from 'src/components/layout/Logo/Logo';
 import { TypeNavLink } from 'src/markdown/navSite';
 
-import { DropdownMenu, Text } from '@gravity-ui/uikit';
+import { Text, Link as LinkGravity, Button, Popup } from '@gravity-ui/uikit';
 
 import cls from './Header.module.scss';
+import { Link } from 'react-router-dom';
 
 export interface HeaderProps {
   titlePage: string;
@@ -15,10 +16,8 @@ export interface HeaderProps {
 export const Header = (props: HeaderProps) => {
   const { titlePage, headerNav } = props;
   const showNav = headerNav[0] && !(headerNav[0].path === '/');
-  const menuItems = headerNav.map((val) => ({
-    href: val.path,
-    text: val.name,
-  }));
+  const buttonRef = React.useRef(null);
+  const [open, setOpen] = React.useState(false);
 
   return (
     <header className={cls.Header}>
@@ -28,9 +27,36 @@ export const Header = (props: HeaderProps) => {
           variant="header-1"
           color={'info'}
         >
-          {titlePage}
+          {titlePage + ' '}
         </Text>
-        {showNav ? <DropdownMenu items={menuItems} /> : null}
+        {showNav ? (
+          <>
+            <Button
+              ref={buttonRef}
+              onClick={() => setOpen((prevOpen) => !prevOpen)}
+            >
+              ...
+            </Button>
+            <Popup
+              anchorRef={buttonRef}
+              open={open}
+              placement="bottom"
+            >
+              <ul>
+                {headerNav.map((val: TypeNavLink) => (
+                  <li onClick={() => setOpen((prevOpen) => !prevOpen)}>
+                    <Link
+                      key={'h' + val.id}
+                      to={val.path}
+                    >
+                      <LinkGravity>{val.name}</LinkGravity>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </Popup>
+          </>
+        ) : null}
       </div>
       <ThemeSwitcher />
     </header>

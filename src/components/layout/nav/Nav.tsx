@@ -13,7 +13,10 @@ export const Nav: React.FC<NavProps> = ({ nav }) => {
   return (
     <>
       {nav.map((val) => (
-        <Link to={val.path}>
+        <Link
+          to={val.path}
+          key={'l' + val.id}
+        >
           <Button
             key={'b' + val.id}
             view="outlined"
@@ -26,18 +29,5 @@ export const Nav: React.FC<NavProps> = ({ nav }) => {
     </>
   );
 };
-
-// function Nav() {
-//   const pageUrl = useLocation().pathname;
-//   return (
-//     <nav>
-//       <nav>
-//         {buttons
-//           .filter((button) => button.to !== pageUrl)
-//           .map((button) => button.button)}
-//       </nav>
-//     </nav>
-//   );
-// }
 
 export default Nav;

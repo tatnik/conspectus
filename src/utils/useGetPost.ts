@@ -21,3 +21,15 @@ export const useGetPost = (props: GetPostProps) => {
   });
   return;
 };
+
+export const getFile = async (fileName: string) => {
+  const data = { text: '', err: '' };
+  try {
+    const doc = await import(`../markdown${fileName}`);
+    const res = await fetch(doc.default);
+    data.text = await res.text();
+  } catch (error) {
+    data.err = (error as Error).message;
+  }
+  return data;
+};

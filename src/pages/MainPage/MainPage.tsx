@@ -1,6 +1,6 @@
-import React, { SetStateAction, useState } from 'react';
+import React, { SetStateAction, useLayoutEffect, useState } from 'react';
 import { ShowMd } from 'src/components/ShowMd/ShowMd';
-import { useGetPost } from 'src/utils/useGetPost';
+import { getFile } from 'src/utils/useGetPost';
 
 import cls from './MainPage.module.scss';
 
@@ -15,7 +15,19 @@ export const MainPage: React.FC<MainPageProps> = (props) => {
   const fileName = '/readme.md';
   const [post, setPost] = useState('');
 
-  useGetPost({ fileName, setPost });
+  //useGetPost({ fileName, setPost });
+
+  const getPost = async () => {
+    const res = await getFile(fileName);
+    setPost(res.text);
+    if (res.err !== '') {
+      console.log(res.err);
+    }
+  };
+
+  useLayoutEffect(() => {
+    getPost();
+  }, []);
 
   return (
     <main className={cls.MainPage}>
