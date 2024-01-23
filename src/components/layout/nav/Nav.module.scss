@@ -1,0 +1,12 @@
+.Nav {
+  font: var(--font-m);
+  padding: var(--indent);
+  margin: 0;
+  & li {
+    list-style-type: none;
+  }
+
+  & a {
+    text-decoration: none;
+  }
+}

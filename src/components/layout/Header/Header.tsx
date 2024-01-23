@@ -1,12 +1,12 @@
 import React from 'react';
 import { ThemeSwitcher } from 'src/app/providers/AppThemeProvider';
 import { Logo } from 'src/components/layout/Logo/Logo';
-import { TypeNavLink } from 'src/markdown/navSite';
 
-import { Text, Link as LinkGravity, Button, Popup } from '@gravity-ui/uikit';
+import { Text, Button, Popup } from '@gravity-ui/uikit';
 
 import cls from './Header.module.scss';
-import { Link } from 'react-router-dom';
+
+import { Nav, TypeNavLink } from '../Nav/Nav';
 
 export interface HeaderProps {
   titlePage: string;
@@ -42,18 +42,10 @@ export const Header = (props: HeaderProps) => {
               open={open}
               placement="bottom"
             >
-              <ul>
-                {headerNav.map((val: TypeNavLink) => (
-                  <li onClick={() => setOpen((prevOpen) => !prevOpen)}>
-                    <Link
-                      key={'h' + val.id}
-                      to={val.path}
-                    >
-                      <LinkGravity>{val.name}</LinkGravity>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <Nav
+                nav={headerNav}
+                onClick={() => setOpen((prevOpen) => !prevOpen)}
+              />
             </Popup>
           </>
         ) : null}

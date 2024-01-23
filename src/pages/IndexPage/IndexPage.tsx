@@ -1,12 +1,11 @@
 import React, { SetStateAction, useLayoutEffect, useState } from 'react';
 
-import { TypeNavLink } from 'src/markdown/navSite';
 import { getFile } from 'src/utils/useGetPost';
 
-import cls from './IndexPage.module.scss';
-import { Link } from 'react-router-dom';
 import { getNavFromIndex } from 'src/utils/getNavFromIndex';
-import { Link as LinkGravity } from '@gravity-ui/uikit';
+import Nav, { TypeNavLink } from 'src/components/layout/Nav/Nav';
+
+import cls from './IndexPage.module.scss';
 
 export interface IndexPageProps {
   setTitlePage: React.Dispatch<SetStateAction<string>>;
@@ -42,18 +41,7 @@ export const IndexPage: React.FC<IndexPageProps> = (props) => {
 
   return (
     <main className={cls.IndexPage}>
-      <ul>
-        {navPart.map((val: TypeNavLink) => (
-          <li key={val.id}>
-            <Link
-              key={val.id}
-              to={val.path}
-            >
-              <LinkGravity>{val.name}</LinkGravity>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <Nav nav={navPart} />
     </main>
   );
 };

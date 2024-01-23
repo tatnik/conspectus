@@ -1,11 +1,12 @@
 import React, { SetStateAction, useEffect, useLayoutEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ShowMd } from 'src/components/ShowMd/ShowMd';
-import { TypeNavLink } from 'src/markdown/navSite';
+
 import { getNavFromIndex } from 'src/utils/getNavFromIndex';
 import { getFile } from 'src/utils/useGetPost';
 
 import cls from './ContentPage.module.scss';
+import { TypeNavLink } from 'src/components/layout/Nav/Nav';
 
 export interface ContentPageProps {
   setTitlePage: React.Dispatch<SetStateAction<string>>;
@@ -45,7 +46,7 @@ export const ContentPage: React.FC<ContentPageProps> = (props) => {
   useLayoutEffect(() => {
     getPost();
     getIndex();
-  }, [navItem]);
+  }, [navItem, fileName]);
 
   useEffect(() => {
     const navFromIndex = getNavFromIndex(index);

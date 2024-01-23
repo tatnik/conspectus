@@ -1,18 +1,16 @@
 import './styles/index.scss';
 
 import React, { Suspense, useLayoutEffect, useState } from 'react';
-import { Footer } from 'src/components/layout/Footer/Footer';
-import { Header } from 'src/components/layout/Header/Header';
-//import { navSite as nav } from 'src/markdown/navSite';
-
 import { Loader } from '@gravity-ui/uikit';
 
-import { AppRouter } from './AppRouter';
-//import { useGetPost } from 'src/utils/useGetPost';
 import { getNavFromIndex } from 'src/utils/getNavFromIndex';
 
-//import { TypeNavLink } from 'src/markdown/navSite';
 import { getFile } from './../utils/useGetPost';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import PageWrapper from 'src/components/layout/PageWrapper/PageWrapper';
+import { MainPage } from 'src/pages/MainPage/MainPage';
+import { IndexPage } from 'src/pages/IndexPage/IndexPage';
+import { ContentPage } from 'src/pages/ContentPage/ContentPage';
 
 export const App = () => {
   const [titlePage, setTitlePage] = useState('');
@@ -21,9 +19,8 @@ export const App = () => {
 
   const getNavSite = async () => {
     const res = await getFile('/index.md');
-    if (res.err === '') {
-      setNavSite(getNavFromIndex(res.text));
-    } else {
+    setNavSite(getNavFromIndex(res.text));
+    if (res.err !== '') {
       console.log(res.err);
     }
   };
@@ -35,18 +32,53 @@ export const App = () => {
   return (
     <>
       <Suspense fallback={<Loader size="l" />}>
-        <Header
-          titlePage={titlePage}
-          headerNav={navPart}
-        />
-        <div className="page-wrapper">
-          <AppRouter
-            navSite={navSite}
-            setTitlePage={setTitlePage}
-            setNavPart={setNavPart}
-          />
-        </div>
-        <Footer nav={navSite} />
+        <BrowserRouter>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <PageWrapper
+                  titlePage={titlePage}
+                  navPart={navPart}
+                  navSite={navSite}
+                />
+              }
+            >
+              <Route
+                index
+                element={<MainPage setTitlePage={setTitlePage} />}
+              />
+
+              {navSite.map((val) => (
+                <Route
+                  path={val.path}
+                  key={'r' + val.id}
+                >
+                  <Route
+                    index
+                    element={
+                      <IndexPage
+                        navItem={val}
+                        setTitlePage={setTitlePage}
+                      />
+                    }
+                  />
+                  <Route
+                    path=":fileName"
+                    key={'r' + val.id}
+                    element={
+                      <ContentPage
+                        navItem={val}
+                        setTitlePage={setTitlePage}
+                        setNavPart={setNavPart}
+                      />
+                    }
+                  />
+                </Route>
+              ))}
+            </Route>
+          </Routes>
+        </BrowserRouter>
       </Suspense>
     </>
   );
