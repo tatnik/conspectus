@@ -1,4 +1,4 @@
-# Keyboard shortcuts for Windows
+# Keyboard shortcuts for Windows (Ctrl+K Ctrl+S)
 
 ## General
 
@@ -11,8 +11,6 @@
 `Ctrl+Shift+W` Close window/instance
 
 `Ctrl+,` User Settings
-
-`Ctrl+K Ctrl+S` Keyboard Shortcuts
 
 ## Editing
 
@@ -68,9 +66,7 @@
 
 `Ctrl+Shift+Alt+PgUp/PgDn` Column (box) selection page up/down
 
-
-## Rich languages editing ##
-
+## Rich languages editing
 
 `Ctrl+Space, Ctrl+I` Trigger suggestion
 
@@ -96,7 +92,7 @@
 
 `Ctrl+K M` Change file language
 
-## Display ##
+## Display
 
 `Ctrl+Shift+E` Show Explorer / Toggle focus
 
