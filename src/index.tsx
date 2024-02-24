@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom/client';
 
 import { configure } from '@gravity-ui/uikit';
 
-import { AppThemeProvider } from './app/providers/AppThemeProvider';
 import { App } from './app/App';
 import reportWebVitals from './reportWebVitals';
 
-//import 'highlight.js/styles/github.css';
+import { Provider } from 'react-redux';
+import { store } from './store';
+import { AppThemeProvider } from './shared/AppTheme';
 
 configure({
   lang: 'en',
@@ -17,9 +18,11 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
   <React.StrictMode>
-    <AppThemeProvider>
-      <App />
-    </AppThemeProvider>
+    <Provider store={store}>
+      <AppThemeProvider>
+        <App />
+      </AppThemeProvider>
+    </Provider>
   </React.StrictMode>
 );
 

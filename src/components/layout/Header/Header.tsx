@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeSwitcher } from 'src/app/providers/AppThemeProvider';
+
 import { Logo } from 'src/components/layout/Logo/Logo';
 
 import { Text, Button, Popup } from '@gravity-ui/uikit';
@@ -7,6 +7,7 @@ import { Text, Button, Popup } from '@gravity-ui/uikit';
 import cls from './Header.module.scss';
 
 import { Nav, TypeNavLink } from '../Nav/Nav';
+import { ThemeSwitcher } from 'src/shared/AppTheme';
 
 export interface HeaderProps {
   titlePage: string;

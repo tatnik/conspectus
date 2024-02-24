@@ -42,3 +42,9 @@
     color: var(--g-color-private-blue-550-solid);
   }
 }
+
+.yc-root {
+  &_theme_light {
+    background-color: #f3fbff;
+  }
+}

@@ -45,3 +45,9 @@
     color: var(--g-color-private-blue-750-solid);
   }
 }
+
+.yc-root {
+  &_theme_dark {
+    background-color: #2d2c33;
+  }
+}

@@ -1,7 +1,7 @@
 @import '~@gravity-ui/uikit/styles/styles.css';
 @import 'variables/global';
-@import 'themes/light';
-@import 'themes/dark';
+@import 'src/shared/AppTheme/styles/light';
+@import 'src/shared/AppTheme/styles/dark';
 
 body {
   margin: 0;
@@ -10,16 +10,6 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
-.yc-root {
-  &_theme_light {
-    background-color: #f3fbff;
-  }
-
-  &_theme_dark {
-    background-color: #2d2c33;
-  }
 }
 
 #root {
