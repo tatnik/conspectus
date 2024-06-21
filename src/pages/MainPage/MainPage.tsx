@@ -3,14 +3,16 @@ import { ShowMd } from 'src/components/ShowMd/ShowMd';
 import { getFile } from 'src/utils/useGetPost';
 
 import cls from './MainPage.module.scss';
+import { TypeNavLink } from './../../components/layout/Nav/Nav';
 
 export interface MainPageProps {
-  setTitlePage: React.Dispatch<SetStateAction<string>>;
+  setPageTitle: React.Dispatch<SetStateAction<string>>;
+  setCurrentPart: React.Dispatch<SetStateAction<TypeNavLink>>;
 }
 
 export const MainPage: React.FC<MainPageProps> = (props) => {
-  const { setTitlePage } = props;
-  setTitlePage('Конспекты'.toUpperCase());
+  const { setPageTitle, setCurrentPart } = props;
+  setPageTitle('Конспекты'.toUpperCase());
 
   const fileName = '/readme.md';
   const [post, setPost] = useState('');
@@ -22,11 +24,13 @@ export const MainPage: React.FC<MainPageProps> = (props) => {
     setPost(res.text);
     if (res.err !== '') {
       console.log(res.err);
+      setPost('Что-то пошло не так! Данные отсутствуют!');
     }
   };
 
   useLayoutEffect(() => {
     getPost();
+    setCurrentPart({ id: 0, name: '', path: '' });
   }, []);
 
   return (

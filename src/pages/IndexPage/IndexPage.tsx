@@ -6,15 +6,17 @@ import { getNavFromIndex } from 'src/utils/getNavFromIndex';
 import Nav, { TypeNavLink } from 'src/components/layout/Nav/Nav';
 
 import cls from './IndexPage.module.scss';
+import { PAGE_TITLE } from 'src/app/App';
 
 export interface IndexPageProps {
-  setTitlePage: React.Dispatch<SetStateAction<string>>;
+  setPageTitle: React.Dispatch<SetStateAction<string>>;
   navItem: TypeNavLink;
+  setCurrentPart: React.Dispatch<SetStateAction<TypeNavLink>>;
 }
 
 export const IndexPage: React.FC<IndexPageProps> = (props) => {
-  const { setTitlePage, navItem } = props;
-  setTitlePage(`КОНСПЕКТЫ  ${navItem.name} `);
+  const { setPageTitle, navItem, setCurrentPart } = props;
+  setPageTitle(`${PAGE_TITLE}  ${navItem.name} `);
 
   const fileName = navItem.path + '/index.md';
   const [navPart, setNavPart] = useState([
@@ -25,7 +27,7 @@ export const IndexPage: React.FC<IndexPageProps> = (props) => {
     },
   ]);
 
-  const getPost = async () => {
+  const getPostsList = async () => {
     const res = await getFile(fileName);
     if (res.err === '') {
       setNavPart(getNavFromIndex(res.text));
@@ -36,7 +38,8 @@ export const IndexPage: React.FC<IndexPageProps> = (props) => {
   };
 
   useLayoutEffect(() => {
-    getPost();
+    getPostsList();
+    setCurrentPart(navItem);
   }, [navItem]);
 
   return (

@@ -1,59 +1,52 @@
-import React, { SetStateAction, useEffect, useLayoutEffect, useState } from 'react';
+import React, { SetStateAction, useLayoutEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ShowMd } from 'src/components/ShowMd/ShowMd';
 
-import { getNavFromIndex } from 'src/utils/getNavFromIndex';
+//import { getNavFromIndex } from 'src/utils/getNavFromIndex';
 import { getFile } from 'src/utils/useGetPost';
 
 import cls from './ContentPage.module.scss';
 import { TypeNavLink } from 'src/components/layout/Nav/Nav';
+import { NOT_FOUND, PAGE_TITLE } from 'src/app/App';
+import { NotFound } from 'src/pages/NotFound/NotFound';
 
 export interface ContentPageProps {
-  setTitlePage: React.Dispatch<SetStateAction<string>>;
-  setNavPart: React.Dispatch<React.SetStateAction<TypeNavLink[]>>;
+  setPageTitle: React.Dispatch<SetStateAction<string>>;
   navItem: TypeNavLink;
+  setCurrentPart: React.Dispatch<SetStateAction<TypeNavLink>>;
 }
 
 export const ContentPage: React.FC<ContentPageProps> = (props) => {
-  const { setTitlePage, setNavPart, navItem } = props;
+  const { setPageTitle, navItem, setCurrentPart } = props;
+
+  console.log(navItem);
 
   const { fileName } = useParams();
 
-  setTitlePage(`КОНСПЕКТЫ  ${navItem.name} `);
+  setPageTitle(`${PAGE_TITLE}  ${navItem.name} `);
 
-  const indexName = navItem.path + '/index.md';
   const contentName = navItem.path + '/' + fileName + '.md';
 
   const [post, setPost] = useState('');
-  const [index, setIndex] = useState('');
-
-  const getIndex = async () => {
-    const res = await getFile(indexName);
-    setIndex(res.text);
-    if (res.err !== '') {
-      console.log(res.err);
-    }
-  };
 
   const getPost = async () => {
     const res = await getFile(contentName);
-    setPost(res.text);
-    if (res.err !== '') {
+    if (res.err === '') {
+      setPost(res.text);
+    } else {
       console.log(res.err);
+      setPost(NOT_FOUND);
     }
   };
 
   useLayoutEffect(() => {
     getPost();
-    getIndex();
+    setCurrentPart(navItem);
   }, [navItem, fileName]);
 
-  useEffect(() => {
-    const navFromIndex = getNavFromIndex(index);
-    setNavPart(navFromIndex);
-  }, [index, setNavPart]);
-
-  return (
+  return navItem.id === 0 ? (
+    <NotFound />
+  ) : (
     <main className={cls.ContentPage}>
       <ShowMd
         post={post}

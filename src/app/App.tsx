@@ -12,9 +12,12 @@ import { MainPage } from 'src/pages/MainPage/MainPage';
 import { IndexPage } from 'src/pages/IndexPage/IndexPage';
 import { ContentPage } from 'src/pages/ContentPage/ContentPage';
 
+export const PAGE_TITLE = 'КОНСПЕКТЫ';
+export const NOT_FOUND = 'Ошибка 404. Такая страница на сайте отсутствует!';
+
 export const App = () => {
-  const [titlePage, setTitlePage] = useState('');
-  const [navPart, setNavPart] = useState([{ id: 0, name: '', path: '/' }]);
+  const [titlePage, setPageTitle] = useState('');
+  const [currentPart, setCurrentPart] = useState({ id: 0, name: '', path: '' });
   const [navSite, setNavSite] = useState([{ id: 0, name: '', path: '/' }]);
 
   const getNavSite = async () => {
@@ -39,14 +42,21 @@ export const App = () => {
               element={
                 <PageWrapper
                   titlePage={titlePage}
-                  navPart={navPart}
                   navSite={navSite}
+                  currentPart={currentPart}
+                  setCurrentPart={setCurrentPart}
+                  isNotFound={false}
                 />
               }
             >
               <Route
                 index
-                element={<MainPage setTitlePage={setTitlePage} />}
+                element={
+                  <MainPage
+                    setPageTitle={setPageTitle}
+                    setCurrentPart={setCurrentPart}
+                  />
+                }
               />
 
               {navSite.map((val) => (
@@ -59,7 +69,8 @@ export const App = () => {
                     element={
                       <IndexPage
                         navItem={val}
-                        setTitlePage={setTitlePage}
+                        setPageTitle={setPageTitle}
+                        setCurrentPart={setCurrentPart}
                       />
                     }
                   />
@@ -69,14 +80,26 @@ export const App = () => {
                     element={
                       <ContentPage
                         navItem={val}
-                        setTitlePage={setTitlePage}
-                        setNavPart={setNavPart}
+                        setPageTitle={setPageTitle}
+                        setCurrentPart={setCurrentPart}
                       />
                     }
                   />
                 </Route>
               ))}
             </Route>
+            <Route
+              path="*"
+              element={
+                <PageWrapper
+                  titlePage={titlePage}
+                  navSite={navSite}
+                  currentPart={currentPart}
+                  setCurrentPart={setCurrentPart}
+                  isNotFound={true}
+                />
+              }
+            />
           </Routes>
         </BrowserRouter>
       </Suspense>

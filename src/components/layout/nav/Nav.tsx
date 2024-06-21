@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SetStateAction } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 
 import { Button, Link as LinkGravity } from '@gravity-ui/uikit';
@@ -12,21 +12,29 @@ export interface TypeNavLink {
 
 export interface TypeNavProps {
   nav: Array<TypeNavLink>;
-  isButton?: boolean;
+  isFooter?: boolean;
   onClick?: () => void;
+  setCurrentPart?: React.Dispatch<SetStateAction<TypeNavLink>>;
 }
 
-export const Nav: React.FC<TypeNavProps> = ({ nav, isButton, onClick }) => {
+export const Nav: React.FC<TypeNavProps> = ({ nav, isFooter = false, setCurrentPart }) => {
   const pageUrl = useLocation().pathname;
+  const clickHandler = (val: TypeNavLink) => {
+    if (isFooter && setCurrentPart) {
+      setCurrentPart(val);
+      console.log(val);
+    }
+  };
+
   return (
     <ul className={cls.Nav}>
       {nav.map((val) => (
         <li key={`li_${val.id}`}>
           <Link
             to={val.path}
-            onClick={onClick}
+            onClick={() => clickHandler(val)}
           >
-            {isButton ? (
+            {isFooter ? (
               <Button
                 view="outlined"
                 disabled={pageUrl === val.path}
