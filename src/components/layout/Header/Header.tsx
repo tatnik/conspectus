@@ -11,12 +11,12 @@ import { ThemeSwitcher } from 'src/shared/AppTheme';
 import { PopupNav } from '../PopupNav/PopupNav';
 
 export interface HeaderProps {
-  titlePage: string;
+  pageTitle: string;
   currentPart: TypeNavLink;
 }
 
 export const Header = (props: HeaderProps) => {
-  const { titlePage, currentPart } = props;
+  const { pageTitle, currentPart } = props;
   const showNav = currentPart.id > 0;
 
   return (
@@ -27,7 +27,7 @@ export const Header = (props: HeaderProps) => {
           variant="header-1"
           color={'info'}
         >
-          {titlePage + ' '}
+          {pageTitle + ' '}
         </Text>
         {showNav ? <PopupNav currentPart={currentPart} /> : null}
       </div>

@@ -12,20 +12,17 @@ import { MainPage } from 'src/pages/MainPage/MainPage';
 import { IndexPage } from 'src/pages/IndexPage/IndexPage';
 import { ContentPage } from 'src/pages/ContentPage/ContentPage';
 
-export const PAGE_TITLE = 'КОНСПЕКТЫ';
+export const PAGE_TITLE = 'конспекты';
 export const NOT_FOUND = 'Ошибка 404. Такая страница на сайте отсутствует!';
 
 export const App = () => {
-  const [titlePage, setPageTitle] = useState('');
+  const [pageTitle, setPageTitle] = useState('');
   const [currentPart, setCurrentPart] = useState({ id: 0, name: '', path: '' });
   const [navSite, setNavSite] = useState([{ id: 0, name: '', path: '/' }]);
 
   const getNavSite = async () => {
     const res = await getFile('/index.md');
-    setNavSite(getNavFromIndex(res.text));
-    if (res.err !== '') {
-      console.log(res.err);
-    }
+    setNavSite(res.err === '' ? getNavFromIndex(res.text) : []);
   };
 
   useLayoutEffect(() => {
@@ -41,7 +38,7 @@ export const App = () => {
               path="/"
               element={
                 <PageWrapper
-                  titlePage={titlePage}
+                  pageTitle={pageTitle}
                   navSite={navSite}
                   currentPart={currentPart}
                   setCurrentPart={setCurrentPart}
@@ -92,7 +89,7 @@ export const App = () => {
               path="*"
               element={
                 <PageWrapper
-                  titlePage={titlePage}
+                  pageTitle={pageTitle}
                   navSite={navSite}
                   currentPart={currentPart}
                   setCurrentPart={setCurrentPart}

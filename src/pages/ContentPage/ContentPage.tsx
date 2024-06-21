@@ -2,7 +2,6 @@ import React, { SetStateAction, useLayoutEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ShowMd } from 'src/components/ShowMd/ShowMd';
 
-//import { getNavFromIndex } from 'src/utils/getNavFromIndex';
 import { getFile } from 'src/utils/useGetPost';
 
 import cls from './ContentPage.module.scss';
@@ -18,25 +17,15 @@ export interface ContentPageProps {
 
 export const ContentPage: React.FC<ContentPageProps> = (props) => {
   const { setPageTitle, navItem, setCurrentPart } = props;
-
-  console.log(navItem);
-
   const { fileName } = useParams();
+  const [post, setPost] = useState('');
+  const contentName = navItem.path + '/' + fileName + '.md';
 
   setPageTitle(`${PAGE_TITLE}  ${navItem.name} `);
 
-  const contentName = navItem.path + '/' + fileName + '.md';
-
-  const [post, setPost] = useState('');
-
   const getPost = async () => {
     const res = await getFile(contentName);
-    if (res.err === '') {
-      setPost(res.text);
-    } else {
-      console.log(res.err);
-      setPost(NOT_FOUND);
-    }
+    setPost(res.err === '' ? res.text : NOT_FOUND);
   };
 
   useLayoutEffect(() => {

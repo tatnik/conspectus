@@ -16,8 +16,6 @@ export interface IndexPageProps {
 
 export const IndexPage: React.FC<IndexPageProps> = (props) => {
   const { setPageTitle, navItem, setCurrentPart } = props;
-  setPageTitle(`${PAGE_TITLE}  ${navItem.name} `);
-
   const fileName = navItem.path + '/index.md';
   const [navPart, setNavPart] = useState([
     {
@@ -27,14 +25,11 @@ export const IndexPage: React.FC<IndexPageProps> = (props) => {
     },
   ]);
 
+  setPageTitle(`${PAGE_TITLE}  ${navItem.name} `);
+
   const getPostsList = async () => {
     const res = await getFile(fileName);
-    if (res.err === '') {
-      setNavPart(getNavFromIndex(res.text));
-    } else {
-      setNavPart([]);
-      console.log(res.err);
-    }
+    setNavPart(res.err === '' ? getNavFromIndex(res.text) : []);
   };
 
   useLayoutEffect(() => {

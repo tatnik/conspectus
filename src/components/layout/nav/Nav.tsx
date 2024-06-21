@@ -22,7 +22,6 @@ export const Nav: React.FC<TypeNavProps> = ({ nav, isFooter = false, setCurrentP
   const clickHandler = (val: TypeNavLink) => {
     if (isFooter && setCurrentPart) {
       setCurrentPart(val);
-      console.log(val);
     }
   };
 
@@ -52,5 +51,3 @@ export const Nav: React.FC<TypeNavProps> = ({ nav, isFooter = false, setCurrentP
 };
 
 export default Nav;
-
-// <LinkGravity key={`l_${keyName}${val.id}`}>{val.name}</LinkGravity>

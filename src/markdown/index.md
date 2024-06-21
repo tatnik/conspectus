@@ -1,6 +1,6 @@
 ## [JavaScript](/js)
 
-## [Typescript](/ts)
+## [TypeScript](/ts)
 
 ## [REACT](/react)
 

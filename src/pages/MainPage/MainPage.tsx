@@ -4,6 +4,7 @@ import { getFile } from 'src/utils/useGetPost';
 
 import cls from './MainPage.module.scss';
 import { TypeNavLink } from './../../components/layout/Nav/Nav';
+import { PAGE_TITLE } from 'src/app/App';
 
 export interface MainPageProps {
   setPageTitle: React.Dispatch<SetStateAction<string>>;
@@ -12,7 +13,7 @@ export interface MainPageProps {
 
 export const MainPage: React.FC<MainPageProps> = (props) => {
   const { setPageTitle, setCurrentPart } = props;
-  setPageTitle('Конспекты'.toUpperCase());
+  setPageTitle(PAGE_TITLE.toUpperCase());
 
   const fileName = '/readme.md';
   const [post, setPost] = useState('');
@@ -23,7 +24,6 @@ export const MainPage: React.FC<MainPageProps> = (props) => {
     const res = await getFile(fileName);
     setPost(res.text);
     if (res.err !== '') {
-      console.log(res.err);
       setPost('Что-то пошло не так! Данные отсутствуют!');
     }
   };

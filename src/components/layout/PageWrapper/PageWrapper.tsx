@@ -9,7 +9,7 @@ import { TypeNavLink } from '../Nav/Nav';
 import { NotFound } from 'src/pages/NotFound/NotFound';
 
 type PageWrapperProps = {
-  titlePage: string;
+  pageTitle: string;
   navSite: Array<TypeNavLink>;
   currentPart: TypeNavLink;
   setCurrentPart: React.Dispatch<SetStateAction<TypeNavLink>>;
@@ -17,12 +17,12 @@ type PageWrapperProps = {
 };
 
 export const PageWrapper: React.FC<PageWrapperProps> = (props) => {
-  const { titlePage, navSite, currentPart, setCurrentPart, isNotFound = false } = props;
+  const { pageTitle, navSite, currentPart, setCurrentPart, isNotFound = false } = props;
 
   return (
     <>
       <Header
-        titlePage={titlePage}
+        pageTitle={pageTitle}
         currentPart={currentPart}
       />
 
