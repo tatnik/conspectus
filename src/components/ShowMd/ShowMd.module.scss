@@ -18,8 +18,9 @@
 
 .showMdBlock {
   display: block;
-  padding-right: var(--indent);
-  padding-left: var(--indent);
+  padding: var(--indent);
+  height: calc(100% - var(--indent) - var(--indent));
+  overflow-y: scroll;
 }
 
 .showMdBlockNav {
@@ -29,4 +30,5 @@
 .showMdGrid {
   display: grid;
   grid-template-columns: 2fr 1fr;
+  height: 100%;
 }

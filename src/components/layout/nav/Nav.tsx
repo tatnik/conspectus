@@ -15,13 +15,17 @@ export interface TypeNavProps {
   isFooter?: boolean;
   onClick?: () => void;
   setCurrentPart?: React.Dispatch<SetStateAction<TypeNavLink>>;
+  setOpen?: React.Dispatch<SetStateAction<boolean>>;
 }
 
-export const Nav: React.FC<TypeNavProps> = ({ nav, isFooter = false, setCurrentPart }) => {
+export const Nav: React.FC<TypeNavProps> = ({ nav, isFooter = false, setCurrentPart, setOpen }) => {
   const pageUrl = useLocation().pathname;
   const clickHandler = (val: TypeNavLink) => {
     if (isFooter && setCurrentPart) {
       setCurrentPart(val);
+    }
+    if (setOpen) {
+      setOpen(false);
     }
   };
 

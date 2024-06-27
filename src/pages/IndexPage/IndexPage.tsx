@@ -1,12 +1,10 @@
 import React, { SetStateAction, useLayoutEffect, useState } from 'react';
 
-import { getFile } from 'src/utils/useGetPost';
-
-import { getNavFromIndex } from 'src/utils/getNavFromIndex';
 import Nav, { TypeNavLink } from 'src/components/layout/Nav/Nav';
 
 import cls from './IndexPage.module.scss';
 import { PAGE_TITLE } from 'src/app/App';
+import { getFile, getNavFromIndex } from 'src/utils/utils';
 
 export interface IndexPageProps {
   setPageTitle: React.Dispatch<SetStateAction<string>>;

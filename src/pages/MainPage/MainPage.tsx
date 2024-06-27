@@ -1,10 +1,10 @@
 import React, { SetStateAction, useLayoutEffect, useState } from 'react';
 import { ShowMd } from 'src/components/ShowMd/ShowMd';
-import { getFile } from 'src/utils/useGetPost';
 
 import cls from './MainPage.module.scss';
 import { TypeNavLink } from './../../components/layout/Nav/Nav';
 import { PAGE_TITLE } from 'src/app/App';
+import { getFile } from 'src/utils/utils';
 
 export interface MainPageProps {
   setPageTitle: React.Dispatch<SetStateAction<string>>;

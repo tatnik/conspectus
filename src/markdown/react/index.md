@@ -7,3 +7,13 @@
 ## [React-router](/react/04_react_router_hooks)
 
 ## [Redux](/react/05_redux)
+
+## [React-Redux](/react/06_react_redux)
+
+## [React работа с данными](/react/07_react_datas)
+
+## [React разные вопросы](/react/08_react_others)
+
+## [React примеры](/react/09_react_samples)
+
+## [React-18 новое](/react/10_react-18)

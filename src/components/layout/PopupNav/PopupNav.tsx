@@ -1,10 +1,9 @@
 import React from 'react';
 
-import { getNavFromIndex } from 'src/utils/getNavFromIndex';
-import { getFile } from 'src/utils/useGetPost';
 import Nav, { TypeNavLink } from '../Nav/Nav';
 
 import { Button, Popup } from '@gravity-ui/uikit';
+import { getFile, getNavFromIndex } from 'src/utils/utils';
 
 export interface PopupNavProps {
   currentPart: TypeNavLink;
@@ -15,29 +14,18 @@ export const PopupNav = (props: PopupNavProps) => {
   const [navPart, setNavPart] = React.useState([{ id: 0, name: '', path: '/' }]);
   const [open, setOpen] = React.useState(false);
   const buttonRef = React.useRef(null);
-  console.log('PopupNav currentPart:');
-  console.log(currentPart);
 
   const getIndex = async () => {
     if (currentPart.id === 0) {
       setNavPart([]);
-      console.log('1');
     } else {
       const res = await getFile(currentPart.path + '/index.md');
-      if (res.err === '') {
-        setNavPart(getNavFromIndex(res.text));
-        console.log('2');
-      } else {
-        setNavPart([]);
-        console.log(res.err);
-      }
+      setNavPart(res.err === '' ? getNavFromIndex(res.text) : []);
     }
   };
 
   React.useEffect(() => {
-    console.log('LayoutEffect navPart:');
     getIndex();
-    console.log(navPart);
   }, [currentPart]);
 
   return (
@@ -56,6 +44,7 @@ export const PopupNav = (props: PopupNavProps) => {
         <Nav
           nav={navPart}
           onClick={() => setOpen((prevOpen) => !prevOpen)}
+          setOpen={setOpen}
         />
       </Popup>
     </>

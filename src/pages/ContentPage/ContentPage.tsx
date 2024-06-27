@@ -2,12 +2,11 @@ import React, { SetStateAction, useLayoutEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ShowMd } from 'src/components/ShowMd/ShowMd';
 
-import { getFile } from 'src/utils/useGetPost';
-
 import cls from './ContentPage.module.scss';
 import { TypeNavLink } from 'src/components/layout/Nav/Nav';
 import { NOT_FOUND, PAGE_TITLE } from 'src/app/App';
 import { NotFound } from 'src/pages/NotFound/NotFound';
+import { getFile } from './../../utils/utils';
 
 export interface ContentPageProps {
   setPageTitle: React.Dispatch<SetStateAction<string>>;

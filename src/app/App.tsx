@@ -3,14 +3,12 @@ import './styles/index.scss';
 import React, { Suspense, useLayoutEffect, useState } from 'react';
 import { Loader } from '@gravity-ui/uikit';
 
-import { getNavFromIndex } from 'src/utils/getNavFromIndex';
-
-import { getFile } from './../utils/useGetPost';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import PageWrapper from 'src/components/layout/PageWrapper/PageWrapper';
 import { MainPage } from 'src/pages/MainPage/MainPage';
 import { IndexPage } from 'src/pages/IndexPage/IndexPage';
 import { ContentPage } from 'src/pages/ContentPage/ContentPage';
+import { getFile, getNavFromIndex } from 'src/utils/utils';
 
 export const PAGE_TITLE = 'конспекты';
 export const NOT_FOUND = 'Ошибка 404. Такая страница на сайте отсутствует!';

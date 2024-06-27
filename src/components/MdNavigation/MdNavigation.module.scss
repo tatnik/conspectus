@@ -2,10 +2,10 @@
   position: sticky;
   top: 0;
   box-sizing: border-box;
-  height: fit-content;
-  padding: 0 var(--indent);
+  padding: var(--indent);
+  height: calc(100% - var(--indent) - var(--indent));
+  overflow-y: scroll;
   border-left: 1px dotted var(--g-color-private-blue-200-solid);
-  overflow-y: auto;
   & ul {
     margin: 0;
     padding: 0;
