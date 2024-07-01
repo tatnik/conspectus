@@ -1,9 +1,33 @@
 .IndexPage {
-  display: block;
   width: 100%;
   box-sizing: border-box;
+  margin: 0, auto;
+  font: var(--font-l);
 
-  & a {
-    font: var(--font-l);
+  .nav {
+    display: flex;
+    flex-flow: row wrap;
+    row-gap: var(--indent);
+    justify-content: space-evenly;
+    padding: 0;
+    align-items: stretch;
+  }
+
+  .navItem {
+    flex-basis: 260px;
+  }
+
+  .card {
+    padding: calc(var(--indent) - 2px);
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--indent);
+    height: 100%;
+  }
+
+  img {
+    width: 220px;
+    height: 220px;
+    border-radius: 10px;
   }
 }

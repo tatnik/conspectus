@@ -2,8 +2,10 @@ import React from 'react';
 
 import Nav, { TypeNavLink } from '../Nav/Nav';
 
-import { Button, Popup } from '@gravity-ui/uikit';
+import { Button, Popup, Link as LinkGravity } from '@gravity-ui/uikit';
 import { getFile, getNavFromIndex } from 'src/utils/utils';
+
+import cls from './PopupNav.module.scss';
 
 export interface PopupNavProps {
   currentPart: TypeNavLink;
@@ -40,11 +42,14 @@ export const PopupNav = (props: PopupNavProps) => {
         anchorRef={buttonRef}
         open={open}
         placement="bottom"
+        className={cls.PopupNav}
       >
         <Nav
           nav={navPart}
-          onClick={() => setOpen((prevOpen) => !prevOpen)}
-          setOpen={setOpen}
+          classNameList={cls.nav}
+          renderProps={(val) => {
+            return <LinkGravity onClick={() => setOpen(false)}>{val.name}</LinkGravity>;
+          }}
         />
       </Popup>
     </>

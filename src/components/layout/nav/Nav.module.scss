@@ -1,12 +1,10 @@
 .Nav {
-  font: var(--font-m);
-  padding: var(--indent);
-  margin: 0;
-  & li {
+  li {
     list-style-type: none;
   }
 
-  & a {
+  a {
     text-decoration: none;
+    margin: 0;
   }
 }

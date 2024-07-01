@@ -1,7 +1,5 @@
-import React, { SetStateAction } from 'react';
-import { useLocation, Link } from 'react-router-dom';
-
-import { Button, Link as LinkGravity } from '@gravity-ui/uikit';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import cls from './Nav.module.scss';
 
 export interface TypeNavLink {
@@ -12,41 +10,31 @@ export interface TypeNavLink {
 
 export interface TypeNavProps {
   nav: Array<TypeNavLink>;
-  isFooter?: boolean;
-  onClick?: () => void;
-  setCurrentPart?: React.Dispatch<SetStateAction<TypeNavLink>>;
-  setOpen?: React.Dispatch<SetStateAction<boolean>>;
+  classNameList: string;
+  classNameItem?: string;
+  onClick?: (val?: TypeNavLink) => void;
+  renderProps: (val: TypeNavLink) => React.JSX.Element;
 }
 
-export const Nav: React.FC<TypeNavProps> = ({ nav, isFooter = false, setCurrentPart, setOpen }) => {
-  const pageUrl = useLocation().pathname;
-  const clickHandler = (val: TypeNavLink) => {
-    if (isFooter && setCurrentPart) {
-      setCurrentPart(val);
-    }
-    if (setOpen) {
-      setOpen(false);
-    }
-  };
-
+export const Nav: React.FC<TypeNavProps> = ({
+  nav,
+  classNameList,
+  classNameItem = '',
+  onClick,
+  renderProps,
+}) => {
   return (
-    <ul className={cls.Nav}>
+    <ul className={classNameList + ' ' + cls.Nav}>
       {nav.map((val) => (
-        <li key={`li_${val.id}`}>
+        <li
+          key={`li_${val.id}`}
+          className={classNameItem}
+        >
           <Link
             to={val.path}
-            onClick={() => clickHandler(val)}
+            onClick={() => onClick}
           >
-            {isFooter ? (
-              <Button
-                view="outlined"
-                disabled={pageUrl === val.path}
-              >
-                {val.name}
-              </Button>
-            ) : (
-              <LinkGravity>{val.name}</LinkGravity>
-            )}
+            {renderProps(val)}
           </Link>
         </li>
       ))}

@@ -17,7 +17,7 @@
   background-color: var(--g-color-private-blue-100-solid);
   border: 1px solid var(--g-color-private-blue-200-solid);
 
-  ul {
+  .nav {
     display: flex;
     flex-direction: row;
     column-gap: var(--indent);

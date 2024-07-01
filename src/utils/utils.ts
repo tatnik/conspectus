@@ -21,3 +21,5 @@ export const getNavFromIndex = (index: string) => {
   }));
   return result;
 };
+
+export const getImgName = (mdPath: string) => '/jpg/md' + mdPath + '-220.jpg';

@@ -33,6 +33,7 @@ export const PageWrapper: React.FC<PageWrapperProps> = (props) => {
 
       <Footer
         footerNav={navSite}
+        currentPart={currentPart}
         setCurrentPart={setCurrentPart}
       />
     </>

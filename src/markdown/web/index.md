@@ -1,5 +1,5 @@
-## [Основные концепции](/web/01_web_bases)
+## [Основные концепции](/web/web_bases)
 
-## [Деревья](/web/02_web_trees)
+## [Деревья](/web/web_trees)
 
-## [HTTP](/web/03_web_http)
+## [HTTP](/web/web_http)
