@@ -3,17 +3,15 @@ import { ShowMd } from 'src/components/ShowMd/ShowMd';
 
 import cls from './MainPage.module.scss';
 import { TypeNavLink } from './../../components/layout/Nav/Nav';
-import { PAGE_TITLE } from 'src/app/App';
+
 import { DataProvider } from 'src/utils/DataProvider';
 
 export interface MainPageProps {
-  setPageTitle: React.Dispatch<SetStateAction<string>>;
   setCurrentPart: React.Dispatch<SetStateAction<TypeNavLink>>;
 }
 
 export const MainPage: React.FC<MainPageProps> = (props) => {
-  const { setPageTitle, setCurrentPart } = props;
-  setPageTitle(PAGE_TITLE.toUpperCase());
+  const { setCurrentPart } = props;
   const fileName = '/readme.md';
 
   useLayoutEffect(() => {

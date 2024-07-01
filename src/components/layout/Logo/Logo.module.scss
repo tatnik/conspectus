@@ -1,5 +1,9 @@
 .Logo {
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font: var(--font-m);
+  text-decoration: none;
 
   @media (prefers-reduced-motion: no-preference) {
     & img {

@@ -43,6 +43,8 @@ export const PopupNav = (props: PopupNavProps) => {
         open={open}
         placement="bottom"
         className={cls.PopupNav}
+        hasArrow={true}
+        onOutsideClick={() => setOpen(false)}
       >
         <Nav
           nav={navPart}

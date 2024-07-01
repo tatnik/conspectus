@@ -14,9 +14,10 @@
   padding: 0 var(--indent);
   background-color: var(--g-color-private-blue-100-solid);
   border: 1px solid var(--g-color-private-blue-200-solid);
-}
 
-.title {
-  font-size: larger;
-  line-height: 120%;
+  .title {
+    font-size: larger;
+    line-height: 120%;
+    margin-right: var(--indent);
+  }
 }

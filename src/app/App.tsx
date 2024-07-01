@@ -10,11 +10,10 @@ import { IndexPage } from 'src/pages/IndexPage/IndexPage';
 import { ContentPage } from 'src/pages/ContentPage/ContentPage';
 import { getFile, getNavFromIndex } from 'src/utils/utils';
 
-export const PAGE_TITLE = 'конспекты';
+export const APP_TITLE = 'конспекты';
 export const NOT_FOUND = 'Ошибка 404. Такая страница на сайте отсутствует!';
 
 export const App = () => {
-  const [pageTitle, setPageTitle] = useState('');
   const [currentPart, setCurrentPart] = useState({ id: 0, name: '', path: '' });
   const [navSite, setNavSite] = useState([{ id: 0, name: '', path: '/' }]);
 
@@ -36,7 +35,6 @@ export const App = () => {
               path="/"
               element={
                 <PageWrapper
-                  pageTitle={pageTitle}
                   navSite={navSite}
                   currentPart={currentPart}
                   setCurrentPart={setCurrentPart}
@@ -46,12 +44,7 @@ export const App = () => {
             >
               <Route
                 index
-                element={
-                  <MainPage
-                    setPageTitle={setPageTitle}
-                    setCurrentPart={setCurrentPart}
-                  />
-                }
+                element={<MainPage setCurrentPart={setCurrentPart} />}
               />
 
               {navSite.map((val) => (
@@ -64,7 +57,6 @@ export const App = () => {
                     element={
                       <IndexPage
                         navItem={val}
-                        setPageTitle={setPageTitle}
                         setCurrentPart={setCurrentPart}
                       />
                     }
@@ -75,7 +67,6 @@ export const App = () => {
                     element={
                       <ContentPage
                         navItem={val}
-                        setPageTitle={setPageTitle}
                         setCurrentPart={setCurrentPart}
                       />
                     }
@@ -87,7 +78,6 @@ export const App = () => {
               path="*"
               element={
                 <PageWrapper
-                  pageTitle={pageTitle}
                   navSite={navSite}
                   currentPart={currentPart}
                   setCurrentPart={setCurrentPart}

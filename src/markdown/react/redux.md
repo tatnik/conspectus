@@ -6,7 +6,7 @@
 
 ![схема](/jpg/redux-shema.jpg архитектура)
 
-Из из компонента React (View) посылается действие (action), это действие получает функция reducer, которая в соответствии с действием обновляет состояние хранилища(store). Затем компоненты React применяют обновленное состояние из хранилища.
+Из компонента React (View) посылается действие (action), это действие получает функция reducer, которая в соответствии с действием обновляет состояние хранилища(store). Затем компоненты React применяют обновленное состояние из хранилища.
 
 ## Состояние, дерево состояния (state)
 
@@ -66,7 +66,7 @@ const ADD_TODO = 'ADD_TODO';
 
 {
   type: ADD_TODO,
-  text: 'Build my first Redux app'
+  payload: 'Build my first Redux app'
 }
 ```
 
@@ -78,7 +78,7 @@ const ADD_TODO = 'ADD_TODO';
 function addTodo(text) {
   return {
     type: ADD_TODO,
-    text,
+    payload: text,
   };
 }
 ```
