@@ -1,18 +1,15 @@
 import React from 'react';
 
-import Nav, { TypeNavLink } from '../Nav/Nav';
+import Nav from '../Nav/Nav';
 
 import { Button, Popup, Link as LinkGravity } from '@gravity-ui/uikit';
 import { getFile, getNavFromIndex } from 'src/utils/utils';
 
 import cls from './PopupNav.module.scss';
+import { useAppContext } from 'src/app/AppContext/AppContextProvider';
 
-export interface PopupNavProps {
-  currentPart: TypeNavLink;
-}
-
-export const PopupNav = (props: PopupNavProps) => {
-  const { currentPart } = props;
+export const PopupNav = () => {
+  const { currentPart } = useAppContext();
   const [navPart, setNavPart] = React.useState([{ id: 0, name: '', path: '/' }]);
   const [open, setOpen] = React.useState(false);
   const buttonRef = React.useRef(null);

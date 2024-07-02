@@ -1,19 +1,20 @@
-import React, { SetStateAction } from 'react';
+import React from 'react';
 import { Logo } from 'src/components/layout/Logo/Logo';
 
 import { Button, Label } from '@gravity-ui/uikit';
 
 import Nav, { TypeNavLink } from '../Nav/Nav';
 import cls from './Footer.module.scss';
+import { useAppContext } from 'src/app/AppContext/AppContextProvider';
 
 type FooterProps = {
   footerNav: Array<TypeNavLink>;
-  currentPart: TypeNavLink;
-  setCurrentPart: React.Dispatch<SetStateAction<TypeNavLink>>;
 };
 
 export const Footer: React.FC<FooterProps> = (props) => {
-  const { footerNav, currentPart, setCurrentPart } = props;
+  const { footerNav } = props;
+  const { currentPart, setCurrentPart } = useAppContext();
+
   return (
     <div className={cls.Footer}>
       <Logo />

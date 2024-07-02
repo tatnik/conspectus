@@ -1,4 +1,4 @@
-import React, { SetStateAction, useLayoutEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 
 import Nav, { TypeNavLink } from 'src/components/layout/Nav/Nav';
 
@@ -7,14 +7,15 @@ import cls from './IndexPage.module.scss';
 import { getImgName, getNavFromIndex } from 'src/utils/utils';
 import { DataProvider } from 'src/utils/DataProvider';
 import { Card, Link as LinkGravity } from '@gravity-ui/uikit';
+import { useAppContext } from 'src/app/AppContext/AppContextProvider';
 
 export interface IndexPageProps {
   navItem: TypeNavLink;
-  setCurrentPart: React.Dispatch<SetStateAction<TypeNavLink>>;
 }
 
 export const IndexPage: React.FC<IndexPageProps> = (props) => {
-  const { navItem, setCurrentPart } = props;
+  const { navItem } = props;
+  const { setCurrentPart } = useAppContext();
   const fileName = navItem.path + '/index.md';
 
   useLayoutEffect(() => {

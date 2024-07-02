@@ -1,4 +1,4 @@
-import React, { SetStateAction, useLayoutEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { ShowMd } from 'src/components/ShowMd/ShowMd';
 
@@ -7,14 +7,15 @@ import { TypeNavLink } from 'src/components/layout/Nav/Nav';
 
 import { NotFound } from 'src/pages/NotFound/NotFound';
 import { DataProvider } from 'src/utils/DataProvider';
+import { useAppContext } from 'src/app/AppContext/AppContextProvider';
 
 export interface ContentPageProps {
   navItem: TypeNavLink;
-  setCurrentPart: React.Dispatch<SetStateAction<TypeNavLink>>;
 }
 
 export const ContentPage: React.FC<ContentPageProps> = (props) => {
-  const { navItem, setCurrentPart } = props;
+  const { navItem } = props;
+  const { setCurrentPart } = useAppContext();
   const { fileName } = useParams();
   const contentName = navItem.path + '/' + fileName + '.md';
 

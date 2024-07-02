@@ -6,17 +6,13 @@ import { Text } from '@gravity-ui/uikit';
 
 import cls from './Header.module.scss';
 
-import { TypeNavLink } from '../Nav/Nav';
 import { ThemeSwitcher } from 'src/shared/AppTheme';
 import { PopupNav } from '../PopupNav/PopupNav';
 import { APP_TITLE } from 'src/app/App';
+import { useAppContext } from 'src/app/AppContext/AppContextProvider';
 
-export interface HeaderProps {
-  currentPart: TypeNavLink;
-}
-
-export const Header = (props: HeaderProps) => {
-  const { currentPart } = props;
+export const Header = () => {
+  const { currentPart } = useAppContext();
   const showNav = currentPart.id > 0;
 
   return (
@@ -30,7 +26,7 @@ export const Header = (props: HeaderProps) => {
         >
           {currentPart.name}
         </Text>
-        {showNav ? <PopupNav currentPart={currentPart} /> : null}
+        {showNav ? <PopupNav /> : null}
       </div>
       <ThemeSwitcher />
     </header>

@@ -1,17 +1,13 @@
-import React, { SetStateAction, useLayoutEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import { ShowMd } from 'src/components/ShowMd/ShowMd';
 
 import cls from './MainPage.module.scss';
-import { TypeNavLink } from './../../components/layout/Nav/Nav';
 
 import { DataProvider } from 'src/utils/DataProvider';
+import { useAppContext } from 'src/app/AppContext/AppContextProvider';
 
-export interface MainPageProps {
-  setCurrentPart: React.Dispatch<SetStateAction<TypeNavLink>>;
-}
-
-export const MainPage: React.FC<MainPageProps> = (props) => {
-  const { setCurrentPart } = props;
+export const MainPage: React.FC = () => {
+  const { setCurrentPart } = useAppContext();
   const fileName = '/readme.md';
 
   useLayoutEffect(() => {

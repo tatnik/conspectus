@@ -9,12 +9,12 @@ import { MainPage } from 'src/pages/MainPage/MainPage';
 import { IndexPage } from 'src/pages/IndexPage/IndexPage';
 import { ContentPage } from 'src/pages/ContentPage/ContentPage';
 import { getFile, getNavFromIndex } from 'src/utils/utils';
+import { AppContextProvider } from './AppContext/AppContextProvider';
 
 export const APP_TITLE = 'конспекты';
 export const NOT_FOUND = 'Ошибка 404. Такая страница на сайте отсутствует!';
 
 export const App = () => {
-  const [currentPart, setCurrentPart] = useState({ id: 0, name: '', path: '' });
   const [navSite, setNavSite] = useState([{ id: 0, name: '', path: '/' }]);
 
   const getNavSite = async () => {
@@ -28,66 +28,54 @@ export const App = () => {
 
   return (
     <>
-      <Suspense fallback={<Loader size="l" />}>
-        <BrowserRouter>
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <PageWrapper
-                  navSite={navSite}
-                  currentPart={currentPart}
-                  setCurrentPart={setCurrentPart}
-                  isNotFound={false}
-                />
-              }
-            >
+      <AppContextProvider>
+        <Suspense fallback={<Loader size="l" />}>
+          <BrowserRouter>
+            <Routes>
               <Route
-                index
-                element={<MainPage setCurrentPart={setCurrentPart} />}
-              />
-
-              {navSite.map((val) => (
+                path="/"
+                element={
+                  <PageWrapper
+                    navSite={navSite}
+                    isNotFound={false}
+                  />
+                }
+              >
                 <Route
-                  path={val.path}
-                  key={'r' + val.id}
-                >
-                  <Route
-                    index
-                    element={
-                      <IndexPage
-                        navItem={val}
-                        setCurrentPart={setCurrentPart}
-                      />
-                    }
-                  />
-                  <Route
-                    path=":fileName"
-                    key={'r' + val.id}
-                    element={
-                      <ContentPage
-                        navItem={val}
-                        setCurrentPart={setCurrentPart}
-                      />
-                    }
-                  />
-                </Route>
-              ))}
-            </Route>
-            <Route
-              path="*"
-              element={
-                <PageWrapper
-                  navSite={navSite}
-                  currentPart={currentPart}
-                  setCurrentPart={setCurrentPart}
-                  isNotFound={true}
+                  index
+                  element={<MainPage />}
                 />
-              }
-            />
-          </Routes>
-        </BrowserRouter>
-      </Suspense>
+
+                {navSite.map((val) => (
+                  <Route
+                    path={val.path}
+                    key={'r' + val.id}
+                  >
+                    <Route
+                      index
+                      element={<IndexPage navItem={val} />}
+                    />
+                    <Route
+                      path=":fileName"
+                      key={'r' + val.id}
+                      element={<ContentPage navItem={val} />}
+                    />
+                  </Route>
+                ))}
+              </Route>
+              <Route
+                path="*"
+                element={
+                  <PageWrapper
+                    navSite={navSite}
+                    isNotFound={true}
+                  />
+                }
+              />
+            </Routes>
+          </BrowserRouter>
+        </Suspense>
+      </AppContextProvider>
     </>
   );
 };

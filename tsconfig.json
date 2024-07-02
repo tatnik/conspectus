@@ -8,14 +8,7 @@
     "baseUrl": ".",
     "resolveJsonModule": true,
     "importHelpers": true,
-    "typeRoots": [
-      "types",
-      "./node_modules/@types",
-      ".rehype-highlight/*"
-    ]
+    "typeRoots": ["types", "./node_modules/@types", ".rehype-highlight/*"]
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/app/AppContext/AppContextProvider.jsx"]
 }
