@@ -12,6 +12,7 @@
     "@types/node": "^18.17.19",
     "@types/react": "^18.2.22",
     "bem-cn-lite": "^4.1.0",
+    "gh-pages": "^6.1.1",
     "highlight.js": "^11.9.0",
     "markdown-to-jsx": "^7.3.2",
     "react": "^18.2.0",
@@ -48,6 +49,8 @@
     "svg-inline-loader": "^0.8.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b main -d build",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
@@ -70,5 +73,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "homepage": "https://tatnik.github.io/conspectus"
 }

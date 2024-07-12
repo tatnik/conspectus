@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 import cls from './Nav.module.scss';
+import { NavLink } from 'react-router-dom';
 
 export interface TypeNavLink {
   id: number;
@@ -30,12 +31,17 @@ export const Nav: React.FC<TypeNavProps> = ({
           key={`li_${val.id}`}
           className={classNameItem}
         >
-          <Link
+          <NavLink
             to={val.path}
             onClick={() => onClick}
+            style={({ isActive }) => {
+              return {
+                fontWeight: isActive ? 'bold' : '',
+              };
+            }}
           >
             {renderProps(val)}
-          </Link>
+          </NavLink>
         </li>
       ))}
     </ul>
