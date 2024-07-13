@@ -3,7 +3,7 @@ import { Logo } from 'src/components/layout/Logo/Logo';
 
 import { Button, Label } from '@gravity-ui/uikit';
 
-import Nav, { TypeNavLink } from '../Nav/Nav';
+import Nav, { TypeNavLink } from 'src/components/layout/Nav/Nav';
 import cls from './Footer.module.scss';
 import { useAppContext } from 'src/app/AppContext/AppContextProvider';
 
