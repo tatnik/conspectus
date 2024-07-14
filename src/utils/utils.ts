@@ -22,4 +22,4 @@ export const getNavFromIndex = (index: string) => {
   return result;
 };
 
-export const getImgName = (mdPath: string) => '/jpg/md' + mdPath + '-220.jpg';
+export const getImgName = (mdPath: string) => 'conspectus/jpg/md' + mdPath + '-220.jpg';
