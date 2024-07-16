@@ -13,7 +13,7 @@ interface TypeAppRouterProps {
 export const AppRouter: React.FC<TypeAppRouterProps> = (props) => {
   const { navSite } = props;
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/conspectus">
       <Routes>
         <Route
           path="/"
@@ -25,10 +25,9 @@ export const AppRouter: React.FC<TypeAppRouterProps> = (props) => {
           }
         >
           <Route
-            index
+            path="/"
             element={<MainPage />}
           />
-
           {navSite.map((val) => (
             <Route
               path={val.path}
