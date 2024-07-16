@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/conspectus/static/css/main.5ae777cb.css",
-    "main.js": "/conspectus/static/js/main.527be8bf.js",
+    "main.css": "/conspectus/static/css/main.ae5567b3.css",
+    "main.js": "/conspectus/static/js/main.dd850647.js",
     "static/js/998.c2281351.chunk.js": "/conspectus/static/js/998.c2281351.chunk.js",
     "static/js/286.7b76963c.chunk.js": "/conspectus/static/js/286.7b76963c.chunk.js",
     "static/js/764.4a50a093.chunk.js": "/conspectus/static/js/764.4a50a093.chunk.js",
@@ -62,12 +62,12 @@
     "static/media/index.md": "/conspectus/static/media/index.2ac4b5a3174d689ec8aa.md",
     "static/media/readme.md": "/conspectus/static/media/readme.241931162b9df4de6f2e.md",
     "static/media/js_base.md": "/conspectus/static/media/js_base.aa45774bd8427c63a2d6.md",
-    "main.5ae777cb.css.map": "/conspectus/static/css/main.5ae777cb.css.map",
-    "main.527be8bf.js.map": "/conspectus/static/js/main.527be8bf.js.map",
+    "main.ae5567b3.css.map": "/conspectus/static/css/main.ae5567b3.css.map",
+    "main.dd850647.js.map": "/conspectus/static/js/main.dd850647.js.map",
     "390.f519353a.chunk.js.map": "/conspectus/static/js/390.f519353a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5ae777cb.css",
-    "static/js/main.527be8bf.js"
+    "static/css/main.ae5567b3.css",
+    "static/js/main.dd850647.js"
   ]
 }
