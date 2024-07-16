@@ -5,6 +5,7 @@ import PageWrapper from 'src/components/layout/PageWrapper/PageWrapper';
 import { ContentPage } from 'src/pages/ContentPage/ContentPage';
 import { IndexPage } from 'src/pages/IndexPage/IndexPage';
 import { MainPage } from 'src/pages/MainPage/MainPage';
+import { NotFound } from 'src/pages/NotFound/NotFound';
 
 interface TypeAppRouterProps {
   navSite: TypeNavLink[];
@@ -17,12 +18,7 @@ export const AppRouter: React.FC<TypeAppRouterProps> = (props) => {
       <Routes>
         <Route
           path="/"
-          element={
-            <PageWrapper
-              navSite={navSite}
-              isNotFound={false}
-            />
-          }
+          element={<PageWrapper navSite={navSite} />}
         >
           <Route
             path="/"
@@ -39,21 +35,15 @@ export const AppRouter: React.FC<TypeAppRouterProps> = (props) => {
               />
               <Route
                 path=":fileName"
-                key={'r' + val.id}
                 element={<ContentPage navItem={val} />}
               />
             </Route>
           ))}
+          <Route
+            path="*"
+            element={<NotFound />}
+          />
         </Route>
-        <Route
-          path="*"
-          element={
-            <PageWrapper
-              navSite={navSite}
-              isNotFound={true}
-            />
-          }
-        />
       </Routes>
     </BrowserRouter>
   );

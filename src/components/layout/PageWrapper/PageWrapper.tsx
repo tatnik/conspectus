@@ -6,7 +6,6 @@ import { Footer } from '../Footer/Footer';
 
 import cls from './PageWrapper.module.scss';
 import { TypeNavLink } from '../Nav/Nav';
-import { NotFound } from 'src/pages/NotFound/NotFound';
 
 type PageWrapperProps = {
   navSite: Array<TypeNavLink>;
@@ -14,14 +13,13 @@ type PageWrapperProps = {
 };
 
 export const PageWrapper: React.FC<PageWrapperProps> = (props) => {
-  const { navSite, isNotFound = false } = props;
+  const { navSite } = props;
 
   return (
     <>
       <Header />
 
       <div className={cls.PageWrapper}>
-        {isNotFound ? <NotFound /> : null}
         <Outlet />
       </div>
 
