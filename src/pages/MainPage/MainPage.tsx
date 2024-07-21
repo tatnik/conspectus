@@ -7,11 +7,12 @@ import { DataProvider } from 'src/utils/DataProvider';
 import { useAppContext } from 'src/app/AppContext/AppContextProvider';
 
 export const MainPage: React.FC = () => {
-  const { setCurrentPart } = useAppContext();
+  const { setCurrentPart, setPageTitle } = useAppContext();
   const fileName = '/readme.md';
 
   useLayoutEffect(() => {
     setCurrentPart({ id: 0, name: '', path: '' });
+    setPageTitle('');
   }, []);
 
   return (

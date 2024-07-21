@@ -1,6 +1,6 @@
 .Header {
   display: flex;
-  flex-direction: row;
+  flex-flow: row, wrap;
   justify-content: space-between;
   align-items: center;
   position: fixed;
@@ -9,15 +9,23 @@
   box-sizing: border-box;
   width: 100%;
   max-width: var(--max-width);
-  height: var(--header-height);
+  min-height: var(--header-height);
   margin: 0 auto;
   padding: 0 var(--indent);
   background-color: var(--g-color-private-blue-100-solid);
   border: 1px solid var(--g-color-private-blue-200-solid);
 
   .title {
+    display: flex;
+    flex-flow: row, wrap;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 10px;
     font-size: larger;
     line-height: 120%;
-    margin-right: var(--indent);
+  }
+  h1 {
+    padding: 0;
+    margin: 0;
   }
 }

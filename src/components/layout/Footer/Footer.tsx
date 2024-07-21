@@ -7,19 +7,14 @@ import Nav, { TypeNavLink } from 'src/components/layout/Nav/Nav';
 import cls from './Footer.module.scss';
 import { useAppContext } from 'src/app/AppContext/AppContextProvider';
 
-type FooterProps = {
-  footerNav: Array<TypeNavLink>;
-};
-
-export const Footer: React.FC<FooterProps> = (props) => {
-  const { footerNav } = props;
-  const { currentPart, setCurrentPart } = useAppContext();
+export const Footer: React.FC = () => {
+  const { currentPart, setCurrentPart, siteNav } = useAppContext();
 
   return (
     <div className={cls.Footer}>
       <Logo />
       <Nav
-        nav={footerNav}
+        nav={siteNav.slice(1)}
         classNameList={cls.nav}
         onClick={(val) => setCurrentPart(val as TypeNavLink)}
         renderProps={(val) => {

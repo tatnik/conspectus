@@ -1,9 +1,8 @@
-# Базовые настройки Prettier и ESLint в TypeScript проекте #
+# Базовые настройки Prettier и ESLint в TypeScript проекте
 
+## Установка необходимых зависимостей
 
-## Установка необходимых зависимостей ##
-
-- Node.js и npm предварительно должны быть установлены. 
+- Node.js и npm предварительно должны быть установлены.
 
 - далее в терминале:
 
@@ -11,19 +10,15 @@
 npm install --save-dev prettier eslint eslint-config-prettier eslint-plugin-prettier
 ```
 
-## Настройка ESLint ##
+## Настройка ESLint
 
-- cоздайть файл `.eslintrc.json` в корне проекта 
+- cоздайть файл `.eslintrc.json` в корне проекта
 
 - добавить в него следующий код:
 
 ```json
 {
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
-  ],
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
   "plugins": ["@typescript-eslint"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -38,7 +33,7 @@ npm install --save-dev prettier eslint eslint-config-prettier eslint-plugin-pret
 
 ## Настройка Prettier
 
-- создать файл `.prettierrc` в корне проекта 
+- создать файл `.prettierrc` в корне проекта
 
 - добавьте в него необходимые настройки. Например:
 

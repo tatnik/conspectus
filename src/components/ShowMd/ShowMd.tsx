@@ -12,6 +12,8 @@ import { Link } from '@gravity-ui/uikit';
 
 import MdNavigation from '../MdNavigation/MdNavigation';
 import cls from './ShowMd.module.scss';
+import { getTitleFromPost } from 'src/utils/utils';
+import { useAppContext } from 'src/app/AppContext/AppContextProvider';
 
 hljs.registerLanguage('javascript', javascript); // import XML highlighting
 hljs.registerLanguage('xml', xml);
@@ -57,13 +59,17 @@ export const ShowMd = (props: ShowMdProps) => {
         target: '_blank',
       };
 
+  const { setPageTitle } = useAppContext();
+
   useLayoutEffect(() => {
     const element: HTMLElement | null = articleRef.current;
     if (element) {
       if (!isIndex) {
         const arrayH2 = generateHeadingsArray(element);
         setHeadings(arrayH2);
+        setPageTitle(getTitleFromPost(post));
       }
+
       hljs.highlightAll();
     }
   }, [post, articleRef, isIndex]);

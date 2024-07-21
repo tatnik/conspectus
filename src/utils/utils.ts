@@ -1,3 +1,6 @@
+import { useAppContext } from 'src/app/AppContext/AppContextProvider';
+import { TypeNavLink } from 'src/components/layout/Nav/Nav';
+
 export const getFile = async (fileName: string) => {
   const data = { text: '', err: '' };
   try {
@@ -22,4 +25,18 @@ export const getNavFromIndex = (index: string) => {
   return result;
 };
 
-export const getImgName = (mdPath: string) => '/conspectus/jpg/md' + mdPath + '-220.jpg';
+export const getTitleFromPost = (pageText: string) => {
+  const regex = /^# (.*)$/m;
+  const matches = regex.exec(pageText);
+  return matches ? matches[1] : '';
+};
+
+export const getImgName = (mdPath: string) => `/conspectus/jpg/md${mdPath}-220.jpg`;
+
+export const getNavItemByPath = (path: string): TypeNavLink => {
+  const { siteNav } = useAppContext();
+  for (let i = 0; i < siteNav.length; i++) {
+    if (siteNav[i].path === `/${path}`) return siteNav[i];
+  }
+  return siteNav[0];
+};

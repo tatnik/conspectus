@@ -1,25 +1,29 @@
 import React, { useLayoutEffect } from 'react';
 
-import Nav, { TypeNavLink } from 'src/components/layout/Nav/Nav';
+import Nav from 'src/components/layout/Nav/Nav';
 
 import cls from './IndexPage.module.scss';
 
-import { getImgName, getNavFromIndex } from 'src/utils/utils';
+import { getImgName, getNavFromIndex, getNavItemByPath } from 'src/utils/utils';
 import { DataProvider } from 'src/utils/DataProvider';
 import { Card, Link as LinkGravity } from '@gravity-ui/uikit';
 import { useAppContext } from 'src/app/AppContext/AppContextProvider';
+import { useParams } from 'react-router-dom';
+import { NotFound } from '../NotFound/NotFound';
 
-export interface IndexPageProps {
-  navItem: TypeNavLink;
-}
+export const IndexPage: React.FC = () => {
+  const { setCurrentPart, setPageTitle } = useAppContext();
+  const { path } = useParams();
 
-export const IndexPage: React.FC<IndexPageProps> = (props) => {
-  const { navItem } = props;
-  const { setCurrentPart } = useAppContext();
+  const navItem = getNavItemByPath(path as string);
+
+  if (navItem.id === 0) return <NotFound />;
+
   const fileName = navItem.path + '/index.md';
 
   useLayoutEffect(() => {
     setCurrentPart(navItem);
+    setPageTitle('');
   }, [navItem]);
 
   return (
