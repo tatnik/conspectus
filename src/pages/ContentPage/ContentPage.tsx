@@ -26,12 +26,7 @@ export const ContentPage: React.FC = () => {
     <main className={cls.ContentPage}>
       <DataProvider
         fileName={contentName}
-        renderContent={(data) => (
-          <ShowMd
-            post={data as string}
-            isIndex={false}
-          />
-        )}
+        renderContent={(data) => <ShowMd post={data as string} />}
       />
     </main>
   );

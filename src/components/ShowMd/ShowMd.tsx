@@ -22,7 +22,6 @@ hljs.registerLanguage('bash', bash);
 
 export interface ShowMdProps {
   post: string;
-  isIndex: boolean;
 }
 
 interface Heading {
@@ -47,54 +46,43 @@ function generateHeadingsArray(article: HTMLElement | null): Heading[] {
 }
 
 export const ShowMd = (props: ShowMdProps) => {
-  const { post, isIndex } = props;
+  const { post } = props;
   const articleRef = useRef(null);
   const [headings, setHeadings] = useState<Heading[]>([]);
-  const mdProps = isIndex
-    ? {
-        view: 'normal',
-      }
-    : {
-        view: 'normal',
-        target: '_blank',
-      };
-
   const { setPageTitle } = useAppContext();
 
   useLayoutEffect(() => {
     const element: HTMLElement | null = articleRef.current;
     if (element) {
-      if (!isIndex) {
-        const arrayH2 = generateHeadingsArray(element);
-        setHeadings(arrayH2);
-        setPageTitle(getTitleFromPost(post));
-      }
-
+      const arrayH2 = generateHeadingsArray(element);
+      setHeadings(arrayH2);
+      setPageTitle(getTitleFromPost(post));
       hljs.highlightAll();
     }
-  }, [post, articleRef, isIndex]);
+  }, [post, articleRef]);
 
   return (
     <article
       ref={articleRef}
-      className={isIndex ? cls.showMdBlock : cls.showMdGrid}
+      className={cls.showMdGrid}
     >
-      <div className={cls.showMdBlock}>
-        <Markdown
-          options={{
-            overrides: {
-              wrapper: React.Fragment,
-              a: {
-                component: Link,
-                props: mdProps,
+      <Markdown
+        className={cls.showMdBlock}
+        options={{
+          overrides: {
+            a: {
+              component: Link,
+              props: {
+                view: 'normal',
+                target: '_blank',
               },
             },
-          }}
-        >
-          {post}
-        </Markdown>
-      </div>
-      {isIndex ? null : <MdNavigation headings={headings} />}
+          },
+        }}
+      >
+        {post}
+      </Markdown>
+      <MdNavigation headings={headings} />
     </article>
   );
 };
