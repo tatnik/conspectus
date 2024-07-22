@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import PageWrapper from 'src/components/layout/PageWrapper/PageWrapper';
 import { ContentPage } from 'src/pages/ContentPage/ContentPage';
 import { IndexPage } from 'src/pages/IndexPage/IndexPage';
-import { MainPage } from 'src/pages/MainPage/MainPage';
+//import { MainPage } from 'src/pages/MainPage/MainPage';
 import { NotFound } from 'src/pages/NotFound/NotFound';
 
 export const AppRouter: React.FC = () => {
@@ -16,7 +16,7 @@ export const AppRouter: React.FC = () => {
         >
           <Route
             index
-            element={<MainPage />}
+            element={<IndexPage />}
           />
           <Route
             path=":path/:fileName"

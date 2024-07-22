@@ -17,9 +17,9 @@ export const IndexPage: React.FC = () => {
 
   const navItem = getNavItemByPath(path as string);
 
-  if (navItem.id === 0) return <NotFound />;
+  if (navItem.id === 0 && path !== '' && path !== undefined) return <NotFound />;
 
-  const fileName = navItem.path + '/index.md';
+  const fileName = navItem.id === 0 ? '/index.md' : navItem.path + '/index.md';
 
   useLayoutEffect(() => {
     setCurrentPart(navItem);
