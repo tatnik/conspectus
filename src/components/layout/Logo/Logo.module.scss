@@ -8,6 +8,9 @@
   @media (prefers-reduced-motion: no-preference) {
     & img {
       animation: app-logo-spin infinite 20s linear;
+      width: 40px;
+      height: 40px;
+      margin-left: -10px;
     }
   }
 }

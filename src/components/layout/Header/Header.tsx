@@ -11,31 +11,22 @@ import { useAppContext } from 'src/app/AppContext/AppContextProvider';
 import { Text } from '@gravity-ui/uikit';
 
 export const Header = () => {
-  const { currentPart, pageTitle } = useAppContext();
+  const { currentPart } = useAppContext();
   const showNav = currentPart.id > 0;
 
   return (
     <header className={cls.Header}>
-      <div className={cls.title}>
+      <span className={cls.nav}>
         <Logo logoText={APP_TITLE} />
         {showNav ? <PopupNav /> : null}
-        <h1>
-          <Text
-            variant="header-1"
-            color={'info'}
-          >
-            {currentPart.name}
-          </Text>
-          {pageTitle ? (
-            <Text
-              variant="header-1"
-              color={'info'}
-            >
-              {` / ${pageTitle}`}
-            </Text>
-          ) : null}
-        </h1>
-      </div>
+      </span>
+      <Text
+        className={cls.title}
+        variant="header-1"
+        color={'info'}
+      >
+        {currentPart.name}
+      </Text>
       <ThemeSwitcher />
     </header>
   );

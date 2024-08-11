@@ -1,6 +1,6 @@
 .Header {
   display: flex;
-  flex-flow: row, wrap;
+  flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
   position: fixed;
@@ -16,16 +16,14 @@
   border: 1px solid var(--g-color-private-blue-200-solid);
 
   .title {
+    margin: 0 10px;
+  }
+
+  .nav {
     display: flex;
-    flex-flow: row, wrap;
+    flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
     column-gap: 10px;
-    font-size: larger;
-    line-height: 120%;
-  }
-  h1 {
-    padding: 0;
-    margin: 0;
   }
 }
