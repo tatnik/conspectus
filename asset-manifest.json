@@ -1,10 +1,12 @@
 {
   "files": {
-    "main.css": "/conspectus/static/css/main.4ef71431.css",
-    "main.js": "/conspectus/static/js/main.89bab5b7.js",
+    "main.css": "/conspectus/static/css/main.1db82997.css",
+    "main.js": "/conspectus/static/js/main.fd3a7413.js",
     "static/js/998.c2281351.chunk.js": "/conspectus/static/js/998.c2281351.chunk.js",
     "static/js/286.8e6d5434.chunk.js": "/conspectus/static/js/286.8e6d5434.chunk.js",
-    "static/js/956.114124e7.chunk.js": "/conspectus/static/js/956.114124e7.chunk.js",
+    "static/js/956.f61b5302.chunk.js": "/conspectus/static/js/956.f61b5302.chunk.js",
+    "static/js/934.92b75aeb.chunk.js": "/conspectus/static/js/934.92b75aeb.chunk.js",
+    "static/js/68.4cf42045.chunk.js": "/conspectus/static/js/68.4cf42045.chunk.js",
     "static/js/844.39020d61.chunk.js": "/conspectus/static/js/844.39020d61.chunk.js",
     "static/js/912.6607b129.chunk.js": "/conspectus/static/js/912.6607b129.chunk.js",
     "static/js/657.31cbdfb7.chunk.js": "/conspectus/static/js/657.31cbdfb7.chunk.js",
@@ -39,17 +41,19 @@
     "static/media/tools_git.md": "/conspectus/static/media/tools_git.34479c463aa809534cb9.md",
     "static/media/ts_base.md": "/conspectus/static/media/ts_base.121c21a2fdd12d087bd5.md",
     "static/media/react_base.md": "/conspectus/static/media/react_base.2d72b77eaae8f0d0ff7a.md",
+    "static/media/js_functions.md": "/conspectus/static/media/js_functions.19c11fbdc46be40fc759.md",
     "static/media/redux.md": "/conspectus/static/media/redux.6e8f4dc65dfbacaab91a.md",
+    "static/media/js_event-loop.md": "/conspectus/static/media/js_event-loop.93960a6c24673ea8b06c.md",
     "static/media/tools_webpack.md": "/conspectus/static/media/tools_webpack.693f1b72ffc364d8b46b.md",
     "static/media/ts_types.md": "/conspectus/static/media/ts_types.46b5fd5e833c1aae4595.md",
     "static/media/react_datas.md": "/conspectus/static/media/react_datas.95859e7f484d3fd7baac.md",
     "static/media/react_18.md": "/conspectus/static/media/react_18.9ffc94087d2481da43e2.md",
     "static/media/ts_oop.md": "/conspectus/static/media/ts_oop.39d82121089095a7654e.md",
     "static/media/web_http.md": "/conspectus/static/media/web_http.d45424dcf180e439fcda.md",
+    "static/media/js_base.md": "/conspectus/static/media/js_base.701b099482e2b5f56f29.md",
     "static/media/web_trees.md": "/conspectus/static/media/web_trees.cbfa30c353347ec711f9.md",
     "static/media/react_others.md": "/conspectus/static/media/react_others.ef26f1f6ebea5f5d9fc5.md",
     "static/media/react_begin.md": "/conspectus/static/media/react_begin.395498eaca333d02428a.md",
-    "static/media/js_base.md": "/conspectus/static/media/js_base.2e3f89b7ec53a750b35d.md",
     "static/media/ts_jeneric.md": "/conspectus/static/media/ts_jeneric.588316813ea0b5bb5e1f.md",
     "static/media/react_samples.md": "/conspectus/static/media/react_samples.9e24acfad7d97842ea4f.md",
     "static/media/tools_prettier.md": "/conspectus/static/media/tools_prettier.77aa31aa6b9a27af67ec.md",
@@ -62,12 +66,12 @@
     "index.html": "/conspectus/index.html",
     "static/media/index.md": "/conspectus/static/media/index.08cc1c9c8ff5d9d5e547.md",
     "static/media/readme.md": "/conspectus/static/media/readme.241931162b9df4de6f2e.md",
-    "main.4ef71431.css.map": "/conspectus/static/css/main.4ef71431.css.map",
-    "main.89bab5b7.js.map": "/conspectus/static/js/main.89bab5b7.js.map",
+    "main.1db82997.css.map": "/conspectus/static/css/main.1db82997.css.map",
+    "main.fd3a7413.js.map": "/conspectus/static/js/main.fd3a7413.js.map",
     "390.f519353a.chunk.js.map": "/conspectus/static/js/390.f519353a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4ef71431.css",
-    "static/js/main.89bab5b7.js"
+    "static/css/main.1db82997.css",
+    "static/js/main.fd3a7413.js"
   ]
 }
