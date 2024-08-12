@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/conspectus/static/css/main.1db82997.css",
-    "main.js": "/conspectus/static/js/main.fd3a7413.js",
+    "main.css": "/conspectus/static/css/main.e9e74c8f.css",
+    "main.js": "/conspectus/static/js/main.6b1f0eed.js",
     "static/js/998.c2281351.chunk.js": "/conspectus/static/js/998.c2281351.chunk.js",
-    "static/js/286.8e6d5434.chunk.js": "/conspectus/static/js/286.8e6d5434.chunk.js",
+    "static/js/286.3bb74459.chunk.js": "/conspectus/static/js/286.3bb74459.chunk.js",
     "static/js/956.f61b5302.chunk.js": "/conspectus/static/js/956.f61b5302.chunk.js",
     "static/js/934.92b75aeb.chunk.js": "/conspectus/static/js/934.92b75aeb.chunk.js",
     "static/js/68.4cf42045.chunk.js": "/conspectus/static/js/68.4cf42045.chunk.js",
@@ -64,14 +64,14 @@
     "static/media/react_redux.md": "/conspectus/static/media/react_redux.b08ad8d9c2c50beb7835.md",
     "static/media/react_router.md": "/conspectus/static/media/react_router.95354d1b93de657b6eda.md",
     "index.html": "/conspectus/index.html",
-    "static/media/index.md": "/conspectus/static/media/index.08cc1c9c8ff5d9d5e547.md",
+    "static/media/index.md": "/conspectus/static/media/index.51705a8fac54ccffbf0d.md",
     "static/media/readme.md": "/conspectus/static/media/readme.241931162b9df4de6f2e.md",
-    "main.1db82997.css.map": "/conspectus/static/css/main.1db82997.css.map",
-    "main.fd3a7413.js.map": "/conspectus/static/js/main.fd3a7413.js.map",
+    "main.e9e74c8f.css.map": "/conspectus/static/css/main.e9e74c8f.css.map",
+    "main.6b1f0eed.js.map": "/conspectus/static/js/main.6b1f0eed.js.map",
     "390.f519353a.chunk.js.map": "/conspectus/static/js/390.f519353a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1db82997.css",
-    "static/js/main.fd3a7413.js"
+    "static/css/main.e9e74c8f.css",
+    "static/js/main.6b1f0eed.js"
   ]
 }
