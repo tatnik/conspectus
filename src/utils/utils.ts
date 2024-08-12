@@ -1,5 +1,5 @@
+import { TypeNavLink } from 'src/app/App';
 import { useAppContext } from 'src/app/AppContext/AppContextProvider';
-import { TypeNavLink } from 'src/components/layout/Nav/Nav';
 
 export const getFile = async (fileName: string) => {
   const data = { text: '', err: '' };

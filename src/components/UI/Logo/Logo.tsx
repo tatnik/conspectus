@@ -3,7 +3,7 @@ import logo from 'src/assets/logo.svg';
 
 import cls from './Logo.module.scss';
 import { Link } from 'react-router-dom';
-import { Link as LinkGravity } from '@gravity-ui/uikit';
+import { Text } from '@gravity-ui/uikit';
 
 interface TypeLogoProps {
   logoText?: string;
@@ -18,10 +18,17 @@ export const Logo: React.FC<TypeLogoProps> = ({ logoText = '' }) => {
       >
         <img
           src={logo}
-          height="35px"
+          height="40px"
           alt="логотип"
         />
-        {logoText === '' ? null : <LinkGravity view="normal">Конспекты</LinkGravity>}
+        {logoText === '' ? null : (
+          <Text
+            variant="header-1"
+            color={'info'}
+          >
+            Конспекты
+          </Text>
+        )}
       </Link>
     </>
   );

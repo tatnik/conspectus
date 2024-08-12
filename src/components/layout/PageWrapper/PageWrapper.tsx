@@ -13,7 +13,6 @@ export const PageWrapper: React.FC = () => {
       <div className={cls.PageWrapper}>
         <Outlet />
       </div>
-
       <Footer />
     </>
   );

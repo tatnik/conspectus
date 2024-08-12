@@ -9,6 +9,12 @@ import { AppRouter } from './AppRouter/AppRouter';
 export const APP_TITLE = 'конспекты';
 export const NOT_FOUND = 'Ошибка 404. Такая страница на сайте отсутствует!';
 
+export type TypeNavLink = {
+  id: number;
+  name: string;
+  path: string;
+};
+
 export const App = () => {
   return (
     <>

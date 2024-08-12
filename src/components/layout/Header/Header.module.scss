@@ -14,16 +14,4 @@
   padding: 0 var(--indent);
   background-color: var(--g-color-private-blue-100-solid);
   border: 1px solid var(--g-color-private-blue-200-solid);
-
-  .title {
-    margin: 0 10px;
-  }
-
-  .nav {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    column-gap: 10px;
-  }
 }

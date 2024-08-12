@@ -10,10 +10,10 @@ import React, { useLayoutEffect, useRef, useState } from 'react';
 
 import { Link } from '@gravity-ui/uikit';
 
-import MdNavigation from '../MdNavigation/MdNavigation';
 import cls from './ShowMd.module.scss';
 import { getTitleFromPost } from 'src/utils/utils';
 import { useAppContext } from 'src/app/AppContext/AppContextProvider';
+import MdNavigation from '../MdNavigation/MdNavigation';
 
 hljs.registerLanguage('javascript', javascript); // import XML highlighting
 hljs.registerLanguage('xml', xml);

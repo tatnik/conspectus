@@ -1,6 +1,6 @@
 import React, { useLayoutEffect } from 'react';
 
-import Nav from 'src/components/layout/Nav/Nav';
+import NavList from 'src/components/UI/NavList/NavList';
 
 import cls from './IndexPage.module.scss';
 
@@ -12,7 +12,7 @@ import { useParams } from 'react-router-dom';
 import { NotFound } from '../NotFound/NotFound';
 
 export const IndexPage: React.FC = () => {
-  const { setCurrentPart, setPageTitle } = useAppContext();
+  const { setCurrentPart, setPageTitle, setShowPartNav } = useAppContext();
   const { path } = useParams();
 
   const navItem = getNavItemByPath(path as string);
@@ -24,6 +24,7 @@ export const IndexPage: React.FC = () => {
   useLayoutEffect(() => {
     setCurrentPart(navItem);
     setPageTitle('');
+    setShowPartNav(false);
   }, [navItem]);
 
   return (
@@ -31,8 +32,8 @@ export const IndexPage: React.FC = () => {
       <DataProvider
         fileName={fileName}
         renderContent={(data) => (
-          <Nav
-            nav={getNavFromIndex(data as string)}
+          <NavList
+            navLinkArray={getNavFromIndex(data as string)}
             classNameList={cls.nav}
             classNameItem={cls.navItem}
             renderProps={function (val) {
