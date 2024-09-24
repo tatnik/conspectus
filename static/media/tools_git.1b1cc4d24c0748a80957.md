@@ -381,16 +381,16 @@ What now>
 
 ### GitHub Flow
 
-![github-flow](/jpg/github-flow.jpg)
+![github-flow](/conspectus/jpg/github-flow.jpg)
 
 [Правила](https://githubflow.github.io/)
 
 ### Git Flow
 
-![git-flow](/jpg/git-flow.jpg)
+![git-flow](/conspectus/jpg/git-flow.jpg)
 
 ### The Forking Workflow
 
-![forking-workflow](/jpg/forking-workflow.jpg)
+![forking-workflow](/conspectus/jpg/forking-workflow.jpg)
 
 [Подробнее о стратегиях](https://javarush.com/groups/posts/2693-komandnaja-rabota-bez-putanicih-razbiraem-strategii-vetvlenija-v-gite)

@@ -278,7 +278,7 @@ const cachedValue = useMemo(calculateValue, dependencies);
 
 - в режиме _Strict Mode_ при разработке _React_ будет вызывать функцию _calculateValue_ дважды. Если функция вычисления чиста (как и должно быть), это не должно повлиять на логику работы программы. Результат одного из вызовов будет проигнорирован.
 
-[Подробнее...](https://reactdev.ru/reference/useMemo/#_6)
+[Подробнее...](https://reactdev.ru/reference/react/useMemo/)
 
 ## useCalback
 
