@@ -9,7 +9,8 @@ interface TypeLogoProps {
   logoText?: string;
 }
 
-export const Logo: React.FC<TypeLogoProps> = ({ logoText = '' }) => {
+export const Logo = (props: TypeLogoProps) => {
+  const { logoText = '' } = props;
   return (
     <>
       <Link

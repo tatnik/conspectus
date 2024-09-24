@@ -5,15 +5,15 @@ import cls from './ContentPage.module.scss';
 //import { TypeNavLink } from 'src/components/layout/Nav/Nav';
 
 import { NotFound } from 'src/pages/NotFound/NotFound';
-import { DataProvider } from 'src/utils/DataProvider';
+import { DataProvider } from 'src/data/DataProvider';
 import { useAppContext } from 'src/app/AppContext/AppContextProvider';
-import { getNavItemByPath } from 'src/utils/utils';
-import { ShowMd } from 'src/components/UI/ShowMd/ShowMd';
+import { apiGetNavItemByPath } from 'src/data/Api';
+import { Post } from 'src/components/UI/Post/Post';
 
-export const ContentPage: React.FC = () => {
-  const { setCurrentPart, setShowPartNav } = useAppContext();
+export const ContentPage = () => {
+  const { setCurrentPart, setShowPartNav, siteNav } = useAppContext();
   const { path, fileName } = useParams();
-  const navItem = getNavItemByPath(path as string);
+  const navItem = apiGetNavItemByPath(path as string, siteNav);
   const contentName = `/${path}/${fileName}.md`;
 
   useLayoutEffect(() => {
@@ -27,7 +27,7 @@ export const ContentPage: React.FC = () => {
     <main className={cls.ContentPage}>
       <DataProvider
         fileName={contentName}
-        renderContent={(data) => <ShowMd post={data as string} />}
+        renderContent={(data) => <Post post={data as string} />}
       />
     </main>
   );

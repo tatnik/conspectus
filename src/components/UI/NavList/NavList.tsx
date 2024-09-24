@@ -12,13 +12,8 @@ export interface TypeNavListProps {
   renderProps: (val: TypeNavLink) => React.JSX.Element;
 }
 
-export const NavList: React.FC<TypeNavListProps> = ({
-  navLinkArray,
-  classNameList,
-  classNameItem = '',
-  onClick,
-  renderProps,
-}) => {
+export const NavList = (props: TypeNavListProps) => {
+  const { navLinkArray, classNameList, classNameItem = '', onClick, renderProps } = props;
   return (
     <ul className={`${classNameList} ${cls.NavList}`}>
       {navLinkArray.map((val) => (

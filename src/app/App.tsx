@@ -15,6 +15,9 @@ export type TypeNavLink = {
   path: string;
 };
 
+export type TypeNavArray = Array<TypeNavLink>;
+export type TypePartNavArray = Array<TypeNavArray>;
+
 export const App = () => {
   return (
     <>

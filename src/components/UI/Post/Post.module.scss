@@ -1,4 +1,4 @@
-.ShowMd {
+.Post {
   box-sizing: border-box;
   width: 100%;
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
@@ -17,18 +17,18 @@
   }
 }
 
-.showMdBlock {
+.PostBlock {
   display: block;
   padding: var(--indent);
   height: calc(100% - var(--indent) - var(--indent));
   overflow-y: scroll;
 }
 
-.showMdBlockNav {
+.PostBlockNav {
   border-left: 1px solid var(--g-color-private-blue-200-solid);
 }
 
-.showMdGrid {
+.PostGrid {
   display: grid;
   grid-template-columns: 2fr 1fr;
   height: 100%;

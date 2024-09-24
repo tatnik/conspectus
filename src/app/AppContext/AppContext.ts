@@ -1,47 +1,48 @@
 import React, { useCallback, useLayoutEffect, useState } from 'react';
 
-import { getFile, getNavFromIndex } from 'src/utils/utils';
-import { TypeNavLink } from '../App';
+import { apiGetSiteNav } from 'src/data/Api';
+import { TypeNavLink, TypeNavArray, TypePartNavArray } from '../App';
 
 export type TypeAppContext = {
   currentPart: TypeNavLink;
   setCurrentPart: (newPart: TypeNavLink) => void;
   showPartNav: boolean;
   setShowPartNav: (newValue: boolean) => void;
-  pageTitle: string;
-  setPageTitle: (newPageTitle: string) => void;
-  siteNav: TypeNavLink[];
+  siteNav: TypeNavArray;
+  setSiteNav: (newSiteNav: TypeNavArray) => void;
+  partNavArray: TypePartNavArray;
+  setPartNavArray: (newPartNavArray: TypePartNavArray) => void;
 };
 
 export const Context = React.createContext({} as TypeAppContext);
 
 export const useCreateAppContext = (): TypeAppContext => {
-  const [currentPart, setCurrentPart] = useState<TypeNavLink>({ id: 0, name: '', path: '' });
+  const emptyLink = { id: 0, name: '', path: '/' };
+  // текущий раздел
+  const [currentPart, setCurrentPart] = useState<TypeNavLink>(emptyLink);
   const setNewPart = useCallback((newPart: TypeNavLink) => {
     setCurrentPart(newPart);
   }, []);
 
+  // отображение навигации для текущего раздела
   const [showPartNav, setShowPartNav] = useState<boolean>(false);
   const setNewShowPartNav = useCallback((newValue: boolean) => {
     setShowPartNav(newValue);
   }, []);
 
-  const [pageTitle, setPageTitle] = useState<string>('');
-  const setNewPageTitle = useCallback((newPageTitle: string) => {
-    setPageTitle(newPageTitle);
+  // меню сайта
+  const [siteNav, setSiteNav] = useState<TypeNavArray>([emptyLink]);
+  const setNewSiteNav = useCallback((newValue: TypeNavArray) => setSiteNav(newValue), []);
+
+  // массив меню разделов
+  const [partNavArray, setPartNavArray] = useState<TypePartNavArray>([]);
+  const setNewPartNavArray = useCallback((newValue: TypePartNavArray) => {
+    setPartNavArray(newValue);
   }, []);
 
-  const [siteNav, setSiteNav] = useState([{ id: 0, name: '', path: '/' }]);
-
-  const getSiteNav = async () => {
-    const res = await getFile('/index.md');
-    setSiteNav(
-      res.err === '' ? [{ id: 0, name: '', path: '/' }, ...getNavFromIndex(res.text)] : []
-    );
-  };
-
   useLayoutEffect(() => {
-    getSiteNav();
+    // получаем меню сайта
+    apiGetSiteNav(emptyLink, setSiteNav);
   }, []);
 
   return {
@@ -49,8 +50,9 @@ export const useCreateAppContext = (): TypeAppContext => {
     setCurrentPart: setNewPart,
     showPartNav,
     setShowPartNav: setNewShowPartNav,
-    pageTitle,
-    setPageTitle: setNewPageTitle,
     siteNav,
+    setSiteNav: setNewSiteNav,
+    partNavArray,
+    setPartNavArray: setNewPartNavArray,
   };
 };

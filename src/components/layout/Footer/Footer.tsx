@@ -3,7 +3,7 @@ import { Logo } from 'src/components/UI/Logo/Logo';
 import { Label } from '@gravity-ui/uikit';
 import cls from './Footer.module.scss';
 
-export const Footer: React.FC = () => {
+export const Footer = () => {
   return (
     <div className={cls.Footer}>
       <Logo />

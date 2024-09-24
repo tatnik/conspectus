@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { getFile } from './utils';
+import { apiGetFile } from './Api';
 import { NOT_FOUND } from 'src/app/App';
 
-interface DataProviderProps {
+interface TypeDataProviderProps {
   fileName: string;
   renderContent: React.FC;
 }
 
-export const DataProvider: React.FC<DataProviderProps> = (props) => {
+export const DataProvider = (props: TypeDataProviderProps) => {
   const { fileName, renderContent } = props;
   const [data, setData] = useState('');
 
   const getPost = async () => {
-    const res = await getFile(fileName);
+    const res = await apiGetFile(fileName);
     setData(res.err === '' ? res.text : NOT_FOUND);
   };
 

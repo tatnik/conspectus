@@ -100,7 +100,3 @@ obj['prop'](); // this будет связан с obj
 let func = obj.prop;
 func(); // this останется связан со значением, которое было связано с ним до вызова функции. Так как вызов был не в дот нотации. Как и любой другой вызов функции или метода.
 ```
-
-## SetTimeout
-
-_SetTimeout_ - это API предоставляемое в соответствии со [спецификацией HTML5](https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html), и это API никакого отношения к JavaScript не имеет

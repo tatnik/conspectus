@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { Logo } from 'src/components/UI/Logo/Logo';
 import cls from './Nav.module.scss';
@@ -6,25 +6,30 @@ import { TypeNavLink, APP_TITLE } from 'src/app/App';
 
 import { Text } from '@gravity-ui/uikit';
 import { useAppContext } from 'src/app/AppContext/AppContextProvider';
-import { getFile, getNavFromIndex } from 'src/utils/utils';
+import { apiGetPartNav } from 'src/data/Api';
 import { NavPopup } from 'src/components/UI/NavPopup/NavPopup';
 import { Link } from 'react-router-dom';
 
 export const Nav = () => {
-  const { currentPart, setCurrentPart, showPartNav, setShowPartNav, siteNav } = useAppContext();
-  const [partNav, setPartNav] = React.useState([{ id: 0, name: '', path: '/' }]);
+  const {
+    currentPart,
+    setCurrentPart,
+    showPartNav,
+    setShowPartNav,
+    siteNav,
+    partNavArray,
+    setPartNavArray,
+  } = useAppContext();
 
+  const partNav = partNavArray[currentPart.id] ? partNavArray[currentPart.id] : [];
   const isMainPage = currentPart.id === 0;
   const isPartIndexPage = !isMainPage && !showPartNav;
 
-  const getIndex = async () => {
-    // считываем меню раздела из файла index.md
-    const res = await getFile(`${currentPart.path}/index.md`);
-    setPartNav(res.err === '' ? getNavFromIndex(res.text) : []);
-  };
-
-  React.useEffect(() => {
-    if (!isMainPage) getIndex();
+  useEffect(() => {
+    if (!isMainPage && partNav.length === 0) {
+      // Если нет навигации для текущего раздела, получаем ее из файла
+      apiGetPartNav(currentPart.id, siteNav[currentPart.id].path, partNavArray, setPartNavArray);
+    }
   }, [currentPart]);
 
   return (

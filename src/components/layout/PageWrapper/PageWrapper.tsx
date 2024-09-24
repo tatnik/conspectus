@@ -6,7 +6,7 @@ import { Footer } from '../Footer/Footer';
 
 import cls from './PageWrapper.module.scss';
 
-export const PageWrapper: React.FC = () => {
+export const PageWrapper = () => {
   return (
     <>
       <Header />
