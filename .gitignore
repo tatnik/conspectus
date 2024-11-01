@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+/public/jpg/md/old
 
 # testing
 /coverage
