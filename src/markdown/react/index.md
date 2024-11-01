@@ -6,9 +6,9 @@
 
 ## [React-router](/react/react_router)
 
-## [Redux](/react/redux)
+## [Redux](/react/react_redux)
 
-## [React-Redux](/react/react_redux)
+## [React-Redux](/react/react_react-redux)
 
 ## [React работа с данными](/react/react_datas)
 

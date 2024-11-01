@@ -1,7 +1,6 @@
 .PostNavigation {
   position: sticky;
   top: 0;
-  box-sizing: border-box;
   padding: var(--indent);
   height: calc(100% - var(--indent) - var(--indent));
   overflow-y: scroll;
