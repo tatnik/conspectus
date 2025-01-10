@@ -31,6 +31,8 @@ npm install --save-dev prettier eslint eslint-config-prettier eslint-plugin-pret
 }
 ```
 
+[Подробнее...](https://eslint.org/docs/latest/use/configure/)
+
 ## Настройка Prettier
 
 - создать файл `.prettierrc` в корне проекта
