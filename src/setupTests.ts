@@ -1,16 +1,21 @@
-// jest-dom adds custom jest matchers for asserting on DOM nodes.
-// allows you to do things like:
-// expect(element).toHaveTextContent(/react/i)
-// learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
 
-window.matchMedia = (query) => ({
-  matches: false,
-  media: query,
-  onchange: null,
-  addListener: jest.fn(),
-  removeListener: jest.fn(),
-  addEventListener: jest.fn(),
-  removeEventListener: jest.fn(),
-  dispatchEvent: jest.fn(),
-});
+// Мок для localStorage (если Vitest/jest/jsdom вдруг не определяет его сам)
+if (!globalThis.localStorage) {
+  let storage: Record<string, string> = {};
+  // Простейший мок
+  globalThis.localStorage = {
+    getItem: (key) => (key in storage ? storage[key] : null),
+    setItem: (key, value) => {
+      storage[key] = value.toString();
+    },
+    removeItem: (key) => {
+      delete storage[key];
+    },
+    clear: () => {
+      storage = {};
+    },
+    key: (index) => Object.keys(storage)[index] || null,
+    length: 0,
+  };
+}

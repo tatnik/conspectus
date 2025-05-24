@@ -11,7 +11,10 @@ export const Themes: Theme[] = [Theme.Light, Theme.LightHC, Theme.Dark, Theme.Da
 
 export const LOCAL_STORAGE_THEME_KEY = 'theme';
 
-const defaultTheme: Theme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.Light;
+const defaultTheme: Theme =
+  ((typeof window === 'undefined'
+    ? null
+    : localStorage.getItem(LOCAL_STORAGE_THEME_KEY)) as Theme) || Theme.Light;
 
 export const themeSlice = createSlice({
   name: 'theme',
