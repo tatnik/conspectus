@@ -1,6 +1,6 @@
 import React, { useLayoutEffect } from 'react';
 
-import NavList from 'src/components/UI/NavList/NavList';
+import { NavList } from 'src/components/UI/NavList/NavList';
 
 import cls from './IndexPage.module.scss';
 

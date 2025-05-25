@@ -12,7 +12,7 @@ import { Link } from '@gravity-ui/uikit';
 
 import cls from './Post.module.scss';
 import { apiGetHeadsArray, apiGetTitleFromPost } from 'src/data/Api';
-import PostNavigation from 'src/components/UI/PostNavigation/PostNavigation';
+import { PostNavigation } from 'src/components/UI/PostNavigation/PostNavigation';
 
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('xml', xml);

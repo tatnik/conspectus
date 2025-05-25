@@ -1,5 +1,5 @@
 import React from 'react';
-import NavList from '../../UI/NavList/NavList';
+import { NavList } from '../../UI/NavList/NavList';
 import { Button, Popup, Link as LinkGravity } from '@gravity-ui/uikit';
 import cls from './NavPopup.module.scss';
 import { TypeNavLink } from 'src/app/App';

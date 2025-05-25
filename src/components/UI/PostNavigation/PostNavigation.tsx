@@ -10,7 +10,7 @@ interface TypePostNavigationProps {
   pageTitle: string;
 }
 
-const PostNavigation = (props: TypePostNavigationProps) => {
+export const PostNavigation = (props: TypePostNavigationProps) => {
   const { heads, pageTitle } = props;
   return (
     <nav className={cls.PostNavigation}>
@@ -30,5 +30,3 @@ const PostNavigation = (props: TypePostNavigationProps) => {
     </nav>
   );
 };
-
-export default PostNavigation;

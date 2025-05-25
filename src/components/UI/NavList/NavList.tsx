@@ -37,5 +37,3 @@ export const NavList = (props: TypeNavListProps) => {
     </ul>
   );
 };
-
-export default NavList;
