@@ -19,7 +19,6 @@
     "react-router-dom": "^6.21.1",
     "react-scripts": "5.0.1",
     "rehype-highlight": "^7.0.0",
-    "typescript": "^4.9.5",
     "web-vitals": "^3.4.0"
   },
   "devDependencies": {
@@ -41,6 +40,11 @@
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "fast-glob": "^3.3.3",
+    "fs-extra": "^11.3.0",
+    "identity-obj-proxy": "^3.0.0",
+    "inquirer": "^12.6.2",
+    "jest": "^29.7.0",
     "jsdom": "^26.1.0",
     "prettier": "^2.8.0",
     "raw-loader": "^4.0.2",
@@ -48,7 +52,8 @@
     "sass": "^1.68.0",
     "stylelint": "^14.16.1",
     "svg-inline-loader": "^0.8.2",
-    "jest": "^29.7.0"
+    "ts-morph": "^26.0.0",
+    "typescript": "^4.9.5"
   },
   "scripts": {
     "predeploy": "npm run build",
@@ -62,7 +67,9 @@
     "lint:prettier": "prettier --check src/**.ts*",
     "lint": "npm run lint:js && npm run lint:styles && npm run lint:prettier",
     "lint-fix:js": "eslint --ext .js,.jsx,.ts,.tsx . --fix",
-    "lint-fix:styles": "stylelint '{styles,src}/**/*.scss' --fix"
+    "lint-fix:styles": "stylelint '{styles,src}/**/*.scss' --fix",
+    "propsMap:create": "node .testCreator/generatePropsMap.mjs",
+    "test:create": "node .testCreator/testCreator.mjs"
   },
   "browserslist": {
     "production": [
