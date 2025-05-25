@@ -1,0 +1,9 @@
+import React from 'react';
+import { renderWithProviders } from 'src/test-utils';
+import {${COMPONENT_NAME}} from './${COMPONENT_NAME}';
+
+describe('<${COMPONENT_NAME} />', () => {
+  it('рендерится без ошибок', () => {
+    renderWithProviders(<${COMPONENT_NAME}${COMPONENT_PROPS} />);
+  });
+});
