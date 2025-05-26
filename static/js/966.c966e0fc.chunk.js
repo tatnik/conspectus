@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkconspectus=self.webpackChunkconspectus||[]).push([[966],{7179:function(s,e,c){s.exports=c.p+"static/media/tools_babel.e54706409db3cfb52324.md"}}]);
