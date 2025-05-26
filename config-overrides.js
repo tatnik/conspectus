@@ -1,4 +1,4 @@
-// eslint-disable-next-line no-undef
+/* eslint-env node */
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = function override(config /*, env*/) {
