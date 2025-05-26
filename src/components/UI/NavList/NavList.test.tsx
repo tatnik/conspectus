@@ -8,7 +8,7 @@ describe('<NavList />', () => {
       <NavList
         navLinkArray={[]}
         classNameList=""
-        renderProps={() => {}}
+        renderProps={() => React.createElement('div')}
       />
     );
   });

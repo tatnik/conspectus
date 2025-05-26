@@ -12,7 +12,28 @@ function getDefaultForType(type) {
   if (type.isString && type.isString()) return "''";
   if (type.isNumber && type.isNumber()) return '0';
   // ВНИМАНИЕ: если это функция (call signature), возвращай "() => {}"
-  if (type.getCallSignatures && type.getCallSignatures().length > 0) return '() => {}';
+  if (type.getCallSignatures && type.getCallSignatures().length > 0) {
+    // Проверяем возвращаемый тип функции
+    const signature = type.getCallSignatures()[0];
+    if (signature) {
+      const returnType = signature.getReturnType();
+      // Самые частые типы возвращаемых элементов: JSX.Element, React.ReactNode, Element, ReactElement, etc.
+      const returnText = returnType.getText();
+      if (
+        returnText.includes('Element') ||
+        returnText.includes('ReactNode') ||
+        returnText.includes('JSX.Element')
+      ) {
+        return '() => React.createElement("div")';
+      }
+      // Для функций, которые возвращают void или ничего не возвращают
+      if (returnType.getText() === 'void' || returnType.getText() === 'undefined') {
+        return '() => {}';
+      }
+    }
+    // Если не удалось определить тип возвращаемого значения
+    return '() => {}';
+  }
   // Если это object, проверь, не функция ли это (call signature выше)
   if (type.isObject && type.isObject()) return '{}';
   if ((type.isAny && type.isAny()) || (type.isUnknown && type.isUnknown())) return 'undefined';
