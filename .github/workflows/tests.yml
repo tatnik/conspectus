@@ -19,4 +19,7 @@ jobs:
           node-version: 20
           cache: 'pnpm'
       - run: pnpm install
-      - run: pnpm test
+      - name: Show workspace structure
+        run: tree -L 4 || ls -alR | head -1000
+      - name: Run tests
+        run: pnpm test
