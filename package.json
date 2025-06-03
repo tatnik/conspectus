@@ -62,16 +62,21 @@
     "deploy": "gh-pages -d build",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
+    "test": "react-app-rewired test --config='./config/jest.config.ts'",
     "eject": "react-app-rewired eject",
-    "lint:js": "eslint --ext .js,.jsx,.ts,.tsx .",
-    "lint:styles": "stylelint '{styles,src}/**/*.scss'",
-    "lint:prettier": "prettier --check src/**.ts*",
+    "lint:js": "eslint --config ./config/.eslintrc.json --ext .js,.jsx,.ts,.tsx .",
+    "lint:styles": "stylelint --config ./config/.stylelintrc '{styles,src}/**/*.scss'",
+    "lint:prettier": "prettier --config ./config/.prettierrc.js --check src/**.ts*",
     "lint": "npm run lint:js && npm run lint:styles && npm run lint:prettier",
-    "lint-fix:js": "eslint --ext .js,.jsx,.ts,.tsx . --fix",
-    "lint-fix:styles": "stylelint '{styles,src}/**/*.scss' --fix",
+    "lint-fix:js": "eslint --config ./config/.eslintrc.json --ext .js,.jsx,.ts,.tsx . --fix",
+    "lint-fix:styles": "stylelint --config ./config/.stylelintrc '{styles,src}/**/*.scss' --fix",
     "propsMap:create": "node .testCreator/generatePropsMap.mjs",
-    "test:create": "node .testCreator/testCreator.mjs"
+    "test:create": "node .testCreator/testCreator.mjs",
+    "docker:up": "docker-compose -f docker/docker-compose.yaml up",
+    "docker:down": "docker-compose -f docker/docker-compose.yaml down",
+    "docker:build": "docker-compose -f docker/docker-compose.yaml build",
+    "docker:logs": "docker-compose -f docker/docker-compose.yaml logs -f",
+    "docker:ps": "docker-compose -f docker/docker-compose.yaml ps"
   },
   "browserslist": {
     "production": [
