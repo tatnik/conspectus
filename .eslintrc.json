@@ -1,0 +1,7 @@
+{
+  "extends": ["@gravity-ui/eslint-config", "plugin:prettier/recommended"],
+  "root": true,
+  "rules": {
+    "linebreak-style": ["error", "unix"]
+  }
+}

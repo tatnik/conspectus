@@ -19,9 +19,4 @@ jobs:
           node-version: 20
           cache: 'pnpm'
       - run: pnpm install
-      - run: ls -l config/
-      - run: cat config/.prettierrc.js
-      - run: cat config/.prettierignore
-      - run: pnpm prettier --version
-      - run: pnpm eslint --version      
       - run: pnpm lint
