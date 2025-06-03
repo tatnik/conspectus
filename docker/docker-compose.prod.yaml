@@ -3,7 +3,8 @@ services:
     image: conspectus
     build:
       context: .
-      dockerfile: ./Dockerfile
+      dockerfile: ./docker/Dockerfile
+      dockerignore: ./docker/.dockerignore
     environment:
       NODE_ENV: production
     ports:
