@@ -7,3 +7,5 @@
 ## [Tools](/tools)
 
 ## [WEB](/web)
+
+## [Phyton](/python)
