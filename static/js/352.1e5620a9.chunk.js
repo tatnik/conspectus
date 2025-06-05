@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkconspectus=self.webpackChunkconspectus||[]).push([[352],{9352:(s,c,e)=>{s.exports=e.p+"static/media/tools_webpack.693f1b72ffc364d8b46b.md"}}]);
