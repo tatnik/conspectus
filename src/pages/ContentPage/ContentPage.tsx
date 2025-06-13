@@ -31,3 +31,5 @@ export const ContentPage = () => {
     </main>
   );
 };
+
+export default ContentPage;
