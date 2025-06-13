@@ -1,7 +1,8 @@
-import React, { useCallback, useLayoutEffect, useState } from 'react';
+import React, { useMemo, useState } from 'react';
+import { EMPTY_LINK } from 'src/constans';
 
-import { apiGetSiteNav } from 'src/data/Api';
 import { TypeNavLink, TypeNavArray, TypePartNavArray } from 'src/types/nav';
+import { useSiteNav } from 'src/hooks/useSiteNav';
 
 export type TypeAppContext = {
   currentPart: TypeNavLink;
@@ -9,50 +10,34 @@ export type TypeAppContext = {
   showPartNav: boolean;
   setShowPartNav: (newValue: boolean) => void;
   siteNav: TypeNavArray;
-  setSiteNav: (newSiteNav: TypeNavArray) => void;
   partNavArray: TypePartNavArray;
   setPartNavArray: (newPartNavArray: TypePartNavArray) => void;
 };
 
-export const Context = React.createContext({} as TypeAppContext);
+export const Context = React.createContext<TypeAppContext | undefined>(undefined);
 
 export const useCreateAppContext = (): TypeAppContext => {
-  const emptyLink = { id: 0, name: '', path: '/' };
-  // текущий раздел
-  const [currentPart, setCurrentPart] = useState<TypeNavLink>(emptyLink);
-  const setNewPart = useCallback((newPart: TypeNavLink) => {
-    setCurrentPart(newPart);
-  }, []);
+  const [currentPart, setCurrentPart] = useState<TypeNavLink>(EMPTY_LINK);
 
   // отображение навигации для текущего раздела
   const [showPartNav, setShowPartNav] = useState<boolean>(false);
-  const setNewShowPartNav = useCallback((newValue: boolean) => {
-    setShowPartNav(newValue);
-  }, []);
 
   // меню сайта
-  const [siteNav, setSiteNav] = useState<TypeNavArray>([emptyLink]);
-  const setNewSiteNav = useCallback((newValue: TypeNavArray) => setSiteNav(newValue), []);
+  const siteNav = useSiteNav();
 
   // массив меню разделов
   const [partNavArray, setPartNavArray] = useState<TypePartNavArray>([]);
-  const setNewPartNavArray = useCallback((newValue: TypePartNavArray) => {
-    setPartNavArray(newValue);
-  }, []);
 
-  useLayoutEffect(() => {
-    // получаем меню сайта
-    apiGetSiteNav(emptyLink, setSiteNav);
-  }, []);
-
-  return {
-    currentPart,
-    setCurrentPart: setNewPart,
-    showPartNav,
-    setShowPartNav: setNewShowPartNav,
-    siteNav,
-    setSiteNav: setNewSiteNav,
-    partNavArray,
-    setPartNavArray: setNewPartNavArray,
-  };
+  return useMemo(
+    () => ({
+      currentPart,
+      setCurrentPart,
+      showPartNav,
+      setShowPartNav,
+      siteNav,
+      partNavArray,
+      setPartNavArray,
+    }),
+    [currentPart, showPartNav, siteNav, partNavArray]
+  );
 };
