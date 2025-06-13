@@ -108,8 +108,41 @@ print(list(pipeline))  # [0, 4, 8, 12, 16]
 
 ---
 
-**Полезные функции:**  
-- `iter()`, `next()`
-- `itertools` — стандартная библиотека для мощной работы с итераторами и генераторами.
+## Типичные ошибки и подводные камни
+
+- Попытка многократно итерироваться по уже использованному генератору (он выдаст пустую последовательность).
+- Использование генератора там, где нужен список (например, индексация не работает).
+- Забыли обработать StopIteration (например, при ручном вызове `next()` без цикла).
+
+## Полезные примеры использования
+
+**Чтение файла построчно:**
+```python
+def read_lines(filepath):
+    with open(filepath) as f:
+        for line in f:
+            yield line.strip()
+
+for line in read_lines('file.txt'):
+    print(line)
+```
+
+**Бесконечный генератор:**
+```python
+def count_up(start=0):
+    while True:
+        yield start
+        start += 1
+
+gen = count_up()
+for _ in range(5):
+    print(next(gen))  # 0, 1, 2, 3, 4
+```
 
 ---
+
+## Ссылки на документацию и полезные ресурсы
+
+- [PEP 255 — Simple Generators](https://peps.python.org/pep-0255/)
+- [Документация: Генераторы и yield](https://docs.python.org/3/reference/expressions.html#generator-expressions)
+- [Документация: itertools](https://docs.python.org/3/library/itertools.html)
