@@ -22,7 +22,7 @@ export const Nav = () => {
     setPartNavArray,
   } = useAppContext();
 
-  const partNav = partNavArray[currentPart.id] ? partNavArray[currentPart.id] : [];
+  const partNav = partNavArray[currentPart?.id] ? partNavArray[currentPart?.id] : [];
   const isMainPage = currentPart.id === 0;
   const isPartIndexPage = !isMainPage && !showPartNav;
 
@@ -33,53 +33,63 @@ export const Nav = () => {
     }
   }, [currentPart]);
 
-  return (
-    <nav className={cls.Nav}>
-      <Logo logoText={APP_TITLE} />
+  // кнопка с главной навигацией (по разделам сайта)
+  let mainNav = null;
+  if (!isMainPage) {
+    mainNav = (
+      <NavPopup
+        navLinks={siteNav.slice(1)}
+        handleOnClick={(val) => {
+          setCurrentPart(val as TypeNavLink);
+          setShowPartNav(false);
+        }}
+      />
+    );
+  }
 
-      {/* Список разделов 
-      (показываем, если мы не на главной странице сайта) */}
-      {isMainPage ? null : (
-        <NavPopup
-          navLinks={siteNav.slice(1)}
-          handleOnClick={(val) => {
-            setCurrentPart(val as TypeNavLink);
-            setShowPartNav(false);
-          }}
-        />
-      )}
-
-      {/* Текущий раздел: */}
-
-      {isPartIndexPage ? (
+  // название/ссылка для индексной страницы текущего раздела
+  let currentPartLink = null;
+  if (isPartIndexPage) {
+    // на индексной странице раздела ссылки нет, только название раздела
+    currentPartLink = (
+      <Text
+        variant="header-1"
+        color="info"
+      >
+        {currentPart.name}
+      </Text>
+    );
+  } else if (!isMainPage) {
+    // на всех прочих страницах ссылка на индексную страницу раздела
+    currentPartLink = (
+      <Link to={currentPart.path}>
         <Text
           variant="header-1"
-          color={'info'}
+          color="info"
         >
           {currentPart.name}
         </Text>
-      ) : null}
+      </Link>
+    );
+  }
 
-      {!isMainPage && !isPartIndexPage ? (
-        <Link to={currentPart.path}>
-          <Text
-            variant="header-1"
-            color={'info'}
-          >
-            {currentPart.name}
-          </Text>
-        </Link>
-      ) : null}
+  // кнопка с навигацией по конспектам внутри раздела
+  let conspectsNav = null;
+  if (showPartNav && partNav.length > 0) {
+    conspectsNav = (
+      <NavPopup
+        navLinks={partNav}
+        handleOnClick={() => setShowPartNav(true)}
+      />
+    );
+  }
 
-      {/* Список топиков текущего раздела */}
-      {showPartNav && partNav.length > 0 ? (
-        <NavPopup
-          navLinks={partNav}
-          handleOnClick={() => {
-            setShowPartNav(true);
-          }}
-        />
-      ) : null}
+  return (
+    <nav className={cls.Nav}>
+      <Logo logoText={APP_TITLE} />
+      {mainNav}
+      {currentPartLink}
+      {conspectsNav}
     </nav>
   );
 };
