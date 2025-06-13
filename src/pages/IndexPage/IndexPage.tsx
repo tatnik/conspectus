@@ -27,7 +27,7 @@ export const IndexPage = () => {
   }, [navItem]);
 
   return (
-    <main className={cls.IndexPage}>
+    <div className={cls.IndexPage}>
       <DataProvider
         fileName={fileName}
         renderContent={(data) => (
@@ -46,7 +46,7 @@ export const IndexPage = () => {
           />
         )}
       />
-    </main>
+    </div>
   );
 };
 

@@ -23,12 +23,12 @@ export const ContentPage = () => {
   return navItem.id === 0 ? (
     <NotFound />
   ) : (
-    <main className={cls.ContentPage}>
+    <div className={cls.ContentPage}>
       <DataProvider
         fileName={contentName}
         renderContent={(data) => <Post post={data as string} />}
       />
-    </main>
+    </div>
   );
 };
 
