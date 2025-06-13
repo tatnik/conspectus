@@ -2,7 +2,7 @@ import React from 'react';
 
 import cls from './NavList.module.scss';
 import { NavLink } from 'react-router-dom';
-import { TypeNavLink } from 'src/app/App';
+import { TypeNavLink } from 'src/types/nav';
 
 export interface TypeNavListProps {
   navLinkArray: Array<TypeNavLink>;

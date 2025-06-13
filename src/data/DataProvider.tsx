@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { apiGetFile } from './Api';
-import { NOT_FOUND } from 'src/app/App';
+import { NOT_FOUND } from 'src/constans';
 
 interface TypeDataProviderProps {
   fileName: string;

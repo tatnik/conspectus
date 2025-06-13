@@ -1,4 +1,4 @@
-import { TypeNavArray, TypeNavLink, TypePartNavArray } from 'src/app/App';
+import { TypeNavArray, TypeNavLink, TypePartNavArray } from 'src/types/nav';
 
 // получаем текст markdown файла
 export const apiGetFile = async (fileName: string) => {

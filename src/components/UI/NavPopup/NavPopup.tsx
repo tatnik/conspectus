@@ -2,7 +2,7 @@ import React from 'react';
 import { NavList } from '../../UI/NavList/NavList';
 import { Button, Popup, Link as LinkGravity } from '@gravity-ui/uikit';
 import cls from './NavPopup.module.scss';
-import { TypeNavLink } from 'src/app/App';
+import { TypeNavLink } from 'src/types/nav';
 
 interface TypeNavPopupProps {
   navLinks: TypeNavLink[];

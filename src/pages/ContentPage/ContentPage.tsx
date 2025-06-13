@@ -2,7 +2,6 @@ import React, { useLayoutEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import cls from './ContentPage.module.scss';
-//import { TypeNavLink } from 'src/components/layout/Nav/Nav';
 
 import { NotFound } from 'src/pages/NotFound/NotFound';
 import { DataProvider } from 'src/data/DataProvider';

@@ -1,7 +1,7 @@
 import React, { useCallback, useLayoutEffect, useState } from 'react';
 
 import { apiGetSiteNav } from 'src/data/Api';
-import { TypeNavLink, TypeNavArray, TypePartNavArray } from '../App';
+import { TypeNavLink, TypeNavArray, TypePartNavArray } from 'src/types/nav';
 
 export type TypeAppContext = {
   currentPart: TypeNavLink;

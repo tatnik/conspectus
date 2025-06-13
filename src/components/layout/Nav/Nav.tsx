@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 
 import { Logo } from 'src/components/UI/Logo/Logo';
 import cls from './Nav.module.scss';
-import { TypeNavLink, APP_TITLE } from 'src/app/App';
+import { TypeNavLink } from 'src/types/nav';
+import { APP_TITLE } from 'src/constans';
 
 import { Text } from '@gravity-ui/uikit';
 import { useAppContext } from 'src/app/AppContext/AppContextProvider';
