@@ -1,31 +1,33 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+
+import { useAppContext } from 'src/app/AppContext/AppContextProvider';
+import { DataProvider } from 'src/data/DataProvider';
+import { apiGetNavItemByPath } from 'src/data/Api';
+
+import { Post } from 'src/components/UI/Post/Post';
+import { NotFound } from 'src/pages/NotFound/NotFound';
 
 import cls from './ContentPage.module.scss';
 
-import { NotFound } from 'src/pages/NotFound/NotFound';
-import { DataProvider } from 'src/data/DataProvider';
-import { useAppContext } from 'src/app/AppContext/AppContextProvider';
-import { apiGetNavItemByPath } from 'src/data/Api';
-import { Post } from 'src/components/UI/Post/Post';
-
 export const ContentPage = () => {
+  const { path = '', fileName = '' } = useParams<{ path?: string; fileName?: string }>();
   const { setCurrentPart, setShowPartNav, siteNav } = useAppContext();
-  const { path, fileName } = useParams();
-  const navItem = apiGetNavItemByPath(path as string, siteNav);
-  const contentName = `/${path}/${fileName}.md`;
 
-  useLayoutEffect(() => {
+  const navItem = apiGetNavItemByPath(path as string, siteNav);
+  const fileFullName = `/${path}/${fileName}.md`;
+
+  useEffect(() => {
     setCurrentPart(navItem);
     setShowPartNav(navItem.id > 0);
   }, [navItem]);
 
-  return navItem.id === 0 ? (
-    <NotFound />
-  ) : (
+  if (navItem.id === 0) return <NotFound />;
+
+  return (
     <div className={cls.ContentPage}>
       <DataProvider
-        fileName={contentName}
+        fileName={fileFullName}
         renderContent={(data) => <Post post={data as string} />}
       />
     </div>
