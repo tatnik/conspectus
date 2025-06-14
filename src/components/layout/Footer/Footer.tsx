@@ -5,9 +5,9 @@ import cls from './Footer.module.scss';
 
 export const Footer = () => {
   return (
-    <div className={cls.Footer}>
+    <footer className={cls.Footer}>
       <Logo />
       <Label theme="info">(С) 2024</Label>
-    </div>
+    </footer>
   );
 };
