@@ -5,15 +5,14 @@ import { NavLink } from 'react-router-dom';
 import { TypeNavLink } from 'src/types/nav';
 
 export interface TypeNavListProps {
-  navLinkArray: Array<TypeNavLink>;
+  navLinkArray: TypeNavLink[];
   classNameList: string;
   classNameItem?: string;
-  onClick?: (val?: TypeNavLink) => void;
-  renderProps: (val: TypeNavLink) => React.JSX.Element;
+  renderProps: (val: TypeNavLink) => React.ReactNode;
 }
 
 export const NavList = (props: TypeNavListProps) => {
-  const { navLinkArray, classNameList, classNameItem = '', onClick, renderProps } = props;
+  const { navLinkArray, classNameList, classNameItem = '', renderProps } = props;
   return (
     <ul className={`${classNameList} ${cls.NavList}`}>
       {navLinkArray.map((val) => (
@@ -23,7 +22,6 @@ export const NavList = (props: TypeNavListProps) => {
         >
           <NavLink
             to={val.path}
-            onClick={() => onClick}
             style={({ isActive }) => {
               return {
                 fontWeight: isActive ? 'bold' : '',
