@@ -51,30 +51,37 @@ export const Post = (props: TypePostProps) => {
       />
     );
 
+  const postBlockRef = useRef<HTMLDivElement>(null);
+
   return (
     <article
       ref={postRef}
       className={cls.PostGrid}
     >
-      <Markdown
+      <div
+        ref={postBlockRef}
         className={cls.PostBlock}
-        options={{
-          overrides: {
-            a: {
-              component: Link,
-              props: {
-                view: 'normal',
-                target: '_blank',
+      >
+        <Markdown
+          options={{
+            overrides: {
+              a: {
+                component: Link,
+                props: {
+                  view: 'normal',
+                  target: '_blank',
+                },
               },
             },
-          },
-        }}
-      >
-        {post}
-      </Markdown>
+          }}
+        >
+          {post}
+        </Markdown>
+      </div>
       <PostNavigation
         heads={heads}
         pageTitle={apiGetTitleFromPost(post)}
+        postBlockRef={postBlockRef}
       />
     </article>
   );

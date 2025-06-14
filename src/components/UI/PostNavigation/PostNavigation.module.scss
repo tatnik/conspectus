@@ -15,3 +15,9 @@
     margin-bottom: 10px;
   }
 }
+
+.active {
+  font-weight: bold;
+  border: 1px dotted var(--g-color-private-blue-500-solid);
+  padding: 5px 10px;
+}
