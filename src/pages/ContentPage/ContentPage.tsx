@@ -1,3 +1,5 @@
+// Не убирать default экспорт! Используется для ленивого импорта, именованный нужен для автогенерации тестов
+
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
