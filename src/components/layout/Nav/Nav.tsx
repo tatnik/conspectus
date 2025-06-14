@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { Logo } from 'src/components/UI/Logo/Logo';
 import cls from './Nav.module.scss';
 import { TypeNavLink } from 'src/types/nav';
-import { APP_TITLE } from 'src/constans';
+import { APP_TITLE } from 'src/constants';
 
 import { Text } from '@gravity-ui/uikit';
 import { useAppContext } from 'src/app/AppContext/AppContextProvider';

@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { EMPTY_LINK } from 'src/constans';
+import { EMPTY_LINK } from 'src/constants';
 
 import { TypeNavLink, TypeNavArray, TypePartNavArray } from 'src/types/nav';
 import { useSiteNav } from 'src/hooks/useSiteNav';
