@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkconspectus=self.webpackChunkconspectus||[]).push([[4506],{4506:(c,e,s)=>{c.exports=s.p+"static/media/py_cy.82c70687b8e2ccbe5440.md"}}]);

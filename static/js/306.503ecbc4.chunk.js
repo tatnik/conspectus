@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkconspectus=self.webpackChunkconspectus||[]).push([[306],{306:(c,s,e)=>{c.exports=e.p+"static/media/pu_func_code.08570ca2fb8bdb7b7f10.md"}}]);

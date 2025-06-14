@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkconspectus=self.webpackChunkconspectus||[]).push([[2774],{2774:(c,s,e)=>{c.exports=e.p+"static/media/py_func_code.08570ca2fb8bdb7b7f10.md"}}]);
