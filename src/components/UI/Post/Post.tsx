@@ -12,9 +12,10 @@ import React, { useLayoutEffect, useRef, useState } from 'react';
 import { Link, Alert } from '@gravity-ui/uikit';
 
 import cls from './Post.module.scss';
-import { apiGetHeadsArray, apiGetTitleFromPost } from 'src/data/Api';
+
 import { PostNavigation } from 'src/components/UI/PostNavigation/PostNavigation';
 import { NO_CONTENT } from 'src/constants';
+import { parseHeadsArray, parseTitleFromMarkdown } from 'src/data/parsers';
 
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('xml', xml);
@@ -38,7 +39,7 @@ export const Post = (props: TypePostProps) => {
       codeBlocks.forEach((block) => {
         hljs.highlightElement(block as HTMLElement);
       });
-      setHeads(apiGetHeadsArray(postElement));
+      setHeads(parseHeadsArray(postElement));
     }
   }, [post, postRef]);
 
@@ -80,7 +81,7 @@ export const Post = (props: TypePostProps) => {
       </div>
       <PostNavigation
         heads={heads}
-        pageTitle={apiGetTitleFromPost(post)}
+        pageTitle={parseTitleFromMarkdown(post)}
         postBlockRef={postBlockRef}
       />
     </article>

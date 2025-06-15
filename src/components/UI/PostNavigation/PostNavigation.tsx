@@ -3,8 +3,9 @@ import React, { useState } from 'react';
 import { Link, Text } from '@gravity-ui/uikit';
 
 import cls from './PostNavigation.module.scss';
-import { apiGetH2Id } from 'src/data/Api';
+
 import { useActiveHeading } from 'src/hooks/useActiveHeading';
+import { parseIdFromH2 } from 'src/data/parsers';
 
 interface PostNavigationProps {
   heads: string[];
@@ -36,7 +37,7 @@ export const PostNavigation = (props: PostNavigationProps) => {
             className={index === activeIndex ? cls.active : ''}
           >
             <Link
-              href={`#${apiGetH2Id(index)}`}
+              href={`#${parseIdFromH2(index)}`}
               onClick={() => setSelectedIndex(index)}
             >
               {text}

@@ -5,18 +5,18 @@ import { useParams } from 'react-router-dom';
 
 import { useAppContext } from 'src/app/AppContext/AppContextProvider';
 import { DataProvider } from 'src/data/DataProvider';
-import { apiGetNavItemByPath } from 'src/data/Api';
 
 import { Post } from 'src/components/UI/Post/Post';
 import { NotFound } from 'src/pages/NotFound/NotFound';
 
 import cls from './ContentPage.module.scss';
+import { getNavItemByPath } from 'src/data/helpers';
 
 export const ContentPage = () => {
   const { path = '', fileName = '' } = useParams<{ path?: string; fileName?: string }>();
   const { setCurrentPart, setShowPartNav, siteNav } = useAppContext();
 
-  const navItem = apiGetNavItemByPath(path as string, siteNav);
+  const navItem = getNavItemByPath(path as string, siteNav);
   const fileFullName = `/${path}/${fileName}.md`;
 
   useEffect(() => {

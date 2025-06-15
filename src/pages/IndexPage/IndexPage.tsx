@@ -5,21 +5,20 @@ import { useParams } from 'react-router-dom';
 
 import { useAppContext } from 'src/app/AppContext/AppContextProvider';
 import { DataProvider } from 'src/data/DataProvider';
-import { apiGetImgName, apiGetNavFromIndex, apiGetNavItemByPath } from 'src/data/Api';
 
 import { NavList } from 'src/components/UI/NavList/NavList';
 import { Card, Link as LinkGravity } from '@gravity-ui/uikit';
 import { NotFound } from 'src/pages/NotFound/NotFound';
 
 import cls from './IndexPage.module.scss';
+import { getImgName, getNavItemByPath } from 'src/data/helpers';
+import { parseNavFromIndex } from 'src/data/parsers';
 
 export const IndexPage = () => {
   const { setCurrentPart, setShowPartNav, siteNav } = useAppContext();
   const { path } = useParams();
 
-  const navItem = useMemo(() => apiGetNavItemByPath(path as string, siteNav), [path, siteNav]);
-
-  if (navItem.id === 0 && path !== '' && path !== undefined) return <NotFound />;
+  const navItem = useMemo(() => getNavItemByPath(path as string, siteNav), [path, siteNav]);
 
   const fileName = useMemo(
     () => (navItem.id === 0 ? '/index.md' : navItem.path + '/index.md'),
@@ -31,15 +30,17 @@ export const IndexPage = () => {
     setShowPartNav(false);
   }, [navItem]);
 
+  if (navItem.id === 0 && path !== '' && path !== undefined) return <NotFound />;
+
   const renderNavList = (data: string) => (
     <NavList
-      navLinkArray={apiGetNavFromIndex(data)}
+      navLinkArray={parseNavFromIndex(data)}
       classNameList={cls.nav}
       classNameItem={cls.navItem}
       renderProps={(val) => (
         <Card className={cls.card}>
           <img
-            src={apiGetImgName(val.path)}
+            src={getImgName(val.path)}
             loading="lazy"
           />
           <LinkGravity>{val.name}</LinkGravity>

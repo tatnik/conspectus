@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { apiGetFile } from './Api';
-import { NOT_FOUND } from 'src/constants';
+import { getFile } from './api';
+
 import { Loader } from '@gravity-ui/uikit';
 import NotFound from 'src/pages/NotFound/NotFound';
 
@@ -19,21 +19,20 @@ export const DataProvider = (props: TypeDataProviderProps) => {
     let isMounted = true;
     setIsLoading(true);
     setError(null);
-    apiGetFile(fileName)
-      .then((res) => {
-        if (!isMounted) return;
-        if (res.err === '') {
-          setData(res.text);
-        } else {
-          setError(res.err || NOT_FOUND);
-        }
-      })
-      .catch((e) => {
+
+    async function fetchData() {
+      try {
+        const text = await getFile(fileName);
+        if (isMounted) setData(text);
+      } catch (e) {
         if (isMounted) setError(String(e));
-      })
-      .finally(() => {
+      } finally {
         if (isMounted) setIsLoading(false);
-      });
+      }
+    }
+
+    fetchData();
+
     return () => {
       isMounted = false;
     };

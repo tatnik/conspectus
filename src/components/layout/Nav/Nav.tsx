@@ -7,7 +7,7 @@ import { APP_TITLE } from 'src/constants';
 
 import { Text } from '@gravity-ui/uikit';
 import { useAppContext } from 'src/app/AppContext/AppContextProvider';
-import { apiGetPartNav } from 'src/data/Api';
+
 import { NavPopup } from 'src/components/UI/NavPopup/NavPopup';
 import { Link } from 'react-router-dom';
 
@@ -19,7 +19,7 @@ export const Nav = () => {
     setShowPartNav,
     siteNav,
     partNavArray,
-    setPartNavArray,
+    loadPartNav,
   } = useAppContext();
 
   const partNav = partNavArray[currentPart?.id] ? partNavArray[currentPart?.id] : [];
@@ -29,7 +29,7 @@ export const Nav = () => {
   useEffect(() => {
     if (!isMainPage && partNav.length === 0) {
       // Если нет навигации для текущего раздела, получаем ее из файла
-      apiGetPartNav(currentPart.id, siteNav[currentPart.id].path, partNavArray, setPartNavArray);
+      loadPartNav(currentPart.id, siteNav[currentPart.id].path);
     }
   }, [currentPart]);
 
