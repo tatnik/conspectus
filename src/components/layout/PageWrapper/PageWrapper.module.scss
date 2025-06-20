@@ -1,5 +1,6 @@
 .PageWrapper {
-  display: block;
+  display: flex; // меняем с block на flex!
+  flex-direction: row;
   position: relative;
   top: var(--header-height);
   left: 0;

@@ -16,6 +16,9 @@ import cls from './Post.module.scss';
 import { PostNavigation } from 'src/components/UI/PostNavigation/PostNavigation';
 import { NO_CONTENT } from 'src/constants';
 import { parseHeadsArray, parseTitleFromMarkdown } from 'src/data/parsers';
+import { TypeNavLink } from 'src/types/nav';
+import { PrevNextButtons } from '../PrevNextButtons/PrevNexButtons';
+import { Sidebar } from 'src/components/layout/Sidebar/Sidebar';
 
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('xml', xml);
@@ -25,10 +28,12 @@ hljs.registerLanguage('python', python);
 
 export interface TypePostProps {
   post: string;
+  prevPost: TypeNavLink;
+  nextPost: TypeNavLink;
 }
 
 export const Post = (props: TypePostProps) => {
-  const { post } = props;
+  const { post, prevPost, nextPost } = props;
   const postRef = useRef<HTMLDivElement | null>(null);
   const [heads, setHeads] = useState<Array<string>>([]);
 
@@ -43,6 +48,8 @@ export const Post = (props: TypePostProps) => {
     }
   }, [post, postRef]);
 
+  const postBlockRef = useRef<HTMLDivElement>(null);
+
   if (!post)
     return (
       <Alert
@@ -51,8 +58,6 @@ export const Post = (props: TypePostProps) => {
         className={cls.PostAlert}
       />
     );
-
-  const postBlockRef = useRef<HTMLDivElement>(null);
 
   return (
     <article
@@ -79,11 +84,17 @@ export const Post = (props: TypePostProps) => {
           {post}
         </Markdown>
       </div>
-      <PostNavigation
-        heads={heads}
-        pageTitle={parseTitleFromMarkdown(post)}
-        postBlockRef={postBlockRef}
-      />
+      <Sidebar>
+        <PostNavigation
+          heads={heads}
+          pageTitle={parseTitleFromMarkdown(post)}
+          postBlockRef={postBlockRef}
+        />
+        <PrevNextButtons
+          prevPost={prevPost}
+          nextPost={nextPost}
+        />
+      </Sidebar>
     </article>
   );
 };

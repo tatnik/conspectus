@@ -1,0 +1,35 @@
+.navCard {
+  flex-shrink: 0;
+  margin-top: auto;
+  padding: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  & a {
+    text-decoration: none;
+    opacity: 0.8;
+  }
+
+  & a:hover {
+    opacity: 1;
+  }
+}
+
+.prevButton,
+.nextButton {
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 10px;
+  align-items: center;
+}
+
+.prevButton {
+  text-align: left;
+}
+
+.nextButton {
+  margin-left: auto;
+  text-align: right;
+}

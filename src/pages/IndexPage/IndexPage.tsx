@@ -18,7 +18,9 @@ export const IndexPage = () => {
   const { setCurrentPart, setShowPartNav, siteNav } = useAppContext();
   const { path } = useParams();
 
-  const navItem = useMemo(() => getNavItemByPath(path as string, siteNav), [path, siteNav]);
+  const seekPath = path ?? '';
+
+  const navItem = useMemo(() => getNavItemByPath(seekPath, siteNav), [seekPath, siteNav]);
 
   const fileName = useMemo(
     () => (navItem.id === 0 ? '/index.md' : navItem.path + '/index.md'),
@@ -42,6 +44,7 @@ export const IndexPage = () => {
           <img
             src={getImgName(val.path)}
             loading="lazy"
+            alt={val.name}
           />
           <LinkGravity>{val.name}</LinkGravity>
         </Card>

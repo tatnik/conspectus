@@ -1,10 +1,12 @@
 .PostNavigation {
-  position: sticky;
-  top: 0;
   padding: var(--indent);
-  height: calc(100% - var(--indent) - var(--indent));
-  overflow-y: scroll;
+  overflow-y: auto;
   border-left: 1px dotted var(--g-color-private-blue-200-solid);
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  flex: 1 1 auto;
+
   & ul {
     margin: 15px 0;
     padding: 0;

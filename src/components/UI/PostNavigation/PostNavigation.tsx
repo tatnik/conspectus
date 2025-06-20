@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Link, Text } from '@gravity-ui/uikit';
+import { Text, Link as GLink } from '@gravity-ui/uikit';
 
 import cls from './PostNavigation.module.scss';
 
@@ -15,9 +15,11 @@ interface PostNavigationProps {
 
 export const PostNavigation = (props: PostNavigationProps) => {
   const { heads, pageTitle, postBlockRef } = props;
-  if (!heads.length) return null;
+
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const activeIndex = useActiveHeading(heads, postBlockRef, selectedIndex, setSelectedIndex);
+
+  if (!heads.length) return null;
 
   return (
     <nav
@@ -25,23 +27,24 @@ export const PostNavigation = (props: PostNavigationProps) => {
       aria-label="Навигация по статье"
     >
       <Text
-        variant="subheader-1"
+        variant="subheader-2"
         color={'info'}
       >
         {pageTitle}
       </Text>
+
       <ul>
         {heads.map((text, index) => (
           <li
             key={index + 1}
             className={index === activeIndex ? cls.active : ''}
           >
-            <Link
+            <GLink
               href={`#${parseIdFromH2(index)}`}
               onClick={() => setSelectedIndex(index)}
             >
               {text}
-            </Link>
+            </GLink>
           </li>
         ))}
       </ul>

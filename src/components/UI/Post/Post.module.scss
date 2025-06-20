@@ -1,7 +1,8 @@
 .Post {
   box-sizing: border-box;
   width: 100%;
-  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  height: calc(100% - var(--indent) - var(--indent));
+  overflow-y: scroll;
   h5 {
     margin-top: 40px;
   }
@@ -32,6 +33,7 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   height: 100%;
+  width: 100%;
 }
 
 .PostAlert {
