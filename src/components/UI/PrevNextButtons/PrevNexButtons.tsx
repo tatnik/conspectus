@@ -23,6 +23,7 @@ export const PrevNextButtons = (props: PrevNextButtonsProps) => {
       type="container"
       theme="normal"
       className={cls.navCard}
+      view="clear"
     >
       {prevPost.id > 0 && (
         <PrevButton
