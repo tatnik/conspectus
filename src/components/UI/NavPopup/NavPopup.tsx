@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavList } from '../../UI/NavList/NavList';
-import { Button, Popup, Link as LinkGravity } from '@gravity-ui/uikit';
+import { Button, Popup, Link as LinkGravity, ArrowToggle } from '@gravity-ui/uikit';
 import cls from './NavPopup.module.scss';
 import { TypeNavLink } from 'src/types/nav';
 
@@ -21,7 +21,7 @@ export const NavPopup = (props: TypeNavPopupProps) => {
         ref={buttonRef}
         onClick={() => setOpen((prevOpen) => !prevOpen)}
       >
-        ...
+        <ArrowToggle direction="bottom" />
       </Button>
       <Popup
         anchorRef={buttonRef}
@@ -30,6 +30,7 @@ export const NavPopup = (props: TypeNavPopupProps) => {
         className={cls.NavPopup}
         hasArrow={true}
         onOutsideClick={() => setOpen(false)}
+        keepMounted={true}
       >
         <NavList
           navLinkArray={navLinks}
