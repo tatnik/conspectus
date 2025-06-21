@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkconspectus=self.webpackChunkconspectus||[]).push([[6495],{6495:(c,e,s)=>{c.exports=s.p+"static/media/py_local.ee86c72d8c89c0f2e3c2.md"}}]);
