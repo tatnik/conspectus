@@ -11,3 +11,5 @@
 ## [Git](/tools/tools_git)
 
 ## [Docker](/tools/tools_docker)
+
+## [DevTools - ссылки на полезные ресурсы](/tools/tools_links)

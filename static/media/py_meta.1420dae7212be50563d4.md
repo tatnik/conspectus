@@ -1,4 +1,3 @@
-````markdown
 # Метапрограммирование в Python
 
 **Метапрограммирование** — подход, при котором программы могут анализировать, изменять или создавать другой код во время выполнения. Python благодаря своей динамической природе отлично подходит для метапрограммирования: функции — объекты первого класса, классы и их атрибуты можно создавать и модифицировать "на лету".
@@ -164,4 +163,7 @@ print(MyClass.FOO)                 # 42
 - [abc — Abstract Base Classes](https://docs.python.org/3/library/abc.html)
 - [Python Metaclasses (realpython)](https://realpython.com/python-metaclasses/)
 - [Документация: getattr, setattr, hasattr](https://docs.python.org/3/library/functions.html)
-````
+
+```
+
+```

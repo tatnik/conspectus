@@ -1,3 +1,5 @@
+## [Phyton](/python)
+
 ## [JavaScript](/js)
 
 ## [TypeScript](/ts)
@@ -7,5 +9,3 @@
 ## [Tools](/tools)
 
 ## [WEB](/web)
-
-## [Phyton](/python)

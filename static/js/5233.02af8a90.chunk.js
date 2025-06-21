@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkconspectus=self.webpackChunkconspectus||[]).push([[5233],{5233:(e,s,c)=>{e.exports=c.p+"static/media/readme.241931162b9df4de6f2e.md"}}]);
