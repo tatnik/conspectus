@@ -10,7 +10,7 @@ export const useActiveHeading = (
 
   useEffect(() => {
     const container = scrollRef.current;
-    if (!container || !heads.length) return;
+    if (!container || !heads.length) return undefined;
 
     const handleScroll = () => {
       // На любом скролле — сбрасываем selectedIndex
@@ -18,7 +18,7 @@ export const useActiveHeading = (
 
       //Собираем позиции заголовков относительно контейнера
       const offsets = heads.map((_, idx) => {
-        const elem = container.querySelector(`#h2-${idx}`) as HTMLElement | null;
+        const elem = container.querySelector(`#h2-${idx}`);
         return elem
           ? elem.getBoundingClientRect().top - container.getBoundingClientRect().top
           : Infinity;
@@ -44,8 +44,10 @@ export const useActiveHeading = (
     container.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 
-    return () => container.removeEventListener('scroll', handleScroll);
+    return () => {
+      container.removeEventListener('scroll', handleScroll);
+    };
   }, [heads, scrollRef, selectedIndex, setSelectedIndex]);
 
-  return selectedIndex !== -1 ? selectedIndex : activeIndex;
+  return selectedIndex === -1 ? activeIndex : selectedIndex;
 };

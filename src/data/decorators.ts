@@ -1,21 +1,37 @@
-export function withAsyncError<T extends (...args: any[]) => Promise<any>>(fn: T) {
-  return async function (...args: Parameters<T>): Promise<ReturnType<T>> {
+/**
+ * Декоратор для перехвата ошибок в асинхронных функциях.
+ *
+ * @param fn - Асинхронная функция, которую нужно обернуть
+ * @returns Новая функция, автоматически перехватывающая ошибки
+ */
+export const withAsyncError = <Args extends unknown[], R>(
+  fn: (...args: Args) => Promise<R>
+): ((...args: Args) => Promise<R>) => {
+  return async (...args: Args): Promise<R> => {
     try {
-      // @ts-ignore
       return await fn(...args);
     } catch (error) {
-      throw new Error((error as Error).message);
+      // Можно добавить логирование
+      throw error instanceof Error ? error : new Error(String(error));
     }
   };
-}
+};
 
-export function withError<T extends (...args: any[]) => any>(fn: T) {
-  return function (...args: Parameters<T>): ReturnType<T> {
+/**
+ * Декоратор для перехвата ошибок в синхронных функциях.
+ *
+ * @param fn - Синхронная функция, которую нужно обернуть
+ * @returns Новая функция, автоматически перехватывающая ошибки
+ */
+export const withError = <Args extends unknown[], R>(
+  fn: (...args: Args) => R
+): ((...args: Args) => R) => {
+  return (...args: Args): R => {
     try {
-      // @ts-ignore
       return fn(...args);
     } catch (error) {
-      throw new Error((error as Error).message);
+      // Можно добавить логирование
+      throw error instanceof Error ? error : new Error(String(error));
     }
   };
-}
+};

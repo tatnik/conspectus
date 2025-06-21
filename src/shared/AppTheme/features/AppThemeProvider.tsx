@@ -7,11 +7,11 @@ interface ThemeProviderProps {
   children?: ReactNode;
 }
 
-function saveTheme(theme: string) {
+export const saveTheme = (theme: string) => {
   if (typeof window !== 'undefined' && window.localStorage) {
     window.localStorage.setItem('theme', theme);
   }
-}
+};
 
 export const AppThemeProvider: FC<ThemeProviderProps> = (props) => {
   const { children } = props;
