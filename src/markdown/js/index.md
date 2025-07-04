@@ -13,3 +13,5 @@
 ## [Планирование (setTimeout, setInterval)](/js/js_set-timeout)
 
 ## [Event Loop](/js/js_event-loop)
+
+## [Promises](/js/js_promise)
