@@ -1,0 +1,5912 @@
+[
+  {
+    "file": "js/js_arrays.md",
+    "text": "Методы для работы с массивами",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "js/js_arrays.md",
+    "text": "создание нового массива",
+    "level": 2,
+    "line": 12
+  },
+  {
+    "file": "js/js_arrays.md",
+    "text": "добавление/удаление элементов",
+    "level": 2,
+    "line": 25
+  },
+  {
+    "file": "js/js_arrays.md",
+    "text": "поиск элемента",
+    "level": 2,
+    "line": 37
+  },
+  {
+    "file": "js/js_arrays.md",
+    "text": "конкатенация",
+    "level": 2,
+    "line": 74
+  },
+  {
+    "file": "js/js_arrays.md",
+    "text": "преобразования массива (меняют исходный массив)",
+    "level": 2,
+    "line": 80
+  },
+  {
+    "file": "js/js_arrays.md",
+    "text": "заполнение массива",
+    "level": 3,
+    "line": 82
+  },
+  {
+    "file": "js/js_arrays.md",
+    "text": "копирование элементов внутри массива",
+    "level": 3,
+    "line": 90
+  },
+  {
+    "file": "js/js_arrays.md",
+    "text": "вырезка и вставка",
+    "level": 3,
+    "line": 99
+  },
+  {
+    "file": "js/js_arrays.md",
+    "text": "реверс",
+    "level": 3,
+    "line": 112
+  },
+  {
+    "file": "js/js_arrays.md",
+    "text": "сортировка",
+    "level": 3,
+    "line": 120
+  },
+  {
+    "file": "js/js_arrays.md",
+    "text": "преобразование в строку",
+    "level": 2,
+    "line": 142
+  },
+  {
+    "file": "js/js_arrays.md",
+    "text": "вырезка",
+    "level": 2,
+    "line": 150
+  },
+  {
+    "file": "js/js_arrays.md",
+    "text": "проверка",
+    "level": 2,
+    "line": 160
+  },
+  {
+    "file": "js/js_arrays.md",
+    "text": "элементов массива на условие",
+    "level": 3,
+    "line": 162
+  },
+  {
+    "file": "js/js_arrays.md",
+    "text": "это массив?",
+    "level": 3,
+    "line": 169
+  },
+  {
+    "file": "js/js_arrays.md",
+    "text": "фильтрация массива",
+    "level": 3,
+    "line": 175
+  },
+  {
+    "file": "js/js_arrays.md",
+    "text": "ftat (уплощение вложенных массивов)",
+    "level": 2,
+    "line": 185
+  },
+  {
+    "file": "js/js_arrays.md",
+    "text": "map",
+    "level": 2,
+    "line": 199
+  },
+  {
+    "file": "js/js_arrays.md",
+    "text": "map + flat",
+    "level": 2,
+    "line": 205
+  },
+  {
+    "file": "js/js_arrays.md",
+    "text": "reduce",
+    "level": 2,
+    "line": 218
+  },
+  {
+    "file": "js/js_arrays.md",
+    "text": "копирование",
+    "level": 2,
+    "line": 233
+  },
+  {
+    "file": "js/js_base.md",
+    "text": "Основы",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "js/js_base.md",
+    "text": "Типы в JS",
+    "level": 2,
+    "line": 21
+  },
+  {
+    "file": "js/js_base.md",
+    "text": "Примитивные",
+    "level": 3,
+    "line": 23
+  },
+  {
+    "file": "js/js_base.md",
+    "text": "boolean:",
+    "level": 4,
+    "line": 25
+  },
+  {
+    "file": "js/js_base.md",
+    "text": "number:",
+    "level": 4,
+    "line": 29
+  },
+  {
+    "file": "js/js_base.md",
+    "text": "string",
+    "level": 4,
+    "line": 33
+  },
+  {
+    "file": "js/js_base.md",
+    "text": "symbol",
+    "level": 4,
+    "line": 50
+  },
+  {
+    "file": "js/js_base.md",
+    "text": "null",
+    "level": 4,
+    "line": 52
+  },
+  {
+    "file": "js/js_base.md",
+    "text": "undefined",
+    "level": 4,
+    "line": 56
+  },
+  {
+    "file": "js/js_base.md",
+    "text": "BigInt (добавлен в последних стандартах):",
+    "level": 4,
+    "line": 60
+  },
+  {
+    "file": "js/js_base.md",
+    "text": "Сложный:",
+    "level": 3,
+    "line": 70
+  },
+  {
+    "file": "js/js_base.md",
+    "text": "object",
+    "level": 4,
+    "line": 72
+  },
+  {
+    "file": "js/js_base.md",
+    "text": "Оператор _typeof_",
+    "level": 2,
+    "line": 80
+  },
+  {
+    "file": "js/js_base.md",
+    "text": "this",
+    "level": 2,
+    "line": 91
+  },
+  {
+    "file": "js/js_datetimes.md",
+    "text": "Методы работы с датой/временем",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "js/js_datetimes.md",
+    "text": "Инициализация",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "js/js_datetimes.md",
+    "text": "Преобразования",
+    "level": 2,
+    "line": 36
+  },
+  {
+    "file": "js/js_datetimes.md",
+    "text": "GET - методы",
+    "level": 2,
+    "line": 58
+  },
+  {
+    "file": "js/js_datetimes.md",
+    "text": "SET - методы",
+    "level": 2,
+    "line": 84
+  },
+  {
+    "file": "js/js_datetimes.md",
+    "text": "Библиотеки для работы с датами",
+    "level": 2,
+    "line": 116
+  },
+  {
+    "file": "js/js_event-loop.md",
+    "text": "Event Loop",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "js/js_event-loop.md",
+    "text": "Call Stack",
+    "level": 2,
+    "line": 5
+  },
+  {
+    "file": "js/js_event-loop.md",
+    "text": "Tasks",
+    "level": 2,
+    "line": 9
+  },
+  {
+    "file": "js/js_event-loop.md",
+    "text": "Microtasks",
+    "level": 2,
+    "line": 13
+  },
+  {
+    "file": "js/js_event-loop.md",
+    "text": "Отличие задач от микрозадач",
+    "level": 2,
+    "line": 17
+  },
+  {
+    "file": "js/js_event-loop.md",
+    "text": "Схема работы цикла",
+    "level": 2,
+    "line": 21
+  },
+  {
+    "file": "js/js_event-loop.md",
+    "text": "Чтобы Event Loop не забивался",
+    "level": 2,
+    "line": 30
+  },
+  {
+    "file": "js/js_event-loop.md",
+    "text": "Особенности реализации Event Loop",
+    "level": 2,
+    "line": 36
+  },
+  {
+    "file": "js/js_event-loop.md",
+    "text": "Еще немного про очереди",
+    "level": 2,
+    "line": 52
+  },
+  {
+    "file": "js/js_event-loop.md",
+    "text": "Что еще попадает в task queue:",
+    "level": 2,
+    "line": 70
+  },
+  {
+    "file": "js/js_event-loop.md",
+    "text": "Работа c microtask queue",
+    "level": 2,
+    "line": 84
+  },
+  {
+    "file": "js/js_functions.md",
+    "text": "Функции в JS",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "js/js_functions.md",
+    "text": "Детерминированные и недетерминированные",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "js/js_functions.md",
+    "text": "Побочные эффекты",
+    "level": 2,
+    "line": 15
+  },
+  {
+    "file": "js/js_functions.md",
+    "text": "Чистая функция",
+    "level": 2,
+    "line": 27
+  },
+  {
+    "file": "js/js_functions.md",
+    "text": "Плюсы чистых функций:",
+    "level": 2,
+    "line": 31
+  },
+  {
+    "file": "js/js_functions.md",
+    "text": "Command-query Separation (CQS):",
+    "level": 2,
+    "line": 39
+  },
+  {
+    "file": "js/js_functions.md",
+    "text": "Функции с переменным количеством аргументов (rest-оператор)",
+    "level": 2,
+    "line": 51
+  },
+  {
+    "file": "js/js_functions.md",
+    "text": "Spread-оператор",
+    "level": 2,
+    "line": 67
+  },
+  {
+    "file": "js/js_functions.md",
+    "text": "Функции высшего порядка",
+    "level": 2,
+    "line": 77
+  },
+  {
+    "file": "js/js_functions.md",
+    "text": "Объекты первого класса",
+    "level": 2,
+    "line": 109
+  },
+  {
+    "file": "js/js_functions.md",
+    "text": "Лексическое окружение",
+    "level": 2,
+    "line": 124
+  },
+  {
+    "file": "js/js_functions.md",
+    "text": "Частичное применение функций",
+    "level": 2,
+    "line": 136
+  },
+  {
+    "file": "js/js_functions.md",
+    "text": "Каррирование",
+    "level": 2,
+    "line": 152
+  },
+  {
+    "file": "js/js_oop.md",
+    "text": "Объекты и классы в JS. Прототипы. Типы методов.",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "js/js_oop.md",
+    "text": "Класс",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "js/js_oop.md",
+    "text": "Объект",
+    "level": 2,
+    "line": 11
+  },
+  {
+    "file": "js/js_oop.md",
+    "text": "Основные принципы ООП",
+    "level": 2,
+    "line": 19
+  },
+  {
+    "file": "js/js_oop.md",
+    "text": "Абстракция",
+    "level": 3,
+    "line": 21
+  },
+  {
+    "file": "js/js_oop.md",
+    "text": "Инкапсуляция",
+    "level": 3,
+    "line": 26
+  },
+  {
+    "file": "js/js_oop.md",
+    "text": "Наследование",
+    "level": 3,
+    "line": 30
+  },
+  {
+    "file": "js/js_oop.md",
+    "text": "Полиморфизм",
+    "level": 3,
+    "line": 38
+  },
+  {
+    "file": "js/js_oop.md",
+    "text": "Прототипы",
+    "level": 2,
+    "line": 45
+  },
+  {
+    "file": "js/js_oop.md",
+    "text": "Конструкторы и свойство prototype",
+    "level": 2,
+    "line": 69
+  },
+  {
+    "file": "js/js_oop.md",
+    "text": "Классы (ES6+) и прототипы",
+    "level": 2,
+    "line": 92
+  },
+  {
+    "file": "js/js_oop.md",
+    "text": "Типы методов в JavaScript",
+    "level": 2,
+    "line": 113
+  },
+  {
+    "file": "js/js_oop.md",
+    "text": "1. Обычные методы объекта",
+    "level": 3,
+    "line": 115
+  },
+  {
+    "file": "js/js_oop.md",
+    "text": "2. Методы прототипа",
+    "level": 3,
+    "line": 130
+  },
+  {
+    "file": "js/js_oop.md",
+    "text": "3. Статические методы",
+    "level": 3,
+    "line": 145
+  },
+  {
+    "file": "js/js_oop.md",
+    "text": "4. Геттеры и сеттеры",
+    "level": 3,
+    "line": 159
+  },
+  {
+    "file": "js/js_oop.md",
+    "text": "Краткая таблица по типам методов",
+    "level": 2,
+    "line": 177
+  },
+  {
+    "file": "js/js_oop.md",
+    "text": "Интересные детали и фишки",
+    "level": 2,
+    "line": 188
+  },
+  {
+    "file": "js/js_oop.md",
+    "text": "Типичные ошибки и подводные камни",
+    "level": 2,
+    "line": 198
+  },
+  {
+    "file": "js/js_oop.md",
+    "text": "Ссылки на документацию и полезные ресурсы",
+    "level": 2,
+    "line": 207
+  },
+  {
+    "file": "js/js_promise.md",
+    "text": "Промисы (Promises) в JavaScript",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "js/js_promise.md",
+    "text": "Основные состояния промиса",
+    "level": 2,
+    "line": 7
+  },
+  {
+    "file": "js/js_promise.md",
+    "text": "Создание промиса",
+    "level": 2,
+    "line": 15
+  },
+  {
+    "file": "js/js_promise.md",
+    "text": "Использование then/catch/finally",
+    "level": 2,
+    "line": 30
+  },
+  {
+    "file": "js/js_promise.md",
+    "text": "Цепочки промисов",
+    "level": 2,
+    "line": 51
+  },
+  {
+    "file": "js/js_promise.md",
+    "text": "Промисификация (Promise wrapper)",
+    "level": 2,
+    "line": 69
+  },
+  {
+    "file": "js/js_promise.md",
+    "text": "Статические методы Promise",
+    "level": 2,
+    "line": 83
+  },
+  {
+    "file": "js/js_promise.md",
+    "text": "Сравнение методов Promise.all, Promise.race, Promise.allSettled, Promise.any",
+    "level": 2,
+    "line": 154
+  },
+  {
+    "file": "js/js_promise.md",
+    "text": "Программная реализация Promise.all, Promise.race, Promise.allSettled, Promise.any",
+    "level": 2,
+    "line": 165
+  },
+  {
+    "file": "js/js_promise.md",
+    "text": "promiseAll",
+    "level": 3,
+    "line": 171
+  },
+  {
+    "file": "js/js_promise.md",
+    "text": "promiseRace",
+    "level": 3,
+    "line": 199
+  },
+  {
+    "file": "js/js_promise.md",
+    "text": "promiseAllSettled",
+    "level": 3,
+    "line": 215
+  },
+  {
+    "file": "js/js_promise.md",
+    "text": "promiseAny",
+    "level": 3,
+    "line": 248
+  },
+  {
+    "file": "js/js_promise.md",
+    "text": "Пример использования",
+    "level": 3,
+    "line": 276
+  },
+  {
+    "file": "js/js_promise.md",
+    "text": "Связь промисов с async/await",
+    "level": 2,
+    "line": 297
+  },
+  {
+    "file": "js/js_promise.md",
+    "text": "Интересные детали и фишки",
+    "level": 2,
+    "line": 317
+  },
+  {
+    "file": "js/js_promise.md",
+    "text": "Типичные ошибки и подводные камни",
+    "level": 2,
+    "line": 327
+  },
+  {
+    "file": "js/js_promise.md",
+    "text": "Ссылки на документацию и полезные ресурсы",
+    "level": 2,
+    "line": 337
+  },
+  {
+    "file": "js/js_set-timeout.md",
+    "text": "Планирование: setTimeout и setInterval",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "js/js_set-timeout.md",
+    "text": "SetTimeout",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "js/js_set-timeout.md",
+    "text": "Cинтаксис:",
+    "level": 2,
+    "line": 15
+  },
+  {
+    "file": "js/js_set-timeout.md",
+    "text": "Примеры использования:",
+    "level": 2,
+    "line": 29
+  },
+  {
+    "file": "js/js_set-timeout.md",
+    "text": "Периодический запуск функций",
+    "level": 2,
+    "line": 65
+  },
+  {
+    "file": "js/js_set-timeout.md",
+    "text": "с использованием функции **setInterval**",
+    "level": 2,
+    "line": 67
+  },
+  {
+    "file": "js/js_set-timeout.md",
+    "text": "с использованием вложенного **setTimeout**",
+    "level": 2,
+    "line": 84
+  },
+  {
+    "file": "js/js_set-timeout.md",
+    "text": "Отмена",
+    "level": 2,
+    "line": 106
+  },
+  {
+    "file": "js/js_set-timeout.md",
+    "text": "Минимальная задержка вложенных таймеров в браузере",
+    "level": 2,
+    "line": 121
+  },
+  {
+    "file": "js/js_strings.md",
+    "text": "Строковые методы",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "js/js_strings.md",
+    "text": "длина строки",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "js/js_strings.md",
+    "text": "преобразование регистра",
+    "level": 2,
+    "line": 9
+  },
+  {
+    "file": "js/js_strings.md",
+    "text": "вырезка",
+    "level": 2,
+    "line": 16
+  },
+  {
+    "file": "js/js_strings.md",
+    "text": "объединение / разделение",
+    "level": 2,
+    "line": 52
+  },
+  {
+    "file": "js/js_strings.md",
+    "text": "поиск",
+    "level": 2,
+    "line": 62
+  },
+  {
+    "file": "js/js_strings.md",
+    "text": "замена",
+    "level": 2,
+    "line": 94
+  },
+  {
+    "file": "js/js_strings.md",
+    "text": "обрезка",
+    "level": 2,
+    "line": 101
+  },
+  {
+    "file": "js/js_strings.md",
+    "text": "дополнение",
+    "level": 2,
+    "line": 109
+  },
+  {
+    "file": "js/js_strings.md",
+    "text": "клонирование",
+    "level": 2,
+    "line": 116
+  },
+  {
+    "file": "python/py_async.md",
+    "text": "Асинхронное программирование",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_async.md",
+    "text": "Термины и базовые понятия",
+    "level": 2,
+    "line": 7
+  },
+  {
+    "file": "python/py_async.md",
+    "text": "Пример коррутины и использования async/await",
+    "level": 2,
+    "line": 16
+  },
+  {
+    "file": "python/py_async.md",
+    "text": "Привет!",
+    "level": 1,
+    "line": 31
+  },
+  {
+    "file": "python/py_async.md",
+    "text": "Прошла секунда",
+    "level": 1,
+    "line": 32
+  },
+  {
+    "file": "python/py_async.md",
+    "text": "Привет!",
+    "level": 1,
+    "line": 33
+  },
+  {
+    "file": "python/py_async.md",
+    "text": "Прошла секунда",
+    "level": 1,
+    "line": 34
+  },
+  {
+    "file": "python/py_async.md",
+    "text": "Запуск нескольких задач параллельно",
+    "level": 2,
+    "line": 42
+  },
+  {
+    "file": "python/py_async.md",
+    "text": "A стартовал",
+    "level": 1,
+    "line": 59
+  },
+  {
+    "file": "python/py_async.md",
+    "text": "B стартовал",
+    "level": 1,
+    "line": 60
+  },
+  {
+    "file": "python/py_async.md",
+    "text": "B завершён",
+    "level": 1,
+    "line": 61
+  },
+  {
+    "file": "python/py_async.md",
+    "text": "A завершён",
+    "level": 1,
+    "line": 62
+  },
+  {
+    "file": "python/py_async.md",
+    "text": "Асинхронные очереди, таймеры и синхронизация",
+    "level": 2,
+    "line": 70
+  },
+  {
+    "file": "python/py_async.md",
+    "text": "Обработано: 0",
+    "level": 1,
+    "line": 90
+  },
+  {
+    "file": "python/py_async.md",
+    "text": "Обработано: 1",
+    "level": 1,
+    "line": 91
+  },
+  {
+    "file": "python/py_async.md",
+    "text": "Обработано: 2",
+    "level": 1,
+    "line": 92
+  },
+  {
+    "file": "python/py_async.md",
+    "text": "Обработано: 3",
+    "level": 1,
+    "line": 93
+  },
+  {
+    "file": "python/py_async.md",
+    "text": "Обработано: 4",
+    "level": 1,
+    "line": 94
+  },
+  {
+    "file": "python/py_async.md",
+    "text": "Асинхронные библиотеки",
+    "level": 2,
+    "line": 101
+  },
+  {
+    "file": "python/py_async.md",
+    "text": "Пример асинхронного HTTP-запроса с aiohttp:",
+    "level": 3,
+    "line": 106
+  },
+  {
+    "file": "python/py_async.md",
+    "text": "(Вывод первых 200 символов HTML-кода главной страницы python.org)",
+    "level": 1,
+    "line": 122
+  },
+  {
+    "file": "python/py_async.md",
+    "text": "Интересные детали и фишки",
+    "level": 2,
+    "line": 127
+  },
+  {
+    "file": "python/py_async.md",
+    "text": "Типичные ошибки и подводные камни",
+    "level": 2,
+    "line": 138
+  },
+  {
+    "file": "python/py_async.md",
+    "text": "Ссылки на документацию и полезные ресурсы",
+    "level": 2,
+    "line": 148
+  },
+  {
+    "file": "python/py_base.md",
+    "text": "Python: Базовые сведения",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_base.md",
+    "text": "Что такое Python?",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "python/py_base.md",
+    "text": "Основные особенности Python",
+    "level": 2,
+    "line": 7
+  },
+  {
+    "file": "python/py_base.md",
+    "text": "Особенности языка",
+    "level": 2,
+    "line": 18
+  },
+  {
+    "file": "python/py_base.md",
+    "text": "Hello, World!",
+    "level": 2,
+    "line": 27
+  },
+  {
+    "file": "python/py_base.md",
+    "text": "Основные типы данных",
+    "level": 2,
+    "line": 35
+  },
+  {
+    "file": "python/py_base.md",
+    "text": "Переменные",
+    "level": 2,
+    "line": 48
+  },
+  {
+    "file": "python/py_base.md",
+    "text": "Специальные значения",
+    "level": 2,
+    "line": 62
+  },
+  {
+    "file": "python/py_base.md",
+    "text": "Проверка типа",
+    "level": 2,
+    "line": 74
+  },
+  {
+    "file": "python/py_base.md",
+    "text": "Комментарии",
+    "level": 2,
+    "line": 84
+  },
+  {
+    "file": "python/py_base.md",
+    "text": "Управляющие конструкции",
+    "level": 2,
+    "line": 97
+  },
+  {
+    "file": "python/py_base.md",
+    "text": "0",
+    "level": 1,
+    "line": 110
+  },
+  {
+    "file": "python/py_base.md",
+    "text": "1",
+    "level": 1,
+    "line": 111
+  },
+  {
+    "file": "python/py_base.md",
+    "text": "2",
+    "level": 1,
+    "line": 112
+  },
+  {
+    "file": "python/py_base.md",
+    "text": "Виртуальные окружения и пакетный менеджер",
+    "level": 2,
+    "line": 117
+  },
+  {
+    "file": "python/py_base.md",
+    "text": "Запуск скрипта",
+    "level": 2,
+    "line": 132
+  },
+  {
+    "file": "python/py_base.md",
+    "text": "Интересные детали и фишки",
+    "level": 2,
+    "line": 140
+  },
+  {
+    "file": "python/py_base.md",
+    "text": "Типичные ошибки и подводные камни",
+    "level": 2,
+    "line": 150
+  },
+  {
+    "file": "python/py_base.md",
+    "text": "Ссылки на документацию и полезные ресурсы",
+    "level": 2,
+    "line": 160
+  },
+  {
+    "file": "python/py_contextmanager.md",
+    "text": "Контекстные менеджеры в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_contextmanager.md",
+    "text": "Термины",
+    "level": 2,
+    "line": 7
+  },
+  {
+    "file": "python/py_contextmanager.md",
+    "text": "Простой пример: класс с методами `__enter__` и `__exit__`",
+    "level": 2,
+    "line": 16
+  },
+  {
+    "file": "python/py_contextmanager.md",
+    "text": "Файл будет закрыт автоматически, даже если возникла ошибка",
+    "level": 1,
+    "line": 29
+  },
+  {
+    "file": "python/py_contextmanager.md",
+    "text": "Использование стандартных контекстных менеджеров",
+    "level": 2,
+    "line": 34
+  },
+  {
+    "file": "python/py_contextmanager.md",
+    "text": "Файл закроется автоматически при выходе из блока",
+    "level": 1,
+    "line": 41
+  },
+  {
+    "file": "python/py_contextmanager.md",
+    "text": "Создание контекстного менеджера через `contextlib`",
+    "level": 2,
+    "line": 46
+  },
+  {
+    "file": "python/py_contextmanager.md",
+    "text": "Интересные стандартные менеджеры из `contextlib`",
+    "level": 3,
+    "line": 66
+  },
+  {
+    "file": "python/py_contextmanager.md",
+    "text": "Не будет ошибки, даже если файл не существует",
+    "level": 1,
+    "line": 75
+  },
+  {
+    "file": "python/py_contextmanager.md",
+    "text": "Интересные фишки и неочевидные детали",
+    "level": 2,
+    "line": 100
+  },
+  {
+    "file": "python/py_contextmanager.md",
+    "text": "Типичные ошибки и подводные камни",
+    "level": 2,
+    "line": 109
+  },
+  {
+    "file": "python/py_contextmanager.md",
+    "text": "Ссылки на документацию и полезные ресурсы",
+    "level": 2,
+    "line": 118
+  },
+  {
+    "file": "python/py_cy.md",
+    "text": "Встраивание C/C++ и использование Cython в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_cy.md",
+    "text": "Ускорение кода через Cython",
+    "level": 2,
+    "line": 7
+  },
+  {
+    "file": "python/py_cy.md",
+    "text": "Пример ускорения с помощью Cython",
+    "level": 3,
+    "line": 13
+  },
+  {
+    "file": "python/py_cy.md",
+    "text": "Связывание с C-библиотеками",
+    "level": 2,
+    "line": 56
+  },
+  {
+    "file": "python/py_cy.md",
+    "text": "ctypes",
+    "level": 3,
+    "line": 62
+  },
+  {
+    "file": "python/py_cy.md",
+    "text": "libc = ctypes.CDLL(\"msvcrt.dll\")  # на Windows",
+    "level": 1,
+    "line": 73
+  },
+  {
+    "file": "python/py_cy.md",
+    "text": "10",
+    "level": 1,
+    "line": 75
+  },
+  {
+    "file": "python/py_cy.md",
+    "text": "cffi (C Foreign Function Interface)",
+    "level": 3,
+    "line": 82
+  },
+  {
+    "file": "python/py_cy.md",
+    "text": "123",
+    "level": 1,
+    "line": 97
+  },
+  {
+    "file": "python/py_cy.md",
+    "text": "build_myfunc.py",
+    "level": 1,
+    "line": 103
+  },
+  {
+    "file": "python/py_cy.md",
+    "text": "main.py",
+    "level": 1,
+    "line": 112
+  },
+  {
+    "file": "python/py_cy.md",
+    "text": "5",
+    "level": 1,
+    "line": 115
+  },
+  {
+    "file": "python/py_cy.md",
+    "text": "Интересные детали и фишки",
+    "level": 2,
+    "line": 120
+  },
+  {
+    "file": "python/py_cy.md",
+    "text": "Типичные ошибки и подводные камни",
+    "level": 2,
+    "line": 130
+  },
+  {
+    "file": "python/py_cy.md",
+    "text": "Ссылки на документацию и полезные ресурсы",
+    "level": 2,
+    "line": 139
+  },
+  {
+    "file": "python/py_data.md",
+    "text": "Машинное обучение и Data Science в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_data.md",
+    "text": "NumPy",
+    "level": 2,
+    "line": 7
+  },
+  {
+    "file": "python/py_data.md",
+    "text": "SciPy",
+    "level": 2,
+    "line": 24
+  },
+  {
+    "file": "python/py_data.md",
+    "text": "Pandas",
+    "level": 2,
+    "line": 41
+  },
+  {
+    "file": "python/py_data.md",
+    "text": "Scikit-learn",
+    "level": 2,
+    "line": 57
+  },
+  {
+    "file": "python/py_data.md",
+    "text": "TensorFlow",
+    "level": 2,
+    "line": 77
+  },
+  {
+    "file": "python/py_data.md",
+    "text": "PyTorch",
+    "level": 2,
+    "line": 97
+  },
+  {
+    "file": "python/py_data.md",
+    "text": "Интересные детали и фишки",
+    "level": 2,
+    "line": 130
+  },
+  {
+    "file": "python/py_data.md",
+    "text": "Типичные ошибки и подводные камни",
+    "level": 2,
+    "line": 141
+  },
+  {
+    "file": "python/py_data.md",
+    "text": "Ссылки на документацию и полезные ресурсы",
+    "level": 2,
+    "line": 151
+  },
+  {
+    "file": "python/py_datetime.md",
+    "text": "Работа с датой и временем в Python: модуль datetime",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_datetime.md",
+    "text": "Импорт и базовые объекты",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "python/py_datetime.md",
+    "text": "Основные объекты:",
+    "level": 3,
+    "line": 11
+  },
+  {
+    "file": "python/py_datetime.md",
+    "text": "Текущая дата и время",
+    "level": 2,
+    "line": 20
+  },
+  {
+    "file": "python/py_datetime.md",
+    "text": "Создание объекта даты и времени",
+    "level": 2,
+    "line": 34
+  },
+  {
+    "file": "python/py_datetime.md",
+    "text": "Разница между датами: timedelta",
+    "level": 2,
+    "line": 50
+  },
+  {
+    "file": "python/py_datetime.md",
+    "text": "Разница между датами",
+    "level": 1,
+    "line": 60
+  },
+  {
+    "file": "python/py_datetime.md",
+    "text": "Форматирование и парсинг дат",
+    "level": 2,
+    "line": 68
+  },
+  {
+    "file": "python/py_datetime.md",
+    "text": "Дополнительные возможности",
+    "level": 2,
+    "line": 93
+  },
+  {
+    "file": "python/py_db.md",
+    "text": "Работа с базами данных в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_db.md",
+    "text": "Основные СУБД",
+    "level": 2,
+    "line": 7
+  },
+  {
+    "file": "python/py_db.md",
+    "text": "Работа с SQLite (стандартная библиотека)",
+    "level": 2,
+    "line": 15
+  },
+  {
+    "file": "python/py_db.md",
+    "text": "[(1, 'Alice')]",
+    "level": 1,
+    "line": 29
+  },
+  {
+    "file": "python/py_db.md",
+    "text": "Работа с PostgreSQL (psycopg2)",
+    "level": 2,
+    "line": 37
+  },
+  {
+    "file": "python/py_db.md",
+    "text": "[(1, 'Bob')]",
+    "level": 1,
+    "line": 50
+  },
+  {
+    "file": "python/py_db.md",
+    "text": "Работа с MySQL (mysql-connector-python)",
+    "level": 2,
+    "line": 57
+  },
+  {
+    "file": "python/py_db.md",
+    "text": "[(1, 'Carol')]",
+    "level": 1,
+    "line": 70
+  },
+  {
+    "file": "python/py_db.md",
+    "text": "ORM (Object-Relational Mapping)",
+    "level": 2,
+    "line": 77
+  },
+  {
+    "file": "python/py_db.md",
+    "text": "SQLAlchemy",
+    "level": 3,
+    "line": 83
+  },
+  {
+    "file": "python/py_db.md",
+    "text": "[(1, 'Dave')]",
+    "level": 1,
+    "line": 112
+  },
+  {
+    "file": "python/py_db.md",
+    "text": "peewee",
+    "level": 3,
+    "line": 120
+  },
+  {
+    "file": "python/py_db.md",
+    "text": "1 Eva",
+    "level": 1,
+    "line": 143
+  },
+  {
+    "file": "python/py_db.md",
+    "text": "Интересные детали и фишки",
+    "level": 2,
+    "line": 148
+  },
+  {
+    "file": "python/py_db.md",
+    "text": "Типичные ошибки и подводные камни",
+    "level": 2,
+    "line": 157
+  },
+  {
+    "file": "python/py_db.md",
+    "text": "Ссылки на документацию и полезные ресурсы",
+    "level": 2,
+    "line": 167
+  },
+  {
+    "file": "python/py_decor.md",
+    "text": "Декораторы в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_decor.md",
+    "text": "Определение",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "python/py_decor.md",
+    "text": "Функции-декораторы",
+    "level": 2,
+    "line": 10
+  },
+  {
+    "file": "python/py_decor.md",
+    "text": "До вызова функции",
+    "level": 1,
+    "line": 28
+  },
+  {
+    "file": "python/py_decor.md",
+    "text": "Привет!",
+    "level": 1,
+    "line": 29
+  },
+  {
+    "file": "python/py_decor.md",
+    "text": "После вызова функции",
+    "level": 1,
+    "line": 30
+  },
+  {
+    "file": "python/py_decor.md",
+    "text": "Декораторы с параметрами",
+    "level": 2,
+    "line": 35
+  },
+  {
+    "file": "python/py_decor.md",
+    "text": "Hello!",
+    "level": 1,
+    "line": 53
+  },
+  {
+    "file": "python/py_decor.md",
+    "text": "Hello!",
+    "level": 1,
+    "line": 54
+  },
+  {
+    "file": "python/py_decor.md",
+    "text": "Hello!",
+    "level": 1,
+    "line": 55
+  },
+  {
+    "file": "python/py_decor.md",
+    "text": "Стандартные декораторы",
+    "level": 2,
+    "line": 60
+  },
+  {
+    "file": "python/py_decor.md",
+    "text": "@staticmethod",
+    "level": 3,
+    "line": 62
+  },
+  {
+    "file": "python/py_decor.md",
+    "text": "@classmethod",
+    "level": 3,
+    "line": 76
+  },
+  {
+    "file": "python/py_decor.md",
+    "text": "@property",
+    "level": 3,
+    "line": 94
+  },
+  {
+    "file": "python/py_decor.md",
+    "text": "Сохранение имени и документации функции с помощью functools.wraps",
+    "level": 2,
+    "line": 114
+  },
+  {
+    "file": "python/py_dict_set.md",
+    "text": "Словари и множества в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_dict_set.md",
+    "text": "Словари (`dict`)",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "python/py_dict_set.md",
+    "text": "Создание и основные операции",
+    "level": 3,
+    "line": 8
+  },
+  {
+    "file": "python/py_dict_set.md",
+    "text": "Проверка наличия ключа",
+    "level": 1,
+    "line": 22
+  },
+  {
+    "file": "python/py_dict_set.md",
+    "text": "Методы словаря",
+    "level": 3,
+    "line": 29
+  },
+  {
+    "file": "python/py_dict_set.md",
+    "text": "Множества (`set`)",
+    "level": 2,
+    "line": 48
+  },
+  {
+    "file": "python/py_dict_set.md",
+    "text": "Создание и основные операции",
+    "level": 3,
+    "line": 53
+  },
+  {
+    "file": "python/py_dict_set.md",
+    "text": "Операции над множествами",
+    "level": 3,
+    "line": 65
+  },
+  {
+    "file": "python/py_dict_set.md",
+    "text": "Методы множества",
+    "level": 3,
+    "line": 79
+  },
+  {
+    "file": "python/py_doc.md",
+    "text": "Документирование кода в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_doc.md",
+    "text": "Докстринги",
+    "level": 2,
+    "line": 7
+  },
+  {
+    "file": "python/py_doc.md",
+    "text": "Форматы и стили докстрингов",
+    "level": 2,
+    "line": 49
+  },
+  {
+    "file": "python/py_doc.md",
+    "text": "Автоматическая генерация документации",
+    "level": 2,
+    "line": 106
+  },
+  {
+    "file": "python/py_doc.md",
+    "text": "Sphinx",
+    "level": 3,
+    "line": 110
+  },
+  {
+    "file": "python/py_doc.md",
+    "text": "В конфиге conf.py добавьте 'sphinx.ext.autodoc'",
+    "level": 1,
+    "line": 121
+  },
+  {
+    "file": "python/py_doc.md",
+    "text": "Добавьте в .rst-файл директиву:",
+    "level": 1,
+    "line": 122
+  },
+  {
+    "file": "python/py_doc.md",
+    "text": ".. automodule:: mypackage.mymodule",
+    "level": 1,
+    "line": 123
+  },
+  {
+    "file": "python/py_doc.md",
+    "text": ":members:",
+    "level": 1,
+    "line": 124
+  },
+  {
+    "file": "python/py_doc.md",
+    "text": "Далее соберите документацию:",
+    "level": 1,
+    "line": 125
+  },
+  {
+    "file": "python/py_doc.md",
+    "text": "pdoc",
+    "level": 3,
+    "line": 129
+  },
+  {
+    "file": "python/py_doc.md",
+    "text": "Откроется html-страница с документацией по модулю",
+    "level": 1,
+    "line": 139
+  },
+  {
+    "file": "python/py_doc.md",
+    "text": "Интересные детали и советы",
+    "level": 2,
+    "line": 144
+  },
+  {
+    "file": "python/py_doc.md",
+    "text": "Типичные ошибки и подводные камни",
+    "level": 2,
+    "line": 157
+  },
+  {
+    "file": "python/py_doc.md",
+    "text": "Ссылки на документацию и полезные ресурсы",
+    "level": 2,
+    "line": 166
+  },
+  {
+    "file": "python/py_errors.md",
+    "text": "Обработка ошибок в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_errors.md",
+    "text": "Базовые конструкции: try, except, else, finally",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "python/py_errors.md",
+    "text": "try ... except",
+    "level": 3,
+    "line": 5
+  },
+  {
+    "file": "python/py_errors.md",
+    "text": "try ... except ... else",
+    "level": 3,
+    "line": 17
+  },
+  {
+    "file": "python/py_errors.md",
+    "text": "try ... except ... finally",
+    "level": 3,
+    "line": 31
+  },
+  {
+    "file": "python/py_errors.md",
+    "text": "Перехват нескольких исключений",
+    "level": 2,
+    "line": 51
+  },
+  {
+    "file": "python/py_errors.md",
+    "text": "Генерация собственных исключений",
+    "level": 2,
+    "line": 62
+  },
+  {
+    "file": "python/py_errors.md",
+    "text": "Собственные классы исключений",
+    "level": 2,
+    "line": 75
+  },
+  {
+    "file": "python/py_errors.md",
+    "text": "Ошибки времени выполнения (Run-time Errors / Exceptions)",
+    "level": 2,
+    "line": 95
+  },
+  {
+    "file": "python/py_errors.md",
+    "text": "А. Арифметические ошибки",
+    "level": 3,
+    "line": 97
+  },
+  {
+    "file": "python/py_errors.md",
+    "text": "Б. Ошибки типа и значения",
+    "level": 3,
+    "line": 103
+  },
+  {
+    "file": "python/py_errors.md",
+    "text": "В. Ввод-вывод и файловые ошибки",
+    "level": 3,
+    "line": 114
+  },
+  {
+    "file": "python/py_errors.md",
+    "text": "Г. Импорт и модули",
+    "level": 3,
+    "line": 123
+  },
+  {
+    "file": "python/py_errors.md",
+    "text": "Д. Операции с памятью и объектами",
+    "level": 3,
+    "line": 128
+  },
+  {
+    "file": "python/py_errors.md",
+    "text": "Е. Прочие часто используемые",
+    "level": 3,
+    "line": 133
+  },
+  {
+    "file": "python/py_eventloop.md",
+    "text": "Event Loop (событийный цикл) в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_eventloop.md",
+    "text": "Основные понятия",
+    "level": 2,
+    "line": 7
+  },
+  {
+    "file": "python/py_eventloop.md",
+    "text": "Принцип работы",
+    "level": 2,
+    "line": 15
+  },
+  {
+    "file": "python/py_eventloop.md",
+    "text": "Простой пример использования event loop",
+    "level": 2,
+    "line": 24
+  },
+  {
+    "file": "python/py_eventloop.md",
+    "text": "Старт",
+    "level": 1,
+    "line": 35
+  },
+  {
+    "file": "python/py_eventloop.md",
+    "text": "... (через 1 секунду)",
+    "level": 1,
+    "line": 36
+  },
+  {
+    "file": "python/py_eventloop.md",
+    "text": "Готово!",
+    "level": 1,
+    "line": 37
+  },
+  {
+    "file": "python/py_eventloop.md",
+    "text": "Ручное управление event loop",
+    "level": 2,
+    "line": 45
+  },
+  {
+    "file": "python/py_eventloop.md",
+    "text": "foo",
+    "level": 1,
+    "line": 62
+  },
+  {
+    "file": "python/py_eventloop.md",
+    "text": "bar",
+    "level": 1,
+    "line": 63
+  },
+  {
+    "file": "python/py_eventloop.md",
+    "text": "Взаимодействие с задачами (tasks) и будущим (future)",
+    "level": 2,
+    "line": 70
+  },
+  {
+    "file": "python/py_eventloop.md",
+    "text": "Событийный цикл и блокирующий код",
+    "level": 2,
+    "line": 78
+  },
+  {
+    "file": "python/py_eventloop.md",
+    "text": "Разные реализации Event Loop в Python",
+    "level": 2,
+    "line": 85
+  },
+  {
+    "file": "python/py_eventloop.md",
+    "text": "1. Стандартный event loop (asyncio)",
+    "level": 3,
+    "line": 87
+  },
+  {
+    "file": "python/py_eventloop.md",
+    "text": "2. uvloop",
+    "level": 3,
+    "line": 94
+  },
+  {
+    "file": "python/py_eventloop.md",
+    "text": "3. ProactorEventLoop (только для Windows)",
+    "level": 3,
+    "line": 112
+  },
+  {
+    "file": "python/py_eventloop.md",
+    "text": "4. SelectorEventLoop",
+    "level": 3,
+    "line": 118
+  },
+  {
+    "file": "python/py_eventloop.md",
+    "text": "5. Другие альтернативные реализации",
+    "level": 3,
+    "line": 124
+  },
+  {
+    "file": "python/py_eventloop.md",
+    "text": "Как выбрать и использовать другую реализацию",
+    "level": 3,
+    "line": 131
+  },
+  {
+    "file": "python/py_eventloop.md",
+    "text": "Интересные детали и фишки",
+    "level": 2,
+    "line": 149
+  },
+  {
+    "file": "python/py_eventloop.md",
+    "text": "Типичные ошибки и подводные камни",
+    "level": 2,
+    "line": 162
+  },
+  {
+    "file": "python/py_eventloop.md",
+    "text": "Ссылки на документацию и полезные ресурсы",
+    "level": 2,
+    "line": 174
+  },
+  {
+    "file": "python/py_files.md",
+    "text": "Работа с файлами в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_files.md",
+    "text": "Открытие файла",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "python/py_files.md",
+    "text": "Чтение из файла",
+    "level": 2,
+    "line": 22
+  },
+  {
+    "file": "python/py_files.md",
+    "text": "Весь файл как строка",
+    "level": 1,
+    "line": 25
+  },
+  {
+    "file": "python/py_files.md",
+    "text": "Построчно (список строк)",
+    "level": 1,
+    "line": 29
+  },
+  {
+    "file": "python/py_files.md",
+    "text": "Запись в файл",
+    "level": 2,
+    "line": 38
+  },
+  {
+    "file": "python/py_files.md",
+    "text": "Контекстный менеджер (with)",
+    "level": 2,
+    "line": 49
+  },
+  {
+    "file": "python/py_files.md",
+    "text": "Пример: копирование содержимого файла",
+    "level": 2,
+    "line": 68
+  },
+  {
+    "file": "python/py_fs.md",
+    "text": "Работа с файловой системой в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_fs.md",
+    "text": "Модуль `os` — работа с путями и файлами",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "python/py_fs.md",
+    "text": "Получить текущий рабочий каталог",
+    "level": 3,
+    "line": 5
+  },
+  {
+    "file": "python/py_fs.md",
+    "text": "Перейти в другой каталог",
+    "level": 3,
+    "line": 12
+  },
+  {
+    "file": "python/py_fs.md",
+    "text": "Получить список файлов и папок в директории",
+    "level": 3,
+    "line": 18
+  },
+  {
+    "file": "python/py_fs.md",
+    "text": "Создать папку",
+    "level": 3,
+    "line": 25
+  },
+  {
+    "file": "python/py_fs.md",
+    "text": "Удалить файл или папку",
+    "level": 3,
+    "line": 32
+  },
+  {
+    "file": "python/py_fs.md",
+    "text": "Модуль `os.path` — работа с путями",
+    "level": 2,
+    "line": 42
+  },
+  {
+    "file": "python/py_fs.md",
+    "text": "Модуль `shutil` — копирование, перемещение, удаление",
+    "level": 2,
+    "line": 61
+  },
+  {
+    "file": "python/py_fs.md",
+    "text": "Советы",
+    "level": 2,
+    "line": 74
+  },
+  {
+    "file": "python/py_fs.md",
+    "text": "Альтернатива: модуль `pathlib` (современный способ)",
+    "level": 2,
+    "line": 82
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "Функции и области видимости",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "Объявление и вызов функций",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "Аргументы по умолчанию",
+    "level": 2,
+    "line": 27
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "\\*args и \\*\\*kwargs",
+    "level": 2,
+    "line": 41
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "Что такое \\*args и \\*\\*kwargs?",
+    "level": 2,
+    "line": 43
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "Как использовать \\*args",
+    "level": 2,
+    "line": 50
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "(1, 2, 3)",
+    "level": 1,
+    "line": 57
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "Как использовать \\*\\*kwargs",
+    "level": 3,
+    "line": 74
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "{'a': 1, 'b': 2}",
+    "level": 1,
+    "line": 81
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "name: Анна",
+    "level": 1,
+    "line": 92
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "age: 30",
+    "level": 1,
+    "line": 93
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "Совмещённое использование \\*args и \\*\\*kwargs",
+    "level": 3,
+    "line": 98
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "a = 1",
+    "level": 1,
+    "line": 107
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "args = (2, 3)",
+    "level": 1,
+    "line": 108
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "kwargs = {'x': 10, 'y': 20}",
+    "level": 1,
+    "line": 109
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "Передача \\*args и \\*\\*kwargs дальше",
+    "level": 3,
+    "line": 114
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "(1, 2) {'x': 10}",
+    "level": 1,
+    "line": 126
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "Использование с обычными аргументами",
+    "level": 3,
+    "line": 131
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "1 2 (3, 4) 5 {'x': 10}",
+    "level": 1,
+    "line": 140
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "Распаковка \\*args и \\*\\*kwargs при вызове функции",
+    "level": 3,
+    "line": 145
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "Выведет: 1 2 3 4",
+    "level": 1,
+    "line": 157
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "Области видимости",
+    "level": 2,
+    "line": 170
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "Как создаются области видимости?",
+    "level": 3,
+    "line": 183
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "Примеры",
+    "level": 3,
+    "line": 192
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "Локальная и глобальная",
+    "level": 4,
+    "line": 194
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "Замыкающая (enclosing) область",
+    "level": 4,
+    "line": 207
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "Глобальная область: global",
+    "level": 4,
+    "line": 219
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "Замыкающая область: nonlocal",
+    "level": 4,
+    "line": 234
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "1",
+    "level": 1,
+    "line": 249
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "2",
+    "level": 1,
+    "line": 250
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "Built-in область",
+    "level": 3,
+    "line": 255
+  },
+  {
+    "file": "python/py_functions.md",
+    "text": "Как Python ищет переменную?",
+    "level": 3,
+    "line": 261
+  },
+  {
+    "file": "python/py_func_code.md",
+    "text": "Основы функционального программирования в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_func_code.md",
+    "text": "Основные принципы",
+    "level": 2,
+    "line": 7
+  },
+  {
+    "file": "python/py_func_code.md",
+    "text": "Чистая функция",
+    "level": 2,
+    "line": 19
+  },
+  {
+    "file": "python/py_func_code.md",
+    "text": "Всегда при одних и тех же a и b будет одинаковый результат",
+    "level": 1,
+    "line": 24
+  },
+  {
+    "file": "python/py_func_code.md",
+    "text": "map(func, iterable)",
+    "level": 2,
+    "line": 27
+  },
+  {
+    "file": "python/py_func_code.md",
+    "text": "filter(func, iterable)",
+    "level": 2,
+    "line": 39
+  },
+  {
+    "file": "python/py_func_code.md",
+    "text": "reduce(func, iterable)",
+    "level": 2,
+    "line": 51
+  },
+  {
+    "file": "python/py_func_code.md",
+    "text": "sorted(iterable, key=func)",
+    "level": 2,
+    "line": 66
+  },
+  {
+    "file": "python/py_func_code.md",
+    "text": "['Ann', 'boris', 'Vika']",
+    "level": 1,
+    "line": 73
+  },
+  {
+    "file": "python/py_func_code.md",
+    "text": "Генераторы и ленивые вычисления",
+    "level": 2,
+    "line": 76
+  },
+  {
+    "file": "python/py_func_code.md",
+    "text": "Использование функций как аргументов",
+    "level": 2,
+    "line": 86
+  },
+  {
+    "file": "python/py_func_code.md",
+    "text": "Возврат функций из функции",
+    "level": 2,
+    "line": 95
+  },
+  {
+    "file": "python/py_func_code.md",
+    "text": "Композиция функций (через вложенность)",
+    "level": 2,
+    "line": 109
+  },
+  {
+    "file": "python/py_func_code.md",
+    "text": "Рекурсия",
+    "level": 2,
+    "line": 120
+  },
+  {
+    "file": "python/py_func_code.md",
+    "text": "Ограничения Python",
+    "level": 2,
+    "line": 132
+  },
+  {
+    "file": "python/py_graph.md",
+    "text": "Визуализация данных в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_graph.md",
+    "text": "seaborn",
+    "level": 2,
+    "line": 7
+  },
+  {
+    "file": "python/py_graph.md",
+    "text": "plotly",
+    "level": 2,
+    "line": 44
+  },
+  {
+    "file": "python/py_graph.md",
+    "text": "bokeh",
+    "level": 2,
+    "line": 73
+  },
+  {
+    "file": "python/py_graph.md",
+    "text": "Интересные детали и фишки",
+    "level": 2,
+    "line": 104
+  },
+  {
+    "file": "python/py_graph.md",
+    "text": "Типичные ошибки и подводные камни",
+    "level": 2,
+    "line": 114
+  },
+  {
+    "file": "python/py_graph.md",
+    "text": "Ссылки на документацию и полезные ресурсы",
+    "level": 2,
+    "line": 124
+  },
+  {
+    "file": "python/py_gui.md",
+    "text": "GUI-разработка в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_gui.md",
+    "text": "Tkinter",
+    "level": 2,
+    "line": 7
+  },
+  {
+    "file": "python/py_gui.md",
+    "text": "При нажатии на кнопку надпись меняется на \"Привет, Tkinter!\"",
+    "level": 1,
+    "line": 31
+  },
+  {
+    "file": "python/py_gui.md",
+    "text": "PyQt",
+    "level": 2,
+    "line": 36
+  },
+  {
+    "file": "python/py_gui.md",
+    "text": "При нажатии на кнопку надпись меняется на \"Привет, PyQt!\"",
+    "level": 1,
+    "line": 65
+  },
+  {
+    "file": "python/py_gui.md",
+    "text": "Kivy",
+    "level": 2,
+    "line": 70
+  },
+  {
+    "file": "python/py_gui.md",
+    "text": "Открывается окно с большой кнопкой \"Привет, Kivy!\"",
+    "level": 1,
+    "line": 88
+  },
+  {
+    "file": "python/py_gui.md",
+    "text": "Интересные детали и фишки",
+    "level": 2,
+    "line": 93
+  },
+  {
+    "file": "python/py_gui.md",
+    "text": "Типичные ошибки и подводные камни",
+    "level": 2,
+    "line": 103
+  },
+  {
+    "file": "python/py_gui.md",
+    "text": "Ссылки на документацию и полезные ресурсы",
+    "level": 2,
+    "line": 113
+  },
+  {
+    "file": "python/py_if_for.md",
+    "text": "Условные конструкции и циклы в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_if_for.md",
+    "text": "Условные конструкции",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "python/py_if_for.md",
+    "text": "Оператор if, elif, else",
+    "level": 3,
+    "line": 5
+  },
+  {
+    "file": "python/py_if_for.md",
+    "text": "Вложенные условия",
+    "level": 3,
+    "line": 24
+  },
+  {
+    "file": "python/py_if_for.md",
+    "text": "Циклы",
+    "level": 1,
+    "line": 42
+  },
+  {
+    "file": "python/py_if_for.md",
+    "text": "Цикл for",
+    "level": 2,
+    "line": 44
+  },
+  {
+    "file": "python/py_if_for.md",
+    "text": "Цикл while",
+    "level": 2,
+    "line": 61
+  },
+  {
+    "file": "python/py_if_for.md",
+    "text": "Операторы break, continue, else для циклов",
+    "level": 2,
+    "line": 74
+  },
+  {
+    "file": "python/py_if_for.md",
+    "text": "Выведет: 0 1 2",
+    "level": 1,
+    "line": 84
+  },
+  {
+    "file": "python/py_if_for.md",
+    "text": "Выведет: 1 3",
+    "level": 1,
+    "line": 92
+  },
+  {
+    "file": "python/py_if_for.md",
+    "text": "range(), enumerate(), zip()",
+    "level": 2,
+    "line": 106
+  },
+  {
+    "file": "python/py_if_for.md",
+    "text": "range()",
+    "level": 3,
+    "line": 108
+  },
+  {
+    "file": "python/py_if_for.md",
+    "text": "enumerate()",
+    "level": 3,
+    "line": 126
+  },
+  {
+    "file": "python/py_if_for.md",
+    "text": "0 яблоко",
+    "level": 1,
+    "line": 134
+  },
+  {
+    "file": "python/py_if_for.md",
+    "text": "1 груша",
+    "level": 1,
+    "line": 135
+  },
+  {
+    "file": "python/py_if_for.md",
+    "text": "2 слива",
+    "level": 1,
+    "line": 136
+  },
+  {
+    "file": "python/py_in_out.md",
+    "text": "Ввод и вывод данных в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_in_out.md",
+    "text": "Функция `input()`",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "python/py_in_out.md",
+    "text": "Функция `print()`",
+    "level": 2,
+    "line": 21
+  },
+  {
+    "file": "python/py_in_out.md",
+    "text": "Форматирование строк",
+    "level": 2,
+    "line": 46
+  },
+  {
+    "file": "python/py_in_out.md",
+    "text": "1. Старое форматирование через `%`",
+    "level": 3,
+    "line": 48
+  },
+  {
+    "file": "python/py_in_out.md",
+    "text": "2. f-строки (f-strings, Python 3.6+)",
+    "level": 3,
+    "line": 57
+  },
+  {
+    "file": "python/py_in_out.md",
+    "text": "3. Метод `.format()`",
+    "level": 3,
+    "line": 67
+  },
+  {
+    "file": "python/py_in_out.md",
+    "text": "Использование индексов и ключей",
+    "level": 4,
+    "line": 84
+  },
+  {
+    "file": "python/py_in_out.md",
+    "text": "Форматирование чисел",
+    "level": 4,
+    "line": 100
+  },
+  {
+    "file": "python/py_in_out.md",
+    "text": "Словари и списки",
+    "level": 4,
+    "line": 124
+  },
+  {
+    "file": "python/py_in_out.md",
+    "text": "Вложенные выражения (Python 3.6+)",
+    "level": 4,
+    "line": 135
+  },
+  {
+    "file": "python/py_iter.md",
+    "text": "Итераторы и генераторы в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_iter.md",
+    "text": "Протокол итераторов",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "python/py_iter.md",
+    "text": "next(it)  # StopIteration!",
+    "level": 1,
+    "line": 19
+  },
+  {
+    "file": "python/py_iter.md",
+    "text": "Создание своих итераторов",
+    "level": 2,
+    "line": 24
+  },
+  {
+    "file": "python/py_iter.md",
+    "text": "Генераторные функции (`yield`)",
+    "level": 2,
+    "line": 50
+  },
+  {
+    "file": "python/py_iter.md",
+    "text": "Ленивые вычисления",
+    "level": 2,
+    "line": 69
+  },
+  {
+    "file": "python/py_iter.md",
+    "text": "Неочевидные возможности",
+    "level": 2,
+    "line": 83
+  },
+  {
+    "file": "python/py_iter.md",
+    "text": "Типичные ошибки и подводные камни",
+    "level": 2,
+    "line": 111
+  },
+  {
+    "file": "python/py_iter.md",
+    "text": "Полезные примеры использования",
+    "level": 2,
+    "line": 117
+  },
+  {
+    "file": "python/py_iter.md",
+    "text": "Ссылки на документацию и полезные ресурсы",
+    "level": 2,
+    "line": 144
+  },
+  {
+    "file": "python/py_lambda.md",
+    "text": "Лямбда-функции",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_lambda.md",
+    "text": "Особенности и ограничения",
+    "level": 2,
+    "line": 9
+  },
+  {
+    "file": "python/py_lambda.md",
+    "text": "Где удобно использовать лямбда-функции?",
+    "level": 2,
+    "line": 16
+  },
+  {
+    "file": "python/py_lambda.md",
+    "text": "1. В функциях высшего порядка (`map`, `filter`, `sorted`, `reduce`)",
+    "level": 3,
+    "line": 18
+  },
+  {
+    "file": "python/py_lambda.md",
+    "text": "['анна', 'борис', 'Вика']",
+    "level": 1,
+    "line": 29
+  },
+  {
+    "file": "python/py_lambda.md",
+    "text": "2. Для сортировки сложных структур",
+    "level": 3,
+    "line": 34
+  },
+  {
+    "file": "python/py_lambda.md",
+    "text": "3. Как аргумент по умолчанию",
+    "level": 3,
+    "line": 48
+  },
+  {
+    "file": "python/py_lambda.md",
+    "text": "4. Можно возвращать лямбда-функции из других функций",
+    "level": 3,
+    "line": 60
+  },
+  {
+    "file": "python/py_lambda.md",
+    "text": "5. Лямбда с несколькими аргументами",
+    "level": 3,
+    "line": 72
+  },
+  {
+    "file": "python/py_lambda.md",
+    "text": "Необычные приёмы",
+    "level": 2,
+    "line": 81
+  },
+  {
+    "file": "python/py_library.md",
+    "text": "Внешние библиотеки Python: подробный обзор",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_library.md",
+    "text": "1. **requests** — HTTP-клиент",
+    "level": 2,
+    "line": 5
+  },
+  {
+    "file": "python/py_library.md",
+    "text": "2. **matplotlib** — визуализация данных",
+    "level": 2,
+    "line": 44
+  },
+  {
+    "file": "python/py_library.md",
+    "text": "3. **pandas** — обработка таблиц и анализ данных",
+    "level": 2,
+    "line": 85
+  },
+  {
+    "file": "python/py_library.md",
+    "text": "NumPy: назначение и основной функционал",
+    "level": 2,
+    "line": 125
+  },
+  {
+    "file": "python/py_library.md",
+    "text": "Зачем нужен NumPy?",
+    "level": 3,
+    "line": 132
+  },
+  {
+    "file": "python/py_library.md",
+    "text": "Ключевые возможности",
+    "level": 3,
+    "line": 140
+  },
+  {
+    "file": "python/py_library.md",
+    "text": "1. **Массивы (ndarray)**",
+    "level": 4,
+    "line": 142
+  },
+  {
+    "file": "python/py_library.md",
+    "text": "2. **Быстрая арифметика и операции над массивами**",
+    "level": 4,
+    "line": 152
+  },
+  {
+    "file": "python/py_library.md",
+    "text": "3. **Векторизация**",
+    "level": 4,
+    "line": 162
+  },
+  {
+    "file": "python/py_library.md",
+    "text": "4. **Матричные операции**",
+    "level": 4,
+    "line": 166
+  },
+  {
+    "file": "python/py_library.md",
+    "text": "5. **Генерация массивов**",
+    "level": 4,
+    "line": 174
+  },
+  {
+    "file": "python/py_library.md",
+    "text": "6. **Статистические функции**",
+    "level": 4,
+    "line": 183
+  },
+  {
+    "file": "python/py_library.md",
+    "text": "7. **Срезы и индексация**",
+    "level": 4,
+    "line": 192
+  },
+  {
+    "file": "python/py_library.md",
+    "text": "8. **Работа с многомерными данными**",
+    "level": 4,
+    "line": 199
+  },
+  {
+    "file": "python/py_library.md",
+    "text": "Почему NumPy быстрее обычных списков?",
+    "level": 3,
+    "line": 209
+  },
+  {
+    "file": "python/py_list.md",
+    "text": "Списки, кортежи, массивы",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_list.md",
+    "text": "Списки (`list`)",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "python/py_list.md",
+    "text": "Создание списка",
+    "level": 3,
+    "line": 11
+  },
+  {
+    "file": "python/py_list.md",
+    "text": "Индексация и срезы",
+    "level": 3,
+    "line": 20
+  },
+  {
+    "file": "python/py_list.md",
+    "text": "Основные методы списков",
+    "level": 3,
+    "line": 29
+  },
+  {
+    "file": "python/py_list.md",
+    "text": "Кортежи (`tuple`)",
+    "level": 2,
+    "line": 46
+  },
+  {
+    "file": "python/py_list.md",
+    "text": "Вложенные структуры",
+    "level": 2,
+    "line": 62
+  },
+  {
+    "file": "python/py_list.md",
+    "text": "Генераторы списков (List Comprehensions)",
+    "level": 2,
+    "line": 78
+  },
+  {
+    "file": "python/py_list.md",
+    "text": "Генераторные выражения (generator expressions)",
+    "level": 2,
+    "line": 104
+  },
+  {
+    "file": "python/py_list.md",
+    "text": "Примеры:",
+    "level": 3,
+    "line": 109
+  },
+  {
+    "file": "python/py_list.md",
+    "text": "Зачем нужны генераторы?",
+    "level": 3,
+    "line": 128
+  },
+  {
+    "file": "python/py_list.md",
+    "text": "Сравнение:",
+    "level": 3,
+    "line": 135
+  },
+  {
+    "file": "python/py_list.md",
+    "text": "Массивы (`array.array`)",
+    "level": 2,
+    "line": 143
+  },
+  {
+    "file": "python/py_list.md",
+    "text": "Создаём массив из целых чисел",
+    "level": 1,
+    "line": 153
+  },
+  {
+    "file": "python/py_list.md",
+    "text": "Основные отличия от списков",
+    "level": 3,
+    "line": 163
+  },
+  {
+    "file": "python/py_list.md",
+    "text": "Когда использовать массивы?",
+    "level": 3,
+    "line": 174
+  },
+  {
+    "file": "python/py_list.md",
+    "text": "Функция zip()",
+    "level": 2,
+    "line": 182
+  },
+  {
+    "file": "python/py_list.md",
+    "text": "Как работает zip()",
+    "level": 3,
+    "line": 188
+  },
+  {
+    "file": "python/py_list.md",
+    "text": "(1, 'a')",
+    "level": 1,
+    "line": 201
+  },
+  {
+    "file": "python/py_list.md",
+    "text": "(2, 'b')",
+    "level": 1,
+    "line": 202
+  },
+  {
+    "file": "python/py_list.md",
+    "text": "(3, 'c')",
+    "level": 1,
+    "line": 203
+  },
+  {
+    "file": "python/py_list.md",
+    "text": "[(1, 10), (2, 20)]",
+    "level": 1,
+    "line": 212
+  },
+  {
+    "file": "python/py_list.md",
+    "text": "Типичные применения",
+    "level": 3,
+    "line": 226
+  },
+  {
+    "file": "python/py_list.md",
+    "text": "[(1, 4), (2, 5), (3, 6)]",
+    "level": 1,
+    "line": 239
+  },
+  {
+    "file": "python/py_list.md",
+    "text": "Типичные ошибки",
+    "level": 3,
+    "line": 244
+  },
+  {
+    "file": "python/py_list.md",
+    "text": "Ссылки",
+    "level": 3,
+    "line": 252
+  },
+  {
+    "file": "python/py_local.md",
+    "text": "Интернационализация и локализация в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_local.md",
+    "text": "Основные понятия",
+    "level": 2,
+    "line": 8
+  },
+  {
+    "file": "python/py_local.md",
+    "text": "Стандартная библиотека: gettext",
+    "level": 2,
+    "line": 17
+  },
+  {
+    "file": "python/py_local.md",
+    "text": "Генерация \"фейкового\" перевода для примера",
+    "level": 1,
+    "line": 26
+  },
+  {
+    "file": "python/py_local.md",
+    "text": "\"Привет, мир!\" (если есть перевод в файлах locales/ru/LC_MESSAGES/base.mo)",
+    "level": 1,
+    "line": 32
+  },
+  {
+    "file": "python/py_local.md",
+    "text": "Как устроен процесс i18n + l10n (на примере gettext)",
+    "level": 3,
+    "line": 39
+  },
+  {
+    "file": "python/py_local.md",
+    "text": "Интернационализация дат, времени, чисел",
+    "level": 2,
+    "line": 57
+  },
+  {
+    "file": "python/py_local.md",
+    "text": "В России: 'Пн 10 июн 2024 13:20:10'",
+    "level": 1,
+    "line": 68
+  },
+  {
+    "file": "python/py_local.md",
+    "text": "Django: i18n и l10n “из коробки”",
+    "level": 2,
+    "line": 73
+  },
+  {
+    "file": "python/py_local.md",
+    "text": "Flask и другие фреймворки",
+    "level": 2,
+    "line": 82
+  },
+  {
+    "file": "python/py_local.md",
+    "text": "Интересные детали и фишки",
+    "level": 2,
+    "line": 101
+  },
+  {
+    "file": "python/py_local.md",
+    "text": "Типичные ошибки и подводные камни",
+    "level": 2,
+    "line": 111
+  },
+  {
+    "file": "python/py_local.md",
+    "text": "Ссылки на документацию и полезные ресурсы",
+    "level": 2,
+    "line": 121
+  },
+  {
+    "file": "python/py_meta.md",
+    "text": "Метапрограммирование в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_meta.md",
+    "text": "Работа с функциями как с объектами",
+    "level": 2,
+    "line": 7
+  },
+  {
+    "file": "python/py_meta.md",
+    "text": "Привет, Аня!",
+    "level": 1,
+    "line": 17
+  },
+  {
+    "file": "python/py_meta.md",
+    "text": "('Привет, Сергей!', 'Привет, Сергей!')",
+    "level": 1,
+    "line": 23
+  },
+  {
+    "file": "python/py_meta.md",
+    "text": "Пример функции с атрибутом",
+    "level": 1,
+    "line": 34
+  },
+  {
+    "file": "python/py_meta.md",
+    "text": "Встроенные функции getattr, setattr, hasattr",
+    "level": 2,
+    "line": 39
+  },
+  {
+    "file": "python/py_meta.md",
+    "text": "Лена",
+    "level": 1,
+    "line": 50
+  },
+  {
+    "file": "python/py_meta.md",
+    "text": "30",
+    "level": 1,
+    "line": 54
+  },
+  {
+    "file": "python/py_meta.md",
+    "text": "True",
+    "level": 1,
+    "line": 57
+  },
+  {
+    "file": "python/py_meta.md",
+    "text": "Модуль inspect",
+    "level": 2,
+    "line": 64
+  },
+  {
+    "file": "python/py_meta.md",
+    "text": "Пример функции.",
+    "level": 1,
+    "line": 78
+  },
+  {
+    "file": "python/py_meta.md",
+    "text": "(x, y=1)",
+    "level": 1,
+    "line": 81
+  },
+  {
+    "file": "python/py_meta.md",
+    "text": "def func(x, y=1):",
+    "level": 1,
+    "line": 84
+  },
+  {
+    "file": "python/py_meta.md",
+    "text": "\"\"\"Пример функции.\"\"\"",
+    "level": 1,
+    "line": 85
+  },
+  {
+    "file": "python/py_meta.md",
+    "text": "return x + y",
+    "level": 1,
+    "line": 86
+  },
+  {
+    "file": "python/py_meta.md",
+    "text": "Модуль abc — абстрактные базовые классы",
+    "level": 2,
+    "line": 93
+  },
+  {
+    "file": "python/py_meta.md",
+    "text": "animal = Animal()  # TypeError: Can't instantiate abstract class",
+    "level": 1,
+    "line": 110
+  },
+  {
+    "file": "python/py_meta.md",
+    "text": "Гав!",
+    "level": 1,
+    "line": 113
+  },
+  {
+    "file": "python/py_meta.md",
+    "text": "Собственные метаклассы",
+    "level": 2,
+    "line": 118
+  },
+  {
+    "file": "python/py_meta.md",
+    "text": "Интересные детали и фишки",
+    "level": 2,
+    "line": 141
+  },
+  {
+    "file": "python/py_meta.md",
+    "text": "Типичные ошибки и подводные камни",
+    "level": 2,
+    "line": 150
+  },
+  {
+    "file": "python/py_meta.md",
+    "text": "Ссылки на документацию и полезные ресурсы",
+    "level": 2,
+    "line": 159
+  },
+  {
+    "file": "python/py_modules.md",
+    "text": "Модули и пакеты в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_modules.md",
+    "text": "Модули",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "python/py_modules.md",
+    "text": "Импорт модуля целиком",
+    "level": 3,
+    "line": 8
+  },
+  {
+    "file": "python/py_modules.md",
+    "text": "Импорт отдельного объекта из модуля",
+    "level": 3,
+    "line": 15
+  },
+  {
+    "file": "python/py_modules.md",
+    "text": "Импорт с псевдонимом (alias)",
+    "level": 3,
+    "line": 23
+  },
+  {
+    "file": "python/py_modules.md",
+    "text": "Свои модули",
+    "level": 2,
+    "line": 33
+  },
+  {
+    "file": "python/py_modules.md",
+    "text": "Пакеты",
+    "level": 2,
+    "line": 51
+  },
+  {
+    "file": "python/py_modules.md",
+    "text": "pip — установка внешних пакетов",
+    "level": 2,
+    "line": 73
+  },
+  {
+    "file": "python/py_modules.md",
+    "text": "Как установить пакет",
+    "level": 3,
+    "line": 77
+  },
+  {
+    "file": "python/py_modules.md",
+    "text": "Использование установленного пакета",
+    "level": 3,
+    "line": 83
+  },
+  {
+    "file": "python/py_modules.md",
+    "text": "Обновление пакета",
+    "level": 3,
+    "line": 92
+  },
+  {
+    "file": "python/py_modules.md",
+    "text": "Просмотр установленных пакетов",
+    "level": 3,
+    "line": 98
+  },
+  {
+    "file": "python/py_modules.md",
+    "text": "Как создать свой пакет для публикации на PyPI",
+    "level": 2,
+    "line": 111
+  },
+  {
+    "file": "python/py_modules.md",
+    "text": "1. Оформите структуру проекта как пакет",
+    "level": 3,
+    "line": 113
+  },
+  {
+    "file": "python/py_modules.md",
+    "text": "2. Опишите метаданные и зависимости",
+    "level": 3,
+    "line": 119
+  },
+  {
+    "file": "python/py_modules.md",
+    "text": "Минимальный `pyproject.toml` (современный стандарт, поддерживается pip 21.0+):",
+    "level": 4,
+    "line": 121
+  },
+  {
+    "file": "python/py_modules.md",
+    "text": "Пример простого `setup.py` (для совместимости со старым pip):",
+    "level": 4,
+    "line": 141
+  },
+  {
+    "file": "python/py_modules.md",
+    "text": "Публикация пакета на PyPI",
+    "level": 2,
+    "line": 162
+  },
+  {
+    "file": "python/py_modules.md",
+    "text": "Появятся файлы dist/my-awesome-package-0.1.0.tar.gz и dist/my-awesome-package-0.1.0-py3-none-any.whl",
+    "level": 1,
+    "line": 175
+  },
+  {
+    "file": "python/py_modules.md",
+    "text": "Интересные детали и советы",
+    "level": 2,
+    "line": 198
+  },
+  {
+    "file": "python/py_modules.md",
+    "text": "Типичные ошибки и подводные камни",
+    "level": 2,
+    "line": 208
+  },
+  {
+    "file": "python/py_modules.md",
+    "text": "Ссылки на документацию и полезные ресурсы",
+    "level": 2,
+    "line": 217
+  },
+  {
+    "file": "python/py_net.md",
+    "text": "Работа с сетью в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_net.md",
+    "text": "Сокеты (TCP/UDP)",
+    "level": 2,
+    "line": 7
+  },
+  {
+    "file": "python/py_net.md",
+    "text": "Пример TCP-сервера",
+    "level": 3,
+    "line": 14
+  },
+  {
+    "file": "python/py_net.md",
+    "text": "Сервер слушает...",
+    "level": 1,
+    "line": 34
+  },
+  {
+    "file": "python/py_net.md",
+    "text": "Клиент подключился: ('127.0.0.1', <порт>)",
+    "level": 1,
+    "line": 35
+  },
+  {
+    "file": "python/py_net.md",
+    "text": "Пример TCP-клиента",
+    "level": 3,
+    "line": 38
+  },
+  {
+    "file": "python/py_net.md",
+    "text": "Получено: Привет, сервер!",
+    "level": 1,
+    "line": 51
+  },
+  {
+    "file": "python/py_net.md",
+    "text": "Пример UDP-сервера и клиента",
+    "level": 3,
+    "line": 56
+  },
+  {
+    "file": "python/py_net.md",
+    "text": "UDP сервер запущен...",
+    "level": 1,
+    "line": 73
+  },
+  {
+    "file": "python/py_net.md",
+    "text": "Получено от ('127.0.0.1', <порт>) : <сообщение>",
+    "level": 1,
+    "line": 74
+  },
+  {
+    "file": "python/py_net.md",
+    "text": "Ответ от сервера: Ответ: Hello UDP!",
+    "level": 1,
+    "line": 89
+  },
+  {
+    "file": "python/py_net.md",
+    "text": "HTTP-серверы на базе стандартных библиотек",
+    "level": 2,
+    "line": 94
+  },
+  {
+    "file": "python/py_net.md",
+    "text": "HTTP-сервер на базе http.server",
+    "level": 3,
+    "line": 98
+  },
+  {
+    "file": "python/py_net.md",
+    "text": "Сервер запущен на http://localhost:8000/",
+    "level": 1,
+    "line": 111
+  },
+  {
+    "file": "python/py_net.md",
+    "text": "Кастомизация обработчика запросов",
+    "level": 3,
+    "line": 118
+  },
+  {
+    "file": "python/py_net.md",
+    "text": "HTTP-сервер на http://localhost:8001/",
+    "level": 1,
+    "line": 136
+  },
+  {
+    "file": "python/py_net.md",
+    "text": "Интересные детали и фишки",
+    "level": 2,
+    "line": 141
+  },
+  {
+    "file": "python/py_net.md",
+    "text": "Типичные ошибки и подводные камни",
+    "level": 2,
+    "line": 149
+  },
+  {
+    "file": "python/py_net.md",
+    "text": "Ссылки на документацию и полезные ресурсы",
+    "level": 2,
+    "line": 158
+  },
+  {
+    "file": "python/py_oop.md",
+    "text": "Классы и основы ООП в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_oop.md",
+    "text": "Определение класса",
+    "level": 2,
+    "line": 7
+  },
+  {
+    "file": "python/py_oop.md",
+    "text": "Конструктор `__init__` и атрибуты",
+    "level": 2,
+    "line": 16
+  },
+  {
+    "file": "python/py_oop.md",
+    "text": "Создание объекта:",
+    "level": 1,
+    "line": 27
+  },
+  {
+    "file": "python/py_oop.md",
+    "text": "Методы и self",
+    "level": 2,
+    "line": 34
+  },
+  {
+    "file": "python/py_oop.md",
+    "text": "Наследование",
+    "level": 2,
+    "line": 53
+  },
+  {
+    "file": "python/py_oop.md",
+    "text": "Полиморфизм",
+    "level": 2,
+    "line": 69
+  },
+  {
+    "file": "python/py_oop.md",
+    "text": "Инкапсуляция",
+    "level": 2,
+    "line": 89
+  },
+  {
+    "file": "python/py_oop.md",
+    "text": "print(e.__private)   # Ошибка!",
+    "level": 1,
+    "line": 106
+  },
+  {
+    "file": "python/py_operators.md",
+    "text": "Операторы и выражения в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_operators.md",
+    "text": "Арифметические операторы",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "python/py_operators.md",
+    "text": "Операторы сравнения",
+    "level": 2,
+    "line": 17
+  },
+  {
+    "file": "python/py_operators.md",
+    "text": "Логические операторы",
+    "level": 2,
+    "line": 30
+  },
+  {
+    "file": "python/py_operators.md",
+    "text": "Операторы присваивания",
+    "level": 2,
+    "line": 46
+  },
+  {
+    "file": "python/py_operators.md",
+    "text": "Оператор принадлежности (`in`)",
+    "level": 2,
+    "line": 61
+  },
+  {
+    "file": "python/py_operators.md",
+    "text": "Оператор тождественности (`is`)",
+    "level": 2,
+    "line": 76
+  },
+  {
+    "file": "python/py_operators.md",
+    "text": "Приоритет операторов (сокращённо)",
+    "level": 2,
+    "line": 93
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "Сериализация и парсинг данных в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "Формат JSON (JavaScript Object Notation)",
+    "level": 2,
+    "line": 10
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "Сериализация (Python → JSON-строка)",
+    "level": 1,
+    "line": 19
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "{\"a\": 1, \"b\": [1, 2, 3]}",
+    "level": 1,
+    "line": 22
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "Запись в файл",
+    "level": 1,
+    "line": 24
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "Десериализация (JSON-строка → Python)",
+    "level": 1,
+    "line": 28
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "[1, 2, 3]",
+    "level": 1,
+    "line": 31
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "Загрузка из файла",
+    "level": 1,
+    "line": 33
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "Формат YAML",
+    "level": 2,
+    "line": 40
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "a: 1",
+    "level": 1,
+    "line": 51
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "b:",
+    "level": 1,
+    "line": 52
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "- 1",
+    "level": 1,
+    "line": 53
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "- 2",
+    "level": 1,
+    "line": 54
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "- 3",
+    "level": 1,
+    "line": 55
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "1",
+    "level": 1,
+    "line": 59
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "Работа с файлами аналогична json",
+    "level": 1,
+    "line": 61
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "Формат XML",
+    "level": 2,
+    "line": 66
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "Чтение и парсинг:",
+    "level": 1,
+    "line": 80
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "Alice 100",
+    "level": 1,
+    "line": 85
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "Формат pickle",
+    "level": 2,
+    "line": 90
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "{'a': 1, 'b': [1, 2, 3]}",
+    "level": 1,
+    "line": 105
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "marshmallow",
+    "level": 2,
+    "line": 110
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "Сериализация: Python → dict",
+    "level": 1,
+    "line": 124
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "{'name': 'Ivan', 'age': 33}",
+    "level": 1,
+    "line": 127
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "Валидация и десериализация: dict → Python",
+    "level": 1,
+    "line": 129
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "{'age': ['Invalid value.']}",
+    "level": 1,
+    "line": 134
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "pydantic",
+    "level": 2,
+    "line": 139
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "{'name': 'Oleg', 'age': 30}",
+    "level": 1,
+    "line": 153
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "1 validation error for User",
+    "level": 1,
+    "line": 159
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "age",
+    "level": 1,
+    "line": 160
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "value is not a valid integer (type=type_error.integer)",
+    "level": 1,
+    "line": 161
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "Интересные детали и фишки",
+    "level": 2,
+    "line": 168
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "Типичные ошибки и подводные камни",
+    "level": 2,
+    "line": 178
+  },
+  {
+    "file": "python/py_parse.md",
+    "text": "Ссылки на документацию и полезные ресурсы",
+    "level": 2,
+    "line": 187
+  },
+  {
+    "file": "python/py_pil.md",
+    "text": "Работа с изображениями и видео в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_pil.md",
+    "text": "Pillow (PIL)",
+    "level": 2,
+    "line": 7
+  },
+  {
+    "file": "python/py_pil.md",
+    "text": "Откроет cat.jpg, изменит размер до 200x200, размоет, сохранит как cat_blur.jpg",
+    "level": 1,
+    "line": 22
+  },
+  {
+    "file": "python/py_pil.md",
+    "text": "JPEG (400, 300) RGB",
+    "level": 1,
+    "line": 42
+  },
+  {
+    "file": "python/py_pil.md",
+    "text": "OpenCV (cv2)",
+    "level": 2,
+    "line": 47
+  },
+  {
+    "file": "python/py_pil.md",
+    "text": "Воспроизводит видео, окно закрывается по нажатию q",
+    "level": 1,
+    "line": 86
+  },
+  {
+    "file": "python/py_pil.md",
+    "text": "Находит лица и рисует прямоугольники на новом файле",
+    "level": 1,
+    "line": 101
+  },
+  {
+    "file": "python/py_pil.md",
+    "text": "Интересные детали и фишки",
+    "level": 2,
+    "line": 106
+  },
+  {
+    "file": "python/py_pil.md",
+    "text": "Типичные ошибки и подводные камни",
+    "level": 2,
+    "line": 117
+  },
+  {
+    "file": "python/py_pil.md",
+    "text": "Ссылки на документацию и полезные ресурсы",
+    "level": 2,
+    "line": 127
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "Регулярные выражения в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "Основные понятия",
+    "level": 2,
+    "line": 9
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "Ключевые символы и конструкции",
+    "level": 2,
+    "line": 17
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "Базовые операции",
+    "level": 2,
+    "line": 34
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "1. Поиск совпадений (`re.search`, `re.match`, `re.fullmatch`)",
+    "level": 3,
+    "line": 36
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "+7-921-555-12-34",
+    "level": 1,
+    "line": 45
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "re.match ищет только в начале строки",
+    "level": 1,
+    "line": 47
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "re.fullmatch проверяет, что вся строка соответствует шаблону",
+    "level": 1,
+    "line": 51
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "2. Поиск всех совпадений (`re.findall`, `re.finditer`)",
+    "level": 3,
+    "line": 58
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "['123', '456', '789']",
+    "level": 1,
+    "line": 64
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "Итератор совпадений:",
+    "level": 1,
+    "line": 66
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "abc",
+    "level": 1,
+    "line": 69
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "xyz",
+    "level": 1,
+    "line": 70
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "abc",
+    "level": 1,
+    "line": 71
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "3. Замена подстрок (`re.sub`, `re.subn`)",
+    "level": 3,
+    "line": 76
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "foo XX XX",
+    "level": 1,
+    "line": 81
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "Счётчик замен:",
+    "level": 1,
+    "line": 83
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "('foo YY YY', 2)",
+    "level": 1,
+    "line": 85
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "4. Разделение строки по шаблону (`re.split`)",
+    "level": 3,
+    "line": 90
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "['12', '34', '56', '78']",
+    "level": 1,
+    "line": 95
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "5. Валидация данных (проверка формата)",
+    "level": 3,
+    "line": 100
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "True",
+    "level": 1,
+    "line": 108
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "True",
+    "level": 1,
+    "line": 117
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "Группы и извлечение подстрок",
+    "level": 2,
+    "line": 122
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "Флаги",
+    "level": 2,
+    "line": 143
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "['ABC']",
+    "level": 1,
+    "line": 151
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "Нюансы, подводные камни и типичные ошибки",
+    "level": 2,
+    "line": 156
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "Сложные примеры и полезные трюки",
+    "level": 2,
+    "line": 165
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "['01.06.2025', '02.06.2025']",
+    "level": 1,
+    "line": 173
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "Привет мир",
+    "level": 1,
+    "line": 182
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "1,234,567,890",
+    "level": 1,
+    "line": 191
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "Быстрая шпаргалка",
+    "level": 2,
+    "line": 196
+  },
+  {
+    "file": "python/py_re.md",
+    "text": "Ссылки на документацию и полезные ресурсы",
+    "level": 2,
+    "line": 207
+  },
+  {
+    "file": "python/py_string.md",
+    "text": "Работа со строками в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_string.md",
+    "text": "Основные методы строк",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "python/py_string.md",
+    "text": "Срезы (slices)",
+    "level": 2,
+    "line": 23
+  },
+  {
+    "file": "python/py_string.md",
+    "text": "Конкатенация строк",
+    "level": 2,
+    "line": 40
+  },
+  {
+    "file": "python/py_string.md",
+    "text": "Разделение строки: split()",
+    "level": 2,
+    "line": 55
+  },
+  {
+    "file": "python/py_string.md",
+    "text": "Склеивание строк: join()",
+    "level": 2,
+    "line": 74
+  },
+  {
+    "file": "python/py_test.md",
+    "text": "Тестирование в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_test.md",
+    "text": "unittest",
+    "level": 2,
+    "line": 9
+  },
+  {
+    "file": "python/py_test.md",
+    "text": ".",
+    "level": 1,
+    "line": 34
+  },
+  {
+    "file": "python/py_test.md",
+    "text": "----------------------------------------------------------------------",
+    "level": 1,
+    "line": 35
+  },
+  {
+    "file": "python/py_test.md",
+    "text": "Ran 2 tests in 0.000s",
+    "level": 1,
+    "line": 36
+  },
+  {
+    "file": "python/py_test.md",
+    "text": "OK",
+    "level": 1,
+    "line": 37
+  },
+  {
+    "file": "python/py_test.md",
+    "text": "pytest",
+    "level": 2,
+    "line": 42
+  },
+  {
+    "file": "python/py_test.md",
+    "text": "pytest test_module.py",
+    "level": 1,
+    "line": 62
+  },
+  {
+    "file": "python/py_test.md",
+    "text": "========================= test session starts =========================",
+    "level": 1,
+    "line": 63
+  },
+  {
+    "file": "python/py_test.md",
+    "text": "...",
+    "level": 1,
+    "line": 64
+  },
+  {
+    "file": "python/py_test.md",
+    "text": "========================== 2 passed in 0.01s ==========================",
+    "level": 1,
+    "line": 65
+  },
+  {
+    "file": "python/py_test.md",
+    "text": "Мокирование (замена объектов на поддельные)",
+    "level": 2,
+    "line": 70
+  },
+  {
+    "file": "python/py_test.md",
+    "text": "Фикстуры",
+    "level": 2,
+    "line": 93
+  },
+  {
+    "file": "python/py_test.md",
+    "text": "Параметризация тестов",
+    "level": 2,
+    "line": 115
+  },
+  {
+    "file": "python/py_test.md",
+    "text": "Тест будет выполнен три раза с разными значениями a, b, result",
+    "level": 1,
+    "line": 133
+  },
+  {
+    "file": "python/py_test.md",
+    "text": "Интересные детали и фишки",
+    "level": 2,
+    "line": 138
+  },
+  {
+    "file": "python/py_test.md",
+    "text": "Типичные ошибки и подводные камни",
+    "level": 2,
+    "line": 147
+  },
+  {
+    "file": "python/py_test.md",
+    "text": "Ссылки на документацию и полезные ресурсы",
+    "level": 2,
+    "line": 156
+  },
+  {
+    "file": "python/py_threading.md",
+    "text": "Многопоточность и мультипроцессорность",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_threading.md",
+    "text": "Потоки (модуль `threading`)",
+    "level": 2,
+    "line": 10
+  },
+  {
+    "file": "python/py_threading.md",
+    "text": "Пример создания и запуска потока:",
+    "level": 3,
+    "line": 16
+  },
+  {
+    "file": "python/py_threading.md",
+    "text": "Процессы (`multiprocessing`)",
+    "level": 2,
+    "line": 48
+  },
+  {
+    "file": "python/py_threading.md",
+    "text": "Пример создания и запуска процесса:",
+    "level": 3,
+    "line": 55
+  },
+  {
+    "file": "python/py_threading.md",
+    "text": "Очереди и синхронизация",
+    "level": 2,
+    "line": 77
+  },
+  {
+    "file": "python/py_threading.md",
+    "text": "Очереди (`Queue`)",
+    "level": 3,
+    "line": 79
+  },
+  {
+    "file": "python/py_threading.md",
+    "text": "Синхронизация",
+    "level": 3,
+    "line": 99
+  },
+  {
+    "file": "python/py_threading.md",
+    "text": "Интересные детали и фишки",
+    "level": 2,
+    "line": 106
+  },
+  {
+    "file": "python/py_threading.md",
+    "text": "Типичные ошибки и подводные камни",
+    "level": 2,
+    "line": 117
+  },
+  {
+    "file": "python/py_threading.md",
+    "text": "Ссылки на документацию и полезные ресурсы",
+    "level": 2,
+    "line": 127
+  },
+  {
+    "file": "python/py_web.md",
+    "text": "Веб-разработка в Python",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "python/py_web.md",
+    "text": "Flask",
+    "level": 2,
+    "line": 7
+  },
+  {
+    "file": "python/py_web.md",
+    "text": "curl http://localhost:5000/hello",
+    "level": 1,
+    "line": 32
+  },
+  {
+    "file": "python/py_web.md",
+    "text": "→ Привет, Flask!",
+    "level": 1,
+    "line": 33
+  },
+  {
+    "file": "python/py_web.md",
+    "text": "curl -X POST -H \"Content-Type: application/json\" -d '{\"a\": 2, \"b\": 3}' http://localhost:5000/add",
+    "level": 1,
+    "line": 34
+  },
+  {
+    "file": "python/py_web.md",
+    "text": "→ {\"result\": 5}",
+    "level": 1,
+    "line": 35
+  },
+  {
+    "file": "python/py_web.md",
+    "text": "FastAPI",
+    "level": 2,
+    "line": 40
+  },
+  {
+    "file": "python/py_web.md",
+    "text": "uvicorn main:app --reload",
+    "level": 1,
+    "line": 66
+  },
+  {
+    "file": "python/py_web.md",
+    "text": "curl http://localhost:8000/hello",
+    "level": 1,
+    "line": 67
+  },
+  {
+    "file": "python/py_web.md",
+    "text": "→ {\"message\": \"Привет, FastAPI!\"}",
+    "level": 1,
+    "line": 68
+  },
+  {
+    "file": "python/py_web.md",
+    "text": "curl -X POST -H \"Content-Type: application/json\" -d '{\"a\": 2, \"b\": 3}' http://localhost:8000/add",
+    "level": 1,
+    "line": 69
+  },
+  {
+    "file": "python/py_web.md",
+    "text": "→ {\"result\": 5}",
+    "level": 1,
+    "line": 70
+  },
+  {
+    "file": "python/py_web.md",
+    "text": "Django",
+    "level": 2,
+    "line": 77
+  },
+  {
+    "file": "python/py_web.md",
+    "text": "settings.py, urls.py, models.py, serializers.py, views.py и др.",
+    "level": 1,
+    "line": 86
+  },
+  {
+    "file": "python/py_web.md",
+    "text": "Пример самого простого views.py:",
+    "level": 1,
+    "line": 87
+  },
+  {
+    "file": "python/py_web.md",
+    "text": "urls.py:",
+    "level": 1,
+    "line": 95
+  },
+  {
+    "file": "python/py_web.md",
+    "text": "curl http://localhost:8000/hello/",
+    "level": 1,
+    "line": 102
+  },
+  {
+    "file": "python/py_web.md",
+    "text": "→ {\"message\": \"Привет, Django!\"}",
+    "level": 1,
+    "line": 103
+  },
+  {
+    "file": "python/py_web.md",
+    "text": "REST API",
+    "level": 2,
+    "line": 108
+  },
+  {
+    "file": "python/py_web.md",
+    "text": "Интересные детали и фишки",
+    "level": 2,
+    "line": 144
+  },
+  {
+    "file": "python/py_web.md",
+    "text": "Типичные ошибки и подводные камни",
+    "level": 2,
+    "line": 154
+  },
+  {
+    "file": "python/py_web.md",
+    "text": "Ссылки на документацию и полезные ресурсы",
+    "level": 2,
+    "line": 164
+  },
+  {
+    "file": "react/react_18.md",
+    "text": "Новое в версии 18.",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "react/react_18.md",
+    "text": "Автоматический батчинг setState",
+    "level": 2,
+    "line": 19
+  },
+  {
+    "file": "react/react_18.md",
+    "text": "Прекращение поддержки IE",
+    "level": 2,
+    "line": 26
+  },
+  {
+    "file": "react/react_18.md",
+    "text": "flushSync",
+    "level": 2,
+    "line": 28
+  },
+  {
+    "file": "react/react_18.md",
+    "text": "Возвращаемое значение React компонента",
+    "level": 2,
+    "line": 33
+  },
+  {
+    "file": "react/react_18.md",
+    "text": "Улучшения SSR (server side rendering)",
+    "level": 2,
+    "line": 37
+  },
+  {
+    "file": "react/react_18.md",
+    "text": "Предварительный рендеринг на сервере",
+    "level": 3,
+    "line": 39
+  },
+  {
+    "file": "react/react_18.md",
+    "text": "Использование Suspense",
+    "level": 3,
+    "line": 47
+  },
+  {
+    "file": "react/react_18.md",
+    "text": "Новые хуки",
+    "level": 2,
+    "line": 51
+  },
+  {
+    "file": "react/react_18.md",
+    "text": "**useOpaqueIdentifier**",
+    "level": 3,
+    "line": 53
+  },
+  {
+    "file": "react/react_18.md",
+    "text": "**useId**",
+    "level": 3,
+    "line": 57
+  },
+  {
+    "file": "react/react_18.md",
+    "text": "**useSyncExternalStore**",
+    "level": 3,
+    "line": 61
+  },
+  {
+    "file": "react/react_18.md",
+    "text": "**useInsertionEffect**",
+    "level": 3,
+    "line": 65
+  },
+  {
+    "file": "react/react_18.md",
+    "text": "**useDeferredValue**",
+    "level": 3,
+    "line": 69
+  },
+  {
+    "file": "react/react_base.md",
+    "text": "Базовые понятия",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "react/react_base.md",
+    "text": "JSX",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "react/react_base.md",
+    "text": "React",
+    "level": 2,
+    "line": 53
+  },
+  {
+    "file": "react/react_base.md",
+    "text": "React-компоненты",
+    "level": 2,
+    "line": 65
+  },
+  {
+    "file": "react/react_base.md",
+    "text": "Чистая функция",
+    "level": 2,
+    "line": 152
+  },
+  {
+    "file": "react/react_base.md",
+    "text": "Props (сокр. от \"propetries\")",
+    "level": 2,
+    "line": 162
+  },
+  {
+    "file": "react/react_base.md",
+    "text": "State (состояние)",
+    "level": 2,
+    "line": 169
+  },
+  {
+    "file": "react/react_base.md",
+    "text": "Жизненный цикл компонента",
+    "level": 2,
+    "line": 189
+  },
+  {
+    "file": "react/react_base.md",
+    "text": "Методы жизненного цикла в классовых компонентах",
+    "level": 2,
+    "line": 197
+  },
+  {
+    "file": "react/react_base.md",
+    "text": "Компонент высшего порядка (Higher Order Component, HOC)",
+    "level": 2,
+    "line": 239
+  },
+  {
+    "file": "react/react_base.md",
+    "text": "События",
+    "level": 2,
+    "line": 247
+  },
+  {
+    "file": "react/react_begin.md",
+    "text": "Начало работы и настройки проекта",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "react/react_begin.md",
+    "text": "Создание проекта на основе шаблона CRA (create-react-app)",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "react/react_begin.md",
+    "text": "Создание проекта с помощью Vite.js с поддержкой TypeScript",
+    "level": 2,
+    "line": 22
+  },
+  {
+    "file": "react/react_begin.md",
+    "text": "tsconfig.json",
+    "level": 2,
+    "line": 53
+  },
+  {
+    "file": "react/react_begin.md",
+    "text": "README.md",
+    "level": 2,
+    "line": 129
+  },
+  {
+    "file": "react/react_datas.md",
+    "text": "Работа с данными",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "react/react_datas.md",
+    "text": "Управление состоянием",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "react/react_datas.md",
+    "text": "Получение данных с сервера с помощью fetch",
+    "level": 2,
+    "line": 9
+  },
+  {
+    "file": "react/react_datas.md",
+    "text": "Вызов API через Axios",
+    "level": 2,
+    "line": 57
+  },
+  {
+    "file": "react/react_datas.md",
+    "text": "React Context API",
+    "level": 2,
+    "line": 71
+  },
+  {
+    "file": "react/react_datas.md",
+    "text": "Передача данных между компонентами",
+    "level": 2,
+    "line": 81
+  },
+  {
+    "file": "react/react_datas.md",
+    "text": "через пропсы (от родительского компонента потомкам, prop drilling)",
+    "level": 3,
+    "line": 83
+  },
+  {
+    "file": "react/react_datas.md",
+    "text": "используя callback-функцию (от дочернего реакт компонента к родительскому)",
+    "level": 3,
+    "line": 112
+  },
+  {
+    "file": "react/react_datas.md",
+    "text": "между соседними компонентами",
+    "level": 3,
+    "line": 145
+  },
+  {
+    "file": "react/react_datas.md",
+    "text": "при помощи контекста:",
+    "level": 3,
+    "line": 185
+  },
+  {
+    "file": "react/react_datas.md",
+    "text": "через хранилище (store)",
+    "level": 3,
+    "line": 226
+  },
+  {
+    "file": "react/react_datas.md",
+    "text": "между компонентами на разных страницах с помощью React Router и хука useParams:",
+    "level": 3,
+    "line": 228
+  },
+  {
+    "file": "react/react_hooks.md",
+    "text": "Хуки React",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "react/react_hooks.md",
+    "text": "useState",
+    "level": 2,
+    "line": 10
+  },
+  {
+    "file": "react/react_hooks.md",
+    "text": "useEffect",
+    "level": 2,
+    "line": 74
+  },
+  {
+    "file": "react/react_hooks.md",
+    "text": "useLayoutEffect",
+    "level": 2,
+    "line": 122
+  },
+  {
+    "file": "react/react_hooks.md",
+    "text": "useInsertionEffect",
+    "level": 2,
+    "line": 134
+  },
+  {
+    "file": "react/react_hooks.md",
+    "text": "useContext",
+    "level": 2,
+    "line": 149
+  },
+  {
+    "file": "react/react_hooks.md",
+    "text": "useReducer",
+    "level": 2,
+    "line": 167
+  },
+  {
+    "file": "react/react_hooks.md",
+    "text": "useRef",
+    "level": 2,
+    "line": 218
+  },
+  {
+    "file": "react/react_hooks.md",
+    "text": "useMemo",
+    "level": 2,
+    "line": 258
+  },
+  {
+    "file": "react/react_hooks.md",
+    "text": "useCalback",
+    "level": 2,
+    "line": 283
+  },
+  {
+    "file": "react/react_hooks.md",
+    "text": "useDebugValue",
+    "level": 2,
+    "line": 320
+  },
+  {
+    "file": "react/react_hooks.md",
+    "text": "useForm",
+    "level": 2,
+    "line": 336
+  },
+  {
+    "file": "react/react_hooks.md",
+    "text": "useFetch",
+    "level": 2,
+    "line": 340
+  },
+  {
+    "file": "react/react_hooks.md",
+    "text": "useWindowSize",
+    "level": 2,
+    "line": 344
+  },
+  {
+    "file": "react/react_hooks.md",
+    "text": "useId",
+    "level": 2,
+    "line": 348
+  },
+  {
+    "file": "react/react_hooks.md",
+    "text": "useTransition",
+    "level": 2,
+    "line": 376
+  },
+  {
+    "file": "react/react_hooks.md",
+    "text": "useDeferredValue",
+    "level": 2,
+    "line": 394
+  },
+  {
+    "file": "react/react_hooks.md",
+    "text": "useSyncExternalStore",
+    "level": 2,
+    "line": 404
+  },
+  {
+    "file": "react/react_others.md",
+    "text": "Разные вопросы",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "react/react_others.md",
+    "text": "Оптимизация React-приложения:",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "react/react_others.md",
+    "text": "Пагинация",
+    "level": 2,
+    "line": 10
+  },
+  {
+    "file": "react/react_others.md",
+    "text": "Порталы",
+    "level": 2,
+    "line": 18
+  },
+  {
+    "file": "react/react_others.md",
+    "text": "React - реактивен?",
+    "level": 2,
+    "line": 30
+  },
+  {
+    "file": "react/react_others.md",
+    "text": "Переменные среды в React",
+    "level": 2,
+    "line": 36
+  },
+  {
+    "file": "react/react_react-redux.md",
+    "text": "REACT-REDUX",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "react/react_react-redux.md",
+    "text": "useSelector",
+    "level": 2,
+    "line": 29
+  },
+  {
+    "file": "react/react_react-redux.md",
+    "text": "useDispatch",
+    "level": 2,
+    "line": 33
+  },
+  {
+    "file": "react/react_redux.md",
+    "text": "REDUX",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "react/react_redux.md",
+    "text": "Состояние, дерево состояния (state)",
+    "level": 2,
+    "line": 11
+  },
+  {
+    "file": "react/react_redux.md",
+    "text": "Стор (store)",
+    "level": 2,
+    "line": 21
+  },
+  {
+    "file": "react/react_redux.md",
+    "text": "Генератор стора (store creator)",
+    "level": 3,
+    "line": 44
+  },
+  {
+    "file": "react/react_redux.md",
+    "text": "Экшен (action)",
+    "level": 2,
+    "line": 52
+  },
+  {
+    "file": "react/react_redux.md",
+    "text": "Генераторы экшенов (action creators)",
+    "level": 3,
+    "line": 73
+  },
+  {
+    "file": "react/react_redux.md",
+    "text": "Редьюсер (reducer)",
+    "level": 2,
+    "line": 90
+  },
+  {
+    "file": "react/react_redux.md",
+    "text": "Функция-диспетчер (dispatching function)",
+    "level": 2,
+    "line": 119
+  },
+  {
+    "file": "react/react_redux.md",
+    "text": "Мидлвар (middleware)",
+    "level": 2,
+    "line": 127
+  },
+  {
+    "file": "react/react_redux.md",
+    "text": "API Redux",
+    "level": 2,
+    "line": 173
+  },
+  {
+    "file": "react/react_redux.md",
+    "text": "createStore(reducer, [preloadedState], [enhancer])",
+    "level": 3,
+    "line": 175
+  },
+  {
+    "file": "react/react_redux.md",
+    "text": "combineReducers(reducers)",
+    "level": 3,
+    "line": 211
+  },
+  {
+    "file": "react/react_redux.md",
+    "text": "applyMiddleware(...middlewares)",
+    "level": 3,
+    "line": 282
+  },
+  {
+    "file": "react/react_redux.md",
+    "text": "bindActionCreators(actionCreators, dispatch)",
+    "level": 3,
+    "line": 294
+  },
+  {
+    "file": "react/react_redux.md",
+    "text": "compose(...functions)",
+    "level": 3,
+    "line": 304
+  },
+  {
+    "file": "react/react_redux.md",
+    "text": "Популярное объяснение основных терминов Redux от AI",
+    "level": 2,
+    "line": 311
+  },
+  {
+    "file": "react/react_redux.md",
+    "text": "State",
+    "level": 3,
+    "line": 313
+  },
+  {
+    "file": "react/react_redux.md",
+    "text": "Store",
+    "level": 3,
+    "line": 320
+  },
+  {
+    "file": "react/react_redux.md",
+    "text": "Action",
+    "level": 3,
+    "line": 327
+  },
+  {
+    "file": "react/react_redux.md",
+    "text": "Action Creators",
+    "level": 3,
+    "line": 335
+  },
+  {
+    "file": "react/react_redux.md",
+    "text": "Dispatcher",
+    "level": 3,
+    "line": 342
+  },
+  {
+    "file": "react/react_redux.md",
+    "text": "Reducer",
+    "level": 3,
+    "line": 349
+  },
+  {
+    "file": "react/react_redux.md",
+    "text": "Combine Reducers",
+    "level": 3,
+    "line": 357
+  },
+  {
+    "file": "react/react_redux.md",
+    "text": "Matcher",
+    "level": 3,
+    "line": 365
+  },
+  {
+    "file": "react/react_redux.md",
+    "text": "Thunk",
+    "level": 3,
+    "line": 372
+  },
+  {
+    "file": "react/react_redux.md",
+    "text": "Middleware",
+    "level": 3,
+    "line": 379
+  },
+  {
+    "file": "react/react_redux.md",
+    "text": "Listener",
+    "level": 3,
+    "line": 386
+  },
+  {
+    "file": "react/react_redux.md",
+    "text": "Subscriber",
+    "level": 3,
+    "line": 393
+  },
+  {
+    "file": "react/react_router.md",
+    "text": "Хуки React Router",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "react/react_router.md",
+    "text": "useHistory",
+    "level": 2,
+    "line": 7
+  },
+  {
+    "file": "react/react_router.md",
+    "text": "useLocation",
+    "level": 2,
+    "line": 12
+  },
+  {
+    "file": "react/react_router.md",
+    "text": "useParams",
+    "level": 2,
+    "line": 16
+  },
+  {
+    "file": "react/react_samples.md",
+    "text": "Примеры",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "react/react_samples.md",
+    "text": "Отследить клик за пределами компонента",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "react/react_samples.md",
+    "text": "Установить фокус на поле ввода после монтирования компонента",
+    "level": 2,
+    "line": 29
+  },
+  {
+    "file": "react/react_samples.md",
+    "text": "Render props",
+    "level": 2,
+    "line": 52
+  },
+  {
+    "file": "react/react_samples.md",
+    "text": "Обработка асинхронных действий",
+    "level": 2,
+    "line": 85
+  },
+  {
+    "file": "tools/tools_babel.md",
+    "text": "Babel",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "tools/tools_babel.md",
+    "text": "Установка Babel:",
+    "level": 2,
+    "line": 9
+  },
+  {
+    "file": "tools/tools_babel.md",
+    "text": "Настройка конфигурации:",
+    "level": 2,
+    "line": 15
+  },
+  {
+    "file": "tools/tools_babel.md",
+    "text": "Использование плагинов и пресетов:",
+    "level": 2,
+    "line": 32
+  },
+  {
+    "file": "tools/tools_docker.md",
+    "text": "DOCKER",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "tools/tools_docker.md",
+    "text": "Компоненты Docker:",
+    "level": 2,
+    "line": 11
+  },
+  {
+    "file": "tools/tools_docker.md",
+    "text": "Команды",
+    "level": 2,
+    "line": 33
+  },
+  {
+    "file": "tools/tools_docker.md",
+    "text": "Порты публикации",
+    "level": 3,
+    "line": 35
+  },
+  {
+    "file": "tools/tools_docker.md",
+    "text": "Тома и привязки",
+    "level": 3,
+    "line": 65
+  },
+  {
+    "file": "tools/tools_docker.md",
+    "text": "Postgres",
+    "level": 3,
+    "line": 95
+  },
+  {
+    "file": "tools/tools_docker.md",
+    "text": "Остановка и удаление контейнеров и томов",
+    "level": 3,
+    "line": 117
+  },
+  {
+    "file": "tools/tools_docker.md",
+    "text": "Docker Compose",
+    "level": 2,
+    "line": 129
+  },
+  {
+    "file": "tools/tools_docker.md",
+    "text": "Основные команды:",
+    "level": 3,
+    "line": 133
+  },
+  {
+    "file": "tools/tools_eslint-prettier.md",
+    "text": "Базовые настройки Prettier и ESLint в TypeScript проекте",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "tools/tools_eslint-prettier.md",
+    "text": "Установка необходимых зависимостей",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "tools/tools_eslint-prettier.md",
+    "text": "Настройка ESLint",
+    "level": 2,
+    "line": 13
+  },
+  {
+    "file": "tools/tools_eslint-prettier.md",
+    "text": "Настройка Prettier",
+    "level": 2,
+    "line": 36
+  },
+  {
+    "file": "tools/tools_eslint-prettier.md",
+    "text": "Скрипты для проверки и форматирования кода",
+    "level": 2,
+    "line": 51
+  },
+  {
+    "file": "tools/tools_eslint-prettier.md",
+    "text": "Выполнение проверки и форматирования",
+    "level": 2,
+    "line": 62
+  },
+  {
+    "file": "tools/tools_git.md",
+    "text": "GIT - распределенная система контроля версий",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "tools/tools_git.md",
+    "text": ".gitignore",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "tools/tools_git.md",
+    "text": "Хеширование коммитов",
+    "level": 2,
+    "line": 11
+  },
+  {
+    "file": "tools/tools_git.md",
+    "text": "Статусы файлов",
+    "level": 2,
+    "line": 41
+  },
+  {
+    "file": "tools/tools_git.md",
+    "text": "Основные команды Git",
+    "level": 2,
+    "line": 62
+  },
+  {
+    "file": "tools/tools_git.md",
+    "text": "Отмена изменений",
+    "level": 2,
+    "line": 148
+  },
+  {
+    "file": "tools/tools_git.md",
+    "text": "Изменение коммита",
+    "level": 2,
+    "line": 166
+  },
+  {
+    "file": "tools/tools_git.md",
+    "text": "Сторнирование коммита",
+    "level": 2,
+    "line": 176
+  },
+  {
+    "file": "tools/tools_git.md",
+    "text": "Работа с ветками",
+    "level": 2,
+    "line": 180
+  },
+  {
+    "file": "tools/tools_git.md",
+    "text": "Работа с удаленным репозиторием",
+    "level": 2,
+    "line": 223
+  },
+  {
+    "file": "tools/tools_git.md",
+    "text": "Участие в публичном проекте",
+    "level": 2,
+    "line": 266
+  },
+  {
+    "file": "tools/tools_git.md",
+    "text": "Интерактивное индексирование",
+    "level": 2,
+    "line": 295
+  },
+  {
+    "file": "tools/tools_git.md",
+    "text": "Припрятывание изменений",
+    "level": 2,
+    "line": 314
+  },
+  {
+    "file": "tools/tools_git.md",
+    "text": "Очистка рабочего каталога",
+    "level": 2,
+    "line": 350
+  },
+  {
+    "file": "tools/tools_git.md",
+    "text": "Прочее",
+    "level": 2,
+    "line": 368
+  },
+  {
+    "file": "tools/tools_git.md",
+    "text": "Стратегии ветвления",
+    "level": 2,
+    "line": 380
+  },
+  {
+    "file": "tools/tools_git.md",
+    "text": "GitHub Flow",
+    "level": 3,
+    "line": 382
+  },
+  {
+    "file": "tools/tools_git.md",
+    "text": "Git Flow",
+    "level": 3,
+    "line": 388
+  },
+  {
+    "file": "tools/tools_git.md",
+    "text": "The Forking Workflow",
+    "level": 3,
+    "line": 392
+  },
+  {
+    "file": "tools/tools_links.md",
+    "text": "🛠️ DevTools Links",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "tools/tools_links.md",
+    "text": "🔁 Generators & Converters",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "tools/tools_links.md",
+    "text": "📏 Validators & helpers",
+    "level": 2,
+    "line": 61
+  },
+  {
+    "file": "tools/tools_links.md",
+    "text": "✍️ Code Editors",
+    "level": 2,
+    "line": 79
+  },
+  {
+    "file": "tools/tools_links.md",
+    "text": "🎨 Design & UI",
+    "level": 2,
+    "line": 97
+  },
+  {
+    "file": "tools/tools_links.md",
+    "text": "🧪 Testing & Debug",
+    "level": 2,
+    "line": 159
+  },
+  {
+    "file": "tools/tools_links.md",
+    "text": "🧩 VS Code Extensions",
+    "level": 2,
+    "line": 177
+  },
+  {
+    "file": "tools/tools_links.md",
+    "text": "🏗️ Site Builders",
+    "level": 2,
+    "line": 187
+  },
+  {
+    "file": "tools/tools_links.md",
+    "text": "📝 AI",
+    "level": 2,
+    "line": 198
+  },
+  {
+    "file": "tools/tools_links.md",
+    "text": "📘 Docs & Reference",
+    "level": 2,
+    "line": 216
+  },
+  {
+    "file": "tools/tools_links.md",
+    "text": "🎓 Education",
+    "level": 2,
+    "line": 234
+  },
+  {
+    "file": "tools/tools_links.md",
+    "text": "🖼️ Demo & Samples",
+    "level": 2,
+    "line": 274
+  },
+  {
+    "file": "tools/tools_prettier.md",
+    "text": "Расширение для VSCode prettier-vscode",
+    "level": 2,
+    "line": 1
+  },
+  {
+    "file": "tools/tools_prettier.md",
+    "text": "Варианты настройки параметров форматирования:",
+    "level": 2,
+    "line": 21
+  },
+  {
+    "file": "tools/tools_prettier.md",
+    "text": "Порядок чтения настроек:",
+    "level": 2,
+    "line": 38
+  },
+  {
+    "file": "tools/tools_prettier.md",
+    "text": "Виды настроек:",
+    "level": 2,
+    "line": 46
+  },
+  {
+    "file": "tools/tools_prettier.md",
+    "text": "Включить форматирование при сохранении:",
+    "level": 2,
+    "line": 73
+  },
+  {
+    "file": "tools/tools_vscode.md",
+    "text": "Keyboard shortcuts for Windows (Ctrl+K Ctrl+S)",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "tools/tools_vscode.md",
+    "text": "General",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "tools/tools_vscode.md",
+    "text": "Editing",
+    "level": 2,
+    "line": 15
+  },
+  {
+    "file": "tools/tools_vscode.md",
+    "text": "Search and replace",
+    "level": 2,
+    "line": 27
+  },
+  {
+    "file": "tools/tools_vscode.md",
+    "text": "Multi-cursor and selection",
+    "level": 2,
+    "line": 43
+  },
+  {
+    "file": "tools/tools_vscode.md",
+    "text": "Rich languages editing",
+    "level": 2,
+    "line": 69
+  },
+  {
+    "file": "tools/tools_vscode.md",
+    "text": "Display",
+    "level": 2,
+    "line": 95
+  },
+  {
+    "file": "tools/tools_webpack.md",
+    "text": "Webpack",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "tools/tools_webpack.md",
+    "text": "Установка",
+    "level": 2,
+    "line": 7
+  },
+  {
+    "file": "tools/tools_webpack.md",
+    "text": "или",
+    "level": 1,
+    "line": 11
+  },
+  {
+    "file": "tools/tools_webpack.md",
+    "text": "Настройка",
+    "level": 2,
+    "line": 15
+  },
+  {
+    "file": "tools/tools_webpack.md",
+    "text": "Настройка Webpack на работу с Babel",
+    "level": 2,
+    "line": 35
+  },
+  {
+    "file": "tools/tools_webpack.md",
+    "text": "Правила для JS-файлов:",
+    "level": 3,
+    "line": 39
+  },
+  {
+    "file": "tools/tools_webpack.md",
+    "text": "Правила для CSS-файлов (добавляются в тот же массив _rules_)",
+    "level": 3,
+    "line": 57
+  },
+  {
+    "file": "tools/tools_webpack.md",
+    "text": "Правила обработки статических ресурсов:",
+    "level": 3,
+    "line": 89
+  },
+  {
+    "file": "tools/tools_webpack.md",
+    "text": "Настройка сервера разработки:",
+    "level": 3,
+    "line": 101
+  },
+  {
+    "file": "tools/tools_webpack.md",
+    "text": "Полный код файла webpack.config.js:",
+    "level": 3,
+    "line": 119
+  },
+  {
+    "file": "tools/tools_webpack.md",
+    "text": "Пример webpack.config.js для React-проекта, который использует SASS:",
+    "level": 2,
+    "line": 170
+  },
+  {
+    "file": "tools/tools_webpack.md",
+    "text": "Пример файла webpack.config.js для React-проекта с поддержкой TypeScript:",
+    "level": 2,
+    "line": 259
+  },
+  {
+    "file": "tools/tools_webpack.md",
+    "text": "Основные моменты:",
+    "level": 3,
+    "line": 306
+  },
+  {
+    "file": "ts/ts_base.md",
+    "text": "Основы",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "ts/ts_base.md",
+    "text": "Примитивные типы данных",
+    "level": 2,
+    "line": 15
+  },
+  {
+    "file": "ts/ts_base.md",
+    "text": "boolean",
+    "level": 3,
+    "line": 17
+  },
+  {
+    "file": "ts/ts_base.md",
+    "text": "number",
+    "level": 3,
+    "line": 24
+  },
+  {
+    "file": "ts/ts_base.md",
+    "text": "string",
+    "level": 3,
+    "line": 38
+  },
+  {
+    "file": "ts/ts_base.md",
+    "text": "null",
+    "level": 3,
+    "line": 46
+  },
+  {
+    "file": "ts/ts_base.md",
+    "text": "undefined",
+    "level": 3,
+    "line": 48
+  },
+  {
+    "file": "ts/ts_base.md",
+    "text": "Symbol",
+    "level": 3,
+    "line": 50
+  },
+  {
+    "file": "ts/ts_base.md",
+    "text": "Bigint (числа > 2^53 - 1)",
+    "level": 3,
+    "line": 54
+  },
+  {
+    "file": "ts/ts_base.md",
+    "text": "Специальные типы",
+    "level": 2,
+    "line": 72
+  },
+  {
+    "file": "ts/ts_base.md",
+    "text": "any",
+    "level": 3,
+    "line": 74
+  },
+  {
+    "file": "ts/ts_base.md",
+    "text": "void",
+    "level": 3,
+    "line": 86
+  },
+  {
+    "file": "ts/ts_base.md",
+    "text": "unknown",
+    "level": 3,
+    "line": 97
+  },
+  {
+    "file": "ts/ts_base.md",
+    "text": "never",
+    "level": 3,
+    "line": 116
+  },
+  {
+    "file": "ts/ts_base.md",
+    "text": "Составные типы данных",
+    "level": 2,
+    "line": 123
+  },
+  {
+    "file": "ts/ts_base.md",
+    "text": "Array",
+    "level": 3,
+    "line": 125
+  },
+  {
+    "file": "ts/ts_base.md",
+    "text": "Tuple (кортеж)",
+    "level": 3,
+    "line": 175
+  },
+  {
+    "file": "ts/ts_base.md",
+    "text": "Enum (перечисление)",
+    "level": 3,
+    "line": 193
+  },
+  {
+    "file": "ts/ts_base.md",
+    "text": "Date",
+    "level": 2,
+    "line": 228
+  },
+  {
+    "file": "ts/ts_base.md",
+    "text": "RegExp",
+    "level": 2,
+    "line": 238
+  },
+  {
+    "file": "ts/ts_base.md",
+    "text": "HTMLElement",
+    "level": 2,
+    "line": 248
+  },
+  {
+    "file": "ts/ts_base.md",
+    "text": "Типы для функций",
+    "level": 2,
+    "line": 258
+  },
+  {
+    "file": "ts/ts_base.md",
+    "text": "Типизация объектов",
+    "level": 2,
+    "line": 361
+  },
+  {
+    "file": "ts/ts_base.md",
+    "text": "Динамические ключи",
+    "level": 3,
+    "line": 447
+  },
+  {
+    "file": "ts/ts_jeneric.md",
+    "text": "Дженерики",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "ts/ts_jeneric.md",
+    "text": "Дженерики - функции",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "ts/ts_jeneric.md",
+    "text": "Ограничения дженериков",
+    "level": 2,
+    "line": 43
+  },
+  {
+    "file": "ts/ts_jeneric.md",
+    "text": "Асинхронные функции",
+    "level": 2,
+    "line": 61
+  },
+  {
+    "file": "ts/ts_jeneric.md",
+    "text": "Дженерики на классах",
+    "level": 2,
+    "line": 74
+  },
+  {
+    "file": "ts/ts_oop.md",
+    "text": "ООП в TypeScript",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "ts/ts_oop.md",
+    "text": "Объявление класса",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "ts/ts_oop.md",
+    "text": "Cоздание объекта класса:",
+    "level": 2,
+    "line": 23
+  },
+  {
+    "file": "ts/ts_oop.md",
+    "text": "Наследование",
+    "level": 2,
+    "line": 29
+  },
+  {
+    "file": "ts/ts_oop.md",
+    "text": "Модификаторы доступа",
+    "level": 2,
+    "line": 54
+  },
+  {
+    "file": "ts/ts_oop.md",
+    "text": "public, private, protected",
+    "level": 3,
+    "line": 56
+  },
+  {
+    "file": "ts/ts_oop.md",
+    "text": "readonly",
+    "level": 3,
+    "line": 109
+  },
+  {
+    "file": "ts/ts_oop.md",
+    "text": "Заполнение свойств из параметров",
+    "level": 2,
+    "line": 123
+  },
+  {
+    "file": "ts/ts_oop.md",
+    "text": "Аксессоры свойств",
+    "level": 2,
+    "line": 139
+  },
+  {
+    "file": "ts/ts_oop.md",
+    "text": "Статические свойства и методы (static)",
+    "level": 2,
+    "line": 158
+  },
+  {
+    "file": "ts/ts_oop.md",
+    "text": "Абстрактные классы",
+    "level": 2,
+    "line": 222
+  },
+  {
+    "file": "ts/ts_oop.md",
+    "text": "Классы как типы",
+    "level": 2,
+    "line": 257
+  },
+  {
+    "file": "ts/ts_types.md",
+    "text": "Типы, интерфейсы",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "ts/ts_types.md",
+    "text": "Проверка типа, оператор **typeof**",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "ts/ts_types.md",
+    "text": "Явное преобразование типов",
+    "level": 2,
+    "line": 20
+  },
+  {
+    "file": "ts/ts_types.md",
+    "text": "Объединение типов (операция _'или'_ **|**)",
+    "level": 2,
+    "line": 35
+  },
+  {
+    "file": "ts/ts_types.md",
+    "text": "Пересечение типов (операция _'и'_ **&**)",
+    "level": 2,
+    "line": 60
+  },
+  {
+    "file": "ts/ts_types.md",
+    "text": "Псевдонимы типов",
+    "level": 2,
+    "line": 95
+  },
+  {
+    "file": "ts/ts_types.md",
+    "text": "Приведение типов",
+    "level": 2,
+    "line": 137
+  },
+  {
+    "file": "ts/ts_types.md",
+    "text": "Структурная (утиная) типизация",
+    "level": 2,
+    "line": 152
+  },
+  {
+    "file": "ts/ts_types.md",
+    "text": "Перегрузка функций",
+    "level": 2,
+    "line": 156
+  },
+  {
+    "file": "ts/ts_types.md",
+    "text": "Интерфейсы",
+    "level": 2,
+    "line": 196
+  },
+  {
+    "file": "ts/ts_types.md",
+    "text": "Возможности, которые есть у интерфейсов, но нет у типов:",
+    "level": 2,
+    "line": 240
+  },
+  {
+    "file": "ts/ts_types.md",
+    "text": "Декларативное расширение (мерджинг, слияние деклараций)",
+    "level": 3,
+    "line": 242
+  },
+  {
+    "file": "ts/ts_types.md",
+    "text": "Расширение интерфейсов",
+    "level": 3,
+    "line": 264
+  },
+  {
+    "file": "ts/ts_types.md",
+    "text": "Перекрестные типы",
+    "level": 3,
+    "line": 305
+  },
+  {
+    "file": "web/web_bases.md",
+    "text": "Основные концепции",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "web/web_bases.md",
+    "text": "Система доменных имен - Domain Name System (DNS)",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "web/web_bases.md",
+    "text": "Балансировщик нагрузки",
+    "level": 2,
+    "line": 13
+  },
+  {
+    "file": "web/web_bases.md",
+    "text": "Шлюз API (API Gateway)",
+    "level": 2,
+    "line": 19
+  },
+  {
+    "file": "web/web_bases.md",
+    "text": "CDN",
+    "level": 2,
+    "line": 33
+  },
+  {
+    "file": "web/web_bases.md",
+    "text": "Proxy",
+    "level": 2,
+    "line": 42
+  },
+  {
+    "file": "web/web_bases.md",
+    "text": "Кэширование",
+    "level": 2,
+    "line": 48
+  },
+  {
+    "file": "web/web_bases.md",
+    "text": "Секционирование данных",
+    "level": 2,
+    "line": 52
+  },
+  {
+    "file": "web/web_bases.md",
+    "text": "Типы секционирования",
+    "level": 3,
+    "line": 57
+  },
+  {
+    "file": "web/web_bases.md",
+    "text": "Репликация базы данных",
+    "level": 2,
+    "line": 77
+  },
+  {
+    "file": "web/web_bases.md",
+    "text": "Распределенные системы обмена сообщениями (брокеры сообщений)",
+    "level": 2,
+    "line": 93
+  },
+  {
+    "file": "web/web_bases.md",
+    "text": "Микросервисы",
+    "level": 2,
+    "line": 111
+  },
+  {
+    "file": "web/web_bases.md",
+    "text": "Базы данных NoSQL",
+    "level": 2,
+    "line": 127
+  },
+  {
+    "file": "web/web_bases.md",
+    "text": "Индексы базы данных",
+    "level": 2,
+    "line": 147
+  },
+  {
+    "file": "web/web_bases.md",
+    "text": "Распределенные файловые системы",
+    "level": 2,
+    "line": 155
+  },
+  {
+    "file": "web/web_bases.md",
+    "text": "Система уведомлений",
+    "level": 2,
+    "line": 159
+  },
+  {
+    "file": "web/web_bases.md",
+    "text": "Полнотекстовый поиск",
+    "level": 2,
+    "line": 163
+  },
+  {
+    "file": "web/web_bases.md",
+    "text": "Распределенный сервис координации",
+    "level": 2,
+    "line": 167
+  },
+  {
+    "file": "web/web_bases.md",
+    "text": "Шпаргалка по основным темам в области Backend-разработки.",
+    "level": 2,
+    "line": 171
+  },
+  {
+    "file": "web/web_http.md",
+    "text": "Что такое HTTP",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "web/web_http.md",
+    "text": "Особенности протокола HTTP",
+    "level": 2,
+    "line": 7
+  },
+  {
+    "file": "web/web_http.md",
+    "text": "Отличия HTTP/1.0, HTTP/1.1, HTTP/2",
+    "level": 2,
+    "line": 17
+  },
+  {
+    "file": "web/web_http.md",
+    "text": "HTTP методы",
+    "level": 2,
+    "line": 25
+  },
+  {
+    "file": "web/web_http.md",
+    "text": "Из чего состоит HTTP-запрос?",
+    "level": 2,
+    "line": 39
+  },
+  {
+    "file": "web/web_http.md",
+    "text": "Что такое HTTP cookie?",
+    "level": 2,
+    "line": 54
+  },
+  {
+    "file": "web/web_http.md",
+    "text": "Для чего используют HTTP cookie?",
+    "level": 2,
+    "line": 68
+  },
+  {
+    "file": "web/web_principles.md",
+    "text": "Принципы проектирования современных web-приложений",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "web/web_principles.md",
+    "text": "SOLID",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "web/web_principles.md",
+    "text": "**S** единство ответственности",
+    "level": 3,
+    "line": 5
+  },
+  {
+    "file": "web/web_principles.md",
+    "text": "**O** открытость/закрытость",
+    "level": 3,
+    "line": 9
+  },
+  {
+    "file": "web/web_principles.md",
+    "text": "**L** принцип подстановки Лисков",
+    "level": 3,
+    "line": 13
+  },
+  {
+    "file": "web/web_principles.md",
+    "text": "**I** разделение инетрфейсов",
+    "level": 3,
+    "line": 17
+  },
+  {
+    "file": "web/web_principles.md",
+    "text": "**D** инверсия зависимостей",
+    "level": 3,
+    "line": 21
+  },
+  {
+    "file": "web/web_principles.md",
+    "text": "KISS (Keep It Simple, Stupid)",
+    "level": 2,
+    "line": 25
+  },
+  {
+    "file": "web/web_principles.md",
+    "text": "YAGNI (You Aren't Gonna Need It)",
+    "level": 2,
+    "line": 35
+  },
+  {
+    "file": "web/web_principles.md",
+    "text": "BDUF (Big Design Up Front)",
+    "level": 2,
+    "line": 39
+  },
+  {
+    "file": "web/web_principles.md",
+    "text": "APO (Avoid Premature Optimization)",
+    "level": 2,
+    "line": 53
+  },
+  {
+    "file": "web/web_principles.md",
+    "text": "DRY (Don't Repeat Yourself)",
+    "level": 2,
+    "line": 63
+  },
+  {
+    "file": "web/web_principles.md",
+    "text": "LOD (Law of Demeter)",
+    "level": 2,
+    "line": 71
+  },
+  {
+    "file": "web/web_trees.md",
+    "text": "Деревья в веб-мире, зачем они нужны",
+    "level": 1,
+    "line": 1
+  },
+  {
+    "file": "web/web_trees.md",
+    "text": "DOM",
+    "level": 2,
+    "line": 3
+  },
+  {
+    "file": "web/web_trees.md",
+    "text": "Типы узлов DOM",
+    "level": 2,
+    "line": 23
+  },
+  {
+    "file": "web/web_trees.md",
+    "text": "CSSOM-дерево",
+    "level": 2,
+    "line": 43
+  },
+  {
+    "file": "web/web_trees.md",
+    "text": "Render-дерево",
+    "level": 2,
+    "line": 50
+  },
+  {
+    "file": "web/web_trees.md",
+    "text": "Shadow DOM",
+    "level": 2,
+    "line": 56
+  },
+  {
+    "file": "web/web_trees.md",
+    "text": "Виртуальный DOM ",
+    "level": 2,
+    "line": 68
+  }
+]
