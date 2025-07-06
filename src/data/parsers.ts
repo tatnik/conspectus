@@ -1,5 +1,6 @@
 import { TypeNavLink } from 'src/types/nav';
 import { withError } from './decorators';
+import { HeadingInfo } from 'src/types/heading';
 
 // Парсинг массива навигационных ссылок из markdown-текста
 const parseNavFromIndexBase = (index: string): TypeNavLink[] => {
@@ -23,19 +24,39 @@ const parseTitleFromMarkdownBase = (pageText: string): string => {
 
 export const parseTitleFromMarkdown = withError(parseTitleFromMarkdownBase);
 
-// Получение id для h2
-export const parseIdFromH2 = (n: number): string => `h2-${n}`;
+// Получение слага по тексту
+export function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/[^\p{L}\p{N}]+/gu, '-') // пробелы/небуквы -> дефис
+    .replace(/(^-+)|(-+$)/g, '');
+}
 
 // Получение массива заголовков h2 из HTML-элемента
-const parseHeadsArrayBase = (el: HTMLElement | null): Array<string> => {
+export const parseHeadingsFromHtmlBase = (el: HTMLElement | null): HeadingInfo[] => {
   if (!el) return [];
-  const h2Tags = el.getElementsByTagName('h2');
-  const heads: string[] = [];
-  for (let i = 0; i < h2Tags.length; i++) {
-    h2Tags[i].id = parseIdFromH2(i);
-    heads.push(h2Tags[i].textContent || '');
-  }
-  return heads;
+  const result: HeadingInfo[] = [];
+  const usedSlugs: Record<string, number> = {};
+
+  // h1..h6
+  el.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach((heading) => {
+    const level = parseInt(heading.tagName[1]); // 'h2' -> 2
+    const text = heading.textContent?.trim() ?? '';
+    let slug = slugify(text);
+    // если slug повторяется, добавлять -2, -3 и т.д.
+    if (usedSlugs[slug]) {
+      usedSlugs[slug] += 1;
+      slug = `${slug}-${usedSlugs[slug]}`;
+    } else {
+      usedSlugs[slug] = 1;
+    }
+    const id = `h${level}-${slug}`;
+    heading.id = id; // <- вешаем id для якоря!
+    result.push({ id, text, level });
+  });
+
+  return result;
 };
 
-export const parseHeadsArray = withError(parseHeadsArrayBase);
+export const parseHeadingsFromHtml = withError(parseHeadingsFromHtmlBase);

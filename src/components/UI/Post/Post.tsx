@@ -13,12 +13,14 @@ import { Link, Alert } from '@gravity-ui/uikit';
 
 import cls from './Post.module.scss';
 
+import { parseHeadingsFromHtml, parseTitleFromMarkdown } from 'src/data/parsers';
 import { PostNavigation } from 'src/components/UI/PostNavigation/PostNavigation';
 import { NO_CONTENT } from 'src/constants';
-import { parseHeadsArray, parseTitleFromMarkdown } from 'src/data/parsers';
+
 import { TypeNavLink } from 'src/types/nav';
 import { PrevNextButtons } from '../PrevNextButtons/PrevNexButtons';
 import { Sidebar } from 'src/components/layout/Sidebar/Sidebar';
+import { HeadingInfo } from 'src/types/heading';
 
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('xml', xml);
@@ -35,7 +37,7 @@ export interface TypePostProps {
 export const Post = (props: TypePostProps) => {
   const { post, prevPost, nextPost } = props;
   const postRef = useRef<HTMLDivElement | null>(null);
-  const [heads, setHeads] = useState<Array<string>>([]);
+  const [heads, setHeads] = useState<HeadingInfo[]>([]);
 
   useLayoutEffect(() => {
     const postElement: HTMLElement | null = postRef.current;
@@ -44,7 +46,7 @@ export const Post = (props: TypePostProps) => {
       codeBlocks.forEach((block) => {
         hljs.highlightElement(block as HTMLElement);
       });
-      setHeads(parseHeadsArray(postElement));
+      setHeads(parseHeadingsFromHtml(postElement));
     }
   }, [post, postRef]);
 

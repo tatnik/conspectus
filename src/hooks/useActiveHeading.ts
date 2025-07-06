@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
+import { HeadingInfo } from 'src/types/heading';
 
 export const useActiveHeading = (
-  heads: string[],
+  heads: HeadingInfo[],
   scrollRef: React.RefObject<HTMLElement>,
   selectedIndex: number,
   setSelectedIndex: (idx: number) => void
@@ -17,8 +18,8 @@ export const useActiveHeading = (
       setSelectedIndex(-1);
 
       //Собираем позиции заголовков относительно контейнера
-      const offsets = heads.map((_, idx) => {
-        const elem = container.querySelector(`#h2-${idx}`);
+      const offsets = heads.map((head) => {
+        const elem = container.querySelector(`#${head.id}`);
         return elem
           ? elem.getBoundingClientRect().top - container.getBoundingClientRect().top
           : Infinity;
