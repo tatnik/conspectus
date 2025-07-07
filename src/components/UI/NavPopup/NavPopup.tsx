@@ -3,10 +3,11 @@ import { NavList } from '../../UI/NavList/NavList';
 import { Button, Popup, Link as LinkGravity, ArrowToggle } from '@gravity-ui/uikit';
 import cls from './NavPopup.module.scss';
 import { TypeNavLink } from 'src/types/nav';
+import { PopperPlacement } from '@gravity-ui/uikit/build/esm/hooks/private';
 
 interface TypeNavPopupProps {
   navLinks: TypeNavLink[];
-  placement?: 'bottom' | 'top';
+  placement?: PopperPlacement;
   handleOnClick: (val: TypeNavLink) => void;
 }
 
