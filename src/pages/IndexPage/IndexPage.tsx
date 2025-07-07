@@ -11,8 +11,8 @@ import { Card, Link as LinkGravity } from '@gravity-ui/uikit';
 import { NotFound } from 'src/pages/NotFound/NotFound';
 
 import cls from './IndexPage.module.scss';
-import { getImgName, getNavItemByPath } from 'src/data/helpers';
-import { parseNavFromIndex } from 'src/data/parsers';
+import { getImgName, getNavItemByPath } from 'src/utils/helpers';
+import { parseNavFromIndex } from 'src/utils/parsers';
 
 export const IndexPage = () => {
   const { setCurrentPart, setShowPartNav, siteNav } = useAppContext();

@@ -1,6 +1,7 @@
 import { TypeNavLink } from 'src/types/nav';
-import { withError } from './decorators';
+import { withError } from 'src/utils/decorators';
 import { HeadingInfo } from 'src/types/heading';
+import { getHeadingInfo } from 'src/utils/helpers';
 
 // Парсинг массива навигационных ссылок из markdown-текста
 const parseNavFromIndexBase = (index: string): TypeNavLink[] => {
@@ -24,36 +25,18 @@ const parseTitleFromMarkdownBase = (pageText: string): string => {
 
 export const parseTitleFromMarkdown = withError(parseTitleFromMarkdownBase);
 
-// Получение слага по тексту
-export function slugify(text: string): string {
-  return text
-    .toLowerCase()
-    .trim()
-    .replace(/[^\p{L}\p{N}]+/gu, '-') // пробелы/небуквы -> дефис
-    .replace(/(^-+)|(-+$)/g, '');
-}
-
-// Получение массива заголовков h2 из HTML-элемента
+// Получение массива заголовков из HTML-элемента и установка id в заголовках
 export const parseHeadingsFromHtmlBase = (el: HTMLElement | null): HeadingInfo[] => {
   if (!el) return [];
   const result: HeadingInfo[] = [];
   const usedSlugs: Record<string, number> = {};
-
   // h1..h6
   el.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach((heading) => {
     const level = parseInt(heading.tagName[1]); // 'h2' -> 2
     const text = heading.textContent?.trim() ?? '';
-    let slug = slugify(text);
-    // если slug повторяется, добавлять -2, -3 и т.д.
-    if (usedSlugs[slug]) {
-      usedSlugs[slug] += 1;
-      slug = `${slug}-${usedSlugs[slug]}`;
-    } else {
-      usedSlugs[slug] = 1;
-    }
-    const id = `h${level}-${slug}`;
-    heading.id = id; // <- вешаем id для якоря!
-    result.push({ id, text, level });
+    const headingInfo = getHeadingInfo(level, text, usedSlugs);
+    heading.id = headingInfo.id; // <- вешаем id для якоря!
+    result.push(headingInfo);
   });
 
   return result;

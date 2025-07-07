@@ -10,7 +10,7 @@ import { Post } from 'src/components/UI/Post/Post';
 import { NotFound } from 'src/pages/NotFound/NotFound';
 
 import cls from './ContentPage.module.scss';
-import { getNavItemById, getNavItemByPath } from 'src/data/helpers';
+import { getNavItemById, getNavItemByPath } from 'src/utils/helpers';
 
 export const ContentPage = () => {
   const { path = '', fileName = '' } = useParams<{ path?: string; fileName?: string }>();

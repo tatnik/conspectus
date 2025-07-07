@@ -1,8 +1,8 @@
-import { parseNavFromIndex } from './parsers';
+import { parseNavFromIndex } from '../utils/parsers';
 import { TypeNavArray } from 'src/types/nav';
 import { EMPTY_LINK } from 'src/constants';
 
-import { withAsyncError } from './decorators';
+import { withAsyncError } from '../utils/decorators';
 
 const getFileBase = async (fileName: string): Promise<string> => {
   const module = await import(`../markdown${fileName}`);
