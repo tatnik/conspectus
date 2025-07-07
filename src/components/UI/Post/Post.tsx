@@ -13,7 +13,7 @@ import { Link, Alert } from '@gravity-ui/uikit';
 
 import cls from './Post.module.scss';
 
-import { parseHeadingsFromHtml, parseTitleFromMarkdown } from 'src/data/parsers';
+import { parseHeadingsFromHtml, parseTitleFromMarkdown } from 'src/utils/parsers';
 import { PostNavigation } from 'src/components/UI/PostNavigation/PostNavigation';
 import { NO_CONTENT } from 'src/constants';
 
@@ -21,6 +21,7 @@ import { TypeNavLink } from 'src/types/nav';
 import { PrevNextButtons } from '../PrevNextButtons/PrevNexButtons';
 import { Sidebar } from 'src/components/layout/Sidebar/Sidebar';
 import { HeadingInfo } from 'src/types/heading';
+import { useScrollToHash } from 'src/hooks/useScrollToHash';
 
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('xml', xml);
@@ -51,6 +52,8 @@ export const Post = (props: TypePostProps) => {
   }, [post, postRef]);
 
   const postBlockRef = useRef<HTMLDivElement>(null);
+
+  useScrollToHash([post]);
 
   if (!post)
     return (
