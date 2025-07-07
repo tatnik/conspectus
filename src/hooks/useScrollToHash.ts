@@ -12,11 +12,10 @@ export function useScrollToHash(deps: any[] = []) {
       const id = decodeURIComponent(hash.replace('#', ''));
       console.log(`id ${id}`);
       const el = document.getElementById(id);
-      //console.log(`el ${el.id}`);
       if (el) {
         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-    }, 500); // задержка нужна, чтобы markdown успел отрисоваться
+    }, 100); // задержка нужна, чтобы markdown успел отрисоваться
     // eslint-disable-next-line
   }, [hash, ...deps]);
 }

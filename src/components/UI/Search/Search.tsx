@@ -8,6 +8,7 @@ type SearchItem = {
   link: string; // путь вида ts/ts_oop#id
   text: string; // заголовок
   level: number; // уровень #, ##, ...
+  breadcrumbs: string;
 };
 
 export const Search: React.FC = () => {
@@ -32,7 +33,7 @@ export const Search: React.FC = () => {
     return filterIndex.map((item, id) => {
       return {
         id,
-        name: item.text,
+        name: item.breadcrumbs,
         path: item.link,
       };
     });

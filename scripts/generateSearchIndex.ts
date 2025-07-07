@@ -14,7 +14,15 @@ interface SearchHeading {
   text: string;
   level: number;
   link: string;
+  breadcrumbs: string; 
 }
+
+type HeadingWithBreadcrumbs = {
+  level: number;
+  text: string;
+  line: number;
+  breadcrumbs: string; // новый ключ
+};
 
 // Рекурсивно собираем все md-файлы, кроме index.md
 function walk(dir: string): string[] {
@@ -39,19 +47,35 @@ function walk(dir: string): string[] {
 function extractHeadings(mdText: string) {
   const headingRegex = /^(#+)\s+(.*)$/gm;
   let match: RegExpExecArray | null;
-  const headings: { level: number; text: string; line: number }[] = [];
-  let level = 0;
-  let line = 0;
+  const headings: HeadingWithBreadcrumbs[] = [];
+
+  // Стек с последними заголовками каждого уровня
+  const parents: { level: number; text: string }[] = [];
+
   while ((match = headingRegex.exec(mdText)) !== null) {
     // заголовок первого уровня может находиться только в первой строке конспекта и он должен быть только один
     // внутри конспекта в блоках кода могут быть строки Python-комментариев, начинающиеся с #, они не должны попасть в итоговый массив
-    level = match[1].length;
-    line = mdText.slice(0, match.index).split('\n').length;
+    const level = match[1].length;
+    const line = mdText.slice(0, match.index).split('\n').length;
+
     if (level === 1 && line > 1) continue;
+
+    const text = match[2];
+
+    // Обновляем parents-стек: удаляем все уровни >= текущего
+    while (parents.length && parents[parents.length - 1].level >= level) {
+      parents.pop();
+    }
+    parents.push({ level, text });
+
+    // Формируем breadcrumbs
+    const breadcrumbs = parents.map((h) => h.text).join(' / ');
+
     headings.push({
       level,
-      text: match[2],
+      text,
       line,
+      breadcrumbs,
     });
   }
   return headings;
@@ -80,6 +104,7 @@ function main() {
         text: h.text,
         level: h.level,
         link: getLink(relPath, id),
+        breadcrumbs: h.breadcrumbs,
       });
     });
   });
