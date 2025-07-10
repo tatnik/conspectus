@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/conspectus/static/css/main.04f2c72c.css",
-    "main.js": "/conspectus/static/js/main.18b36cf2.js",
+    "main.css": "/conspectus/static/css/main.53e1a229.css",
+    "main.js": "/conspectus/static/js/main.5a6ad32e.js",
     "static/js/4267.d30fdbee.chunk.js": "/conspectus/static/js/4267.d30fdbee.chunk.js",
     "static/js/7539.dd491936.chunk.js": "/conspectus/static/js/7539.dd491936.chunk.js",
-    "static/js/8977.ef074c90.chunk.js": "/conspectus/static/js/8977.ef074c90.chunk.js",
+    "static/js/8977.85e9f036.chunk.js": "/conspectus/static/js/8977.85e9f036.chunk.js",
     "static/js/838.c43e9032.chunk.js": "/conspectus/static/js/838.c43e9032.chunk.js",
     "static/js/6493.8befd2cf.chunk.js": "/conspectus/static/js/6493.8befd2cf.chunk.js",
     "static/js/4670.7b87282c.chunk.js": "/conspectus/static/js/4670.7b87282c.chunk.js",
@@ -82,10 +82,10 @@
     "static/js/2603.04cf9325.chunk.js": "/conspectus/static/js/2603.04cf9325.chunk.js",
     "static/js/4418.bc5e0934.chunk.js": "/conspectus/static/js/4418.bc5e0934.chunk.js",
     "static/js/9714.bb29798e.chunk.js": "/conspectus/static/js/9714.bb29798e.chunk.js",
-    "static/css/5192.e0a0c96d.chunk.css": "/conspectus/static/css/5192.e0a0c96d.chunk.css",
-    "static/js/5192.73f70203.chunk.js": "/conspectus/static/js/5192.73f70203.chunk.js",
+    "static/css/2409.fb32d6c1.chunk.css": "/conspectus/static/css/2409.fb32d6c1.chunk.css",
+    "static/js/2409.72e5dc5a.chunk.js": "/conspectus/static/js/2409.72e5dc5a.chunk.js",
     "static/css/8481.cc0c1ae4.chunk.css": "/conspectus/static/css/8481.cc0c1ae4.chunk.css",
-    "static/js/8481.746412d4.chunk.js": "/conspectus/static/js/8481.746412d4.chunk.js",
+    "static/js/8481.2b9cfcfa.chunk.js": "/conspectus/static/js/8481.2b9cfcfa.chunk.js",
     "static/css/979.816c9edf.chunk.css": "/conspectus/static/css/979.816c9edf.chunk.css",
     "static/js/979.f7f3af94.chunk.js": "/conspectus/static/js/979.f7f3af94.chunk.js",
     "static/js/4039.3dec1c8a.chunk.js": "/conspectus/static/js/4039.3dec1c8a.chunk.js",
@@ -129,7 +129,7 @@
     "static/media/py_local.md": "/conspectus/static/media/py_local.ee86c72d8c89c0f2e3c2.md",
     "static/media/py_pil.md": "/conspectus/static/media/py_pil.ad999bca01418ece26a5.md",
     "static/media/py_cy.md": "/conspectus/static/media/py_cy.82c70687b8e2ccbe5440.md",
-    "static/media/js_arrays.md": "/conspectus/static/media/js_arrays.7e290b3fd83ffed09e77.md",
+    "static/media/js_arrays.md": "/conspectus/static/media/js_arrays.a0a1ff01cec0cb38caa9.md",
     "static/media/py_doc.md": "/conspectus/static/media/py_doc.f41775784d6699df5278.md",
     "static/media/web_trees.md": "/conspectus/static/media/web_trees.cbfa30c353347ec711f9.md",
     "static/media/web_principles.md": "/conspectus/static/media/web_principles.dea5ad516a6d2659249f.md",
@@ -166,19 +166,19 @@
     "static/media/react_react-redux.md": "/conspectus/static/media/react_react-redux.b08ad8d9c2c50beb7835.md",
     "static/media/react_router.md": "/conspectus/static/media/react_router.95354d1b93de657b6eda.md",
     "index.html": "/conspectus/index.html",
-    "main.04f2c72c.css.map": "/conspectus/static/css/main.04f2c72c.css.map",
-    "main.18b36cf2.js.map": "/conspectus/static/js/main.18b36cf2.js.map",
-    "5192.e0a0c96d.chunk.css.map": "/conspectus/static/css/5192.e0a0c96d.chunk.css.map",
-    "5192.73f70203.chunk.js.map": "/conspectus/static/js/5192.73f70203.chunk.js.map",
+    "main.53e1a229.css.map": "/conspectus/static/css/main.53e1a229.css.map",
+    "main.5a6ad32e.js.map": "/conspectus/static/js/main.5a6ad32e.js.map",
+    "2409.fb32d6c1.chunk.css.map": "/conspectus/static/css/2409.fb32d6c1.chunk.css.map",
+    "2409.72e5dc5a.chunk.js.map": "/conspectus/static/js/2409.72e5dc5a.chunk.js.map",
     "8481.cc0c1ae4.chunk.css.map": "/conspectus/static/css/8481.cc0c1ae4.chunk.css.map",
-    "8481.746412d4.chunk.js.map": "/conspectus/static/js/8481.746412d4.chunk.js.map",
+    "8481.2b9cfcfa.chunk.js.map": "/conspectus/static/js/8481.2b9cfcfa.chunk.js.map",
     "979.816c9edf.chunk.css.map": "/conspectus/static/css/979.816c9edf.chunk.css.map",
     "979.f7f3af94.chunk.js.map": "/conspectus/static/js/979.f7f3af94.chunk.js.map",
     "4039.3dec1c8a.chunk.js.map": "/conspectus/static/js/4039.3dec1c8a.chunk.js.map",
     "2729.4fb74cce.chunk.js.map": "/conspectus/static/js/2729.4fb74cce.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.04f2c72c.css",
-    "static/js/main.18b36cf2.js"
+    "static/css/main.53e1a229.css",
+    "static/js/main.5a6ad32e.js"
   ]
 }
