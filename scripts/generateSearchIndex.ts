@@ -14,7 +14,7 @@ interface SearchHeading {
   text: string;
   level: number;
   link: string;
-  breadcrumbs: string; 
+  breadcrumbs: string;
 }
 
 type HeadingWithBreadcrumbs = {
@@ -91,7 +91,7 @@ function main() {
   const mdFiles: string[] = walk(MARKDOWN_DIR);
   const result: SearchHeading[] = [];
   mdFiles.forEach((filePath) => {
-    const relPath = path.relative(MARKDOWN_DIR, filePath);
+    const relPath = '/' + path.relative(MARKDOWN_DIR, filePath).replace(/\\/g, '/');
     const content = fs.readFileSync(filePath, 'utf-8');
     const headings = extractHeadings(content);
     // Для уникальности slug по файлу
