@@ -9,10 +9,11 @@ interface TypeNavPopupProps {
   navLinks: TypeNavLink[];
   placement?: PopperPlacement;
   handleOnClick: (val: TypeNavLink) => void;
+  strictHash?: boolean;
 }
 
 export const NavPopup = (props: TypeNavPopupProps) => {
-  const { navLinks, placement = 'bottom', handleOnClick } = props;
+  const { navLinks, placement = 'bottom', handleOnClick, strictHash } = props;
   const [open, setOpen] = React.useState(false);
   const buttonRef = React.useRef(null);
 
@@ -36,6 +37,7 @@ export const NavPopup = (props: TypeNavPopupProps) => {
         <NavList
           navLinkArray={navLinks}
           classNameList={cls.nav}
+          strictHash={strictHash}
           renderProps={(val) => {
             return (
               <LinkGravity

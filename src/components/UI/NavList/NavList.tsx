@@ -1,37 +1,53 @@
 import React from 'react';
-
+import { Link, useLocation } from 'react-router-dom';
 import cls from './NavList.module.scss';
-import { NavLink } from 'react-router-dom';
 import { TypeNavLink } from 'src/types/nav';
 
 export interface TypeNavListProps {
   navLinkArray: TypeNavLink[];
   classNameList: string;
   classNameItem?: string;
+  strictHash?: boolean;
   renderProps: (val: TypeNavLink) => React.ReactNode;
+  activeClassName?: string;
 }
 
-export const NavList = (props: TypeNavListProps) => {
-  const { navLinkArray, classNameList, classNameItem = '', renderProps } = props;
+function safeDecode(str: string) {
+  try {
+    return decodeURIComponent(str);
+  } catch {
+    return str;
+  }
+}
+
+export const NavList: React.FC<TypeNavListProps> = ({
+  navLinkArray,
+  classNameList,
+  classNameItem = '',
+  renderProps,
+  strictHash = false,
+  activeClassName = '',
+}) => {
+  const location = useLocation();
+  const currentFullPath = location.pathname + (strictHash ? safeDecode(location.hash) : '');
+  const activeClass = activeClassName === '' ? cls.activeLink : activeClassName;
+
   return (
     <ul className={`${classNameList} ${cls.NavList}`}>
-      {navLinkArray.map((val) => (
-        <li
-          key={`li_${val.id}`}
-          className={classNameItem}
-        >
-          <NavLink
-            to={val.path}
-            style={({ isActive }) => {
-              return {
-                fontWeight: isActive ? 'bold' : '',
-              };
-            }}
+      {navLinkArray.map((val) => {
+        const targetPath = safeDecode(val.path);
+        const isActive = currentFullPath === targetPath;
+        return (
+          <li
+            key={`li_${val.id}`}
+            className={`${classNameItem} ${isActive ? activeClass : ''}`.trim()}
           >
-            {renderProps(val)}
-          </NavLink>
-        </li>
-      ))}
+            <Link to={val.path}>{renderProps(val)}</Link>
+          </li>
+        );
+      })}
     </ul>
   );
 };
+
+export default NavList;
