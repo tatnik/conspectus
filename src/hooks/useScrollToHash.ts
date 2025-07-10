@@ -6,11 +6,11 @@ export function useScrollToHash(deps: any[] = []) {
 
   useEffect(() => {
     if (!hash) return;
-    console.log(`hash ${hash}`);
+
     // Даем время на рендер markdown
     setTimeout(() => {
       const id = decodeURIComponent(hash.replace('#', ''));
-      console.log(`id ${id}`);
+
       const el = document.getElementById(id);
       if (el) {
         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
