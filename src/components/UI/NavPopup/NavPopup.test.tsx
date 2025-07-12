@@ -7,7 +7,9 @@ describe('<NavPopup />', () => {
     renderWithProviders(
       <NavPopup
         navLinks={[]}
+        placement={undefined}
         handleOnClick={() => {}}
+        strictHash={undefined}
       />
     );
   });

@@ -1,9 +1,9 @@
 import React from 'react';
 import { renderWithProviders } from 'src/test-utils';
-import { NotFound } from './NotFound';
+import { Sidebar } from './Sidebar';
 
-describe('<NotFound />', () => {
+describe('<Sidebar />', () => {
   it('рендерится без ошибок', () => {
-    renderWithProviders(<NotFound errorMessage={undefined} />);
+    renderWithProviders(<Sidebar children={[]} />);
   });
 });

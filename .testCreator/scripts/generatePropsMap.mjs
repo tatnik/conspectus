@@ -2,41 +2,51 @@ import { Project } from 'ts-morph';
 import fg from 'fast-glob';
 import fs from 'fs-extra';
 import path from 'path';
-import config from './testCreator.config.mjs';
+import config from '../testCreator.config.mjs';
 
 const { ROOT_DIRS, PROPS_MAP_PATH } = config;
 
-function getDefaultForType(type) {
-  if (type.isArray && type.isArray()) return '[]';
-  if (type.isBoolean && type.isBoolean()) return 'false';
+// Рекурсивная генерация mock для любого типа
+function getMockForType(type, visitedTypes = new Set()) {
+  // Не зацикливаться на рекурсивных типах
+  const typeKey = type.getText();
+  if (visitedTypes.has(typeKey)) return '{}';
+  visitedTypes.add(typeKey);
+
   if (type.isString && type.isString()) return "''";
   if (type.isNumber && type.isNumber()) return '0';
-  // ВНИМАНИЕ: если это функция (call signature), возвращай "() => {}"
-  if (type.getCallSignatures && type.getCallSignatures().length > 0) {
-    // Проверяем возвращаемый тип функции
-    const signature = type.getCallSignatures()[0];
-    if (signature) {
-      const returnType = signature.getReturnType();
-      // Самые частые типы возвращаемых элементов: JSX.Element, React.ReactNode, Element, ReactElement, etc.
-      const returnText = returnType.getText();
-      if (
-        returnText.includes('Element') ||
-        returnText.includes('ReactNode') ||
-        returnText.includes('JSX.Element')
-      ) {
-        return '() => React.createElement("div")';
-      }
-      // Для функций, которые возвращают void или ничего не возвращают
-      if (returnType.getText() === 'void' || returnType.getText() === 'undefined') {
-        return '() => {}';
-      }
-    }
-    // Если не удалось определить тип возвращаемого значения
-    return '() => {}';
-  }
-  // Если это object, проверь, не функция ли это (call signature выше)
-  if (type.isObject && type.isObject()) return '{}';
+  if (type.isBoolean && type.isBoolean()) return 'false';
+  if (type.isArray && type.isArray()) return '[]';
   if ((type.isAny && type.isAny()) || (type.isUnknown && type.isUnknown())) return 'undefined';
+
+  // Если функция — просто мок
+  if (type.getCallSignatures && type.getCallSignatures().length > 0) return '() => {}';
+
+  // Сложный объект — рекурсивно генерим его поля
+  if (type.isObject && type.isObject()) {
+    const props = type.getProperties();
+    if (!props || props.length === 0) return '{}';
+    let fields = [];
+    for (const field of props) {
+      let fieldType;
+      // Для корректной работы ищем декларацию поля (чтобы не словить undefined)
+      if (field.getTypeAtLocation) {
+        const declarations = field.getDeclarations?.() || [];
+        if (declarations.length > 0) {
+          fieldType = field.getTypeAtLocation(declarations[0]);
+        } else {
+          // Иногда декларация отсутствует, fallback:
+          fieldType = field.getType();
+        }
+      } else {
+        fieldType = field.getType();
+      }
+      const mock = fieldType ? getMockForType(fieldType, new Set(visitedTypes)) : 'undefined';
+      fields.push(`${field.getName()}: ${mock}`);
+    }
+    return `{ ${fields.join(', ')} }`;
+  }
+
   return 'undefined';
 }
 
@@ -55,12 +65,30 @@ async function main() {
     for (const file of files) {
       const sourceFile = project.addSourceFileAtPath(file);
 
-      // Найти все переменные-экспорты
-      sourceFile.getVariableDeclarations().forEach((decl) => {
+      // Переменные-экспорты (стрелочные компоненты)
+      for (const decl of sourceFile.getVariableDeclarations()) {
         if (decl.isExported()) {
           const name = decl.getName();
-          // Тип компонента: React.FC<Props>
           const type = decl.getType();
+
+          // Исключаем не-компоненты: если возвращаемый тип функции не Element/ReactNode/JSX.Element
+          if (type.getCallSignatures && type.getCallSignatures().length > 0) {
+            const signature = type.getCallSignatures()[0];
+            if (signature) {
+              const returnType = signature.getReturnType();
+              const returnText = returnType.getText();
+              if (
+                !(
+                  returnText.includes('Element') ||
+                  returnText.includes('ReactNode') ||
+                  returnText.includes('JSX.Element')
+                )
+              ) {
+                continue; // Не компонент
+              }
+            }
+          }
+
           let propsType;
           if (type.getTypeArguments && type.getTypeArguments().length > 0) {
             propsType = type.getTypeArguments()[0];
@@ -69,27 +97,36 @@ async function main() {
             decl.getInitializer().getParameters &&
             decl.getInitializer().getParameters().length > 0
           ) {
-            // Возможно, arrow function c пропсами
+            // Arrow function c пропсами
             const param = decl.getInitializer().getParameters()[0];
             if (param && param.getType) {
               propsType = param.getType();
             }
           }
-          if (propsType && propsType.getProperties) {
+          // Пропускаем если пропсы — чистый примитив
+          if (
+            !propsType ||
+            propsType.isString?.() ||
+            propsType.isNumber?.() ||
+            propsType.isBoolean?.()
+          ) {
+            continue;
+          }
+          if (propsType && propsType.getProperties && propsType.getProperties().length > 0) {
             const fields = propsType.getProperties();
             let defaults = {};
             for (const field of fields) {
               const fieldType = field.getTypeAtLocation(decl);
-              defaults[field.getName()] = getDefaultForType(fieldType);
+              defaults[field.getName()] = getMockForType(fieldType);
             }
             if (Object.keys(defaults).length > 0) {
               propsMap[name] = defaults;
             }
           }
         }
-      });
+      }
 
-      // Также обработаем function declaration
+      // Function declaration (дефолтные функции)
       sourceFile.getFunctions().forEach((fn) => {
         if (fn.isExported()) {
           const name = fn.getName();
@@ -102,7 +139,7 @@ async function main() {
               let defaults = {};
               for (const field of fields) {
                 const fieldType = field.getTypeAtLocation(fn);
-                defaults[field.getName()] = getDefaultForType(fieldType);
+                defaults[field.getName()] = getMockForType(fieldType);
               }
               if (Object.keys(defaults).length > 0) {
                 propsMap[name] = defaults;
@@ -112,7 +149,7 @@ async function main() {
         }
       });
 
-      // Также поддержим export default (по имени файла)
+      // Export default (по имени файла)
       const defaultExportSymbol = sourceFile.getDefaultExportSymbol();
       if (defaultExportSymbol) {
         const decl = defaultExportSymbol.getValueDeclaration();
@@ -127,7 +164,7 @@ async function main() {
             let defaults = {};
             for (const field of fields) {
               const fieldType = field.getTypeAtLocation(decl);
-              defaults[field.getName()] = getDefaultForType(fieldType);
+              defaults[field.getName()] = getMockForType(fieldType);
             }
             if (Object.keys(defaults).length > 0) {
               // Имя компонента по имени файла

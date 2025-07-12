@@ -1,9 +1,9 @@
 import React from 'react';
 import { renderWithProviders } from 'src/test-utils';
-import { NotFound } from './NotFound';
+import { MainNav } from './MainNav';
 
-describe('<NotFound />', () => {
+describe('<MainNav />', () => {
   it('рендерится без ошибок', () => {
-    renderWithProviders(<NotFound errorMessage={undefined} />);
+    renderWithProviders(<MainNav isMainPage={false} />);
   });
 });

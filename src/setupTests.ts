@@ -1,5 +1,18 @@
 import '@testing-library/jest-dom';
 
+// Мок для ResizeObserver
+if (typeof window !== 'undefined' && !window.ResizeObserver) {
+  class ResizeObserver {
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+  }
+  // @ts-ignore
+  window.ResizeObserver = ResizeObserver;
+  // @ts-ignore
+  global.ResizeObserver = ResizeObserver;
+}
+
 // Мок window.matchMedia
 if (typeof window !== 'undefined' && !window.matchMedia) {
   window.matchMedia = function (query: string) {

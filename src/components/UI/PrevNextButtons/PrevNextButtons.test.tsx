@@ -1,12 +1,11 @@
 import React from 'react';
 import { renderWithProviders } from 'src/test-utils';
-import { Post } from './Post';
+import { PrevNextButtons } from './PrevNextButtons';
 
-describe('<Post />', () => {
+describe('<PrevNextButtons />', () => {
   it('рендерится без ошибок', () => {
     renderWithProviders(
-      <Post
-        post=""
+      <PrevNextButtons
         prevPost={{ id: 0, name: '', path: '' }}
         nextPost={{ id: 0, name: '', path: '' }}
       />

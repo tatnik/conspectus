@@ -1,14 +1,13 @@
 import React from 'react';
 import { renderWithProviders } from 'src/test-utils';
-import { Post } from './Post';
+import { CurrentPartLink } from './CurrentPartLink';
 
-describe('<Post />', () => {
+describe('<CurrentPartLink />', () => {
   it('рендерится без ошибок', () => {
     renderWithProviders(
-      <Post
-        post=""
-        prevPost={{ id: 0, name: '', path: '' }}
-        nextPost={{ id: 0, name: '', path: '' }}
+      <CurrentPartLink
+        isMainPage={false}
+        isPartIndexPage={false}
       />
     );
   });

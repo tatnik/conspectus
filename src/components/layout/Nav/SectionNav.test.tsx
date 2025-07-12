@@ -1,9 +1,9 @@
 import React from 'react';
 import { renderWithProviders } from 'src/test-utils';
-import { NotFound } from './NotFound';
+import { SectionNav } from './SectionNav';
 
-describe('<NotFound />', () => {
+describe('<SectionNav />', () => {
   it('рендерится без ошибок', () => {
-    renderWithProviders(<NotFound errorMessage={undefined} />);
+    renderWithProviders(<SectionNav />);
   });
 });

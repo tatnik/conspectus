@@ -4,6 +4,6 @@ import { Logo } from './Logo';
 
 describe('<Logo />', () => {
   it('рендерится без ошибок', () => {
-    renderWithProviders(<Logo />);
+    renderWithProviders(<Logo logoText={undefined} />);
   });
 });

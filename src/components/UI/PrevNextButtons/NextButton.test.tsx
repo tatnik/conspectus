@@ -1,14 +1,14 @@
 import React from 'react';
 import { renderWithProviders } from 'src/test-utils';
-import { Post } from './Post';
+import { NextButton } from './NextButton';
 
-describe('<Post />', () => {
+describe('<NextButton />', () => {
   it('рендерится без ошибок', () => {
     renderWithProviders(
-      <Post
-        post=""
-        prevPost={{ id: 0, name: '', path: '' }}
-        nextPost={{ id: 0, name: '', path: '' }}
+      <NextButton
+        postPath=""
+        postName=""
+        className=""
       />
     );
   });

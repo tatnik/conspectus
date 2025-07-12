@@ -1,57 +1,71 @@
-import config from './testCreator.config.mjs';
-import propsMap from './testCreator.propsMap.mjs';
+import config from '../testCreator.config.mjs';
+import propsMap from '../testCreator.propsMap.mjs';
 import fs from 'fs-extra';
 import path from 'path';
 import fg from 'fast-glob';
 import inquirer from 'inquirer';
 
-// === Импорт карты пропсов ===
+const { COMPONENT_EXTS, TEST_SUFFIX, TEMPLATE_PATH, ROOT_DIRS, EXCLUDE_NAME, ON_EXISTS } = config;
 
-const {
-  COMPONENT_EXTS,
-  TEST_SUFFIX,
-  TEMPLATE_PATH,
-  ROOT_DIRS,
-  EXCLUDE_NAME,
-  ON_EXISTS,
-  PROPS_MAP_PATH,
-} = config;
-
-// Сериализация значения для TSX-пропсов
+// ===== Сериализация значения для TSX-пропса =====
 function jsxValue(val) {
-  if (val === undefined) return undefined;
+  if (val === undefined) return '{undefined}';
   if (val === null) return '{null}';
-  if (typeof val === 'string') return `"${val}"`;
-  if (typeof val === 'number') return `{${val}}`;
-  if (typeof val === 'boolean') return val ? '' : '{false}';
-  if (Array.isArray(val)) return '{[]}';
-  if (typeof val === 'object') return '{ {}}';
-  return `{${val}}`;
+  if (typeof val === 'string') return `"${val.replace(/"/g, '\\"')}"`;
+  if (typeof val === 'number' || typeof val === 'boolean') return `{${val}}`;
+  if (typeof val === 'function') return '{() => {}}';
+  if (Array.isArray(val)) {
+    const arr = val.map(jsxValueForObject).join(', ');
+    return `{[${arr}]}`;
+  }
+  if (typeof val === 'object') {
+    // --- используем дополнительную функцию, чтобы не добавлять лишние фигурные скобки ---
+    return `{${objectToJSX(val)}}`;
+  }
+  return `{${JSON.stringify(val)}}`;
 }
 
-// Формируем строку пропсов для компонента
+// Эта функция используется только для вложенных объектов, не оборачивает результат в {}
+function jsxValueForObject(val) {
+  if (val === undefined) return 'undefined';
+  if (val === null) return 'null';
+  if (typeof val === 'string') return `"${val.replace(/"/g, '\\"')}"`;
+  if (typeof val === 'number' || typeof val === 'boolean') return `${val}`;
+  if (typeof val === 'function') return '() => {}';
+  if (Array.isArray(val)) {
+    return `[${val.map(jsxValueForObject).join(', ')}]`;
+  }
+  if (typeof val === 'object') {
+    return objectToJSX(val);
+  }
+  return JSON.stringify(val);
+}
+
+// Преобразует объект в строку вида: id: 0, name: "", path: ""
+function objectToJSX(obj) {
+  return `{${Object.entries(obj)
+    .map(([k, v]) => `${k}: ${jsxValueForObject(v)}`)
+    .join(', ')}}`;
+}
+
+// ===== Формируем строку пропсов для компонента =====
 function generatePropsStr(componentName) {
   const map = propsMap[componentName];
   if (!map) return '';
   return Object.entries(map)
-    .filter(([_, v]) => v !== undefined)
     .map(([k, v]) => {
       const jsx = jsxValue(v);
       if (jsx === undefined) return '';
-      if (typeof v === 'boolean' && v === true) return ` ${k}`;
       return ` ${k}=${jsx}`;
     })
     .join('');
 }
 
-// Генерация теста для одного файла
+// ===== Генерация теста для одного файла =====
 async function generateTestFile(componentPath, template, testFilePath, componentName) {
   if (await fs.pathExists(testFilePath)) {
-    if (ON_EXISTS === 'skip') {
-      return;
-    } else if (ON_EXISTS === 'overwrite') {
-      // ничего не спрашиваем
-    } else if (ON_EXISTS === 'ask') {
+    if (ON_EXISTS === 'skip') return;
+    if (ON_EXISTS === 'ask') {
       const { action } = await inquirer.prompt([
         {
           type: 'list',
@@ -64,9 +78,8 @@ async function generateTestFile(componentPath, template, testFilePath, component
         },
       ]);
       if (action === 'skip') return;
-    } else {
-      throw new Error(`Неизвестный параметр ON_EXISTS: ${ON_EXISTS}`);
     }
+    // Если 'overwrite' — ничего не спрашиваем, перезаписываем
   }
 
   const propsStr = generatePropsStr(componentName);
@@ -78,7 +91,7 @@ async function generateTestFile(componentPath, template, testFilePath, component
   console.log(`✅ Сгенерирован: ${testFilePath}`);
 }
 
-// Основная логика
+// ===== Основная логика =====
 (async () => {
   const template = await fs.readFile(TEMPLATE_PATH, 'utf-8');
   for (const ROOT_DIR of ROOT_DIRS) {

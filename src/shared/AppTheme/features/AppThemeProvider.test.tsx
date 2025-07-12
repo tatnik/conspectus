@@ -4,6 +4,6 @@ import { AppThemeProvider } from './AppThemeProvider';
 
 describe('<AppThemeProvider />', () => {
   it('рендерится без ошибок', () => {
-    renderWithProviders(<AppThemeProvider />);
+    renderWithProviders(<AppThemeProvider children={undefined} />);
   });
 });

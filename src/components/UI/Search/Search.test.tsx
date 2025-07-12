@@ -1,9 +1,9 @@
 import React from 'react';
 import { renderWithProviders } from 'src/test-utils';
-import { NotFound } from './NotFound';
+import { Search } from './Search';
 
-describe('<NotFound />', () => {
+describe('<Search />', () => {
   it('рендерится без ошибок', () => {
-    renderWithProviders(<NotFound errorMessage={undefined} />);
+    renderWithProviders(<Search />);
   });
 });
