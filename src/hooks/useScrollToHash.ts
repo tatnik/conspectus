@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-export function useScrollToHash(deps: any[] = []) {
+export const useScrollToHash = (post: string) => {
   const { hash } = useLocation();
 
   useEffect(() => {
@@ -15,7 +15,6 @@ export function useScrollToHash(deps: any[] = []) {
       if (el) {
         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-    }, 100); // задержка нужна, чтобы markdown успел отрисоваться
-    // eslint-disable-next-line
-  }, [hash, ...deps]);
-}
+    }, 100);
+  }, [hash, post]);
+};

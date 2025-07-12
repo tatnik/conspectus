@@ -12,13 +12,13 @@ export interface TypeNavListProps {
   activeClassName?: string;
 }
 
-function safeDecode(str: string) {
+const safeDecode = (str: string) => {
   try {
     return decodeURIComponent(str);
   } catch {
     return str;
   }
-}
+};
 
 export const NavList: React.FC<TypeNavListProps> = ({
   navLinkArray,

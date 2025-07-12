@@ -18,7 +18,7 @@ import { PostNavigation } from 'src/components/UI/PostNavigation/PostNavigation'
 import { NO_CONTENT } from 'src/constants';
 
 import { TypeNavLink } from 'src/types/nav';
-import { PrevNextButtons } from '../PrevNextButtons/PrevNexButtons';
+import { PrevNextButtons } from '../PrevNextButtons/PrevNextButtons';
 import { Sidebar } from 'src/components/layout/Sidebar/Sidebar';
 import { HeadingInfo } from 'src/types/heading';
 import { useScrollToHash } from 'src/hooks/useScrollToHash';
@@ -53,7 +53,7 @@ export const Post = (props: TypePostProps) => {
 
   const postBlockRef = useRef<HTMLDivElement>(null);
 
-  useScrollToHash([post]);
+  useScrollToHash(post);
 
   if (!post)
     return (
