@@ -4,8 +4,7 @@ import { MemoryRouter, MemoryRouterProps } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './store';
 import { AppThemeProvider } from './shared/AppTheme';
-import { AppContextProvider } from './app/AppContext/AppContextProvider'; // скорректируй путь если нужно
-
+import { AppContextProvider } from './app/AppContext/AppContextProvider';
 type AllProvidersProps = {
   children: ReactNode;
   route?: string;

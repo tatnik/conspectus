@@ -7,7 +7,14 @@ import inquirer from 'inquirer';
 
 const { COMPONENT_EXTS, TEST_SUFFIX, TEMPLATE_PATH, ROOT_DIRS, EXCLUDE_NAME, ON_EXISTS } = config;
 
-// ===== Сериализация значения для TSX-пропса =====
+/**
+ * Преобразует любое JS-значение в корректный JSX-литерал для передачи в пропс.
+ * - Строки оборачиваются в кавычки
+ * - undefined/null — явно в фигурные скобки
+ * - Числа/boolean — фигурные скобки
+ * - Функции — заглушка
+ * - Массивы и объекты — рекурсивно сериализуются, вложенные объекты не получают лишних скобок
+ */
 function jsxValue(val) {
   if (val === undefined) return '{undefined}';
   if (val === null) return '{null}';
@@ -25,7 +32,10 @@ function jsxValue(val) {
   return `{${JSON.stringify(val)}}`;
 }
 
-// Эта функция используется только для вложенных объектов, не оборачивает результат в {}
+/**
+ * Сериализация значения для вложенных объектов/массивов:
+ * - Не добавляет фигурные скобки вокруг объекта (нужно для вложенности в массиве/объекте)
+ */
 function jsxValueForObject(val) {
   if (val === undefined) return 'undefined';
   if (val === null) return 'null';
@@ -41,14 +51,22 @@ function jsxValueForObject(val) {
   return JSON.stringify(val);
 }
 
-// Преобразует объект в строку вида: id: 0, name: "", path: ""
+/**
+ * Преобразует простой JS-объект в строку вида:
+ *   id: 0, name: "", path: ""
+ * Используется для генерации строк вложенных пропсов
+ */
 function objectToJSX(obj) {
   return `{${Object.entries(obj)
     .map(([k, v]) => `${k}: ${jsxValueForObject(v)}`)
     .join(', ')}}`;
 }
 
-// ===== Формируем строку пропсов для компонента =====
+/**
+ * Формирует строку всех пропсов для компонента на основе propsMap:
+ * - Для каждого ключа вызывает jsxValue
+ * - Все пропсы рендерятся как отдельные параметры для JSX-компонента
+ */
 function generatePropsStr(componentName) {
   const map = propsMap[componentName];
   if (!map) return '';
@@ -61,7 +79,14 @@ function generatePropsStr(componentName) {
     .join('');
 }
 
-// ===== Генерация теста для одного файла =====
+/**
+ * Генерирует тестовый файл для компонента:
+ * - Читает шаблон
+ * - Формирует строку пропсов
+ * - Подставляет значения в шаблон
+ * - Проверяет существование файла (поведение зависит от ON_EXISTS: skip, ask, overwrite)
+ * - Создаёт или перезаписывает файл
+ */
 async function generateTestFile(componentPath, template, testFilePath, componentName) {
   if (await fs.pathExists(testFilePath)) {
     if (ON_EXISTS === 'skip') return;
@@ -91,7 +116,12 @@ async function generateTestFile(componentPath, template, testFilePath, component
   console.log(`✅ Сгенерирован: ${testFilePath}`);
 }
 
-// ===== Основная логика =====
+/**
+ * Главная логика: ищет все компоненты, генерирует по ним тестовые файлы.
+ * - Для каждого компонента определяет тестовый файл и путь
+ * - Подставляет пропсы, используя propsMap
+ * - Поведение при существующем файле регулируется через ON_EXISTS
+ */
 (async () => {
   const template = await fs.readFile(TEMPLATE_PATH, 'utf-8');
   for (const ROOT_DIR of ROOT_DIRS) {

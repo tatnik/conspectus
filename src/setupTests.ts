@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom';
 
 // Мок для ResizeObserver
+/* eslint-disable @typescript-eslint/no-empty-function */
 if (typeof window !== 'undefined' && !window.ResizeObserver) {
   class ResizeObserver {
     observe() {}
@@ -12,6 +13,7 @@ if (typeof window !== 'undefined' && !window.ResizeObserver) {
   // @ts-ignore
   global.ResizeObserver = ResizeObserver;
 }
+/* eslint-enable @typescript-eslint/no-empty-function */
 
 // Мок window.matchMedia
 if (typeof window !== 'undefined' && !window.matchMedia) {
@@ -32,11 +34,22 @@ if (typeof window !== 'undefined' && !window.matchMedia) {
 // Подавление warning от React Router
 beforeAll(() => {
   const originalWarn = console.warn;
+  const originalError = console.error;
+
+  // Подавляем varning'и от React Router в console.warn
   console.warn = (...args: unknown[]) => {
     if (typeof args[0] === 'string' && args[0].includes('React Router Future Flag Warning')) {
       return;
     }
     originalWarn(...args);
+  };
+
+  // Подавляем warning'и act(...) от React в console.error
+  console.error = (...args: unknown[]) => {
+    if (typeof args[0] === 'string' && args[0].includes('not wrapped in act')) {
+      return;
+    }
+    originalError(...args);
   };
 });
 
