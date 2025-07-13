@@ -4,7 +4,11 @@ export default {
     `import userEvent from '@testing-library/user-event';`,
     `import { screen } from '@testing-library/react';`,
   ],
-
+  // Мок-пропсы
+  props: {
+    navLinks: [{ id: 1, name: 'Test', path: '/test' }],
+    handleOnClick: '__JEST_FN__',
+  },
   // Основные тесты для компонента
   tests: [
     {
@@ -31,10 +35,4 @@ export default {
       `,
     },
   ],
-
-  // Мок-пропсы (опционально, если нужно отличаться от defaults)
-  props: {
-    navLinks: [{ id: 1, name: 'Test', path: '/test' }],
-    handleOnClick: '__JEST_FN__',
-  },
 };
