@@ -1,18 +1,13 @@
 import React from 'react';
 import { renderWithProviders } from 'src/test-utils';
-import { NavList } from './NavList';
+
+import {NavList} from './NavList';
+
 
 describe('<NavList />', () => {
+  
   it('рендерится без ошибок', () => {
-    renderWithProviders(
-      <NavList
-        navLinkArray={[]}
-        classNameList=""
-        classNameItem={undefined}
-        strictHash={undefined}
-        renderProps={() => {}}
-        activeClassName={undefined}
-      />
-    );
+    renderWithProviders(<NavList  navLinkArray={[]} classNameList="" classNameItem={undefined} strictHash={undefined} renderProps={() => {}} activeClassName={undefined} />);
   });
+  
 });

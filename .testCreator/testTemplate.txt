@@ -1,9 +1,13 @@
 import React from 'react';
-import { renderWithProviders } from 'src/test-utils';
+import { ${RENDER_FUNCTION} } from 'src/test-utils';
+${EXTRA_IMPORTS}
 import {${COMPONENT_NAME}} from './${COMPONENT_NAME}';
 
+
 describe('<${COMPONENT_NAME} />', () => {
+  ${JEST_MOCKS}
   it('рендерится без ошибок', () => {
-    renderWithProviders(<${COMPONENT_NAME} ${COMPONENT_PROPS} />);
+    ${RENDER_FUNCTION}(<${COMPONENT_NAME} ${COMPONENT_PROPS} />);
   });
+  ${EXTRA_TESTS}
 });

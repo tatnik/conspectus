@@ -13,5 +13,5 @@
     "importHelpers": true,
     "typeRoots": ["types", "./node_modules/@types", ".rehype-highlight/*"]
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/app/AppContext/AppContextProvider.jsx"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/app/AppContext/AppContextProvider.jsx", "src/components/UI/NavPopup/NavPopup.behavior.mjs"]
 }

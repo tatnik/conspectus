@@ -6,4 +6,5 @@ export default {
   EXCLUDE_NAME: 'test',
   ON_EXISTS: 'overwrite', // 'skip' | 'overwrite' | 'ask'
   PROPS_MAP_PATH: '.testCreator/testCreator.propsMap.mjs',
+  RENDER_FUNCTION: 'renderWithProviders', // кастомный рендер
 };
