@@ -12,25 +12,23 @@ interface TypeLogoProps {
 export const Logo = (props: TypeLogoProps) => {
   const { logoText = '' } = props;
   return (
-    <>
-      <Link
-        to="/"
-        className={cls.Logo}
-      >
-        <img
-          src={logo}
-          height="40px"
-          alt="логотип"
-        />
-        {logoText === '' ? null : (
-          <Text
-            variant="header-1"
-            color={'info'}
-          >
-            Конспекты
-          </Text>
-        )}
-      </Link>
-    </>
+    <Link
+      to="/"
+      className={cls.Logo}
+    >
+      <img
+        src={logo}
+        height="40px"
+        alt="логотип"
+      />
+      {logoText === '' ? null : (
+        <Text
+          variant="header-1"
+          color={'info'}
+        >
+          Конспекты
+        </Text>
+      )}
+    </Link>
   );
 };
