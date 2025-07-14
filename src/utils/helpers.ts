@@ -15,11 +15,11 @@ export const getNavItemByPath = (path: string, navArray: TypeNavArray): TypeNavL
 };
 
 // получаем навигационную ссылку из массива ссылок  по id
-export const getNavItemById = (id: number, navArray: TypeNavArray): TypeNavLink => {
+export const getNavItemById = (id: number, navArray: TypeNavArray): TypeNavLink | undefined => {
   for (const element of navArray) {
     if (element.id === id) return element;
   }
-  return EMPTY_LINK;
+  return undefined;
 };
 
 // получаем слаг из текста

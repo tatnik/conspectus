@@ -7,7 +7,7 @@ import {Post} from './Post';
 describe('<Post />', () => {
   
   it('рендерится без ошибок', () => {
-    renderWithProviders(<Post  post="" prevPost={{id: 0, name: "", path: ""}} nextPost={{id: 0, name: "", path: ""}} />);
+    renderWithProviders(<Post  post="" prevPost={undefined} nextPost={undefined} />);
   });
   
 });

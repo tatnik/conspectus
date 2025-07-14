@@ -11,8 +11,8 @@ import { PrevButton } from './PrevButton';
 import { NextButton } from './NextButton';
 
 interface PrevNextButtonsProps {
-  prevPost: TypeNavLink;
-  nextPost: TypeNavLink;
+  prevPost?: TypeNavLink;
+  nextPost?: TypeNavLink;
 }
 
 export const PrevNextButtons = (props: PrevNextButtonsProps) => {
@@ -25,14 +25,14 @@ export const PrevNextButtons = (props: PrevNextButtonsProps) => {
       className={cls.navCard}
       view="clear"
     >
-      {prevPost.id > 0 && (
+      {prevPost && (
         <PrevButton
           postPath={prevPost.path}
           postName={prevPost.name}
           className={cls.prevButton}
         />
       )}
-      {nextPost.id > 0 && (
+      {nextPost && (
         <NextButton
           postPath={nextPost.path}
           postName={nextPost.name}

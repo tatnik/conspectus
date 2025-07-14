@@ -1,61 +1,41 @@
+import React, { useRef } from 'react';
+import { Alert } from '@gravity-ui/uikit';
+
 import 'highlight.js/scss/default.scss';
-
-import hljs from 'highlight.js/lib/core';
-import bash from 'highlight.js/lib/languages/bash';
-import javascript from 'highlight.js/lib/languages/javascript';
-import json from 'highlight.js/lib/languages/json';
-import python from 'highlight.js/lib/languages/python';
-import xml from 'highlight.js/lib/languages/xml';
-import Markdown from 'markdown-to-jsx';
-import React, { useLayoutEffect, useRef, useState } from 'react';
-
-import { Link, Alert } from '@gravity-ui/uikit';
-
 import cls from './Post.module.scss';
 
-import { parseHeadingsFromHtml, parseTitleFromMarkdown } from 'src/utils/parsers';
+import { useHighlightAndHeadings } from 'src/hooks/useHighlightAndHeadings';
+import { PostMarkdownBlock } from './PostMarkdownBlock';
 import { PostNavigation } from 'src/components/UI/PostNavigation/PostNavigation';
 import { NO_CONTENT } from 'src/constants';
-
 import { TypeNavLink } from 'src/types/nav';
 import { PrevNextButtons } from '../PrevNextButtons/PrevNextButtons';
 import { Sidebar } from 'src/components/layout/Sidebar/Sidebar';
-import { HeadingInfo } from 'src/types/heading';
+import { parseTitleFromMarkdown } from 'src/utils/parsers';
 import { useScrollToHash } from 'src/hooks/useScrollToHash';
 
-hljs.registerLanguage('javascript', javascript);
-hljs.registerLanguage('xml', xml);
-hljs.registerLanguage('json', json);
-hljs.registerLanguage('bash', bash);
-hljs.registerLanguage('python', python);
-
+/**
+ * Свойства для компонента Post.
+ */
 export interface TypePostProps {
   post: string;
-  prevPost: TypeNavLink;
-  nextPost: TypeNavLink;
+  prevPost?: TypeNavLink;
+  nextPost?: TypeNavLink;
 }
 
-export const Post = (props: TypePostProps) => {
-  const { post, prevPost, nextPost } = props;
-  const postRef = useRef<HTMLDivElement | null>(null);
-  const [heads, setHeads] = useState<HeadingInfo[]>([]);
-
-  useLayoutEffect(() => {
-    const postElement: HTMLElement | null = postRef.current;
-    if (postElement) {
-      const codeBlocks = postElement.querySelectorAll('pre code');
-      codeBlocks.forEach((block) => {
-        hljs.highlightElement(block as HTMLElement);
-      });
-      setHeads(parseHeadingsFromHtml(postElement));
-    }
-  }, [post, postRef]);
-
-  const postBlockRef = useRef<HTMLDivElement>(null);
+/**
+ * Компонент для отображения markdown-поста с подсветкой синтаксиса, боковой навигацией и кнопками "назад/вперёд".
+ */
+export const Post: React.FC<TypePostProps> = ({ post, prevPost, nextPost }) => {
+  const markdownRootRef = useRef<HTMLDivElement>(null);
+  const sidebarBlockRef = useRef<HTMLDivElement>(null);
 
   useScrollToHash(post);
 
-  if (!post)
+  // Используем кастомный хук для подсветки и сбора заголовков
+  const heads = useHighlightAndHeadings(markdownRootRef, [post]);
+
+  if (!post) {
     return (
       <Alert
         theme="warning"
@@ -63,37 +43,23 @@ export const Post = (props: TypePostProps) => {
         className={cls.PostAlert}
       />
     );
+  }
 
   return (
     <article
-      ref={postRef}
+      ref={markdownRootRef}
       className={cls.PostGrid}
     >
-      <div
-        ref={postBlockRef}
+      <PostMarkdownBlock
+        post={post}
+        blockRef={sidebarBlockRef}
         className={cls.PostBlock}
-      >
-        <Markdown
-          options={{
-            overrides: {
-              a: {
-                component: Link,
-                props: {
-                  view: 'normal',
-                  target: '_blank',
-                },
-              },
-            },
-          }}
-        >
-          {post}
-        </Markdown>
-      </div>
+      />
       <Sidebar>
         <PostNavigation
           heads={heads}
           pageTitle={parseTitleFromMarkdown(post)}
-          postBlockRef={postBlockRef}
+          postBlockRef={sidebarBlockRef}
         />
         <PrevNextButtons
           prevPost={prevPost}
