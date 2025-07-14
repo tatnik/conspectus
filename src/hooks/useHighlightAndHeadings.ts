@@ -11,7 +11,7 @@ import { HeadingInfo } from 'src/types/heading';
  */
 export function useHighlightAndHeadings(
   ref: React.RefObject<HTMLElement>,
-  deps: any[] = []
+  deps: React.DependencyList = []
 ): HeadingInfo[] {
   const [heads, setHeads] = useState<HeadingInfo[]>([]);
 

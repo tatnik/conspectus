@@ -25,6 +25,12 @@ export interface TypePostProps {
 
 /**
  * Компонент для отображения markdown-поста с подсветкой синтаксиса, боковой навигацией и кнопками "назад/вперёд".
+ *
+ * @param props - Объект со следующими свойствами:
+ *   - post: содержимое поста в формате markdown
+ *   - prevPost: объект для навигации на предыдущий пост
+ *   - nextPost: объект для навигации на следующий пост
+ * @returns {JSX.Element} Разметка поста, навигации и кнопок перехода.
  */
 export const Post: React.FC<TypePostProps> = ({ post, prevPost, nextPost }) => {
   const markdownRootRef = useRef<HTMLDivElement>(null);

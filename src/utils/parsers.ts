@@ -32,7 +32,7 @@ export const parseHeadingsFromHtmlBase = (el: HTMLElement | null): HeadingInfo[]
   const usedSlugs: Record<string, number> = {};
   // h1..h6
   el.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach((heading) => {
-    const level = parseInt(heading.tagName[1]); // 'h2' -> 2
+    const level = parseInt(heading.tagName[1], 10); // 'h2' -> 2
     const text = heading.textContent?.trim() ?? '';
     const headingInfo = getHeadingInfo(level, text, usedSlugs);
     heading.id = headingInfo.id; // <- вешаем id для якоря!
