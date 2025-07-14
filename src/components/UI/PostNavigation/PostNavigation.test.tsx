@@ -7,7 +7,7 @@ import {PostNavigation} from './PostNavigation';
 describe('<PostNavigation />', () => {
   
   it('рендерится без ошибок', () => {
-    renderWithProviders(<PostNavigation  heads={[]} pageTitle="" postBlockRef={{current: undefined}} />);
+    renderWithProviders(<PostNavigation  heads={[]} pageTitle="" postBlockRef={{ current: null }} />);
   });
   
 });

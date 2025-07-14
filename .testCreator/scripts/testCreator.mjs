@@ -122,7 +122,15 @@ function generatePropsStr(componentName, props = null, useVarsForMocks = false) 
   if (!map) return '';
   return Object.entries(map)
     .map(([k, v]) => {
+      // ----- спец. обработка для ref-пропсов -----
+      if (k.toLowerCase().includes('ref')) {
+        // Если это объект с current, то { current: null }
+        if (typeof v === 'object' && v && 'current' in v) return ` ${k}={{ current: null }}`;
+        return ` ${k}={null}`;
+      }
+
       if (useVarsForMocks && v === '__JEST_FN__') return ` ${k}={${k}}`;
+
       const jsx = jsxValue(v);
       if (jsx === undefined) return '';
       return ` ${k}=${jsx}`;
