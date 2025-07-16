@@ -7,7 +7,7 @@ import {MainNav} from './MainNav';
 describe('<MainNav />', () => {
   
   it('рендерится без ошибок', () => {
-    renderWithProviders(<MainNav  isMainPage={false} />);
+    renderWithProviders(<MainNav  />);
   });
   
 });

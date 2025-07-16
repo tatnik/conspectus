@@ -30,16 +30,16 @@ export interface TypePostProps {
  *   - post: содержимое поста в формате markdown
  *   - prevPost: объект для навигации на предыдущий пост
  *   - nextPost: объект для навигации на следующий пост
+ *
  * @returns {JSX.Element} Разметка поста, навигации и кнопок перехода.
  */
 export const Post: React.FC<TypePostProps> = ({ post, prevPost, nextPost }) => {
-  const markdownRootRef = useRef<HTMLDivElement>(null);
-  const sidebarBlockRef = useRef<HTMLDivElement>(null);
+  const markdownBlockRef = useRef<HTMLDivElement>(null);
 
   useScrollToHash(post);
 
   // Используем кастомный хук для подсветки и сбора заголовков
-  const heads = useHighlightAndHeadings(markdownRootRef, [post]);
+  const heads = useHighlightAndHeadings(markdownBlockRef, [post]);
 
   if (!post) {
     return (
@@ -52,20 +52,17 @@ export const Post: React.FC<TypePostProps> = ({ post, prevPost, nextPost }) => {
   }
 
   return (
-    <article
-      ref={markdownRootRef}
-      className={cls.PostGrid}
-    >
+    <article className={cls.PostGrid}>
       <PostMarkdownBlock
         post={post}
-        blockRef={sidebarBlockRef}
+        markdownBlockRef={markdownBlockRef}
         className={cls.PostBlock}
       />
       <Sidebar>
         <PostNavigation
           heads={heads}
           pageTitle={parseTitleFromMarkdown(post)}
-          postBlockRef={sidebarBlockRef}
+          markdownBlockRef={markdownBlockRef}
         />
         <PrevNextButtons
           prevPost={prevPost}

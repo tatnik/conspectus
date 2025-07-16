@@ -1,23 +1,34 @@
 import React, { useState } from 'react';
-
-import { Text, Link as GLink } from '@gravity-ui/uikit';
-
+import { Text } from '@gravity-ui/uikit';
 import cls from './PostNavigation.module.scss';
 
 import { useActiveHeading } from 'src/hooks/useActiveHeading';
 import { HeadingInfo } from 'src/types/heading';
+import { NavItem } from 'src/components/UI/NavItem/NavItem';
 
 interface PostNavigationProps {
   heads: HeadingInfo[];
   pageTitle: string;
-  postBlockRef: React.RefObject<HTMLDivElement>;
+  markdownBlockRef: React.RefObject<HTMLDivElement>;
 }
 
+/**
+ * Компонент для боковой навигации по статье.
+ * Показывает структуру заголовков (heads) и позволяет быстро переходить к нужному разделу.
+ * Активный пункт подсвечивается по мере скролла или при клике.
+ *
+ * @param {Object} props - Свойства компонента
+ * @param {HeadingInfo[]} props.heads - Список заголовков статьи (id, уровень, текст).
+ * @param {string} props.pageTitle - Заголовок/название текущей страницы или статьи.
+ * @param {React.RefObject<HTMLDivElement>} props.markdownBlockRef - Ref на основной блок статьи для отслеживания положения.
+ *
+ * @returns {JSX.Element|null} Навигация по заголовкам или null, если заголовков нет.
+ */
 export const PostNavigation = (props: PostNavigationProps) => {
-  const { heads, pageTitle, postBlockRef } = props;
+  const { heads, pageTitle, markdownBlockRef } = props;
 
   const [selectedIndex, setSelectedIndex] = useState(-1);
-  const activeIndex = useActiveHeading(heads, postBlockRef, selectedIndex, setSelectedIndex);
+  const activeIndex = useActiveHeading(heads, markdownBlockRef, selectedIndex, setSelectedIndex);
 
   if (!heads.length) return null;
 
@@ -36,18 +47,15 @@ export const PostNavigation = (props: PostNavigationProps) => {
       <ul>
         {heads.map((head, index) =>
           head.level > 1 ? (
-            <li
+            <NavItem
               key={head.id}
-              className={index === activeIndex ? cls.active : ''}
+              to={{ hash: `#${head.id}` }}
+              active={index === activeIndex}
               style={{ paddingLeft: (head.level - 2) * 18 }}
+              onClick={() => setSelectedIndex(index)}
             >
-              <GLink
-                href={`#${head.id}`}
-                onClick={() => setSelectedIndex(index)}
-              >
-                {head.text}
-              </GLink>
-            </li>
+              {head.text}
+            </NavItem>
           ) : null
         )}
       </ul>
