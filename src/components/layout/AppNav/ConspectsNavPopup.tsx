@@ -2,8 +2,14 @@ import React, { useEffect, useMemo } from 'react';
 import { useAppContext } from 'src/app/AppContext/AppContextProvider';
 import { NavPopup } from 'src/components/UI/NavPopup/NavPopup';
 
-// кнопка с навигацией по конспектам внутри раздела
-export const SectionNav = () => {
+/**
+ * Выпадающее меню для навигации по конспектам (Conspects) текущего раздела (Part).
+ * Загружает навигацию по конспектам и отображает NavPopup, если нужно.
+ *
+ * @component
+ * @returns {JSX.Element|null} Popup-меню по конспектам либо null, если не требуется.
+ */
+export const ConspectsNavPopup: React.FC = () => {
   const { currentPart, siteNav, partNavArray, showPartNav, setShowPartNav, loadPartNav } =
     useAppContext();
 
@@ -14,7 +20,6 @@ export const SectionNav = () => {
 
   useEffect(() => {
     if (partNav.length === 0 && siteNav[currentPart.id]?.path) {
-      // Если нет навигации для текущего раздела, получаем ее из файла
       loadPartNav(currentPart.id, siteNav[currentPart.id].path);
     }
   }, [currentPart, siteNav, loadPartNav, partNav.length]);
