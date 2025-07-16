@@ -26,7 +26,7 @@ export const Logo = (props: TypeLogoProps) => {
           variant="header-1"
           color={'info'}
         >
-          Конспекты
+          {logoText}
         </Text>
       )}
     </Link>

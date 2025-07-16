@@ -16,21 +16,21 @@ export default {
       `,
     },
     {
-      it: 'не отображает текст "Конспекты" если logoText пустой',
+      it: 'не отображает текст "конспекты" если logoText пустой',
       async: false,
       steps: `
-        // Не должно быть текста "Конспекты"
-        expect(screen.queryByText('Конспекты')).toBeNull();
+        // Не должно быть текста "конспекты"
+        expect(screen.queryByText('конспекты')).toBeNull();
       `,
     },
     {
-      it: 'отображает текст "Конспекты" если передан logoText',
+      it: 'отображает переданный текст ',
       async: false,
       steps: `
-        expect(screen.getByText('Конспекты')).toBeInTheDocument();
+        expect(screen.getByText('ЛогоТекст')).toBeInTheDocument();
       `,
       props: {
-        logoText: '1', // любое непустое значение, чтобы сработал рендер <Text>
+        logoText: 'ЛогоТекст',
       },
     },
   ],
