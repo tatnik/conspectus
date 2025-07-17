@@ -6,9 +6,9 @@ import { APP_TITLE } from 'src/constants';
 
 import { useAppContext } from 'src/app/AppContext/AppContextProvider';
 
-import { PartsNavPopup } from './PartsNavPopup';
-import { CurrentPartTitle } from './CurrentPartTitle';
-import { ConspectsNavPopup } from './ConspectsNavPopup';
+import { PartsNavPopup } from './PartsNavPopup/PartsNavPopup';
+import { CurrentPartTitle } from './CurrentPartTitle/CurrentPartTitle';
+import { ConspectsNavPopup } from './ConspectsNavPopup/ConspectsNavPopup';
 
 /**
  * Главный навигационный контейнер приложения.
