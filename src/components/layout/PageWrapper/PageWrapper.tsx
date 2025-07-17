@@ -6,6 +6,12 @@ import { Footer } from 'src/components/layout/Footer/Footer';
 
 import cls from './PageWrapper.module.scss';
 
+/**
+ * Корневой layout-компонент страницы.
+ * Отображает Header, содержимое страницы (main через <Outlet />), Footer.
+ *
+ * @returns {JSX.Element} Базовый каркас страницы с хедером, основным контентом и футером.
+ */
 export const PageWrapper = () => {
   return (
     <>
