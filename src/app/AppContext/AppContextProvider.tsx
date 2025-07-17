@@ -1,10 +1,16 @@
 import React from 'react';
 
-import { Context, useCreateAppContext } from './AppContext';
+import { Context, TypeAppContext, useCreateAppContext } from './AppContext';
 
-export const AppContextProvider = ({ children }: { children: React.ReactNode }) => {
+export const AppContextProvider = ({
+  children,
+  value,
+}: {
+  children: React.ReactNode;
+  value?: TypeAppContext;
+}) => {
   const context = useCreateAppContext();
-  return <Context.Provider value={context}>{children}</Context.Provider>;
+  return <Context.Provider value={value ?? context}>{children}</Context.Provider>;
 };
 
 export const useAppContext = () => {

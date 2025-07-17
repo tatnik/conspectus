@@ -150,6 +150,47 @@ function generateJestMocksBlock(props) {
 }
 
 /**
+ * Для теста определяет актуальный mockContext (приоритет: локальный > глобальный > undefined)
+ *
+ * @param {object} test — блок теста из behavior-файла.
+ * @param {object} behavior — весь behavior-файл.
+ * @returns {object|undefined}
+ */
+
+function getMockContextForTest(test, behavior) {
+  return (test && test.mockContext) || (behavior && behavior.mockContext);
+}
+
+/**
+ * Генерирует блок объявлений jest.fn() для моков-функций из context.
+ * Каждый элемент контекста со значением __JEST_FN__ объявляется: const имя = jest.fn();
+ * Генерирует блок с текстовым представление объекта mockContext
+ * Возвращает оба блока в виде объекта
+ *
+ * @param {object} mockContext — объект контекста.
+ * @returns {object} - {contextConstBlock: string, contextObjectBlock:string}
+ */
+function generateMockContextBlocks(mockContext) {
+  let contextConstBlock = '';
+  let contextObjectBlock = '';
+
+  if (mockContext) {
+    contextObjectBlock = `const mockContext = {\n`;
+    Object.entries(mockContext).forEach(([key, value]) => {
+      if (value === '__JEST_FN__') {
+        contextConstBlock += `const ${key} = jest.fn();\n`;
+        contextObjectBlock += `  ${key},\n`;
+      } else {
+        const jsx = jsxValueForObject(value);
+        contextObjectBlock += `  ${key}:  ${jsx === undefined ? '' : jsx},\n`;
+      }
+    });
+    contextObjectBlock += `}\n`;
+  }
+  return { contextConstBlock, contextObjectBlock };
+}
+
+/**
  * Формирует строку дополнительных тестов на основе behavior.tests.
  * В каждом тесте:
  * - объявляются моки (если есть)
@@ -160,6 +201,7 @@ function generateJestMocksBlock(props) {
  * @param {string} componentName — имя компонента.
  * @returns {string}
  */
+
 function generateCustomTests(behavior, componentName) {
   if (!behavior?.tests || !Array.isArray(behavior.tests)) return '';
   return (
@@ -176,11 +218,17 @@ function generateCustomTests(behavior, componentName) {
         const testProps = getPropsForTest(test, behavior);
         const jestMocksBlock = generateJestMocksBlock(testProps);
         const propsStr = generatePropsStr(testProps, true);
-        const renderCall = `${RENDER_FUNCTION}(<${componentName}${propsStr} />);`;
-        let body = jestMocksBlock + renderCall;
-        if (test.steps) {
-          body += '\n' + test.steps.trim();
-        }
+        const mockContext = getMockContextForTest(test, behavior);
+        const { contextConstBlock, contextObjectBlock } = getMockContextBlocks(mockContext);
+
+        // Генерируем строку рендера с/без mockContext
+        const renderCall =
+          mockContext !== undefined
+            ? `${RENDER_FUNCTION}(<${componentName} ${propsStr} />, { mockContext });`
+            : `${RENDER_FUNCTION}(<${componentName} ${propsStr} />);`;
+
+        const body = `${jestMocksBlock}${contextConstBlock}${contextObjectBlock}${renderCall}\n${test.steps.trim()}`;
+
         return `  it('${test.it}', ${test.async ? 'async ' : ''}() => {\n${indentLines(
           body,
           4
