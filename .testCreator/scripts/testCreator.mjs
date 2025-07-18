@@ -150,6 +150,20 @@ function generateJestMocksBlock(props) {
 }
 
 /**
+ * Генерирует блок доп.строк
+ *
+ * @param {array} strings — массив строк для рендера.
+ * @returns {string}
+ */
+function generateStringBlock(strings) {
+  let block = '';
+  for (let st of strings) {
+    block += st + '\n';
+  }
+  return block;
+}
+
+/**
  * Для теста определяет актуальный mockContext (приоритет: локальный > глобальный > undefined)
  *
  * @param {object} test — блок теста из behavior-файла.
@@ -219,13 +233,21 @@ function generateCustomTests(behavior, componentName) {
         const jestMocksBlock = generateJestMocksBlock(testProps);
         const propsStr = generatePropsStr(testProps, true);
         const mockContext = getMockContextForTest(test, behavior);
-        const { contextConstBlock, contextObjectBlock } = getMockContextBlocks(mockContext);
+        const { contextConstBlock, contextObjectBlock } = generateMockContextBlocks(mockContext);
 
-        // Генерируем строку рендера с/без mockContext
-        const renderCall =
-          mockContext !== undefined
-            ? `${RENDER_FUNCTION}(<${componentName} ${propsStr} />, { mockContext });`
-            : `${RENDER_FUNCTION}(<${componentName} ${propsStr} />);`;
+        // Проверяем, надо ли нам генерировать строку рендера
+        const renderRequired = !(test && test.noRender);
+
+        let renderCall;
+        if (renderRequired) {
+          // Генерируем строку рендера с/без mockContext
+          renderCall =
+            mockContext !== undefined
+              ? `${RENDER_FUNCTION}(<${componentName} ${propsStr} />, { mockContext });`
+              : `${RENDER_FUNCTION}(<${componentName} ${propsStr} />);`;
+        } else {
+          renderCall = '';
+        }
 
         const body = `${jestMocksBlock}${contextConstBlock}${contextObjectBlock}${renderCall}\n${test.steps.trim()}`;
 
@@ -289,16 +311,20 @@ async function tryLoadBehavior(componentPath) {
 
 /**
  * Собирает данные для render-теста (describe-блока):
- * - импорты, блок моков, props для render.
+ * - импорты, блок начальных строк(header), блок моков, props для render, блок начальных строк для describe.
  * @param {object|null} behavior — behavior-файл компонента.
  * @returns {{importLines: string, jestMocksBlock: string, renderPropsStr: string}}
  */
 function getRenderTestContext(behavior) {
   const props = (behavior && behavior.props) || {};
+  const header = (behavior && behavior.header) || [];
+  const headerBlock = generateStringBlock(header);
+  const describe = (behavior && behavior.describe) || [];
+  const describeBlock = generateStringBlock(describe);
   const jestMocksBlock = generateJestMocksBlock(props);
   const renderPropsStr = generatePropsStr(props, true);
   const importLines = behavior?.imports?.join('\n') || '';
-  return { importLines, jestMocksBlock, renderPropsStr };
+  return { importLines, headerBlock, jestMocksBlock, renderPropsStr, describeBlock };
 }
 
 /**
@@ -332,8 +358,9 @@ async function generateTestFile(componentPath, template, testFilePath, component
     // Если 'overwrite' — ничего не спрашиваем, перезаписываем
   }
 
-  // ---- Генерируем строки для render-теста (describe): импорты, блок моков, props ----
-  const { importLines, jestMocksBlock, renderPropsStr } = getRenderTestContext(behavior);
+  // ---- Генерируем строки для render-теста (describe): импорты, блок моков, props, describe ----
+  const { importLines, headerBlock, jestMocksBlock, renderPropsStr, describeBlock } =
+    getRenderTestContext(behavior);
 
   // ---- Генерируем блоки для кастомных тестов ----
   const customTests = generateCustomTests(behavior, componentName);
@@ -342,7 +369,9 @@ async function generateTestFile(componentPath, template, testFilePath, component
   const content = template
     .replace(/\$\{EXTRA_IMPORTS\}/g, importLines ? importLines + '\n' : '')
     .replace(/\$\{COMPONENT_NAME\}/g, componentName)
+    .replace(/\$\{HEADER\}/g, headerBlock)
     .replace(/\$\{JEST_MOCKS\}/g, jestMocksBlock)
+    .replace(/\$\{DESCRIBE\}/g, describeBlock)
     .replace(/\$\{COMPONENT_PROPS\}/g, renderPropsStr)
     .replace(/\$\{EXTRA_TESTS\}/g, customTests)
     .replace(/\$\{RENDER_FUNCTION\}/g, RENDER_FUNCTION);

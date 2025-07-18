@@ -3,9 +3,11 @@ import { ${RENDER_FUNCTION} } from 'src/test-utils';
 ${EXTRA_IMPORTS}
 import {${COMPONENT_NAME}} from './${COMPONENT_NAME}';
 
+${HEADER}
 
 describe('<${COMPONENT_NAME} />', () => {
   ${JEST_MOCKS}
+  ${DESCRIBE}
   it('рендерится без ошибок', () => {
     ${RENDER_FUNCTION}(<${COMPONENT_NAME} ${COMPONENT_PROPS} />);
   });
