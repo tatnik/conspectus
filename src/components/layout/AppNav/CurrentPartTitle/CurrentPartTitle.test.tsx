@@ -5,7 +5,9 @@ import { screen } from '@testing-library/react';
 import {CurrentPartTitle} from './CurrentPartTitle';
 
 
+
 describe('<CurrentPartTitle />', () => {
+  
   
   it('рендерится без ошибок', () => {
     renderWithProviders(<CurrentPartTitle  isMainPage={false} isPartIndexPage={true} />);

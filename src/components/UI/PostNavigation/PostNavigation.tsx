@@ -30,7 +30,7 @@ export const PostNavigation = (props: PostNavigationProps) => {
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const activeIndex = useActiveHeading(heads, markdownBlockRef, selectedIndex, setSelectedIndex);
 
-  if (!heads.length) return null;
+  if (!heads.some((h) => h.level > 1)) return null;
 
   return (
     <nav

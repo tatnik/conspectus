@@ -1,6 +1,6 @@
 export default {
   imports: [`import { screen } from '@testing-library/react';`],
-  // дефолтные props для тестов, где не указан свой props
+  // Дефолтные props для всех тестов, где явно не указаны свои props
   props: {
     navLinkArray: [
       { id: 1, name: 'Link1', path: '/' },
@@ -35,13 +35,12 @@ export default {
         expect(renderProps).toHaveBeenCalledTimes(2);
       `,
     },
-    // Можно и без props — тогда возьмётся из behavior.props
     {
       it: 'применяет класс активного элемента для активного пути',
       async: false,
       steps: `
         const items = screen.getAllByRole('listitem');
-        expect(items[0].className).toContain('activeLink');
+        expect(items[0].className.split(' ')).toContain('active');
       `,
     },
   ],

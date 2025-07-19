@@ -5,7 +5,9 @@ import { screen } from '@testing-library/react';
 import {NavList} from './NavList';
 
 
+
 describe('<NavList />', () => {
+  
   
   it('рендерится без ошибок', () => {
     renderWithProviders(<NavList  navLinkArray={[{id: 1, name: "Link1", path: "/"}, {id: 2, name: "Link2", path: "/about"}]} classNameList="nav" renderProps={(val) => val.name} />);
@@ -26,7 +28,7 @@ describe('<NavList />', () => {
   it('применяет класс активного элемента для активного пути', () => {
     renderWithProviders(<NavList  navLinkArray={[{id: 1, name: "Link1", path: "/"}, {id: 2, name: "Link2", path: "/about"}]} classNameList="nav" renderProps={(val) => val.name} />);
     const items = screen.getAllByRole('listitem');
-            expect(items[0].className).toContain('activeLink');
+            expect(items[0].className.split(' ')).toContain('active');
   });
 
 });

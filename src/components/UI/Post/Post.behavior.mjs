@@ -16,6 +16,10 @@ export default {
   // Тесты для компонента
   tests: [
     {
+      it: 'компонент рендерится',
+      async: false,
+    },
+    {
       it: 'отображает предупреждение, если пост пустой',
       async: false,
       steps: `
@@ -30,7 +34,7 @@ export default {
       async: false,
       steps: `
         expect(screen.getByRole('article')).toBeInTheDocument();
-        expect(screen.queryAllByText('Заголовок поста').length).toEqual(2);
+        expect(screen.queryAllByText('Заголовок поста').length).toEqual(1);
       `,
     },
     {

@@ -5,7 +5,9 @@ import { screen } from '@testing-library/react';
 import {Header} from './Header';
 
 
+
 describe('<Header />', () => {
+  
   
   it('рендерится без ошибок', () => {
     renderWithProviders(<Header  />);

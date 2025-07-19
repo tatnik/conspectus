@@ -6,9 +6,11 @@ import { screen } from '@testing-library/react';
 import {NavPopup} from './NavPopup';
 
 
+
 describe('<NavPopup />', () => {
     const handleOnClick = jest.fn();
 
+  
   it('рендерится без ошибок', () => {
     renderWithProviders(<NavPopup  navLinks={[{id: 1, name: "Test", path: "/test"}]} handleOnClick={handleOnClick} />);
   });

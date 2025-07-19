@@ -5,7 +5,9 @@ import { screen } from '@testing-library/react';
 import {Footer} from './Footer';
 
 
+
 describe('<Footer />', () => {
+  
   
   it('рендерится без ошибок', () => {
     renderWithProviders(<Footer  />);

@@ -5,7 +5,9 @@ import { screen } from '@testing-library/react';
 import {AppNav} from './AppNav';
 
 
+
 describe('<AppNav />', () => {
+  
   
   it('рендерится без ошибок', () => {
     renderWithProviders(<AppNav  />);

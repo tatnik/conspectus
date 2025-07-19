@@ -5,7 +5,9 @@ import { screen } from '@testing-library/react';
 import {ConspectsNavPopup} from './ConspectsNavPopup';
 
 
+
 describe('<ConspectsNavPopup />', () => {
+  
   
   it('рендерится без ошибок', () => {
     renderWithProviders(<ConspectsNavPopup  />);

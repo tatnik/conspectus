@@ -5,7 +5,7 @@ import 'highlight.js/scss/default.scss';
 import cls from './Post.module.scss';
 
 import { useHighlightAndHeadings } from 'src/hooks/useHighlightAndHeadings';
-import { PostMarkdownBlock } from './PostMarkdownBlock';
+import { PostMarkdownBlock } from './PostMarkdownBlock/PostMarkdownBlock';
 import { PostNavigation } from 'src/components/UI/PostNavigation/PostNavigation';
 import { NO_CONTENT } from 'src/constants';
 import { TypeNavLink } from 'src/types/nav';

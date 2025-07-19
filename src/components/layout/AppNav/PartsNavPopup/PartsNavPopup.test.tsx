@@ -5,7 +5,9 @@ import { screen } from '@testing-library/react';
 import {PartsNavPopup} from './PartsNavPopup';
 
 
+
 describe('<PartsNavPopup />', () => {
+  
   
   it('рендерится без ошибок', () => {
     renderWithProviders(<PartsNavPopup  isMainPage={false} />);

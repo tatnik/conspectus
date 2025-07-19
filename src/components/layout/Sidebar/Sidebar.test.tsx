@@ -5,7 +5,9 @@ import { screen } from '@testing-library/react';
 import {Sidebar} from './Sidebar';
 
 
+
 describe('<Sidebar />', () => {
+  
   
   it('рендерится без ошибок', () => {
     renderWithProviders(<Sidebar  children={["test1", "test2"]} />);

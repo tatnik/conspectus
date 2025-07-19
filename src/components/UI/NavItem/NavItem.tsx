@@ -44,6 +44,7 @@ export const NavItem: React.FC<NavItemProps> = ({
     <li
       className={combinedClass}
       style={style}
+      data-active={active ? 'true' : undefined}
     >
       <RouterLink to={to}>
         {isSimple ? <GravityLink view="normal">{children}</GravityLink> : children}

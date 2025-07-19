@@ -5,7 +5,9 @@ import { screen } from '@testing-library/react';
 import {PageWrapper} from './PageWrapper';
 
 
+
 describe('<PageWrapper />', () => {
+  
   
   it('рендерится без ошибок', () => {
     renderWithProviders(<PageWrapper  />);

@@ -1,14 +1,9 @@
 import React from 'react';
-
 import { Card } from '@gravity-ui/uikit';
-
 import cls from './PrevNextButtons.module.scss';
-
 import { TypeNavLink } from 'src/types/nav';
-
-import { PrevButton } from './PrevButton';
-
-import { NextButton } from './NextButton';
+import { PrevButton } from './PrevButton/PrevButton';
+import { NextButton } from './NextButton/NextButton';
 
 interface PrevNextButtonsProps {
   prevPost?: TypeNavLink;

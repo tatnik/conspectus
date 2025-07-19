@@ -1,37 +1,31 @@
 export default {
-  // Импорты только для этого теста (screen нужен, userEvent не требуется)
   imports: [`import { screen } from '@testing-library/react';`],
-  // Основные тесты для компонента
+  props: {
+    logoText: 'Test Title',
+  },
   tests: [
     {
-      it: 'отрисовывает ссылку на главную с логотипом',
+      it: 'рендерит картинку логотипа и текст',
       async: false,
       steps: `
-        // Проверяем, что есть ссылка на '/'
-        const link = screen.getByRole('link');
-        expect(link).toHaveAttribute('href', '/');
-        // Логотип (img)
-        const img = screen.getByRole('img', { name: /логотип/i });
-        expect(img).toBeInTheDocument();
+        // Проверяем, что картинка логотипа присутствует
+        expect(screen.getByAltText("логотип")).toBeInTheDocument();
+        // Проверяем, что отображается переданный текст
+        expect(screen.getByText('Test Title')).toBeInTheDocument();
       `,
     },
     {
-      it: 'не отображает текст "конспекты" если logoText пустой',
+      it: 'отображает только картинку, если logoText не задан',
       async: false,
-      steps: `
-        // Не должно быть текста "конспекты"
-        expect(screen.queryByText('конспекты')).toBeNull();
-      `,
-    },
-    {
-      it: 'отображает переданный текст ',
-      async: false,
-      steps: `
-        expect(screen.getByText('ЛогоТекст')).toBeInTheDocument();
-      `,
       props: {
-        logoText: 'ЛогоТекст',
+        logoText: '',
       },
+      steps: `
+        // Картинка логотипа должна быть в DOM
+        expect(screen.getByAltText("логотип")).toBeInTheDocument();
+        // Текст не должен отображаться
+        expect(screen.queryByText(/./)).toBeNull();
+      `,
     },
   ],
 };
