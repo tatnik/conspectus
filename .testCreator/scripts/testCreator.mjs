@@ -234,7 +234,8 @@ function generateCustomTests(behavior, componentName) {
         const propsStr = generatePropsStr(testProps, true);
         const mockContext = getMockContextForTest(test, behavior);
         const { contextConstBlock, contextObjectBlock } = generateMockContextBlocks(mockContext);
-
+        const test_header = test.test_header || [];
+        const testHeaderBlock = generateStringBlock(test_header);
         // Проверяем, надо ли нам генерировать строку рендера
         const renderRequired = !(test && test.noRender);
 
@@ -249,7 +250,7 @@ function generateCustomTests(behavior, componentName) {
           renderCall = '';
         }
 
-        const body = `${jestMocksBlock}${contextConstBlock}${contextObjectBlock}${renderCall}\n${test.steps.trim()}`;
+        const body = `${jestMocksBlock}${testHeaderBlock}${contextConstBlock}${contextObjectBlock}${renderCall}\n${test.steps.trim()}`;
 
         return `  it('${test.it}', ${test.async ? 'async ' : ''}() => {\n${indentLines(
           body,
@@ -311,7 +312,7 @@ async function tryLoadBehavior(componentPath) {
 
 /**
  * Собирает данные для render-теста (describe-блока):
- * - импорты, блок начальных строк(header), блок моков, props для render, блок начальных строк для describe.
+ * - импорты, блок начальных строк(header), блок моков, props для render, блок начальных строк для describe (describe_header).
  * @param {object|null} behavior — behavior-файл компонента.
  * @returns {{importLines: string, jestMocksBlock: string, renderPropsStr: string}}
  */
@@ -319,8 +320,8 @@ function getRenderTestContext(behavior) {
   const props = (behavior && behavior.props) || {};
   const header = (behavior && behavior.header) || [];
   const headerBlock = generateStringBlock(header);
-  const describe = (behavior && behavior.describe) || [];
-  const describeBlock = generateStringBlock(describe);
+  const describe_header = (behavior && behavior.describe_header) || [];
+  const describeBlock = generateStringBlock(describe_header);
   const jestMocksBlock = generateJestMocksBlock(props);
   const renderPropsStr = generatePropsStr(props, true);
   const importLines = behavior?.imports?.join('\n') || '';
