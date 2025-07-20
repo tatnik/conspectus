@@ -16,12 +16,12 @@ describe('<NextButton />', () => {
   it('отображает название следующего поста и кнопку', () => {
     renderWithProviders(<NextButton  postPath="/next-post" postName="Следующий пост" className="next-button-class" />);
     expect(screen.getByText('Следующий пост')).toBeInTheDocument();
-            expect(screen.getByRole('button')).toBeInTheDocument();
+    expect(screen.getByRole('button')).toBeInTheDocument();
   });
   it('ссылка ведёт на правильный путь', () => {
     renderWithProviders(<NextButton  postPath="/next-post" postName="Следующий пост" className="next-button-class" />);
     const link = screen.getByRole('link');
-            expect(link).toHaveAttribute('href', '/next-post');
+    expect(link).toHaveAttribute('href', '/next-post');
   });
 
 });

@@ -199,7 +199,10 @@ function generateMockContextBlocks(mockContext) {
         contextObjectBlock += `  ${key}:  ${jsx === undefined ? '' : jsx},\n`;
       }
     });
-    contextObjectBlock += `}\n`;
+    contextObjectBlock += `}\n\n`;
+    contextConstBlock += `\n`;
+    contextConstBlock = indentLines(contextConstBlock, 4);
+    contextObjectBlock = indentLines(contextObjectBlock, 4);
   }
   return { contextConstBlock, contextObjectBlock };
 }
@@ -272,7 +275,7 @@ function indentLines(str, spaces = 2) {
   const pad = ' '.repeat(spaces);
   return str
     .split('\n')
-    .map((line) => pad + line)
+    .map((line) => pad + line.trim())
     .join('\n');
 }
 

@@ -16,17 +16,17 @@ describe('<PrevNextButtons />', () => {
   it('отображает обе кнопки если есть prevPost и nextPost', () => {
     renderWithProviders(<PrevNextButtons  prevPost={{id: 1, name: "Предыдущий пост", path: "/prev-post"}} nextPost={{id: 2, name: "Следующий пост", path: "/next-post"}} />);
     expect(screen.getByText('Предыдущий пост')).toBeInTheDocument();
-            expect(screen.getByText('Следующий пост')).toBeInTheDocument();
+    expect(screen.getByText('Следующий пост')).toBeInTheDocument();
   });
   it('не отображает кнопку предыдущего поста если prevPost не задан', () => {
     renderWithProviders(<PrevNextButtons  prevPost={undefined} nextPost={{id: 2, name: "Следующий пост", path: "/next-post"}} />);
     expect(screen.queryByText('Предыдущий пост')).toBeNull();
-            expect(screen.getByText('Следующий пост')).toBeInTheDocument();
+    expect(screen.getByText('Следующий пост')).toBeInTheDocument();
   });
   it('не отображает кнопку следующего поста если nextPost не задан', () => {
     renderWithProviders(<PrevNextButtons  prevPost={{id: 1, name: "Предыдущий пост", path: "/prev-post"}} nextPost={undefined} />);
     expect(screen.queryByText('Следующий пост')).toBeNull();
-            expect(screen.getByText('Предыдущий пост')).toBeInTheDocument();
+    expect(screen.getByText('Предыдущий пост')).toBeInTheDocument();
   });
 
 });

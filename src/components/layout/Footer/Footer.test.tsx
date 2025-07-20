@@ -16,9 +16,9 @@ describe('<Footer />', () => {
   it('рендерит футер с логотипом и копирайтом', () => {
     renderWithProviders(<Footer  />);
     // Логотип есть
-            expect(screen.getByAltText("логотип")).toBeInTheDocument();
-            // Копирайт есть (через текст или label)
-            expect(screen.getByText(/©|\(С\)|202[4-9]/)).toBeInTheDocument();
+    expect(screen.getByAltText("логотип")).toBeInTheDocument();
+    // Копирайт есть (через текст или label)
+    expect(screen.getByText(/©|\(С\)|202[4-9]/)).toBeInTheDocument();
   });
 
 });

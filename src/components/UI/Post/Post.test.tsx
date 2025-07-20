@@ -22,12 +22,12 @@ describe('<Post />', () => {
   it('отображает разметку markdown поста', () => {
     renderWithProviders(<Post  post="# Заголовок поста " prevPost={{id: 1, name: "Назад", path: "/prev"}} nextPost={{id: 2, name: "Вперёд", path: "/next"}} />);
     expect(screen.getByRole('article')).toBeInTheDocument();
-            expect(screen.queryAllByText('Заголовок поста').length).toEqual(1);
+    expect(screen.queryAllByText('Заголовок поста').length).toEqual(1);
   });
   it('рендерит кнопки навигации для предыдущего и следующего поста', () => {
     renderWithProviders(<Post  post="# Заголовок поста " prevPost={{id: 1, name: "Назад", path: "/prev"}} nextPost={{id: 2, name: "Вперёд", path: "/next"}} />);
     expect(screen.getByText('Назад')).toBeInTheDocument();
-            expect(screen.getByText('Вперёд')).toBeInTheDocument();
+    expect(screen.getByText('Вперёд')).toBeInTheDocument();
   });
 
 });

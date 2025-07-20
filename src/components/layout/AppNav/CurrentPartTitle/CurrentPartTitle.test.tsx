@@ -19,21 +19,23 @@ describe('<CurrentPartTitle />', () => {
     const setPartNavArray = jest.fn();
     const loadPartNav = jest.fn();
     const setDataError = jest.fn();
+    
     const mockContext = {
-      currentPart:  {id: 1, name: "Раздел", path: "/section"},
-      siteNav:  [{id: 0, name: "Main", path: "/"}, {id: 1, name: "Раздел", path: "/section"}],
-      partNavArray:  [[], [{id: 1, name: "Conspect", path: "/test/conspect"}]],
-      showPartNav:  true,
-      setCurrentPart,
-      setShowPartNav,
-      setPartNavArray,
-      loadPartNav,
-      dataError:  "",
-      setDataError,
+    currentPart:  {id: 1, name: "Раздел", path: "/section"},
+    siteNav:  [{id: 0, name: "Main", path: "/"}, {id: 1, name: "Раздел", path: "/section"}],
+    partNavArray:  [[], [{id: 1, name: "Conspect", path: "/test/conspect"}]],
+    showPartNav:  true,
+    setCurrentPart,
+    setShowPartNav,
+    setPartNavArray,
+    loadPartNav,
+    dataError:  "",
+    setDataError,
     }
+    
     renderWithProviders(<CurrentPartTitle  isMainPage={false} isPartIndexPage={true} />, { mockContext });
     const text = screen.getByText(/.+/); // Любое имя раздела
-            expect(text.closest('a')).toBeNull();
+    expect(text.closest('a')).toBeNull();
   });
   it('рендерит ссылку на индексную страницу раздела если не индексная', () => {
     const setCurrentPart = jest.fn();
@@ -41,21 +43,23 @@ describe('<CurrentPartTitle />', () => {
     const setPartNavArray = jest.fn();
     const loadPartNav = jest.fn();
     const setDataError = jest.fn();
+    
     const mockContext = {
-      currentPart:  {id: 1, name: "Раздел", path: "/section"},
-      siteNav:  [{id: 0, name: "Main", path: "/"}, {id: 1, name: "Раздел", path: "/section"}],
-      partNavArray:  [[], [{id: 1, name: "Conspect", path: "/test/conspect"}]],
-      showPartNav:  true,
-      setCurrentPart,
-      setShowPartNav,
-      setPartNavArray,
-      loadPartNav,
-      dataError:  "",
-      setDataError,
+    currentPart:  {id: 1, name: "Раздел", path: "/section"},
+    siteNav:  [{id: 0, name: "Main", path: "/"}, {id: 1, name: "Раздел", path: "/section"}],
+    partNavArray:  [[], [{id: 1, name: "Conspect", path: "/test/conspect"}]],
+    showPartNav:  true,
+    setCurrentPart,
+    setShowPartNav,
+    setPartNavArray,
+    loadPartNav,
+    dataError:  "",
+    setDataError,
     }
+    
     renderWithProviders(<CurrentPartTitle  isMainPage={false} isPartIndexPage={false} />, { mockContext });
     const link = screen.getByRole('link');
-            expect(link).toBeInTheDocument();
+    expect(link).toBeInTheDocument();
   });
   it('не рендерится на главной странице', () => {
     const setCurrentPart = jest.fn();
@@ -63,21 +67,23 @@ describe('<CurrentPartTitle />', () => {
     const setPartNavArray = jest.fn();
     const loadPartNav = jest.fn();
     const setDataError = jest.fn();
+    
     const mockContext = {
-      currentPart:  {id: 1, name: "Раздел", path: "/section"},
-      siteNav:  [{id: 0, name: "Main", path: "/"}, {id: 1, name: "Раздел", path: "/section"}],
-      partNavArray:  [[], [{id: 1, name: "Conspect", path: "/test/conspect"}]],
-      showPartNav:  true,
-      setCurrentPart,
-      setShowPartNav,
-      setPartNavArray,
-      loadPartNav,
-      dataError:  "",
-      setDataError,
+    currentPart:  {id: 1, name: "Раздел", path: "/section"},
+    siteNav:  [{id: 0, name: "Main", path: "/"}, {id: 1, name: "Раздел", path: "/section"}],
+    partNavArray:  [[], [{id: 1, name: "Conspect", path: "/test/conspect"}]],
+    showPartNav:  true,
+    setCurrentPart,
+    setShowPartNav,
+    setPartNavArray,
+    loadPartNav,
+    dataError:  "",
+    setDataError,
     }
+    
     renderWithProviders(<CurrentPartTitle  isMainPage={true} isPartIndexPage={true} />, { mockContext });
     // Не должен ничего рендерить
-            expect(screen.queryByText(/.+/)).toBeNull();
+    expect(screen.queryByText(/.+/)).toBeNull();
   });
 
 });

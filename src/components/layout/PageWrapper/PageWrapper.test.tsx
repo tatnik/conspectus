@@ -16,11 +16,11 @@ describe('<PageWrapper />', () => {
   it('рендерит Header, main и Footer', () => {
     renderWithProviders(<PageWrapper  />);
     // Проверяем наличие main-контента
-            expect(screen.getByRole('main')).toBeInTheDocument();
-            // Проверяем наличие Header (по роли navigation)
-            expect(screen.getByRole('navigation')).toBeInTheDocument();
-            // Проверяем наличие Footer (по тексту копирайта или alt-лого)
-            expect(screen.getByText(/©|\(С\)|202[4-9]/)).toBeInTheDocument();
+    expect(screen.getByRole('main')).toBeInTheDocument();
+    // Проверяем наличие Header (по роли navigation)
+    expect(screen.getByRole('navigation')).toBeInTheDocument();
+    // Проверяем наличие Footer (по тексту копирайта или alt-лого)
+    expect(screen.getByText(/©|\(С\)|202[4-9]/)).toBeInTheDocument();
   });
 
 });

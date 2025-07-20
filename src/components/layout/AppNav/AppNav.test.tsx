@@ -16,9 +16,9 @@ describe('<AppNav />', () => {
   it('корректно рендерит AppNav', () => {
     renderWithProviders(<AppNav  />);
     // Должен быть nav-элемент с логотипом и навигацией
-            const nav = screen.getByRole('navigation');
-            expect(nav).toBeInTheDocument();
-            expect(nav).toHaveClass('AppNav');
+    const nav = screen.getByRole('navigation');
+    expect(nav).toBeInTheDocument();
+    expect(nav).toHaveClass('AppNav');
   });
 
 });
