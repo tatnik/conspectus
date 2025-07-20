@@ -12,8 +12,31 @@ import { NotFound } from 'src/pages/NotFound/NotFound';
 import cls from './ContentPage.module.scss';
 import { getNavItemById, getNavItemByPath } from 'src/utils/helpers';
 
+/**
+ * Страница контента (ContentPage) — отображает пост/конспект по URL, навигацию и обёртывает рендеринг в DataProvider.
+ *
+ * Основная страница просмотра содержимого. Находит нужный раздел (part) и пост по URL (использует useParams), определяет соседние посты для перехода (prev/next).
+ * Использует DataProvider для загрузки и передачи markdown-данных компоненту Post.
+ * Если страница/раздел не найдены, отображает NotFound.
+ *
+ * Логика:
+ * - Получает параметры из URL: path (раздел), fileName (имя файла).
+ * - Определяет текущий раздел (`part`) и обновляет контекст приложения.
+ * - Находит навигацию внутри раздела (`partNav`), текущий пост и соседние посты.
+ * - Если раздел не найден — рендерит <NotFound />.
+ * - В остальных случаях оборачивает <Post /> в <DataProvider /> для загрузки и отображения содержимого.
+ *
+ * Использует:
+ *   - useAppContext — глобальный контекст приложения (навигация, методы).
+ *   - DataProvider — загрузка данных по имени файла.
+ *   - Post — отображение markdown-контента и навигации по постам.
+ *   - NotFound — страница 404.
+ *
+ * @returns {JSX.Element} Компонент страницы конспекта/поста, либо страницу NotFound.
+ */
 export const ContentPage = () => {
   const { path = '', fileName = '' } = useParams<{ path?: string; fileName?: string }>();
+
   const { setCurrentPart, setShowPartNav, siteNav, partNavArray } = useAppContext();
 
   const part = getNavItemByPath(path, siteNav);
