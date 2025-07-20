@@ -7,7 +7,7 @@ let mockUseParams = jest.fn();
 
 // 2. Мокаем DataProvider
 jest.mock('src/data/DataProvider', () => ({
-  DataProvider: ({ renderContent }) => renderContent('# Массивы'),
+  DataProvider: ({ renderContent }: { renderContent: (data: string) => React.ReactNode }) => renderContent('# Массивы'),
 }));
 
 // 3. Мокаем useParams через mockUseParams
@@ -15,7 +15,7 @@ jest.mock('react-router-dom', () => {
   const original = jest.requireActual('react-router-dom');
   return {
     ...original,
-    useParams: (...args) => mockUseParams(...args),
+    useParams: (...args: unknown[]) => mockUseParams(...args),
   };
 });
 
