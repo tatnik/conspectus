@@ -8,6 +8,17 @@ interface NotFoundProps {
   errorMessage?: string;
 }
 
+/**
+ * Компонент NotFound — универсальная страница ошибки 404 для приложения.
+ *
+ * Отображает предупреждение (Alert) с кодом и сообщением об ошибке (404 Not Found).
+ * Может принимать свой текст ошибки через проп errorMessage, иначе использует константу NOT_FOUND.
+ * Внизу отображает совет пользователю с ссылкой на главную страницу.
+ *
+ * @param {Object} props - Свойства компонента
+ * @param {string} [props.errorMessage] - Текст сообщения об ошибке (по умолчанию из NOT_FOUND)
+ * @returns {JSX.Element} Страница с предупреждением и подсказкой для пользователя
+ */
 export const NotFound = (props: NotFoundProps) => {
   const { errorMessage } = props;
   const message = errorMessage || NOT_FOUND;
