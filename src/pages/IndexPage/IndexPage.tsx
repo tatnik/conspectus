@@ -11,30 +11,35 @@ import { Card, Link as LinkGravity } from '@gravity-ui/uikit';
 import { NotFound } from 'src/pages/NotFound/NotFound';
 
 import cls from './IndexPage.module.scss';
-import { getImgName, getNavItemByPath } from 'src/utils/helpers';
+import { getImgName, getIndexFileName, getNavItemByPath } from 'src/utils/helpers';
 import { parseNavFromIndex } from 'src/utils/parsers';
 
+/**
+ * Главная страница сайта/раздела — отображает навигацию по разделам/конспектам.
+ */
 export const IndexPage = () => {
   const { setCurrentPart, setShowPartNav, siteNav } = useAppContext();
   const { path } = useParams();
 
-  const seekPath = path ?? '';
+  const partPath = path ?? '';
 
-  const navItem = useMemo(() => getNavItemByPath(seekPath, siteNav), [seekPath, siteNav]);
+  const newCurrentPart = useMemo(() => getNavItemByPath(partPath, siteNav), [partPath, siteNav]);
 
-  const fileName = useMemo(
-    () => (navItem.id === 0 ? '/index.md' : navItem.path + '/index.md'),
-    [navItem]
-  );
+  const fileName = getIndexFileName(newCurrentPart);
 
   useEffect(() => {
-    setCurrentPart(navItem);
+    setCurrentPart(newCurrentPart);
     setShowPartNav(false);
-  }, [navItem]);
+  }, [newCurrentPart]);
 
-  if (navItem.id === 0 && path !== '' && path !== undefined) return <NotFound />;
+  const showNotFound = newCurrentPart.id === 0 && !!path;
+  if (showNotFound) return <NotFound />;
 
-  const renderNavList = (data: string) => (
+  /**
+   * Рендерит список навигации на основе содержимого индексного файла.
+   * @param data markdown из index.md
+   */
+  const renderNavList = (data: string): JSX.Element => (
     <NavList
       navLinkArray={parseNavFromIndex(data)}
       classNameList={cls.nav}

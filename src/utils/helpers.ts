@@ -43,3 +43,7 @@ export const getHeadingInfo = (level: number, text: string, usedSlugs: Record<st
   const id = `h${level}-${slug}`;
   return { id, text, level };
 };
+
+// получаем имя индексного файла для раздела (если id=0, это главаная страница сайта)
+export const getIndexFileName = (part: TypeNavLink): string =>
+  part.id === 0 ? '/index.md' : `${part.path}/index.md`;
