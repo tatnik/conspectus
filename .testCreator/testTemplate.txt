@@ -1,9 +1,10 @@
 import React from 'react';
 import { ${RENDER_FUNCTION} } from 'src/test-utils';
 ${EXTRA_IMPORTS}
-import {${COMPONENT_NAME}} from './${COMPONENT_NAME}';
 
 ${HEADER}
+
+import {${COMPONENT_NAME}} from './${COMPONENT_NAME}';
 
 describe('<${COMPONENT_NAME} />', () => {
   ${JEST_MOCKS}

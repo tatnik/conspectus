@@ -3,9 +3,10 @@ import { renderWithProviders } from 'src/test-utils';
 import userEvent from '@testing-library/user-event';
 import { screen } from '@testing-library/react';
 
+
+
+
 import {NavPopup} from './NavPopup';
-
-
 
 describe('<NavPopup />', () => {
     const handleOnClick = jest.fn();

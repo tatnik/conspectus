@@ -3,10 +3,11 @@ import { renderWithProviders } from 'src/test-utils';
 import { screen } from '@testing-library/react';
 import * as useActiveHeadingModule from 'src/hooks/useActiveHeading';
 
-import {PostNavigation} from './PostNavigation';
 
 jest.mock('src/hooks/useActiveHeading');
 
+
+import {PostNavigation} from './PostNavigation';
 
 describe('<PostNavigation />', () => {
   

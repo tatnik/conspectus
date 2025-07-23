@@ -2,6 +2,8 @@ import React from 'react';
 import { renderWithProviders } from 'src/test-utils';
 import { screen } from '@testing-library/react';
 import { NOT_FOUND } from 'src/constants';
+
+
 // 1. Объявить mockUseParams ДО всех jest.mock
 let mockUseParams = jest.fn();
 
@@ -19,9 +21,8 @@ jest.mock('react-router-dom', () => {
   };
 });
 
+
 import {ContentPage} from './ContentPage';
-
-
 
 describe('<ContentPage />', () => {
   

@@ -3,6 +3,8 @@ export default {
   imports: [
     `import { screen } from '@testing-library/react';`,
     `import { NOT_FOUND } from 'src/constants';`,
+  ],
+  header: [
     `// 1. Объявить mockUseParams ДО всех jest.mock
 let mockUseParams = jest.fn();
 
