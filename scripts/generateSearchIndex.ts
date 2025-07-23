@@ -24,7 +24,11 @@ type HeadingWithBreadcrumbs = {
   breadcrumbs: string; // новый ключ
 };
 
-// Рекурсивно собираем все md-файлы, кроме index.md
+/**
+ * Рекурсивно обходит директорию и возвращает массив всех .md файлов, кроме index.md.
+ * @param {string} dir - Абсолютный путь к директории для обхода.
+ * @returns {string[]} - Массив абсолютных путей к найденным .md-файлам (без index.md).
+ */
 function walk(dir: string): string[] {
   let results: string[] = [];
   const list = fs.readdirSync(dir);
@@ -43,7 +47,12 @@ function walk(dir: string): string[] {
   return results;
 }
 
-// Выделяем заголовки, их уровень и строку (id делаем с помощью getHeadingInfo)
+/**
+ * Извлекает из markdown-текста все заголовки (h1, h2, h3, ...), определяя их уровень, текст, строку и хлебные крошки.
+ * Breadcrumbs формируются по иерархии заголовков (например, "Часть / Глава").
+ * @param {string} mdText - Текст markdown-файла.
+ * @returns {HeadingWithBreadcrumbs[]} - Массив заголовков с уровнем, текстом, номером строки и breadcrumbs.
+ */
 function extractHeadings(mdText: string) {
   const headingRegex = /^(#+)\s+(.*)$/gm;
   let match: RegExpExecArray | null;
@@ -81,12 +90,21 @@ function extractHeadings(mdText: string) {
   return headings;
 }
 
-// Функция для формирования ссылки
+/**
+ * Формирует ссылку на заголовок внутри markdown-файла (например, '/js/arrays#h2-map').
+ * @param {string} filename - Путь к файлу (с расширением .md).
+ * @param {string} id - id заголовка (например, 'h2-map').
+ * @returns {string} - Ссылка на заголовок (без домена).
+ */
 function getLink(filename: string, id: string): string {
   const fileNoExt = filename.replace(/\.md$/, '');
   return `${fileNoExt}#${id}`;
 }
 
+/**
+ * Главная функция скрипта: проходит по всем markdown-файлам, извлекает заголовки, формирует итоговый массив для поиска и сохраняет его в OUTPUT.
+ * @returns {void}
+ */
 function main() {
   const mdFiles: string[] = walk(MARKDOWN_DIR);
   const result: SearchHeading[] = [];
@@ -114,7 +132,11 @@ function main() {
 
 //!  код следующих функций копируем из src/utils/helpers.ts
 
-// получаем слаг из текста
+/**
+ * Генерирует слаг (url-friendly идентификатор) из текста: переводит в нижний регистр, заменяет пробелы/символы на дефисы, убирает лишние дефисы.
+ * @param {string} text - Исходный текст заголовка.
+ * @returns {string} - Слаг для URL/id.
+ */
 function slugify(text: string): string {
   return text
     .toLowerCase()
@@ -123,7 +145,14 @@ function slugify(text: string): string {
     .replace(/(^-+)|(-+$)/g, '');
 }
 
-// генерируем id по тексту заголовка
+/**
+ * Генерирует уникальный id для заголовка с учётом его уровня и количества повторов слагов внутри одного файла.
+ * Пример результата: { id: "h2-array-map", text: "Map", level: 2 }
+ * @param {number} level - Уровень заголовка (1-6).
+ * @param {string} text - Текст заголовка.
+ * @param {Record<string, number>} usedSlugs - Счётчик слагов для текущего файла (для уникальности).
+ * @returns {{ id: string, text: string, level: number }} - Объект с уникальным id, текстом и уровнем.
+ */
 function getHeadingInfo(level: number, text: string, usedSlugs: Record<string, number>) {
   let slug = slugify(text);
   if (usedSlugs[slug]) {
