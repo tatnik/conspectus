@@ -1,3 +1,13 @@
+/**
+ * Компонент поиска с минималистичным инпутом и иконкой лупы в качестве метки.
+ * Использует индекс по ключевым словам для быстрого поиска.
+ *
+ * - Размер адаптируется стилями (cls.Search и/или size="m/s").
+ * - При вводе показываются подходящие результаты через NavPopup.
+ * - Для ошибок/загрузки выводится сообщение.
+ *
+ * @component
+ */
 import React, { useState, useEffect, useMemo } from 'react';
 import { TextInput as Input, Label, Text } from '@gravity-ui/uikit';
 import { TypeNavLink } from 'src/types/nav';
@@ -11,6 +21,39 @@ type SearchItem = {
   breadcrumbs: string;
 };
 
+/**
+ * SVG-иконка лупы для кнопки поиска.
+ * @returns {JSX.Element}
+ */
+export const SearchIcon = () => (
+  <svg
+    width={16}
+    height={16}
+    viewBox="0 0 20 20"
+    fill="none"
+  >
+    <circle
+      cx="9"
+      cy="9"
+      r="7"
+      stroke="currentColor"
+      strokeWidth={2}
+    />
+    <line
+      x1="14.5"
+      y1="14.5"
+      x2="19"
+      y2="19"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+    />
+  </svg>
+);
+
+/**
+ * Компонент поиска с индексацией и popup результатами.
+ */
 export const Search: React.FC = () => {
   const [query, setQuery] = useState('');
   const [index, setIndex] = useState<SearchItem[]>([]);
@@ -60,6 +103,7 @@ export const Search: React.FC = () => {
         size="m"
         theme="info"
         icon={<SearchIcon />}
+        qa="search-label"
       />
       <Input
         value={query}
@@ -67,6 +111,7 @@ export const Search: React.FC = () => {
         size="m"
         hasClear
         autoFocus
+        qa="search-input"
       />
       {loading && <Text>Загрузка...</Text>}
       {error && <Text className={cls.Error}>{error}</Text>}
@@ -84,31 +129,5 @@ export const Search: React.FC = () => {
     </div>
   );
 };
-
-export const SearchIcon = () => (
-  <svg
-    width={16}
-    height={16}
-    viewBox="0 0 20 20"
-    fill="none"
-  >
-    <circle
-      cx="9"
-      cy="9"
-      r="7"
-      stroke="currentColor"
-      strokeWidth={2}
-    />
-    <line
-      x1="14.5"
-      y1="14.5"
-      x2="19"
-      y2="19"
-      stroke="currentColor"
-      strokeWidth={2}
-      strokeLinecap="round"
-    />
-  </svg>
-);
 
 export default Search;

@@ -27,19 +27,24 @@ afterEach(() => {
     renderWithProviders(<Search  />);
   });
   
+  it('отображает метку поиска', () => {
+    renderWithProviders(<Search  />);
+    // Метка поиска присутствует и имеет qa="search-label"
+    const label = document.querySelector('[data-qa="search-label"]');
+    expect(label).toBeInTheDocument();
+  });
   it('отображает поле поиска', () => {
     renderWithProviders(<Search  />);
-    // Поле поиска (input) есть на странице с label "Поиск:"
-    expect(screen.getByLabelText('Поиск:')).toBeInTheDocument();
+    // Input для поиска присутствует и имеет data-qa="search-input"
+    const input = document.querySelector('[data-qa="search-input"]');
+    expect(input).toBeInTheDocument();
   });
   it('показывает индикатор загрузки во время загрузки индекса', () => {
     renderWithProviders(<Search  />);
-    // Проверяет, что отображается индикатор загрузки
     expect(screen.getByText('Загрузка...')).toBeInTheDocument();
   });
   it('отображает ошибку при ошибке загрузки индекса', async () => {
     
-    // Мокаем fetch — возвращает ошибку
     global.fetch = jest.fn(() =>
     Promise.resolve({
     ok: false,
@@ -47,12 +52,10 @@ afterEach(() => {
     } as unknown as Response)
     );
     renderWithProviders(<Search  />);
-    // Ждём появления текста ошибки
     const error = await screen.findByText(/ошибка/i);
     expect(error).toBeInTheDocument();
   });
   it('показывает NavPopup при наличии результатов поиска', async () => {
-    // Мокаем fetch — отдаём индекс с одним элементом
     global.fetch = jest.fn(() =>
     Promise.resolve({
     ok: true,
@@ -66,18 +69,12 @@ afterEach(() => {
     } as unknown as Response)
     );
     renderWithProviders(<Search  />);
-    // Вводим поисковый запрос, совпадающий с индексом
-    fireEvent.change(screen.getByLabelText('Поиск:'), { target: { value: 'массив' } });
+    const input = document.querySelector('[data-qa="search-input"] input');
+    fireEvent.change(input, { target: { value: 'массив' } });
     await waitFor(() => expect(screen.queryByText('Загрузка...')).toBeNull());
-    // Проверяем, что появляется NavPopup (ищем по кнопке — popup внутри кнопки)
-    const arrowButtons = await screen.findAllByRole('button');
-    const navPopupBtn = arrowButtons.find((btn) =>
-    btn.querySelector('.yc-arrow-toggle')
-    );
-    expect(navPopupBtn).toBeInTheDocument();
+    expect(screen.getByText("Методы для работы с массивами / создание нового массива")).toBeInTheDocument();
   });
   it('показывает "Не найдено" при отсутствии результатов', async () => {
-    // Мокаем fetch — отдаём индекс без совпадений
     global.fetch = jest.fn(() =>
     Promise.resolve({
     ok: true,
@@ -87,12 +84,10 @@ afterEach(() => {
     } as unknown as Response)
     );
     renderWithProviders(<Search  />);
-    // Вводим поисковый запрос, который не найден
-    fireEvent.change(screen.getByLabelText('Поиск:'), { target: { value: 'qwertyuiop' } });
+    const input = document.querySelector('[data-qa="search-input"] input');
+    fireEvent.change(input, { target: { value: 'qwertyuiop' } });
     await waitFor(() => expect(screen.queryByText('Загрузка...')).toBeNull());
-    // Проверяем, что появляется сообщение "Не найдено"
-    const mess = await screen.findByText(/найдено/i);
-    expect(mess).toBeInTheDocument();
+    expect(await screen.findByText(/найдено/i)).toBeInTheDocument();
   });
 
 });
