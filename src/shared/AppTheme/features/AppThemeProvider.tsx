@@ -3,6 +3,11 @@ import { ThemeProvider } from '@gravity-ui/uikit';
 import { useSelector } from 'react-redux';
 import { IRootState } from 'src/store';
 
+/**
+ * Сохраняет выбранную тему оформления в localStorage.
+ *
+ * @param {string} theme - Название выбранной темы ('light', 'dark', 'light-hc', 'dark-hc').
+ */
 export const saveTheme = (theme: string) => {
   if (
     typeof window !== 'undefined' &&
@@ -13,6 +18,15 @@ export const saveTheme = (theme: string) => {
   }
 };
 
+/**
+ * Провайдер темы для приложения.
+ *
+ * Оборачивает всё приложение в ThemeProvider Gravity UI и синхронизирует тему с redux и localStorage.
+ *
+ * @component
+ * @param {PropsWithChildren} props - Дочерние элементы, которым требуется доступ к теме.
+ * @returns {JSX.Element} Дерево с установленной темой.
+ */
 export const AppThemeProvider: React.FC<PropsWithChildren> = (props) => {
   const { children } = props;
   const theme = useSelector((state: IRootState) => state.theme.appTheme);

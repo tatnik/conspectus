@@ -1,0 +1,42 @@
+.icon {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+
+.sunLight {
+  color: #ffc56c;
+}
+
+.sunHC {
+  color: #ffc56c;
+}
+
+.moonDark {
+  color: #110252;
+}
+
+.moonDarkHC {
+  color: #110252;
+  /* обводку — отдельным классом */
+}
+
+.strokeWhite1 {
+  stroke: #fff;
+  stroke-width: 1px;
+}
+
+.strokeWhite2 {
+  stroke: #fff;
+  stroke-width: 3px;
+}
+
+.strokeBlack1 {
+  stroke: #000;
+  stroke-width: 1px;
+}
+
+.strokeBlack2 {
+  stroke: #000;
+  stroke-width: 3px;
+}
