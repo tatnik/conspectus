@@ -32,7 +32,7 @@ export const IndexPage = () => {
     setShowPartNav(false);
   }, [newCurrentPart]);
 
-  const showNotFound = newCurrentPart.id === 0 && !!path;
+  const showNotFound = newCurrentPart.id === 0 && Boolean(path);
   if (showNotFound) return <NotFound />;
 
   /**
