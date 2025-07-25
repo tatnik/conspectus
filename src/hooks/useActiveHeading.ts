@@ -1,6 +1,27 @@
 import { useEffect, useState } from 'react';
 import { HeadingInfo } from 'src/types/heading';
 
+/**
+ * Хук для определения и управления активным заголовком в структуре markdown-документа при скролле.
+ *
+ * Используется для подсветки текущего раздела в боковой навигации (например, Table of Contents).
+ *
+ * Основная логика:
+ *   - Отслеживает прокрутку контейнера scrollRef
+ *   - Находит ближайший к верху контейнера заголовок (heads)
+ *   - Возвращает индекс активного заголовка, либо выбранный пользователем selectedIndex (если не -1)
+ *   - При скролле сбрасывает selectedIndex в -1 (режим автоподсветки)
+ *
+ * @param {HeadingInfo[]} heads — Список заголовков (id, уровень, текст)
+ * @param {React.RefObject<HTMLElement>} scrollRef — ref на элемент-контейнер с текстом
+ * @param {number} selectedIndex — Индекс выбранного пользователем заголовка (-1 — автоподсветка)
+ * @param {(idx: number) => void} setSelectedIndex — Setter для смены выбранного индекса
+ *
+ * @returns {number} Индекс активного (подсвеченного) заголовка
+ *
+ * @example
+ * const activeIdx = useActiveHeading(heads, markdownRef, selectedIndex, setSelectedIndex);
+ */
 export const useActiveHeading = (
   heads: HeadingInfo[],
   scrollRef: React.RefObject<HTMLElement>,
