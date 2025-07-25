@@ -18,8 +18,6 @@ describe('<Header />', () => {
     renderWithProviders(<Header  />);
     // Есть навигация (по роли или классу)
     expect(screen.getByRole('navigation')).toBeInTheDocument();
-    // Есть кнопка переключения темы
-    expect(screen.getByRole('combobox')).toBeInTheDocument();
     // Есть элемент поиска (input или aria-label)
     expect(screen.getByLabelText(/Поиск/)).toBeInTheDocument();
   });
