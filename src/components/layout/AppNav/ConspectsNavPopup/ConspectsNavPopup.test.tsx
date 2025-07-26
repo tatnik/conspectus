@@ -2,20 +2,15 @@ import React from 'react';
 import { renderWithProviders } from 'src/test-utils';
 import { screen } from '@testing-library/react';
 
-
-
-
-import {ConspectsNavPopup} from './ConspectsNavPopup';
+import { ConspectsNavPopup } from './ConspectsNavPopup';
 
 describe('<ConspectsNavPopup />', () => {
-  
-  
   it('рендерится без ошибок', () => {
-    renderWithProviders(<ConspectsNavPopup  />);
+    renderWithProviders(<ConspectsNavPopup />);
   });
-  
+
   it('не рендерится если нет showPartNav или нет partNav', () => {
-    renderWithProviders(<ConspectsNavPopup  />);
+    renderWithProviders(<ConspectsNavPopup />);
     // Проверяем, что ничего не отрисовано
     expect(screen.queryByRole('button')).toBeNull();
   });
@@ -25,23 +20,25 @@ describe('<ConspectsNavPopup />', () => {
     const setPartNavArray = jest.fn();
     const loadPartNav = jest.fn();
     const setDataError = jest.fn();
-    
+
     const mockContext = {
-    currentPart:  {id: 1, name: "Раздел", path: "/section"},
-    siteNav:  [{id: 0, name: "Main", path: "/"}, {id: 1, name: "Раздел", path: "/section"}],
-    partNavArray:  [[], [{id: 1, name: "Conspect", path: "/test/conspect"}]],
-    showPartNav:  true,
-    setCurrentPart,
-    setShowPartNav,
-    setPartNavArray,
-    loadPartNav,
-    dataError:  "",
-    setDataError,
-    }
-    
-    renderWithProviders(<ConspectsNavPopup  />, { mockContext });
+      currentPart: { id: 1, name: 'Раздел', path: '/section' },
+      siteNav: [
+        { id: 0, name: 'Main', path: '/' },
+        { id: 1, name: 'Раздел', path: '/section' },
+      ],
+      partNavArray: [[], [{ id: 1, name: 'Conspect', path: '/test/conspect' }]],
+      showPartNav: true,
+      setCurrentPart,
+      setShowPartNav,
+      setPartNavArray,
+      loadPartNav,
+      dataError: '',
+      setDataError,
+    };
+
+    renderWithProviders(<ConspectsNavPopup />, { mockContext });
     // Должен быть NavPopup
     expect(screen.getByRole('button')).toBeInTheDocument();
   });
-
 });
