@@ -1,4 +1,4 @@
 build
 .eslintrc.js
 config-overrides.js
-./ *.js
+./*.js

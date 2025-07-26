@@ -4,8 +4,5 @@
         "@gravity-ui/stylelint-config/prettier",
         "prettier"
     ],
-    "customSyntax": "postcss-scss",
-    "rules": {
-        "declaration-colon-space-after": "always-single-line"
-    }
+    "customSyntax": "postcss-scss"
 }

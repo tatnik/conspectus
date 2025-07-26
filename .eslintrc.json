@@ -1,7 +1,16 @@
 {
+  "plugins": ["prettier"],
   "extends": ["@gravity-ui/eslint-config", "plugin:prettier/recommended"],
   "root": true,
+  "env": { "browser": true, "es2021": true, "node": true, "jest": true },
+  "parser": "@typescript-eslint/parser",
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "rules": {
-    "linebreak-style": ["error", "unix"]
+    "linebreak-style": ["error", "unix"],
+    "prettier/prettier": "error"
   }
 }
