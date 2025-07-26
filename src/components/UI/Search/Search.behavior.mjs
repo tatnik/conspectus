@@ -29,7 +29,7 @@ export default {
       it: 'отображает поле поиска',
       async: false,
       steps: `
-        // Input для поиска присутствует и имеет data-qa="search-input"
+      // блок с Input для поиска присутствует и имеет data-qa="search-input"
       const input = document.querySelector('[data-qa="search-input"]');
       expect(input).toBeInTheDocument();      `,
     },
@@ -75,7 +75,8 @@ export default {
 );`,
       ],
       steps: `
-    const input = document.querySelector('[data-qa="search-input"] input');
+    const input = document.querySelector('[data-qa="search-input"] input') as HTMLInputElement;
+    expect(input).not.toBeNull(); // тест прервется если не найден input
     fireEvent.change(input, { target: { value: 'массив' } });
     await waitFor(() => expect(screen.queryByText('Загрузка...')).toBeNull());
     expect(screen.getByText("Методы для работы с массивами / создание нового массива")).toBeInTheDocument();
@@ -95,7 +96,8 @@ export default {
         );`,
       ],
       steps: `
-    const input = document.querySelector('[data-qa="search-input"] input');
+    const input = document.querySelector('[data-qa="search-input"] input') as HTMLInputElement;
+    expect(input).not.toBeNull(); // тест прервется если не найден input
     fireEvent.change(input, { target: { value: 'qwertyuiop' } });
     await waitFor(() => expect(screen.queryByText('Загрузка...')).toBeNull());
     expect(await screen.findByText(/найдено/i)).toBeInTheDocument();
