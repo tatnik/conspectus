@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkconspectus=self.webpackChunkconspectus||[]).push([[8748],{8748:(s,c,e)=>{s.exports=e.p+"static/media/tools_prettier.ddfdf130256c239c9c66.md"}}]);

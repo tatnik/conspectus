@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkconspectus=self.webpackChunkconspectus||[]).push([[8146],{8146:(s,c,e)=>{s.exports=e.p+"static/media/react_datas.bd5d58f0726c9c57a7e1.md"}}]);

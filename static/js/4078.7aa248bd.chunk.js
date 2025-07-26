@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkconspectus=self.webpackChunkconspectus||[]).push([[4078],{4078:(e,c,s)=>{e.exports=s.p+"static/media/react_begin.eb19123cbce742d76f3d.md"}}]);

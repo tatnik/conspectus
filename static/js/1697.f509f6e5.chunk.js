@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkconspectus=self.webpackChunkconspectus||[]).push([[1697],{4078:(s,e,c)=>{s.exports=c.p+"static/media/py_if_for.38c04f6ae1d63fbb4b69.md"}}]);

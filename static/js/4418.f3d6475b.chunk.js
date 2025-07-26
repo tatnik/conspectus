@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkconspectus=self.webpackChunkconspectus||[]).push([[4418],{4418:(e,s,c)=>{e.exports=c.p+"static/media/web_principles.dea5ad516a6d2659249f.md"}}]);

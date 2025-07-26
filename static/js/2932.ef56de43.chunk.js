@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkconspectus=self.webpackChunkconspectus||[]).push([[2932],{2932:(e,s,t)=>{e.exports=t.p+"static/media/tools_eslint-prettier.b7f19832abc24ec97098.md"}}]);
