@@ -53,6 +53,7 @@ export const SearchIcon = () => (
 
 /**
  * Компонент поиска с индексацией и popup результатами.
+ * @returns {JSX.Element}
  */
 export const Search: React.FC = () => {
   const [query, setQuery] = useState('');

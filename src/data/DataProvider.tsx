@@ -18,8 +18,8 @@ interface TypeDataProviderProps {
  *
  * @component
  * @param {object} props                          — Свойства компонента
- * @param {string} props.fileName                 — Путь к файлу, который нужно загрузить (например, '/js/js_base.md')
- * @param {(data: string) => React.ReactNode} props.renderContent — Функция-рендер для загруженных данных (получает содержимое файла)
+ * {string} props.fileName                 — Путь к файлу, который нужно загрузить (например, '/js/js_base.md')
+ * {(data: string) => React.ReactNode} props.renderContent — Функция-рендер для загруженных данных (получает содержимое файла)
  *
  * @example
  * <DataProvider

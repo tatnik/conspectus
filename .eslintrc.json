@@ -11,6 +11,12 @@
   },
   "rules": {
     "linebreak-style": ["error", "unix"],
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "padding-line-between-statements": [
+      "error",
+      // тут только допустимые типы, никакого comment!
+      { "blankLine": "always", "prev": "function", "next": "function" },
+      { "blankLine": "always", "prev": "block", "next": "function" }
+    ]
   }
 }

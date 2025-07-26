@@ -16,6 +16,7 @@ import { parseNavFromIndex } from 'src/utils/parsers';
 
 /**
  * Главная страница сайта/раздела — отображает навигацию по разделам/конспектам.
+ * @returns {JSX.Element}
  */
 export const IndexPage = () => {
   const { setCurrentPart, setShowPartNav, siteNav } = useAppContext();
@@ -38,6 +39,7 @@ export const IndexPage = () => {
   /**
    * Рендерит список навигации на основе содержимого индексного файла.
    * @param data markdown из index.md
+   * @returns {JSX.Element}
    */
   const renderNavList = (data: string): JSX.Element => (
     <NavList

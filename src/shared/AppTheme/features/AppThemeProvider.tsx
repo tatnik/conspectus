@@ -7,6 +7,7 @@ import { IRootState } from 'src/store';
  * Сохраняет выбранную тему оформления в localStorage.
  *
  * @param {string} theme - Название выбранной темы ('light', 'dark', 'light-hc', 'dark-hc').
+ * @returns {void}
  */
 export const saveTheme = (theme: string) => {
   if (

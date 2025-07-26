@@ -12,6 +12,7 @@ import { useLocation } from 'react-router-dom';
  *   - Добавляет небольшую задержку, чтобы DOM успел отрисовать markdown и заголовки
  *
  * @param {string} post — Содержимое markdown (или другой зависимости, после которой появляются якоря)
+ * @returns {void}
  *
  * @example
  * useScrollToHash(post)

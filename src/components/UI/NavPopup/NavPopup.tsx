@@ -19,10 +19,10 @@ interface TypeNavPopupProps {
  * Каждый пункт меню обёрнут в ссылку GravityLink, при клике вызывается обработчик handleOnClick и popup закрывается.
  *
  * @param {Object} props - Свойства компонента NavPopup
- * @param {TypeNavLink[]} props.navLinks - Массив объектов навигации (id, name, path).
- * @param {PopperPlacement} [props.placement='bottom'] - Положение popup относительно кнопки (например, 'bottom', 'top').
- * @param {(val: TypeNavLink) => void} props.handleOnClick - Обработчик нажатия на пункт меню (получает объект navLink).
- * @param {boolean} [props.strictHash] - Сравнивать ли hash в url при определении активного пункта.
+ * {TypeNavLink[]} props.navLinks - Массив объектов навигации (id, name, path).
+ * {PopperPlacement} [props.placement='bottom'] - Положение popup относительно кнопки (например, 'bottom', 'top').
+ * {(val: TypeNavLink) => void} props.handleOnClick - Обработчик нажатия на пункт меню (получает объект navLink).
+ * {boolean} [props.strictHash] - Сравнивать ли hash в url при определении активного пункта.
  *
  * @returns {JSX.Element} Кнопка с выпадающим списком (popup), содержащим навигацию/NavList.
  *

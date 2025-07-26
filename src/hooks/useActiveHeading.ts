@@ -12,10 +12,10 @@ import { HeadingInfo } from 'src/types/heading';
  *   - Возвращает индекс активного заголовка, либо выбранный пользователем selectedIndex (если не -1)
  *   - При скролле сбрасывает selectedIndex в -1 (режим автоподсветки)
  *
- * @param {HeadingInfo[]} heads — Список заголовков (id, уровень, текст)
- * @param {React.RefObject<HTMLElement>} scrollRef — ref на элемент-контейнер с текстом
- * @param {number} selectedIndex — Индекс выбранного пользователем заголовка (-1 — автоподсветка)
- * @param {(idx: number) => void} setSelectedIndex — Setter для смены выбранного индекса
+ * @param heads {HeadingInfo[]}  — Список заголовков (id, уровень, текст)
+ * @param scrollRef {React.RefObject<HTMLElement>}  — ref на элемент-контейнер с текстом
+ * @param selectedIndex {number}  — Индекс выбранного пользователем заголовка (-1 — автоподсветка)
+ * @param setSelectedIndex {(idx: number) => void}  — Setter для смены выбранного индекса
  *
  * @returns {number} Индекс активного (подсвеченного) заголовка
  *

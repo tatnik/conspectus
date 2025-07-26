@@ -22,17 +22,9 @@ const safeDecode = (str: string) => {
 
 /**
  * Список навигации — универсальный компонент для отображения меню, структуры или разделов.
- * Для каждого элемента массива navLinkArray рендерит NavItem (ссылку или карточку).
- * Можно задать пользовательский рендер через renderProps.
  *
- * @param {Object} props - Свойства компонента NavList
- * @param {TypeNavLink[]} props.navLinkArray - Массив объектов навигации (id, name, path).
- * @param {string} props.classNameList - CSS-класс для <ul>.
- * @param {string} [props.classNameItem] - Дополнительный CSS-класс для каждого NavItem.
- * @param {boolean} [props.strictHash=false] - Если true, сравнивает и hash в урле (для якорей).
- * @param {(val: TypeNavLink) => React.ReactNode} props.renderProps - Функция для рендера содержимого пункта меню.
- *
- * @returns {JSX.Element} Список <ul> с пунктами меню/NavItem.
+ * @param props Свойства компонента NavList
+ * @returns Список <ul> с пунктами меню/NavItem.
  */
 export const NavList: React.FC<TypeNavListProps> = ({
   navLinkArray,
