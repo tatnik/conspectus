@@ -5,7 +5,7 @@ import json from 'highlight.js/lib/languages/json';
 import python from 'highlight.js/lib/languages/python';
 import xml from 'highlight.js/lib/languages/xml';
 
-// Регистрируем необходимые языки (только один раз)
+// Регистрируем необходимые языки
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('xml', xml);
 hljs.registerLanguage('json', json);

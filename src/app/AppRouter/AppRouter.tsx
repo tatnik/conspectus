@@ -7,6 +7,13 @@ const ContentPage = React.lazy(() => import('src/pages/ContentPage/ContentPage')
 const IndexPage = React.lazy(() => import('src/pages/IndexPage/IndexPage'));
 const NotFound = React.lazy(() => import('src/pages/NotFound/NotFound'));
 
+/**
+ * Главный роутер приложения.
+ *
+ * Определяет структуру маршрутов, лейаут и ленивую загрузку страниц.
+ *
+ * @returns {JSX.Element} Роутер с описанием маршрутов приложения.
+ */
 export const AppRouter = () => {
   return (
     <BrowserRouter basename={BASENAME}>
