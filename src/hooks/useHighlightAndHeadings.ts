@@ -21,7 +21,9 @@ export function useHighlightAndHeadings(
     if (postElement) {
       const codeBlocks = postElement.querySelectorAll('pre code');
       codeBlocks.forEach((block) => {
-        hljs.highlightElement(block as HTMLElement);
+        if (!block.hasAttribute('data-highlighted')) {
+          hljs.highlightElement(block as HTMLElement);
+        }
       });
       setHeads(parseHeadingsFromHtml(postElement));
     }
