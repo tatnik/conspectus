@@ -7,21 +7,21 @@ import { NavPopup } from './NavPopup';
 
 describe('<NavPopup />', () => {
   const handleOnClick = jest.fn();
+  const navLinks = [{ id: 1, name: 'Test', path: '/test' }];
 
   it('рендерится без ошибок', () => {
     renderWithProviders(
       <NavPopup
-        navLinks={[{ id: 1, name: 'Test', path: '/test' }]}
+        navLinks={navLinks}
         handleOnClick={handleOnClick}
       />
     );
   });
 
   it('открывает popup при клике по кнопке', async () => {
-    const handleOnClick = jest.fn();
     renderWithProviders(
       <NavPopup
-        navLinks={[{ id: 1, name: 'Test', path: '/test' }]}
+        navLinks={navLinks}
         handleOnClick={handleOnClick}
       />
     );
@@ -31,10 +31,9 @@ describe('<NavPopup />', () => {
     expect(screen.getByRole('list')).toBeInTheDocument();
   });
   it('вызывает handleOnClick при клике по ссылке', async () => {
-    const handleOnClick = jest.fn();
     renderWithProviders(
       <NavPopup
-        navLinks={[{ id: 1, name: 'Test', path: '/test' }]}
+        navLinks={navLinks}
         handleOnClick={handleOnClick}
       />
     );

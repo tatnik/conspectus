@@ -24,11 +24,6 @@ export default {
       it: 'вызывает renderProps для каждого элемента',
       async: false,
       props: {
-        navLinkArray: [
-          { id: 1, name: 'Link1', path: '/' },
-          { id: 2, name: 'Link2', path: '/about' },
-        ],
-        classNameList: 'nav',
         renderProps: '__JEST_FN__',
       },
       steps: `
