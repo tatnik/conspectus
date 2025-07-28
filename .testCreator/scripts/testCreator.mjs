@@ -218,7 +218,6 @@ function generateMockContextBlocks(mockContext) {
  * @param {string} componentName — имя компонента.
  * @returns {string}
  */
-
 function generateCustomTests(behavior, componentName) {
   if (!behavior?.tests || !Array.isArray(behavior.tests)) return '';
   return (
